@@ -180,6 +180,7 @@ class EvolutionEngine:
         novelty_scores = [
             self._novelty_archive.score(sig, self._novelty_distance) for sig in signatures
         ]
+        instantaneous_novelty = _leave_one_out_novelty(signatures, self._novelty_distance)
         for sig in signatures:
             self._novelty_archive.add(sig)
         mean_novelty = float(np.mean(novelty_scores)) if novelty_scores else 0.0
@@ -212,6 +213,7 @@ class EvolutionEngine:
             genotypic_diversity=genotypic_diversity(genomes),
             behavioral_diversity=behavioral_diversity(signatures),
             mean_novelty=mean_novelty,
+            instantaneous_novelty=instantaneous_novelty,
             survival_rate=survival_rate,
             reproductive_success_rate=reproductive_success_rate,
             mean_mutation_rate=float(np.mean(mutation_rates)) if mutation_rates else 0.0,
@@ -226,3 +228,22 @@ def _centroid_shift(current: np.ndarray | None, previous: np.ndarray | None) -> 
     if current is None or previous is None:
         return None
     return float(np.linalg.norm(current - previous))
+
+
+def _leave_one_out_novelty(
+    signatures: list[np.ndarray], distance: EuclideanDistance, k: int = 5
+) -> float:
+    """Instantaneous novelty: score each signature by its mean distance to
+    the k nearest *other* signatures in this same generation, ignoring all
+    history (contrast `NoveltyArchive`-based `mean_novelty`, which is
+    cumulative across generations). O(n^2) in population size — fine at
+    the population sizes GENEVRA targets; a cost to revisit if population
+    sizes grow much larger."""
+    if len(signatures) < 2:
+        return 0.0
+    scores = []
+    for i, signature in enumerate(signatures):
+        others = signatures[:i] + signatures[i + 1 :]
+        distances = sorted(distance.distance(signature, other) for other in others)
+        scores.append(float(np.mean(distances[: min(k, len(distances))])))
+    return float(np.mean(scores))

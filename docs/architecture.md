@@ -3,36 +3,54 @@
 This document describes the module boundaries: which are implemented, and
 which are planned separations of concerns that future phases fill in, one
 validated component at a time. See also [`environment.md`](environment.md),
-[`organism.md`](organism.md), [`metrics.md`](metrics.md), and
-[`experiments.md`](experiments.md) for the design rationale behind each
-implemented layer.
+[`organism.md`](organism.md), [`metrics.md`](metrics.md),
+[`experiments.md`](experiments.md), [`ecology.md`](ecology.md),
+[`analysis.md`](analysis.md), and
+[`research_questions.md`](research_questions.md) for the design rationale
+behind each implemented layer and what it does/doesn't establish.
 
 ## Layers
 
 - **`genevra.simulation`** — environment dynamics: state representation,
   stepping, sensor/action interfaces for organisms. No evolution or
-  learning logic lives here. (Implemented: `GridWorld`, the `Environment`
-  protocol, `VectorEnvironment`. See `environment.md`.)
+  learning logic lives here. (Implemented: `GridWorld` and the new
+  multi-agent `SharedGridWorld`, the `Environment` protocol,
+  `VectorEnvironment`, `EnvironmentDynamics`, `InteractionSystem`. See
+  `environment.md` and `ecology.md`.)
 - **`genevra.organism`** — the digital organism: genome, phenotype,
   controller, sensors, memory, within-lifetime learning, metabolism,
   mutation, and a single-organism reproduction interface. (Implemented.
   See `organism.md`.)
 - **`genevra.evolution`** — population-level search: many organisms,
-  discrete generations, selection, population-level reproduction,
-  mutation, and ancestry tracking. (Implemented — see below and
-  `genevra/evolution/__init__.py`.)
+  both non-overlapping discrete generations (`EvolutionEngine`) and a new
+  overlapping-generations mode (`ContinuousEvolutionEngine`), selection,
+  population-level reproduction, mutation, and ancestry tracking.
+  (Implemented — see below, `ecology.md`, and `genevra/evolution/__init__.py`.)
 - **`genevra.metrics`** — measurement: fitness summary, genotypic and
-  behavioral diversity, novelty, mutation-neighborhood evolvability
-  analysis, and structured per-generation trajectories. Metrics are
-  computed from evolution/simulation state, never the reverse. (Implemented
-  — see `metrics.md`.)
+  behavioral diversity, novelty (cumulative and instantaneous),
+  mutation-neighborhood evolvability analysis, and structured
+  per-generation trajectories. Metrics are computed from evolution/
+  simulation state, never the reverse. (Implemented — see `metrics.md`.)
 - **`genevra.experiments`** — orchestration: a config (`ExperimentConfig`)
   wraps an `EvolutionConfig`; `ExperimentRunner.run()` executes it and
-  returns a self-contained, JSON-serializable `ExperimentResult`.
-  (Implemented — see `experiments.md`.)
+  returns a self-contained, JSON-serializable `ExperimentResult` —
+  including explicit `failure` information for runs that raised, rather
+  than crashing. (Implemented — see `experiments.md`.)
 - **`genevra.analysis`** — post-hoc analysis over persisted experiment
-  outputs (comparison across runs/conditions, later: automated hypothesis
-  discovery). (Planned.)
+  results: multi-run/multi-seed aggregation, controlled comparisons
+  (`ComparisonRunner`), evolutionary stagnation detection, lineage
+  analysis, and evolvability-over-time sampling. Never reaches into a
+  live simulator. (Implemented — see `analysis.md`. Automated hypothesis
+  discovery remains planned.)
+- **`genevra.visualization`** — lightweight, reproducible plots
+  (fitness/novelty/diversity trajectories, population size, lineage
+  survival, evolvability over time) built from stored results, never from
+  a live simulation. `matplotlib` is an optional dependency
+  (`pip install -e ".[viz]"`), imported lazily so the core package stays
+  numpy-only. (Implemented.)
+- **`genevra.cli`** — the `genevra` command (`run`, `analyze`, `inspect`,
+  `compare`) — plain `argparse`, no new CLI framework dependency.
+  (Implemented.)
 - **`genevra.utils`** — cross-cutting concerns with no research content:
   reproducible seeding, logging. (Implemented.)
 - **`genevra.arrays`** — shared NumPy array type aliases (`FloatArray`,
@@ -67,8 +85,12 @@ is the discrete-generation batch analog: by the time it runs, every
 individual's lifetime has already ended, so there's no "still alive"
 organism to ask; it only decides eligibility from the recorded final
 energy and generates offspring genomes for the next, entirely-replacing
-generation. The two are not yet unified because overlapping generations
-don't exist yet — see the Phase 5/6 recommendations below.
+generation. `genevra.evolution.continuous.ContinuousEvolutionEngine` (new
+this phase) is the overlapping-generations counterpart these two were
+foreshadowing — see `ecology.md`. The two engines remain separate rather
+than unified into one, since their control flow (whole-generation batches
+vs. per-tick individual birth/death) is genuinely different, not just a
+configuration knob.
 
 If no individual in a generation meets the reproduction eligibility
 threshold, `EvolutionEngine` records the generation as `extinction=True`
@@ -110,16 +132,31 @@ population/generation count high enough, to make this matter would be the
 trigger to replace it with a bounds-checked direct slice (no padding
 allocation) instead.
 
+**This bottleneck is worse, and now the clear top priority, in the shared/
+multi-agent path.** Profiling `ContinuousEvolutionEngine` (12-20 agents,
+14x14 `SharedGridWorld`, 600 ticks) shows `SharedGridWorld._extract_local_grid`
+accounting for roughly **64%** of total runtime — every agent's `observe()`
+call re-pads the *entire* grid independently every tick, so the cost now
+scales with `agent_count x steps` rather than just `steps`. The fix is the
+same one identified for `GridWorld` (a bounds-checked direct slice instead
+of `np.pad`), and would help proportionally more here. Not fixed in this
+phase — correctness and coverage came first, per "profile before
+optimizing" — but this is now the single most impactful place to optimize
+before scaling shared-world population sizes much further.
+
 ## Status
 
-**Phase 1–4 complete:** environment/world engine (`simulation`), digital
-organism foundation (`organism`), population/evolution engine
-(`evolution`), and metrics + experiment orchestration (`metrics`,
-`experiments`) are implemented and tested — see `environment.md`,
-`organism.md`, `metrics.md`, and `experiments.md`. Only `genevra.analysis`
-(post-hoc cross-run comparison, automated hypothesis discovery) remains
-unimplemented; see the README's Development Status section and this
-document's evolution-layer notes above for what's deliberately deferred
-within the implemented layers (overlapping generations, sexual
-reproduction/recombination, ecological interaction, speciation,
-migration).
+**Phase 1–6 complete:** environment/world engine, digital organism
+foundation, population/evolution engine (discrete and overlapping-
+generations), ecological/multi-agent simulation, metrics, analysis
+(aggregation, controlled comparison, stagnation detection, lineage
+analysis, evolvability-over-time), experiment orchestration, a CLI, and
+lightweight visualization are all implemented and tested. Deliberately
+not built: sexual reproduction/recombination, speciation, migration
+between environments, hazard cells/predation/communication/cooperation
+(the `InteractionSystem`/`EnvironmentDynamics` protocols support adding
+these later without redesign), automated hypothesis discovery, and a
+family-tree visualization (lineage *analysis* exists; a genealogy
+*visualization* does not). See `docs/research_questions.md` for what the
+implemented measurement machinery does and does not establish about
+GENEVRA's actual research questions.

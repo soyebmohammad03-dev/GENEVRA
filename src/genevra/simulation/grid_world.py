@@ -14,6 +14,7 @@ from dataclasses import dataclass
 import numpy as np
 
 from genevra.arrays import BoolArray, FloatArray
+from genevra.simulation.dynamics import EnvironmentDynamics
 from genevra.simulation.types import (
     Action,
     EnvironmentMetadata,
@@ -47,6 +48,12 @@ class GridWorldConfig:
     resource_regen_prob: float = 0.01
     obstacle_density: float = 0.1
     max_steps: int = 500
+    dynamics: EnvironmentDynamics | None = None
+    """If given, overrides `resource_regen_prob` each step with
+    `dynamics.regime_at(step, rng).resource_regen_prob` (see
+    `genevra.simulation.dynamics`). `None` (the default) preserves the
+    original fixed-`resource_regen_prob` behavior exactly — every caller
+    from Phase 1-4 that never set this field is unaffected."""
 
     def __post_init__(self) -> None:
         if self.width < 3 or self.height < 3:
@@ -195,8 +202,13 @@ class GridWorld:
         assert self._obstacles is not None
         assert self._resources is not None
         cfg = self._config
+        regen_prob = (
+            cfg.dynamics.regime_at(self._step_count, self._rng).resource_regen_prob
+            if cfg.dynamics is not None
+            else cfg.resource_regen_prob
+        )
         empty = (~self._obstacles) & (self._resources == 0.0)
-        spawn = empty & (self._rng.random(self._resources.shape) < cfg.resource_regen_prob)
+        spawn = empty & (self._rng.random(self._resources.shape) < regen_prob)
         self._resources[spawn] = cfg.resource_energy_value
 
     def _extract_local_grid(self) -> FloatArray:

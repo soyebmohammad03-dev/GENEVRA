@@ -89,6 +89,17 @@ persistent historical archive); "current population" or "per-lineage"
 archives are conceptually equally valid reference sets the same
 `NoveltyArchive` interface could support, not implemented here.
 
+`GenerationSnapshot` records this cumulative/historical score as
+`mean_novelty`, and separately records `instantaneous_novelty` — each
+individual's signature scored (leave-one-out, k-nearest) only against
+*this generation's own* signatures, ignoring all history entirely. These
+answer different questions ("how different from everything ever seen" vs.
+"how different from current peers") and are never combined into one
+number; see `docs/analysis.md` for how `StagnationAnalyzer` uses the
+instantaneous series specifically (a population's peers changing every
+generation is a more sensitive trend signal than a slowly-saturating
+historical archive).
+
 ## Evolvability: an operational, mutation-neighborhood definition
 
 GENEVRA's long-term research direction includes "can evolvability itself

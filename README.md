@@ -54,12 +54,14 @@ against those ideas empirically, on small, cheap, reproducible runs.
 
 ## Development status
 
-**Experimental research platform — Phase 1–4 complete.** GENEVRA can now
-run config-driven, reproducible evolutionary experiments end to end — a
-population of small-neural-network organisms living, reproducing,
-mutating, and being measured across generations — though only at the
-small scales and single baseline experiment described below, not yet as a
-validated tool for answering any of the research questions above:
+**Experimental research platform — Phase 1–6 complete.** GENEVRA now runs
+config-driven, reproducible evolutionary experiments end to end — isolated
+or ecologically shared, static or temporally dynamic — and can aggregate,
+compare, and analyze the results, though only at the small scales and
+handful of infrastructure-validation experiments described below, not yet
+as a validated tool for answering any of the research questions above (see
+[`docs/research_questions.md`](docs/research_questions.md) for that
+distinction, spelled out explicitly):
 
 - `genevra.utils` — reproducible seeding, experiment logging.
 - `genevra.simulation` — the `Environment` protocol, a `VectorEnvironment`
@@ -77,52 +79,81 @@ validated tool for answering any of the research questions above:
   distinct from both inherited weights and the heritable parameters that
   control how learning happens. See [`docs/organism.md`](docs/organism.md).
 - `genevra.evolution` — a population of many organisms evolving over
-  discrete generations: configurable selection (fitness-proportional,
-  tournament, elitist), population-level reproduction with an explicit
-  reproduction-eligibility rule, and compact per-individual lineage
-  tracking (ancestry, birth/death generation, genome-hash identity). See
-  [`docs/architecture.md`](docs/architecture.md#the-populationevolution-layer).
+  either discrete non-overlapping generations (`EvolutionEngine`:
+  configurable selection — fitness-proportional, tournament, elitist —
+  population-level reproduction with an explicit reproduction-eligibility
+  rule) or overlapping generations in one shared world
+  (`ContinuousEvolutionEngine`: organism age, per-tick birth/death,
+  bounded population size), plus compact per-individual lineage tracking
+  (ancestry, birth/death generation, genome-hash identity) shared by
+  both. See
+  [`docs/architecture.md`](docs/architecture.md#the-populationevolution-layer)
+  and [`docs/ecology.md`](docs/ecology.md).
+- `genevra.simulation` also includes `SharedGridWorld` (multiple
+  organisms coexisting, two resource types, deterministic spatial
+  competition via `InteractionSystem`) and `EnvironmentDynamics`
+  (static/periodic/regime-change/stochastic resource regeneration,
+  usable by both `GridWorld` and `SharedGridWorld`, fully reproducible
+  from a seed). See [`docs/ecology.md`](docs/ecology.md).
 - `genevra.metrics` — fitness summaries; genotypic diversity (genome
   distance) kept structurally separate from behavioral diversity
-  (behavior-signature distance); a persistent novelty archive that is
-  demonstrably not fitness under another name; and an operational,
-  mutation-neighborhood `EvolvabilityAnalyzer` that measures mutational
-  variation, explicitly documented as distinct from adaptive success. See
+  (behavior-signature distance); cumulative *and* instantaneous novelty
+  (never conflated with fitness); and an operational, mutation-
+  neighborhood `EvolvabilityAnalyzer` that measures mutational variation,
+  explicitly documented as distinct from adaptive success. See
   [`docs/metrics.md`](docs/metrics.md).
 - `genevra.experiments` — `ExperimentConfig`/`ExperimentRunner` producing
-  a self-contained, JSON-serializable `ExperimentResult`; same config +
-  same seed reproduces byte-identical results (verified in
-  `tests/test_experiments.py` and by running
-  [`experiments/baseline.py`](experiments/baseline.py) twice). See
-  [`docs/experiments.md`](docs/experiments.md).
+  a self-contained, JSON-serializable `ExperimentResult` (now also
+  carrying environment summary, condition id, and explicit failure
+  information for runs that raised); same config + same seed reproduces
+  byte-identical results (verified in `tests/test_experiments.py` and by
+  running [`experiments/baseline.py`](experiments/baseline.py) twice).
+  See [`docs/experiments.md`](docs/experiments.md).
+- `genevra.analysis` — multi-seed/multi-condition aggregation with a real
+  (non-fabricated) non-parametric permutation test; `ComparisonRunner` for
+  controlled comparisons sharing a seed sequence across conditions; an
+  evolutionary `StagnationAnalyzer` that structurally never equates a
+  fitness plateau with stagnation; lineage analysis; and
+  evolvability-over-time sampling. See [`docs/analysis.md`](docs/analysis.md).
+- `genevra.visualization` and `genevra.cli` — reproducible plots from
+  stored results (`pip install -e ".[viz]"`) and a `genevra run|analyze|
+  inspect|compare` command-line entry point.
 
-Not yet implemented: `genevra.analysis` (post-hoc cross-run comparison,
-automated hypothesis discovery), overlapping generations, sexual
-reproduction/recombination, ecological interaction between organisms
-sharing one environment, speciation, and migration between environments.
-See [`docs/architecture.md`](docs/architecture.md) for the full module
-layout and what's planned versus implemented. Each layer is built and
-validated incrementally, not assembled all at once — this is an
-experimental research platform, not a demonstration that any of GENEVRA's
-research questions have been answered; the one baseline experiment that
-exists (24 organisms, 15 generations, one environment configuration) is a
-pipeline demonstration, not a scientific result.
+Not yet implemented: automated hypothesis discovery, sexual reproduction/
+recombination, speciation, migration between environments, and hazard/
+predation/communication/cooperation interaction mechanisms (the
+`InteractionSystem`/`EnvironmentDynamics` protocols support adding these
+later without redesign). See [`docs/architecture.md`](docs/architecture.md)
+for the full module layout. Each layer is built and validated
+incrementally, not assembled all at once — this is an experimental
+research platform, not a demonstration that any of GENEVRA's research
+questions have been answered; the baseline and three controlled-comparison
+experiments that exist are pipeline demonstrations (a handful of seeds,
+small populations, short runs), not scientific results — see
+[`docs/research_questions.md`](docs/research_questions.md) for exactly
+what would be needed to go further.
 
 ## High-level architecture
 
 ```
 src/genevra/
-  simulation/   Environment protocol, VectorEnvironment, GridWorld  (done)
-  organism/     genome, phenotype, controller, sensors, memory,
-                learning, metabolism, mutation, reproduction        (done)
-  evolution/    population, selection, reproduction, lineage,
-                the generational EvolutionEngine                    (done)
-  metrics/      fitness, genotypic/behavioral diversity, novelty,
-                evolvability, structured trajectories               (done)
-  experiments/  config-driven orchestration + ExperimentResult      (done)
-  analysis/     post-hoc comparison across runs/conditions          (planned)
-  utils/        seeding, logging                                   (done)
-  arrays/       shared NumPy array type aliases                    (done)
+  simulation/     Environment protocol, VectorEnvironment, GridWorld,
+                  SharedGridWorld, EnvironmentDynamics, InteractionSystem (done)
+  organism/       genome, phenotype, controller, sensors, memory,
+                  learning, metabolism, mutation, reproduction           (done)
+  evolution/      population, selection, reproduction, lineage,
+                  EvolutionEngine (discrete) + ContinuousEvolutionEngine
+                  (overlapping generations)                              (done)
+  metrics/        fitness, genotypic/behavioral diversity, novelty
+                  (cumulative + instantaneous), evolvability,
+                  structured trajectories                                (done)
+  experiments/    config-driven orchestration + ExperimentResult          (done)
+  analysis/       aggregation, ComparisonRunner, StagnationAnalyzer,
+                  lineage analysis, evolvability-over-time                (done)
+  visualization/  reproducible plots from stored results (optional dep)   (done)
+  cli/            `genevra run|analyze|inspect|compare`                   (done)
+  utils/          seeding, logging                                       (done)
+  arrays/         shared NumPy array type aliases                        (done)
 ```
 
 Full rationale for this split is in [`docs/architecture.md`](docs/architecture.md).
@@ -148,6 +179,7 @@ Requires Python >= 3.11.
 # using uv (recommended)
 uv venv
 uv pip install -e ".[dev]"
+uv pip install -e ".[viz]"   # optional: matplotlib, for genevra.visualization
 
 # or plain pip
 python -m venv .venv && source .venv/bin/activate
@@ -162,11 +194,24 @@ ruff check .
 mypy
 ```
 
-Run the baseline evolutionary experiment:
+Run the baseline evolutionary experiment, or the `genevra` CLI:
 
 ```bash
 PYTHONPATH=src python experiments/baseline.py --seed 0
 PYTHONPATH=src python experiments/baseline.py --seed 0 --output results/baseline_seed0.json
+
+genevra run --seed 0 --output results/baseline_seed0.json
+genevra inspect results/baseline_seed0.json
+genevra analyze results/baseline_seed0.json    # stagnation report
+genevra compare                                # lists the controlled experiments below
+```
+
+Run one of the three controlled comparison experiments:
+
+```bash
+PYTHONPATH=src python experiments/exp1_isolated_vs_shared.py --seeds 0 1 2 3 4
+PYTHONPATH=src python experiments/exp2_static_vs_changing.py --seeds 0 1 2 3 4
+PYTHONPATH=src python experiments/exp3_fixed_vs_heritable_mutation.py --seeds 0 1 2 3 4
 ```
 
 ## How experiments are organized
@@ -181,11 +226,13 @@ dataclasses rather than a YAML/TOML file format — see
 [`docs/experiments.md`](docs/experiments.md) for why, and what a
 file-based loader would need to add. `experiments/baseline.py` is a
 runnable entry-point script that builds a config, runs it, and prints/
-optionally writes the result; comparing evolutionary conditions means
-building two `ExperimentConfig`s that differ in exactly the variable under
-test and running each across the same seeds — infrastructure this phase
-establishes, not yet a comparison *runner*, and not yet a notebook-based
-exploratory workflow under `notebooks/`.
+optionally writes the result. Comparing evolutionary conditions uses
+`genevra.analysis.comparison.ComparisonRunner`, which runs the same seed
+list across two or more named `ExperimentConfig`-producing factories and
+returns every run's result grouped by condition — see
+[`docs/analysis.md`](docs/analysis.md) and the three scripts above for
+worked examples. A notebook-based exploratory workflow under `notebooks/`
+does not exist yet.
 
 ## License
 

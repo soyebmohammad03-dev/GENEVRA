@@ -69,6 +69,12 @@ class LineageTracker:
     def children(self, individual_id: int) -> list[int]:
         return [eid for eid, event in self._events.items() if individual_id in event.parent_ids]
 
+    def events(self) -> list[LineageEvent]:
+        """Typed access to the raw records, for analysis code that wants
+        to work with real fields rather than re-parsing `to_dicts()`'s
+        untyped output."""
+        return list(self._events.values())
+
     def to_dicts(self) -> list[dict[str, object]]:
         return [dataclasses.asdict(event) for event in self._events.values()]
 

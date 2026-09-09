@@ -106,14 +106,45 @@ does by actually running it, not by asserting it would work.
 
 ## Controlled comparisons
 
-Nothing here yet runs a *suite* of experiments or compares conditions
-automatically (e.g. "fixed vs. heritable mutation strength," "constant vs.
-changing environment") — that is explicitly out of scope for this phase.
-What exists is the infrastructure such a comparison would use: build two
-`ExperimentConfig`s that differ in exactly the variable under test (e.g.
-two `PopulationConfig`s with different `initial_mutation_rate`, or two
-`GridWorldConfig`s with different `resource_regen_prob`), run each with
-the same set of seeds via `ExperimentRunner`, and compare the resulting
-`Trajectory`/`GenerationSnapshot` sequences. A dedicated comparison runner
-(running N seeds × M conditions and aggregating results) is future work —
-see docs/architecture.md's Phase 5/6 notes.
+`genevra.analysis.comparison.ComparisonRunner` (see `docs/analysis.md`)
+runs the same seed list across two or more named conditions and returns a
+`ComparisonResult` with every run's result keyed by condition, plus
+explicit failure reporting. Build two `ExperimentConfig`-producing
+functions that differ in exactly the variable under test (e.g. two
+`GridWorldConfig`s with different `dynamics`, or two `MutationOperator`s)
+and pass them as `conditions={name: factory}` — the runner guarantees the
+same seed sequence is used for every condition, so "condition A, seed 3"
+and "condition B, seed 3" start identically and differ only in whatever
+the factories actually configure differently.
+
+## Controlled baseline experiments (Phase 5 + 6)
+
+Three small, fast, reproducible comparison scripts under `experiments/`
+validate this infrastructure end to end, each with an explicit hypothesis,
+independent variable, dependent measurements, controlled variables, and
+seed policy documented in its own module docstring:
+
+- **`exp1_isolated_vs_shared.py`** — isolated single-organism episodes
+  (`EvolutionEngine` + `GridWorld`) vs. a shared multi-agent world
+  (`ContinuousEvolutionEngine` + `SharedGridWorld`), compared on final
+  genotypic diversity (the one metric directly comparable across both
+  engines' data models — see `docs/ecology.md` for why behavioral
+  diversity is not compared here).
+- **`exp2_static_vs_changing.py`** — `StaticDynamics` vs.
+  `RegimeChangeDynamics` (same average regeneration rate), compared on
+  `instantaneous_novelty`, `genotypic_diversity`, and
+  `behavioral_diversity` trajectories via `ComparisonRunner` and
+  `aggregate_metric_across_runs`.
+- **`exp3_fixed_vs_heritable_mutation.py`** — a condition-local
+  `FixedRateMutation` (pins `mutation_genes` to a constant after every
+  mutation) vs. the default heritable `GaussianMutation`, compared on
+  `mean_mutation_rate`/`mean_mutation_sigma`/`genotypic_diversity`.
+
+Run any of them with `--seeds 0 1 2 3 4` (the default) and optionally
+`--output path.json`. Each is an **infrastructure-validation experiment**:
+it demonstrates the comparison machinery works and is reproducible at a
+small scale (a few seeds, a handful of generations/steps, runs in single-
+digit seconds) — not a scientific finding. See
+`docs/research_questions.md` for the distinction between what these
+demonstrate and what would actually count as evidence for GENEVRA's
+underlying research questions.

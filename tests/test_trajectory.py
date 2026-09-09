@@ -9,6 +9,7 @@ def make_snapshot(generation: int) -> GenerationSnapshot:
         genotypic_diversity=0.3,
         behavioral_diversity=0.4,
         mean_novelty=0.1,
+        instantaneous_novelty=0.05,
         survival_rate=0.8,
         reproductive_success_rate=0.5,
         mean_mutation_rate=0.1,

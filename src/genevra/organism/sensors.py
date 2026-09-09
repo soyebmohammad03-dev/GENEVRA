@@ -18,11 +18,18 @@ _ENERGY_SCALE = 10.0
 
 
 class SensorSystem:
-    def __init__(self, view_radius: int) -> None:
+    def __init__(self, view_radius: int, channels: int = 2) -> None:
+        """`channels` is the number of feature planes in the local grid a
+        given environment produces — 2 for `GridWorld` (obstacle,
+        resource), 3 for `SharedGridWorld` (obstacle, resource A,
+        resource B). Defaults to 2 so every Phase 1-4 caller is
+        unaffected."""
         if view_radius < 0:
             raise ValueError("view_radius must be >= 0")
+        if channels <= 0:
+            raise ValueError("channels must be positive")
         window_size = 2 * view_radius + 1
-        self._grid_features = window_size * window_size * 2
+        self._grid_features = window_size * window_size * channels
 
     @property
     def output_size(self) -> int:

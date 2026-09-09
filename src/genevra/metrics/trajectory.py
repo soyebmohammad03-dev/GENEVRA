@@ -19,11 +19,20 @@ from genevra.metrics.fitness_metrics import FitnessSummary
 
 @dataclass(frozen=True)
 class GenerationSnapshot:
+    """`mean_novelty` is *cumulative/historical* novelty: each
+    individual's behavioral signature scored against the persistent
+    cross-generation `NoveltyArchive` (built up over the whole run so
+    far), then averaged. `instantaneous_novelty` is scored only against
+    this generation's own signatures (leave-one-out), ignoring history —
+    "how different are individuals from their current peers" rather than
+    "how different from everything seen so far." See docs/metrics.md."""
+
     generation: int
     fitness_summary: FitnessSummary
     genotypic_diversity: float
     behavioral_diversity: float
     mean_novelty: float
+    instantaneous_novelty: float
     survival_rate: float
     reproductive_success_rate: float
     mean_mutation_rate: float

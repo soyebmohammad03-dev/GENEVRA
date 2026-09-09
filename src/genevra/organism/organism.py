@@ -24,6 +24,7 @@ class OrganismConfig:
     view_radius: int
     memory_size: int
     initial_energy: float
+    channels: int = 2  # local-grid feature planes; 3 for SharedGridWorld's dual resource types
 
 
 class Organism:
@@ -42,7 +43,7 @@ class Organism:
     ) -> None:
         self.genome = genome
         self.phenotype: Phenotype = develop(genome)
-        self.sensors = SensorSystem(config.view_radius)
+        self.sensors = SensorSystem(config.view_radius, config.channels)
         self.memory = MemorySystem(config.memory_size)
         self.metabolism = Metabolism(self.phenotype.metabolic_params, config.initial_energy)
         self.learning_rule = learning_rule
