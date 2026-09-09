@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Tooling caches
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environments / secrets
+.env
+.env.*
+*.pem
+*.key
+
+# OS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/
+
+# Experiment outputs (never commit generated data/results)
+results/*
+!results/.gitkeep
+*.ckpt
+*.npz
+*.npy
+*.h5
+*.sqlite
+*.log
+
+# Notebooks checkpoints
+.ipynb_checkpoints/
