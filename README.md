@@ -54,31 +54,50 @@ against those ideas empirically, on small, cheap, reproducible runs.
 
 ## Development status
 
-**Foundation stage.** This repository currently contains project
-scaffolding, tooling, and reproducibility utilities only:
+**Experimental substrate — Phase 1 + 2 complete.** GENEVRA is not yet a
+research platform capable of running evolutionary experiments; it is the
+simulation and organism substrate those experiments will run on:
 
-- `genevra.utils.seeding` — deterministic seeding of stdlib `random` and a
-  `numpy.random.Generator`, so runs are replayable from a seed.
-- `genevra.utils.logging` — consistent experiment logging setup.
+- `genevra.utils` — reproducible seeding, experiment logging.
+- `genevra.simulation` — the `Environment` protocol, a `VectorEnvironment`
+  batch wrapper, and `GridWorld`: a configurable 2D world with obstacles,
+  regenerating resources, and a strict boundary between what an organism
+  can sense (`Observation`, an egocentric local window) and
+  simulator-internal state (position, step count, RNG state — reachable
+  only via `snapshot()`/`restore()`, for replay and checkpointing). See
+  [`docs/environment.md`](docs/environment.md).
+- `genevra.organism` — a small NumPy neural controller, genome/phenotype
+  separation, sensing, short-term memory, metabolism (heritable action
+  costs), a mutation operator whose rate/step-size are themselves
+  heritable genes, and a minimal but structurally real within-lifetime
+  learning mechanism (Hebbian plasticity on the output layer) kept
+  distinct from both inherited weights and the heritable parameters that
+  control how learning happens. See [`docs/organism.md`](docs/organism.md).
 
-No simulation, organism, learning, evolution, metrics, or experiment code
-exists yet. See [`docs/architecture.md`](docs/architecture.md) for the
-intended module layout and the reasoning behind it. Each layer will be
-built and validated incrementally, in its own change, before the next one
-is added — not assembled all at once.
+Not yet implemented: population-level evolution (selection, who
+reproduces with whom, population size control — `organism.reproduction`
+only covers a single organism producing one offspring), metrics
+(novelty/diversity/evolvability/stagnation detection), experiment
+orchestration, and analysis. See
+[`docs/architecture.md`](docs/architecture.md) for the full module layout
+and what's planned versus implemented. Each layer is built and validated
+incrementally, not assembled all at once — this is an experimental
+substrate, not a demonstration that any of GENEVRA's research questions
+have been answered.
 
 ## High-level architecture
 
 ```
 src/genevra/
-  simulation/   environment dynamics, sensors, actions        (planned)
-  organism/     genome, small NN controller, memory, dev.     (planned)
-  learning/     within-lifetime learning mechanisms            (planned)
-  evolution/    selection, mutation, recombination operators   (planned)
-  metrics/      fitness, novelty, diversity, evolvability      (planned)
-  experiments/  config-driven orchestration of a run           (planned)
-  analysis/     post-hoc comparison across runs/conditions      (planned)
-  utils/        seeding, logging                                (done)
+  simulation/   Environment protocol, VectorEnvironment, GridWorld  (done)
+  organism/     genome, phenotype, controller, sensors, memory,
+                learning, metabolism, mutation, reproduction        (done)
+  evolution/    population-level selection, recombination            (planned)
+  metrics/      fitness, novelty, diversity, evolvability             (planned)
+  experiments/  config-driven orchestration of a run                  (planned)
+  analysis/     post-hoc comparison across runs/conditions             (planned)
+  utils/        seeding, logging                                       (done)
+  arrays/       shared NumPy array type aliases                        (done)
 ```
 
 Full rationale for this split is in [`docs/architecture.md`](docs/architecture.md).
