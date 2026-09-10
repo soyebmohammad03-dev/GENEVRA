@@ -220,6 +220,28 @@ def test_validate_comparison_flags_failed_runs_as_a_warning_not_silently() -> No
     assert any("failed run" in w for w in validation.warnings)
 
 
+def test_validate_comparison_warns_on_differing_population_sizes() -> None:
+    result = ComparisonRunner(conditions={"a": make_config_factory(10)}, seeds=[0, 1]).run()
+    tampered_runs = list(result.conditions["a"])
+    tampered_runs[0] = {**tampered_runs[0], "final_population_size": 999}
+    tampered = dataclasses.replace(result, conditions={"a": tampered_runs})
+    validation = validate_comparison(tampered)
+    assert any("differing final population" in w for w in validation.warnings)
+
+
+def test_validate_comparison_warns_on_missing_metrics() -> None:
+    result = ComparisonRunner(conditions={"a": make_config_factory(10)}, seeds=[0]).run()
+    tampered_runs = list(result.conditions["a"])
+    stripped_trajectory = [
+        {k: v for k, v in gen.items() if k != "genotypic_diversity"}
+        for gen in tampered_runs[0]["trajectory"]
+    ]
+    tampered_runs[0] = {**tampered_runs[0], "trajectory": stripped_trajectory}
+    tampered = dataclasses.replace(result, conditions={"a": tampered_runs})
+    validation = validate_comparison(tampered)
+    assert any("missing metric" in w for w in validation.warnings)
+
+
 def test_validate_comparison_errors_on_missing_seed_for_one_condition() -> None:
     result = ComparisonRunner(
         conditions={"a": make_config_factory(10), "b": make_config_factory(10)}, seeds=[0, 1]

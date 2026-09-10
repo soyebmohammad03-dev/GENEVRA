@@ -15,6 +15,7 @@ import dataclasses
 import hashlib
 from dataclasses import dataclass
 
+from genevra.analysis.learning_strategy import LearningStrategy
 from genevra.organism.genome import Genome
 
 
@@ -26,6 +27,13 @@ class LineageEvent:
     genome_hash: str
     death_generation: int | None = None
     reproduced: bool = False
+    learning_strategy: tuple[float, float, float] = (0.0, 1.0, 0.0)
+    """`(learning_rate, plasticity_gate, decay)` — see
+    `genevra.analysis.learning_strategy.LearningStrategy` — captured at
+    birth alongside the genome hash. Storing this compact 3-tuple (not
+    the full genome) is what lets strategy persistence/turnover/lineage-
+    survival analysis (Phase 9.4) run directly off `LineageTracker`
+    records instead of requiring every historical genome to be retained."""
 
 
 class LineageTracker:
@@ -37,11 +45,17 @@ class LineageTracker:
     ) -> None:
         if individual_id in self._events:
             raise ValueError(f"individual {individual_id} already has a birth record")
+        strategy = LearningStrategy.from_genome(genome)
         self._events[individual_id] = LineageEvent(
             individual_id=individual_id,
             parent_ids=parent_ids,
             generation=generation,
             genome_hash=_hash_genome(genome),
+            learning_strategy=(
+                strategy.learning_rate,
+                strategy.plasticity_gate,
+                strategy.decay,
+            ),
         )
 
     def record_death(self, individual_id: int, generation: int) -> None:

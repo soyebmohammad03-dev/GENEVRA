@@ -185,4 +185,22 @@ def validate_comparison(result: ComparisonResult) -> ComparisonValidation:
                 f"condition {name!r} runs use different environment configurations across seeds"
             )
 
+        population_sizes = {r["final_population_size"] for r in runs if r["status"] == "completed"}
+        if len(population_sizes) > 1:
+            warnings.append(
+                f"condition {name!r} has completed runs with differing final population "
+                f"sizes {sorted(population_sizes)}"
+            )
+
+        required_keys = {"fitness_summary", "genotypic_diversity", "behavioral_diversity"}
+        for r in runs:
+            if r["status"] == "failed" or not r["trajectory"]:
+                continue
+            missing_keys = required_keys - r["trajectory"][-1].keys()
+            if missing_keys:
+                warnings.append(
+                    f"condition {name!r} seed {r['seed']} trajectory is missing metric(s) "
+                    f"{sorted(missing_keys)} — likely run at a reduced MetricsLevel"
+                )
+
     return ComparisonValidation(errors=tuple(errors), warnings=tuple(warnings))
