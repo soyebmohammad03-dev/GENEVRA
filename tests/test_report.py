@@ -2,7 +2,7 @@ import numpy as np
 
 from genevra.analysis.comparison import ComparisonRunner
 from genevra.analysis.report import build_research_report
-from tests.test_comparison import make_config_factory
+from tests.factories import make_config_factory
 
 
 def _fitness_extractor(g: dict) -> float:

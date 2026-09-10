@@ -1,5 +1,4 @@
 import dataclasses
-from collections.abc import Callable
 
 import pytest
 
@@ -16,42 +15,10 @@ from genevra.organism.mutation import GaussianMutation
 from genevra.organism.organism import OrganismConfig
 from genevra.simulation.grid_world import GridWorldConfig
 from genevra.simulation.types import Action
-
-_VIEW_RADIUS = 1
-_MEMORY_SIZE = 2
-_INPUT_SIZE = (2 * _VIEW_RADIUS + 1) ** 2 * 2 + 2 + _MEMORY_SIZE
-
-
-def make_config_factory(max_steps: int) -> Callable[[int], ExperimentConfig]:
-    def factory(seed: int) -> ExperimentConfig:
-        architecture = ControllerArchitecture(
-            input_size=_INPUT_SIZE, hidden_size=5, output_size=len(Action)
-        )
-        organism_config = OrganismConfig(
-            view_radius=_VIEW_RADIUS, memory_size=_MEMORY_SIZE, initial_energy=15.0
-        )
-        population_config = PopulationConfig(
-            size=5, architecture=architecture, organism_config=organism_config
-        )
-        environment_config = GridWorldConfig(
-            width=8, height=8, view_radius=_VIEW_RADIUS, max_steps=max_steps
-        )
-        evolution_config = EvolutionConfig(
-            generations=2,
-            steps_per_lifetime=max_steps,
-            environment_config=environment_config,
-            population_config=population_config,
-            fitness_function=SurvivalResourceFitness(),
-            selection_strategy=TournamentSelection(tournament_size=2),
-            reproduction=PopulationReproductionConfig(
-                energy_threshold=-1000.0, mutation_operator=GaussianMutation()
-            ),
-            learning_rule_factory=NoLearning,
-            seed=seed,
-        )
-        return ExperimentConfig(name="cond", evolution=evolution_config)
-
-    return factory
+from tests.factories import INPUT_SIZE as _INPUT_SIZE
+from tests.factories import MEMORY_SIZE as _MEMORY_SIZE
+from tests.factories import VIEW_RADIUS as _VIEW_RADIUS
+from tests.factories import make_config_factory
 
 
 def test_comparison_runs_every_condition_across_every_seed() -> None:
