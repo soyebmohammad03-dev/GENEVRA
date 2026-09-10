@@ -31,6 +31,13 @@ class LifetimeObservations:
     positions_visited: tuple[Position, ...]
     actions_taken: tuple[Action, ...]
     survived_full_lifetime: bool
+    rewards_by_step: tuple[float, ...] = ()
+    """Per-step reward (`GridWorld.step`'s `reward`, i.e. resources
+    gained that step), in order — the raw material Phase 8.5's lifetime
+    adaptation curves are computed from (see
+    `genevra.metrics.adaptation`). Defaults to `()` so any caller
+    constructing `LifetimeObservations` directly without this field
+    (existing tests) is unaffected."""
 
 
 @dataclass(frozen=True, eq=False)
@@ -68,6 +75,7 @@ def run_single_lifetime(
 
     positions: list[Position] = []
     actions: list[Action] = []
+    rewards: list[float] = []
     total_resource_gained = 0.0
     steps_survived = 0
 
@@ -79,6 +87,7 @@ def run_single_lifetime(
         organism.learn_from_feedback(action, result.reward)
 
         total_resource_gained += result.reward
+        rewards.append(result.reward)
         steps_survived += 1
         actions.append(action)
         position = result.info.get("position")
@@ -93,4 +102,5 @@ def run_single_lifetime(
         positions_visited=tuple(positions),
         actions_taken=tuple(actions),
         survived_full_lifetime=steps_survived == max_steps,
+        rewards_by_step=tuple(rewards),
     )

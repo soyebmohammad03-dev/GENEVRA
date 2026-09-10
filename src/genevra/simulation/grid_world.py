@@ -217,12 +217,63 @@ class GridWorld:
         assert self._resources is not None
         r = self._config.view_radius
         x, y = self._agent_position
-        obstacles_padded = np.pad(self._obstacles, r, mode="constant", constant_values=True)
-        resources_padded = np.pad(self._resources, r, mode="constant", constant_values=0.0)
-        window_obstacles = obstacles_padded[y : y + 2 * r + 1, x : x + 2 * r + 1]
-        window_resources = resources_padded[y : y + 2 * r + 1, x : x + 2 * r + 1]
+        window_obstacles, window_resources = extract_local_window(
+            self._obstacles,
+            self._resources,
+            x,
+            y,
+            r,
+            self._config.width,
+            self._config.height,
+        )
         normalized = window_resources / self._config.resource_energy_value
         grid: FloatArray = np.stack(
             [window_obstacles.astype(np.float32), normalized.astype(np.float32)], axis=-1
         )
         return grid
+
+
+def _window_bounds(x: int, y: int, r: int, width: int, height: int) -> tuple[int, ...]:
+    src_x0, src_x1 = max(0, x - r), min(width, x + r + 1)
+    src_y0, src_y1 = max(0, y - r), min(height, y + r + 1)
+    dst_x0, dst_y0 = src_x0 - (x - r), src_y0 - (y - r)
+    dst_x1, dst_y1 = dst_x0 + max(0, src_x1 - src_x0), dst_y0 + max(0, src_y1 - src_y0)
+    return src_x0, src_x1, src_y0, src_y1, dst_x0, dst_x1, dst_y0, dst_y1
+
+
+def extract_single_window(
+    array: np.ndarray, fill_value: object, x: int, y: int, r: int, width: int, height: int
+) -> np.ndarray:
+    """Bounds-aware slicing extraction of one `(2r+1, 2r+1)` egocentric
+    window from `array`, equivalent to padding the whole grid with
+    `fill_value` and slicing out the window — but touching only the (at
+    most) `(2r+1)^2` window cells rather than allocating and filling a
+    padded copy of the entire `width x height` grid on every call. See
+    `tests/test_grid_world.py` for equivalence tests against a reference
+    `np.pad`-based implementation across randomized positions, sizes,
+    radii, and boundary conditions.
+    """
+    size = 2 * r + 1
+    window = np.full((size, size), fill_value, dtype=array.dtype)
+    src_x0, src_x1, src_y0, src_y1, dst_x0, dst_x1, dst_y0, dst_y1 = _window_bounds(
+        x, y, r, width, height
+    )
+    if src_x0 < src_x1 and src_y0 < src_y1:
+        window[dst_y0:dst_y1, dst_x0:dst_x1] = array[src_y0:src_y1, src_x0:src_x1]
+    return window
+
+
+def extract_local_window(
+    obstacles: BoolArray,
+    resources: FloatArray,
+    x: int,
+    y: int,
+    r: int,
+    width: int,
+    height: int,
+) -> tuple[BoolArray, FloatArray]:
+    """`GridWorld`'s two-channel case: obstacle window (out-of-bounds =
+    wall) and resource window (out-of-bounds = no resource)."""
+    window_obstacles = extract_single_window(obstacles, True, x, y, r, width, height)
+    window_resources = extract_single_window(resources, 0.0, x, y, r, width, height)
+    return window_obstacles, window_resources

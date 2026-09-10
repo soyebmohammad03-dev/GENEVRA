@@ -132,3 +132,82 @@ def permutation_test(
     return PermutationTestResult(
         observed_difference=observed, p_value=p_value, num_permutations=num_permutations
     )
+
+
+@dataclass(frozen=True)
+class EffectSizeResult:
+    """Cohen's d (pooled-standard-deviation standardized mean
+    difference) between two independent samples — a magnitude measure,
+    deliberately reported alongside (never instead of) `permutation_test`'s
+    p-value: a p-value says whether a difference is unlikely to be chance
+    given the sample size, an effect size says how large the difference
+    actually is, and conflating the two is a common misreading Phase
+    8.14 explicitly avoids by keeping them as separate fields, computed
+    by separate functions."""
+
+    cohens_d: float
+    mean_difference: float
+    pooled_std: float
+    n_a: int
+    n_b: int
+
+
+def cohens_d(sample_a: Sequence[float], sample_b: Sequence[float]) -> EffectSizeResult:
+    a = np.asarray(sample_a, dtype=np.float64)
+    b = np.asarray(sample_b, dtype=np.float64)
+    if len(a) < 2 or len(b) < 2:
+        raise ValueError("cohens_d requires at least 2 observations per sample")
+    mean_difference = float(a.mean() - b.mean())
+    pooled_variance = ((len(a) - 1) * a.var(ddof=1) + (len(b) - 1) * b.var(ddof=1)) / (
+        len(a) + len(b) - 2
+    )
+    pooled_std = float(np.sqrt(pooled_variance))
+    d = mean_difference / pooled_std if pooled_std > 0 else float("nan")
+    return EffectSizeResult(
+        cohens_d=d, mean_difference=mean_difference, pooled_std=pooled_std, n_a=len(a), n_b=len(b)
+    )
+
+
+@dataclass(frozen=True)
+class BootstrapCI:
+    """A percentile-bootstrap confidence interval for the mean of one
+    sample — the resampling-based analog of `aggregate_metric_across_runs`'s
+    percentile spread, for a single scalar (e.g. one condition's final-
+    generation fitness across seeds) rather than a per-generation series.
+    Explicitly not a normal-approximation CI (see this module's
+    docstring on why that assumption isn't justified at typical
+    GENEVRA seed counts)."""
+
+    point_estimate: float
+    low: float
+    high: float
+    confidence_level: float
+    n_resamples: int
+    n_observations: int
+
+
+def bootstrap_confidence_interval(
+    sample: Sequence[float],
+    rng: np.random.Generator,
+    confidence_level: float = 0.90,
+    n_resamples: int = 2000,
+) -> BootstrapCI:
+    if not 0.0 < confidence_level < 1.0:
+        raise ValueError("confidence_level must be in (0, 1)")
+    values = np.asarray(sample, dtype=np.float64)
+    n = len(values)
+    if n < 2:
+        raise ValueError("bootstrap_confidence_interval requires at least 2 observations")
+    resample_means = np.empty(n_resamples, dtype=np.float64)
+    for i in range(n_resamples):
+        resample_means[i] = rng.choice(values, size=n, replace=True).mean()
+    alpha = 1.0 - confidence_level
+    low, high = np.percentile(resample_means, [100 * alpha / 2, 100 * (1 - alpha / 2)])
+    return BootstrapCI(
+        point_estimate=float(values.mean()),
+        low=float(low),
+        high=float(high),
+        confidence_level=confidence_level,
+        n_resamples=n_resamples,
+        n_observations=n,
+    )

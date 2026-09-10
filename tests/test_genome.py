@@ -21,7 +21,7 @@ def test_random_genome_has_correct_shapes() -> None:
     assert genome.controller_weights.shape == (arch.num_params,)
     assert genome.metabolic_genes.shape == (4,)
     assert genome.mutation_genes.shape == (2,)
-    assert genome.learning_genes.shape == (1,)
+    assert genome.learning_genes.shape == (3,)
 
 
 def test_genome_rejects_wrong_shaped_arrays() -> None:
@@ -32,7 +32,7 @@ def test_genome_rejects_wrong_shaped_arrays() -> None:
             controller_weights=np.zeros(3, dtype=np.float32),  # wrong size
             metabolic_genes=np.zeros(4, dtype=np.float32),
             mutation_genes=np.zeros(2, dtype=np.float32),
-            learning_genes=np.zeros(1, dtype=np.float32),
+            learning_genes=np.zeros(3, dtype=np.float32),
         )
 
 

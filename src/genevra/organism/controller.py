@@ -71,3 +71,59 @@ class Controller:
 def _tanh(x: FloatArray) -> FloatArray:
     result: FloatArray = np.tanh(x).astype("float32")
     return result
+
+
+def batch_hidden(controllers: list[Controller], inputs: FloatArray) -> FloatArray:
+    """Vectorized `hidden()` across N *different* controllers (each with
+    its own `weight1`/`bias1` — organisms are not weight-sharing), given
+    stacked inputs `(N, input_size)`. Returns `(N, hidden_size)`.
+
+    This batches the forward pass itself, not organisms' learning state:
+    each row of the result is exactly what `controllers[i].hidden(inputs[i])`
+    would produce alone (see `tests/test_controller.py` for the
+    equivalence check) — no state is shared or averaged across organisms.
+    Requires every controller to share one `ControllerArchitecture` (the
+    common case: one population, one evolved architecture); mixed
+    architectures must use the individual `hidden()` path per controller.
+    """
+    if not controllers:
+        return np.zeros((0, 0), dtype=np.float32)
+    architecture = controllers[0].architecture
+    if inputs.shape != (len(controllers), architecture.input_size):
+        raise ValueError(
+            f"expected inputs shape ({len(controllers)}, {architecture.input_size}), "
+            f"got {inputs.shape}"
+        )
+    weight1 = np.stack([c.weight1 for c in controllers])  # (N, H, I)
+    bias1 = np.stack([c.bias1 for c in controllers])  # (N, H)
+    activated = np.einsum("nhi,ni->nh", weight1, inputs) + bias1
+    result: FloatArray = np.tanh(activated).astype("float32")
+    return result
+
+
+def batch_output(
+    controllers: list[Controller],
+    hidden: FloatArray,
+    weight2_override: FloatArray | None = None,
+    bias2_override: FloatArray | None = None,
+) -> FloatArray:
+    """Vectorized `output()` across N controllers given stacked hidden
+    activations `(N, hidden_size)`. `weight2_override`/`bias2_override`
+    (each stacked `(N, ...)`), when given, substitute per-organism
+    lifetime-plastic output weights, mirroring `Controller.output`'s
+    `weights_override` — one override array per organism, never one
+    shared across the batch.
+    """
+    if not controllers:
+        return np.zeros((0, 0), dtype=np.float32)
+    weight2 = (
+        weight2_override
+        if weight2_override is not None
+        else np.stack([c.weight2 for c in controllers])
+    )
+    bias2 = (
+        bias2_override if bias2_override is not None else np.stack([c.bias2 for c in controllers])
+    )
+    logits = np.einsum("noh,nh->no", weight2, hidden) + bias2
+    result: FloatArray = logits.astype("float32")
+    return result

@@ -11,6 +11,7 @@ conceptual 15-step evolutionary lifecycle.
 
 from __future__ import annotations
 
+import time
 from collections.abc import Callable
 from dataclasses import dataclass
 from enum import Enum
@@ -24,10 +25,12 @@ from genevra.evolution.population import Individual, Population, PopulationConfi
 from genevra.evolution.reproduction import PopulationReproduction, PopulationReproductionConfig
 from genevra.evolution.selection import SelectionStrategy
 from genevra.metrics.behavior import behavioral_signature
+from genevra.metrics.distribution import summarize_distribution
 from genevra.metrics.diversity import EuclideanDistance, behavioral_diversity, genotypic_diversity
-from genevra.metrics.fitness_metrics import compute_fitness_summary
+from genevra.metrics.fitness_metrics import FitnessSummary, compute_fitness_summary
 from genevra.metrics.novelty import NoveltyArchive
-from genevra.metrics.trajectory import GenerationSnapshot, Trajectory
+from genevra.metrics.trajectory import GenerationSnapshot, MetricsLevel, Trajectory
+from genevra.organism.genome import Genome
 from genevra.organism.learning import LearningRule, NoLearning
 from genevra.simulation.grid_world import GridWorldConfig
 
@@ -37,6 +40,7 @@ class RunStatus(Enum):
     RUNNING = "running"
     COMPLETED = "completed"
     EXTINCT = "extinct"
+    BUDGET_EXCEEDED = "budget_exceeded"
 
 
 @dataclass(frozen=True)
@@ -51,6 +55,26 @@ class EvolutionConfig:
     seed: int
     learning_rule_factory: Callable[[], LearningRule] = NoLearning
     novelty_archive_size: int = 200
+    metrics_level: MetricsLevel = MetricsLevel.STANDARD
+    metrics_interval: int = 1
+    """How often (every N generations) `RESEARCH`-level extras are
+    computed; ignored at `MINIMAL`/`STANDARD`. Must be >= 1."""
+    diversity_max_pairs: int | None = None
+    """Caps the number of genome/behavior pairs
+    `genotypic_diversity`/`behavioral_diversity` sample per generation
+    (see `genevra.metrics.diversity.mean_pairwise_distance`) — without
+    this, both are O(population_size^2) every generation. `None`
+    preserves exact (uncapped) computation."""
+    max_runtime_seconds: float | None = None
+    """An explicit wall-clock budget (Phase 7.6): if set, `run()` stops
+    before starting a generation that would exceed it, sets
+    `status=BUDGET_EXCEEDED` and records why in `budget_exceeded_reason`
+    — never silently truncates a run and reports it as `COMPLETED`."""
+    eval_environment_config: GridWorldConfig | None = None
+    """A held-out environment (Phase 8.4): when set, every generation's
+    survivors are additionally evaluated here (never selected on) and
+    the result recorded separately as
+    `GenerationSnapshot.eval_fitness_summary`."""
 
     def __post_init__(self) -> None:
         if self.generations <= 0:
@@ -59,6 +83,12 @@ class EvolutionConfig:
             raise ValueError("steps_per_lifetime must be positive")
         if self.novelty_archive_size <= 0:
             raise ValueError("novelty_archive_size must be positive")
+        if self.metrics_interval < 1:
+            raise ValueError("metrics_interval must be >= 1")
+        if self.diversity_max_pairs is not None and self.diversity_max_pairs <= 0:
+            raise ValueError("diversity_max_pairs must be positive")
+        if self.max_runtime_seconds is not None and self.max_runtime_seconds <= 0:
+            raise ValueError("max_runtime_seconds must be positive")
 
 
 class EvolutionEngine:
@@ -71,11 +101,13 @@ class EvolutionEngine:
         self.trajectory = Trajectory()
         self.generation = 0
         self.status = RunStatus.NOT_STARTED
+        self.budget_exceeded_reason: str | None = None
 
         self._novelty_archive = NoveltyArchive(max_size=config.novelty_archive_size, rng=self._rng)
         self._novelty_distance = EuclideanDistance()
         self._previous_genome_centroid: np.ndarray | None = None
         self._previous_behavior_centroid: np.ndarray | None = None
+        self._start_time: float | None = None
 
     def initialize(self) -> None:
         self.population.initialize(self._rng)
@@ -84,16 +116,30 @@ class EvolutionEngine:
                 individual.id, individual.parent_ids, individual.generation, individual.genome
             )
         self.status = RunStatus.RUNNING
+        self._start_time = time.monotonic()
 
     def run(self) -> Trajectory:
         self.initialize()
         for _ in range(self._config.generations):
             if self.status != RunStatus.RUNNING:
                 break
+            if self._runtime_budget_exceeded():
+                self.status = RunStatus.BUDGET_EXCEEDED
+                self.budget_exceeded_reason = (
+                    f"max_runtime_seconds={self._config.max_runtime_seconds} exceeded "
+                    f"before generation {self.generation}"
+                )
+                break
             self.step()
         if self.status == RunStatus.RUNNING:
             self.status = RunStatus.COMPLETED
         return self.trajectory
+
+    def _runtime_budget_exceeded(self) -> bool:
+        budget = self._config.max_runtime_seconds
+        if budget is None or self._start_time is None:
+            return False
+        return (time.monotonic() - self._start_time) > budget
 
     def step(self) -> GenerationSnapshot:
         records = self._run_lifetimes()
@@ -106,7 +152,14 @@ class EvolutionEngine:
             self.lineage.record_death(individual.id, self.generation)
 
         selected_indices = self._select_parents(fitness_scores, eligible_indices, extinction)
-        snapshot = self._build_snapshot(records, fitness_scores, selected_indices, extinction)
+        eval_fitness_summary = (
+            self._evaluate_generalization(self.population.snapshot_genomes())
+            if self._config.eval_environment_config is not None
+            else None
+        )
+        snapshot = self._build_snapshot(
+            records, fitness_scores, selected_indices, extinction, eval_fitness_summary
+        )
         self.trajectory.append(snapshot)
 
         if extinction:
@@ -138,6 +191,29 @@ class EvolutionEngine:
 
     def _compute_fitness(self, records: list[LifetimeRecord]) -> list[float]:
         return [self._config.fitness_function.compute(record.observations) for record in records]
+
+    def _evaluate_generalization(self, genomes: list[Genome]) -> FitnessSummary:
+        """Phase 8.4: fitness on a held-out `eval_environment_config`,
+        run for every current genome but never fed into
+        `eligible_indices`/selection — this population never evolves on
+        this environment, it is only measured on it."""
+        eval_config = self._config.eval_environment_config
+        assert eval_config is not None
+        scores = []
+        for genome in genomes:
+            env_seed = int(self._rng.integers(0, 2**31 - 1))
+            organism_seed = int(self._rng.integers(0, 2**31 - 1))
+            observations = run_single_lifetime(
+                genome=genome,
+                environment_config=eval_config,
+                organism_config=self._config.population_config.organism_config,
+                learning_rule=self._config.learning_rule_factory(),
+                env_seed=env_seed,
+                organism_seed=organism_seed,
+                max_steps=self._config.steps_per_lifetime,
+            )
+            scores.append(self._config.fitness_function.compute(observations))
+        return compute_fitness_summary(scores)
 
     def _select_parents(
         self, fitness_scores: list[float], eligible_indices: list[int], extinction: bool
@@ -172,18 +248,11 @@ class EvolutionEngine:
         fitness_scores: list[float],
         selected_indices: list[int],
         extinction: bool,
+        eval_fitness_summary: FitnessSummary | None,
     ) -> GenerationSnapshot:
+        level = self._config.metrics_level
         fitness_summary = compute_fitness_summary(fitness_scores)
         genomes = self.population.snapshot_genomes()
-        signatures = [behavioral_signature(record.observations) for record in records]
-
-        novelty_scores = [
-            self._novelty_archive.score(sig, self._novelty_distance) for sig in signatures
-        ]
-        instantaneous_novelty = _leave_one_out_novelty(signatures, self._novelty_distance)
-        for sig in signatures:
-            self._novelty_archive.add(sig)
-        mean_novelty = float(np.mean(novelty_scores)) if novelty_scores else 0.0
 
         survival_rate = (
             float(np.mean([r.observations.survived_full_lifetime for r in records]))
@@ -197,6 +266,38 @@ class EvolutionEngine:
         )
         mutation_rates = [float(g.mutation_genes[0]) for g in genomes]
         mutation_sigmas = [float(g.mutation_genes[1]) for g in genomes]
+        mean_mutation_rate = float(np.mean(mutation_rates)) if mutation_rates else 0.0
+        mean_mutation_sigma = float(np.mean(mutation_sigmas)) if mutation_sigmas else 0.0
+
+        if level is MetricsLevel.MINIMAL:
+            return GenerationSnapshot(
+                generation=self.generation,
+                fitness_summary=fitness_summary,
+                genotypic_diversity=0.0,
+                behavioral_diversity=0.0,
+                mean_novelty=0.0,
+                instantaneous_novelty=0.0,
+                survival_rate=survival_rate,
+                reproductive_success_rate=reproductive_success_rate,
+                mean_mutation_rate=mean_mutation_rate,
+                mean_mutation_sigma=mean_mutation_sigma,
+                genome_centroid_shift=None,
+                behavior_centroid_shift=None,
+                extinction=extinction,
+                eval_fitness_summary=eval_fitness_summary,
+                metrics_level=level.value,
+            )
+
+        max_pairs = self._config.diversity_max_pairs
+        signatures = [behavioral_signature(record.observations) for record in records]
+
+        novelty_scores = [
+            self._novelty_archive.score(sig, self._novelty_distance) for sig in signatures
+        ]
+        instantaneous_novelty = _leave_one_out_novelty(signatures, self._novelty_distance)
+        for sig in signatures:
+            self._novelty_archive.add(sig)
+        mean_novelty = float(np.mean(novelty_scores)) if novelty_scores else 0.0
 
         genome_centroid = (
             np.mean([g.controller_weights for g in genomes], axis=0) if genomes else None
@@ -207,20 +308,36 @@ class EvolutionEngine:
         self._previous_genome_centroid = genome_centroid
         self._previous_behavior_centroid = behavior_centroid
 
+        learning_gene_stats = None
+        if level is MetricsLevel.RESEARCH and self.generation % self._config.metrics_interval == 0:
+            learning_gene_stats = (
+                tuple(
+                    summarize_distribution([float(g.learning_genes[i]) for g in genomes])
+                    for i in range(genomes[0].learning_genes.shape[0])
+                )
+                if genomes
+                else ()
+            )
+
         return GenerationSnapshot(
             generation=self.generation,
             fitness_summary=fitness_summary,
-            genotypic_diversity=genotypic_diversity(genomes),
-            behavioral_diversity=behavioral_diversity(signatures),
+            genotypic_diversity=genotypic_diversity(genomes, max_pairs=max_pairs, rng=self._rng),
+            behavioral_diversity=behavioral_diversity(
+                signatures, max_pairs=max_pairs, rng=self._rng
+            ),
             mean_novelty=mean_novelty,
             instantaneous_novelty=instantaneous_novelty,
             survival_rate=survival_rate,
             reproductive_success_rate=reproductive_success_rate,
-            mean_mutation_rate=float(np.mean(mutation_rates)) if mutation_rates else 0.0,
-            mean_mutation_sigma=float(np.mean(mutation_sigmas)) if mutation_sigmas else 0.0,
+            mean_mutation_rate=mean_mutation_rate,
+            mean_mutation_sigma=mean_mutation_sigma,
             genome_centroid_shift=genome_shift,
             behavior_centroid_shift=behavior_shift,
             extinction=extinction,
+            learning_gene_stats=learning_gene_stats,
+            eval_fitness_summary=eval_fitness_summary,
+            metrics_level=level.value,
         )
 
 

@@ -25,6 +25,7 @@ import numpy as np
 
 from genevra.arrays import BoolArray, FloatArray
 from genevra.simulation.dynamics import EnvironmentDynamics, EnvironmentRegime, StaticDynamics
+from genevra.simulation.grid_world import extract_single_window
 from genevra.simulation.interaction import InteractionSystem, SpatialCompetition
 from genevra.simulation.types import (
     Action,
@@ -307,15 +308,17 @@ class SharedGridWorld:
         assert self._resources_b is not None
         r = self._config.view_radius
         x, y = position
-        obstacles_padded = np.pad(self._obstacles, r, mode="constant", constant_values=True)
-        a_padded = np.pad(self._resources_a, r, mode="constant", constant_values=0.0)
-        b_padded = np.pad(self._resources_b, r, mode="constant", constant_values=0.0)
-        window = (slice(y, y + 2 * r + 1), slice(x, x + 2 * r + 1))
+        cfg = self._config
+        window_obstacles = extract_single_window(
+            self._obstacles, True, x, y, r, cfg.width, cfg.height
+        )
+        window_a = extract_single_window(self._resources_a, 0.0, x, y, r, cfg.width, cfg.height)
+        window_b = extract_single_window(self._resources_b, 0.0, x, y, r, cfg.width, cfg.height)
         grid: FloatArray = np.stack(
             [
-                obstacles_padded[window].astype(np.float32),
-                (a_padded[window] / self._config.resource_a_value).astype(np.float32),
-                (b_padded[window] / self._config.resource_b_value).astype(np.float32),
+                window_obstacles.astype(np.float32),
+                (window_a / cfg.resource_a_value).astype(np.float32),
+                (window_b / cfg.resource_b_value).astype(np.float32),
             ],
             axis=-1,
         )

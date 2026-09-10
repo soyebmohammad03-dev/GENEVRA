@@ -1,8 +1,11 @@
+import dataclasses
+
 from genevra.evolution.engine import EvolutionConfig, EvolutionEngine, RunStatus
 from genevra.evolution.fitness import SurvivalResourceFitness
 from genevra.evolution.population import PopulationConfig
 from genevra.evolution.reproduction import PopulationReproductionConfig
 from genevra.evolution.selection import TournamentSelection
+from genevra.metrics.trajectory import MetricsLevel
 from genevra.organism.genome import ControllerArchitecture
 from genevra.organism.learning import NoLearning
 from genevra.organism.mutation import GaussianMutation
@@ -135,3 +138,72 @@ def test_lineage_deaths_are_recorded_for_every_generation() -> None:
     founder_events = [e for e in events if e["generation"] == 0]
     for event in founder_events:
         assert event["death_generation"] is not None
+
+
+def test_minimal_metrics_level_skips_expensive_extras_but_keeps_fitness() -> None:
+    config = dataclasses.replace(
+        make_evolution_config(seed=0, generations=2, energy_threshold=-1000.0),
+        metrics_level=MetricsLevel.MINIMAL,
+    )
+    engine = EvolutionEngine(config)
+    trajectory = engine.run()
+    for snapshot in trajectory.snapshots:
+        assert snapshot.metrics_level == "minimal"
+        assert snapshot.fitness_summary.n > 0
+        assert snapshot.genotypic_diversity == 0.0
+        assert snapshot.behavioral_diversity == 0.0
+        assert snapshot.genome_centroid_shift is None
+
+
+def test_research_metrics_level_reports_learning_gene_stats_on_interval() -> None:
+    config = dataclasses.replace(
+        make_evolution_config(seed=0, generations=4, energy_threshold=-1000.0),
+        metrics_level=MetricsLevel.RESEARCH,
+        metrics_interval=2,
+    )
+    engine = EvolutionEngine(config)
+    trajectory = engine.run()
+    with_stats = [s for s in trajectory.snapshots if s.generation % 2 == 0]
+    without_stats = [s for s in trajectory.snapshots if s.generation % 2 != 0]
+    assert all(
+        s.learning_gene_stats is not None and len(s.learning_gene_stats) == 3 for s in with_stats
+    )
+    assert all(s.learning_gene_stats is None for s in without_stats)
+
+
+def test_diversity_max_pairs_does_not_change_run_shape() -> None:
+    config = dataclasses.replace(
+        make_evolution_config(seed=0, generations=2, population_size=8, energy_threshold=-1000.0),
+        diversity_max_pairs=3,
+    )
+    engine = EvolutionEngine(config)
+    trajectory = engine.run()
+    assert len(trajectory) == 2
+    for snapshot in trajectory.snapshots:
+        assert snapshot.genotypic_diversity >= 0.0
+
+
+def test_runtime_budget_stops_run_and_reports_budget_exceeded() -> None:
+    config = dataclasses.replace(
+        make_evolution_config(seed=0, generations=10_000, energy_threshold=-1000.0),
+        max_runtime_seconds=0.01,
+    )
+    engine = EvolutionEngine(config)
+    trajectory = engine.run()
+    assert engine.status == RunStatus.BUDGET_EXCEEDED
+    assert engine.budget_exceeded_reason is not None
+    assert len(trajectory) < 10_000  # stopped early, not silently truncated-and-called-complete
+
+
+def test_eval_environment_produces_separate_generalization_fitness() -> None:
+    base_config = make_evolution_config(seed=0, generations=2, energy_threshold=-1000.0)
+    eval_env = dataclasses.replace(base_config.environment_config, resource_density=0.0)
+    config = dataclasses.replace(base_config, eval_environment_config=eval_env)
+    engine = EvolutionEngine(config)
+    trajectory = engine.run()
+    for snapshot in trajectory.snapshots:
+        assert snapshot.eval_fitness_summary is not None
+        assert snapshot.eval_fitness_summary.n == snapshot.fitness_summary.n
+    # A resource-free eval environment must not be what selection acted on:
+    # training fitness and eval fitness are independent measurements.
+    assert any(s.eval_fitness_summary.mean != s.fitness_summary.mean for s in trajectory.snapshots)

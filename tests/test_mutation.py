@@ -59,3 +59,31 @@ def test_mutation_genes_themselves_can_drift() -> None:
     assert child.mutation_genes.shape == genome.mutation_genes.shape
     assert 0.0 <= child.mutation_genes[0] <= 1.0
     assert child.mutation_genes[1] > 0.0
+
+
+def test_mutate_learning_genes_false_is_the_fixed_learning_strategy_control() -> None:
+    """Phase 8.2: with mutate_learning_genes=False, learning_genes pass
+    through every generation unchanged, regardless of mutation rate —
+    the fixed-learning-strategy control condition."""
+    genome = make_genome(mutation_rate=1.0, mutation_sigma=1.0)
+    mutator = GaussianMutation(mutate_learning_genes=False)
+    child = mutator.mutate(genome, np.random.default_rng(0))
+    assert np.array_equal(child.learning_genes, genome.learning_genes)
+    # other gene groups still mutate normally under mutation_rate=1.0
+    assert not np.array_equal(child.controller_weights, genome.controller_weights)
+
+
+def test_mutate_learning_genes_true_is_the_default_evolvable_condition() -> None:
+    genome = make_genome(mutation_rate=1.0, mutation_sigma=1.0)
+    mutator = GaussianMutation(mutate_learning_genes=True)
+    child = mutator.mutate(genome, np.random.default_rng(0))
+    assert not np.array_equal(child.learning_genes, genome.learning_genes)
+
+
+def test_mutate_mutation_genes_false_is_the_fixed_mutation_strength_ablation() -> None:
+    genome = make_genome(mutation_rate=0.5, mutation_sigma=0.3)
+    mutator = GaussianMutation(mutate_mutation_genes=False)
+    child = mutator.mutate(genome, np.random.default_rng(0))
+    assert np.array_equal(child.mutation_genes, genome.mutation_genes)
+    # other gene groups still mutate normally
+    assert not np.array_equal(child.controller_weights, genome.controller_weights)

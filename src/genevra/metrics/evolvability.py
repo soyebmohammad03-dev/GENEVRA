@@ -44,11 +44,28 @@ _LIMITATION_NOTE = (
 
 @dataclass(frozen=True)
 class EvolvabilityReport:
+    """`num_viable`/`mean_behavioral_distance` are the original mutation-
+    variation measurements (viability + how much *behavior* changed).
+    `beneficial_fraction`/`neutral_fraction`/`deleterious_fraction` and
+    `fitness_distance_std` (Phase 8.6) are populated only when the
+    caller supplies a `fitness_evaluator` to `EvolvabilityAnalyzer` — a
+    genuinely separate measurement of whether the fitness-relevant
+    *consequence* of a viable mutant is better, indistinguishable from,
+    or worse than the baseline, classified against
+    `EvolvabilityAnalyzer`'s `neutral_fitness_epsilon`. A mutation that
+    produces large behavioral change (high `mean_behavioral_distance`)
+    is not automatically beneficial — that is exactly why these two
+    measurements are kept as separate fields rather than combined."""
+
     num_samples: int
     num_viable: int
     mean_behavioral_distance: float
     behavioral_distance_std: float
     viable_fraction: float
+    fitness_distance_std: float | None = None
+    beneficial_fraction: float | None = None
+    neutral_fraction: float | None = None
+    deleterious_fraction: float | None = None
     limitation_note: str = field(default=_LIMITATION_NOTE)
 
 
@@ -73,17 +90,25 @@ class EvolvabilityAnalyzer:
         behavioral_evaluator: Callable[[Genome], FloatArray],
         distance: DistanceMetric,
         num_samples: int = 16,
+        fitness_evaluator: Callable[[Genome], float] | None = None,
+        neutral_fitness_epsilon: float = 1e-6,
     ) -> None:
         if num_samples <= 0:
             raise ValueError("num_samples must be positive")
+        if neutral_fitness_epsilon < 0:
+            raise ValueError("neutral_fitness_epsilon must be >= 0")
         self._mutation_operator = mutation_operator
         self._behavioral_evaluator = behavioral_evaluator
         self._distance = distance
         self._num_samples = num_samples
+        self._fitness_evaluator = fitness_evaluator
+        self._neutral_fitness_epsilon = neutral_fitness_epsilon
 
     def analyze(self, genome: Genome, rng: np.random.Generator) -> EvolvabilityReport:
         baseline_signature = self._behavioral_evaluator(genome)
+        baseline_fitness = self._fitness_evaluator(genome) if self._fitness_evaluator else None
         distances: list[float] = []
+        fitness_deltas: list[float] = []
         num_viable = 0
 
         for _ in range(self._num_samples):
@@ -93,15 +118,32 @@ class EvolvabilityAnalyzer:
                 continue
             num_viable += 1
             distances.append(self._distance.distance(signature, baseline_signature))
+            if self._fitness_evaluator is not None and baseline_fitness is not None:
+                fitness_deltas.append(self._fitness_evaluator(mutant) - baseline_fitness)
 
         mean_distance = float(np.mean(distances)) if distances else 0.0
         std_distance = float(np.std(distances)) if distances else 0.0
+
+        fitness_distance_std = None
+        beneficial_fraction = neutral_fraction = deleterious_fraction = None
+        if self._fitness_evaluator is not None and fitness_deltas:
+            eps = self._neutral_fitness_epsilon
+            deltas = np.asarray(fitness_deltas)
+            fitness_distance_std = float(np.std(deltas))
+            beneficial_fraction = float(np.mean(deltas > eps))
+            deleterious_fraction = float(np.mean(deltas < -eps))
+            neutral_fraction = float(np.mean(np.abs(deltas) <= eps))
+
         return EvolvabilityReport(
             num_samples=self._num_samples,
             num_viable=num_viable,
             mean_behavioral_distance=mean_distance,
             behavioral_distance_std=std_distance,
             viable_fraction=num_viable / self._num_samples,
+            fitness_distance_std=fitness_distance_std,
+            beneficial_fraction=beneficial_fraction,
+            neutral_fraction=neutral_fraction,
+            deleterious_fraction=deleterious_fraction,
         )
 
     def _evaluate_viability(self, genome: Genome) -> FloatArray | None:

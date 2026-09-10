@@ -13,6 +13,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
+import numpy as np
+
 from genevra.organism.controller import Controller
 from genevra.organism.genome import Genome
 from genevra.organism.learning import LearningParams
@@ -32,7 +34,12 @@ def develop(genome: Genome) -> Phenotype:
     metabolic_params = MetabolicParams(
         move_cost=move_cost, stay_cost=stay_cost, eat_cost=eat_cost, base_upkeep=base_upkeep
     )
-    learning_params = LearningParams(learning_rate=float(genome.learning_genes[0]))
+    learning_rate, plasticity_gate, decay = (float(gene) for gene in genome.learning_genes)
+    learning_params = LearningParams(
+        learning_rate=learning_rate,
+        plasticity_gate=float(np.clip(plasticity_gate, 0.0, 1.0)),
+        decay=float(np.clip(decay, 0.0, 1.0)),
+    )
     return Phenotype(
         controller=controller, metabolic_params=metabolic_params, learning_params=learning_params
     )

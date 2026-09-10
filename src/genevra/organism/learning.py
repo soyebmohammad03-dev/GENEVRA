@@ -29,7 +29,33 @@ from genevra.organism.genome import ControllerArchitecture
 
 @dataclass(frozen=True)
 class LearningParams:
+    """Heritable control of *how* lifetime learning happens (group (C) in
+    this module's docstring). Each field corresponds to an actual
+    mechanism in `HebbianLearning`, not an arbitrary extra number:
+
+    - `learning_rate`: scales the magnitude of each step's Hebbian
+      update (`HebbianLearning.update`) — how fast the plastic delta
+      moves.
+    - `plasticity_gate`: in `[0, 1]` (mutation-clipped), scales how much
+      of the accumulated plastic delta is actually applied to behavior
+      in `effective_weights` — an organism can inherit a nonzero
+      learning rate yet evolve to suppress its lifetime effect (gate -> 0),
+      making "does this lineage actually use its learning capacity"
+      independently evolvable from "how fast would it learn if it did."
+    - `decay`: in `[0, 1]` (mutation-clipped), the fraction of the
+      accumulated plastic delta forgotten each step before the new
+      Hebbian term is added — models bounded working-memory-like
+      plasticity (decay > 0) versus permanent lifetime accumulation
+      (decay = 0).
+
+    Defaults (`plasticity_gate=1.0`, `decay=0.0`) exactly reproduce the
+    original single-gene Hebbian rule, so every pre-existing caller that
+    only ever set `learning_rate` is unaffected.
+    """
+
     learning_rate: float
+    plasticity_gate: float = 1.0
+    decay: float = 0.0
 
 
 @dataclass(eq=False)
@@ -47,7 +73,9 @@ class LearningRule(Protocol):
         self, state: LearningState, pre: FloatArray, post: FloatArray, params: LearningParams
     ) -> LearningState: ...
 
-    def effective_weights(self, base_weight2: FloatArray, state: LearningState) -> FloatArray: ...
+    def effective_weights(
+        self, base_weight2: FloatArray, state: LearningState, params: LearningParams
+    ) -> FloatArray: ...
 
 
 class NoLearning:
@@ -63,7 +91,9 @@ class NoLearning:
     ) -> LearningState:
         return state
 
-    def effective_weights(self, base_weight2: FloatArray, state: LearningState) -> FloatArray:
+    def effective_weights(
+        self, base_weight2: FloatArray, state: LearningState, params: LearningParams
+    ) -> FloatArray:
         return base_weight2
 
 
@@ -84,12 +114,17 @@ class HebbianLearning:
     def update(
         self, state: LearningState, pre: FloatArray, post: FloatArray, params: LearningParams
     ) -> LearningState:
-        delta = state.output_weight_delta + params.learning_rate * np.outer(post, pre)
+        retained = state.output_weight_delta * (1.0 - params.decay)
+        delta = retained + params.learning_rate * np.outer(post, pre)
         clipped: FloatArray = np.clip(delta, -self._clip, self._clip).astype(np.float32)
         return LearningState(clipped)
 
-    def effective_weights(self, base_weight2: FloatArray, state: LearningState) -> FloatArray:
-        result: FloatArray = (base_weight2 + state.output_weight_delta).astype(np.float32)
+    def effective_weights(
+        self, base_weight2: FloatArray, state: LearningState, params: LearningParams
+    ) -> FloatArray:
+        result: FloatArray = (
+            base_weight2 + params.plasticity_gate * state.output_weight_delta
+        ).astype(np.float32)
         return result
 
 

@@ -63,7 +63,7 @@ class Genome:
         )
         _require_shape(self.metabolic_genes, (4,), "metabolic_genes")
         _require_shape(self.mutation_genes, (2,), "mutation_genes")
-        _require_shape(self.learning_genes, (1,), "learning_genes")
+        _require_shape(self.learning_genes, (3,), "learning_genes")
 
     @classmethod
     def random(cls, architecture: ControllerArchitecture, rng: np.random.Generator) -> Genome:
@@ -73,7 +73,10 @@ class Genome:
             controller_weights=rng.normal(0.0, 0.5, architecture.num_params).astype(np.float32),
             metabolic_genes=np.array([0.5, 0.1, 0.2, 0.05], dtype=np.float32),
             mutation_genes=np.array([0.1, 0.1], dtype=np.float32),
-            learning_genes=np.array([0.05], dtype=np.float32),
+            # (learning_rate, plasticity_gate, decay) — see genevra.organism.learning
+            # module docstring for what each controls; gate=1.0/decay=0.0 reproduce
+            # the original single-gene Hebbian behavior exactly for every founder.
+            learning_genes=np.array([0.05, 1.0, 0.0], dtype=np.float32),
         )
 
 

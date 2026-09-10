@@ -64,7 +64,7 @@ class Organism:
         controller_input: FloatArray = np.concatenate([sensory, self.memory.state])
         hidden = self.phenotype.controller.hidden(controller_input)
         effective_weight2 = self.learning_rule.effective_weights(
-            self.phenotype.controller.weight2, self._learning_state
+            self.phenotype.controller.weight2, self._learning_state, self.phenotype.learning_params
         )
         logits = self.phenotype.controller.output(
             hidden, weights_override=(effective_weight2, self.phenotype.controller.bias2)

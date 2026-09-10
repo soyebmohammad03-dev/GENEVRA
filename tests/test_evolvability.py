@@ -87,3 +87,58 @@ def test_report_documents_its_own_limitation() -> None:
     report = analyzer.analyze(make_genome(), np.random.default_rng(0))
     assert "not" in report.limitation_note.lower()
     assert "adaptive success" in report.limitation_note.lower()
+
+
+def test_without_fitness_evaluator_classification_fields_are_none() -> None:
+    analyzer = EvolvabilityAnalyzer(
+        mutation_operator=GaussianMutation(),
+        behavioral_evaluator=identity_evaluator,
+        distance=EuclideanDistance(),
+        num_samples=5,
+    )
+    report = analyzer.analyze(make_genome(), np.random.default_rng(0))
+    assert report.beneficial_fraction is None
+    assert report.neutral_fraction is None
+    assert report.deleterious_fraction is None
+
+
+def test_fitness_evaluator_classifies_mutants_and_fractions_sum_to_one() -> None:
+    def fitness_evaluator(genome: Genome) -> float:
+        return float(np.sum(genome.controller_weights))
+
+    analyzer = EvolvabilityAnalyzer(
+        mutation_operator=GaussianMutation(),
+        behavioral_evaluator=identity_evaluator,
+        distance=EuclideanDistance(),
+        num_samples=30,
+        fitness_evaluator=fitness_evaluator,
+    )
+    report = analyzer.analyze(
+        make_genome(mutation_rate=1.0, mutation_sigma=1.0), np.random.default_rng(0)
+    )
+    assert report.beneficial_fraction is not None
+    assert report.neutral_fraction is not None
+    assert report.deleterious_fraction is not None
+    total = report.beneficial_fraction + report.neutral_fraction + report.deleterious_fraction
+    assert np.isclose(total, 1.0)
+
+
+def test_large_behavioral_change_is_not_automatically_classified_beneficial() -> None:
+    """A mutation that changes behavior a lot but degrades fitness must
+    show up as deleterious, not beneficial — the two measurements are
+    independent."""
+
+    def fitness_evaluator(genome: Genome) -> float:
+        return -float(np.sum(np.abs(genome.controller_weights)))  # smaller weights = higher fitness
+
+    analyzer = EvolvabilityAnalyzer(
+        mutation_operator=GaussianMutation(),
+        behavioral_evaluator=identity_evaluator,
+        distance=EuclideanDistance(),
+        num_samples=30,
+        fitness_evaluator=fitness_evaluator,
+    )
+    genome = make_genome(mutation_rate=1.0, mutation_sigma=5.0)  # large mutations -> large distance
+    report = analyzer.analyze(genome, np.random.default_rng(0))
+    assert report.mean_behavioral_distance > 0.0
+    assert report.deleterious_fraction is not None and report.deleterious_fraction > 0.0

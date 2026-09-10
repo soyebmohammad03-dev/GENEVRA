@@ -34,6 +34,8 @@ htmlcov/
 # Experiment outputs (never commit generated data/results)
 results/*
 !results/.gitkeep
+experiments/results/*
+!experiments/results/.gitkeep
 *.ckpt
 *.npz
 *.npy
