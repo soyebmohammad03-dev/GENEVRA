@@ -16,12 +16,12 @@ structured competing explanation for an observed association:
 class AlternativeExplanation:
     explanation_id: str
     description: str
-    predicted_signature: str        # what would distinguish it
+    predicted_signature: str  # what would distinguish it
     discriminating_experiment: str  # how to test it
     required_control: str
     status: Literal["untested", "ruled_out", "supported", "inconclusive"]
     evidence: tuple[str, ...]
-    provenance: tuple[str, ...]     # ResearchMemory record ids
+    provenance: tuple[str, ...]  # ResearchMemory record ids
 ```
 
 `standard_alternative_explanations(independent_variable,

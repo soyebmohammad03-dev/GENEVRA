@@ -86,9 +86,7 @@ def _cmd_reproduce(args: argparse.Namespace) -> int:
         spec.primary_metric,
         result.observed_direction,
     )
-    report = build_reproduction_report(
-        claim, spec, result, falsification_hypotheses=hypotheses[:1]
-    )
+    report = build_reproduction_report(claim, spec, result, falsification_hypotheses=hypotheses[:1])
     if args.output:
         with open(args.output, "w") as f:
             json.dump(report.to_dict(), f, indent=2)

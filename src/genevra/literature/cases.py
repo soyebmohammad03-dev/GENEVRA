@@ -391,9 +391,7 @@ def _with_mutation_scale(evolution: EvolutionConfig, high: bool) -> EvolutionCon
 
     factor = 3.0 if high else 1.0
     pop = evolution.population_config
-    new_pop = dataclasses.replace(
-        pop, initial_mutation_sigma=pop.initial_mutation_sigma * factor
-    )
+    new_pop = dataclasses.replace(pop, initial_mutation_sigma=pop.initial_mutation_sigma * factor)
     return dataclasses.replace(evolution, population_config=new_pop)
 
 

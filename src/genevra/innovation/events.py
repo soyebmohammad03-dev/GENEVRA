@@ -117,9 +117,7 @@ def detect_innovation_events(
     for generation, cohort in sorted(by_generation.items()):
         if len(cohort) < min_cohort_size:
             continue
-        vectors = np.stack(
-            [LearningStrategy(*e.learning_strategy).as_vector() for e in cohort]
-        )
+        vectors = np.stack([LearningStrategy(*e.learning_strategy).as_vector() for e in cohort])
         mean = vectors.mean(axis=0)
         pooled_std = float(np.linalg.norm(vectors.std(axis=0)))
         if pooled_std <= 0.0:

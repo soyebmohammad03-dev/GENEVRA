@@ -81,9 +81,7 @@ def extract_metric(result: Mapping[str, Any], metric_path: str) -> float | None:
                 return None
             node = node[part]
         elif (
-            isinstance(node, Sequence)
-            and not isinstance(node, str)
-            and part.lstrip("-").isdigit()
+            isinstance(node, Sequence) and not isinstance(node, str) and part.lstrip("-").isdigit()
         ):
             index = int(part)
             if index >= len(node) or index < -len(node):

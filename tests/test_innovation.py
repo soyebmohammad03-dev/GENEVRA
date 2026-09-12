@@ -73,9 +73,9 @@ class TestInnovationEventDetection:
         assert detected[0].complexity_score is None
 
     def test_descendant_count(self) -> None:
-        events = [
-            _event(i, (), 0, strategy=(0.1, 1.0, 0.0)) for i in range(5)
-        ] + [_event(5, (), 0, strategy=(10.0, 1.0, 0.0))]
+        events = [_event(i, (), 0, strategy=(0.1, 1.0, 0.0)) for i in range(5)] + [
+            _event(5, (), 0, strategy=(10.0, 1.0, 0.0))
+        ]
         events.append(_event(6, (5,), 1))
         events.append(_event(7, (6,), 2))
         tracker = _make_tracker(events)
@@ -102,11 +102,17 @@ class TestInnovationEventDetection:
 class TestDependencyGraph:
     def test_no_edges_between_unrelated_lineages(self) -> None:
         e1 = InnovationEvent(
-            event_id="a", generation=0, lineage=0, behavior_descriptor=(0.0, 0.0, 0.0),
+            event_id="a",
+            generation=0,
+            lineage=0,
+            behavior_descriptor=(0.0, 0.0, 0.0),
             novelty_score=3.0,
         )
         e2 = InnovationEvent(
-            event_id="b", generation=1, lineage=1, behavior_descriptor=(0.0, 0.0, 0.0),
+            event_id="b",
+            generation=1,
+            lineage=1,
+            behavior_descriptor=(0.0, 0.0, 0.0),
             novelty_score=3.0,
         )
         tracker = _make_tracker([_event(0, (), 0), _event(1, (), 0)])
@@ -117,15 +123,24 @@ class TestDependencyGraph:
         events = [_event(0, (), 0), _event(1, (0,), 1), _event(2, (), 0)]
         tracker = _make_tracker(events)
         e1 = InnovationEvent(
-            event_id="a", generation=0, lineage=0, behavior_descriptor=(0.0, 0.0, 0.0),
+            event_id="a",
+            generation=0,
+            lineage=0,
+            behavior_descriptor=(0.0, 0.0, 0.0),
             novelty_score=3.0,
         )
         e2 = InnovationEvent(
-            event_id="b", generation=1, lineage=1, behavior_descriptor=(0.0, 0.0, 0.0),
+            event_id="b",
+            generation=1,
+            lineage=1,
+            behavior_descriptor=(0.0, 0.0, 0.0),
             novelty_score=3.0,
         )
         e3 = InnovationEvent(
-            event_id="c", generation=1, lineage=2, behavior_descriptor=(0.0, 0.0, 0.0),
+            event_id="c",
+            generation=1,
+            lineage=2,
+            behavior_descriptor=(0.0, 0.0, 0.0),
             novelty_score=3.0,
         )
         graph = build_innovation_dependency_graph([e1, e2, e3], tracker)
@@ -186,8 +201,11 @@ class TestPotentialVsRealized:
                 generation=0,
                 individual_id=0,
                 report=EvolvabilityReport(
-                    num_samples=5, num_viable=5, mean_behavioral_distance=0.5,
-                    behavioral_distance_std=0.0, viable_fraction=1.0,
+                    num_samples=5,
+                    num_viable=5,
+                    mean_behavioral_distance=0.5,
+                    behavioral_distance_std=0.0,
+                    viable_fraction=1.0,
                 ),
             )
         ]
