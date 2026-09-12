@@ -228,9 +228,13 @@ comparison — and writes a traceable, checksum-verified package
 [`docs/final_research_quality_gate.md`](docs/final_research_quality_gate.md)
 for exactly what the current evidence does and does not show: one
 research question (ecological interaction structure and genetic
-diversity) has a real, large, statistically significant effect; several
-others are `INCONCLUSIVE` or `INSUFFICIENT_DATA` at the sample sizes
-tested, and that is reported as the actual finding rather than adjusted.
+diversity, RQ4) produced a real, large, statistically significant
+difference between two pipelines, but an independent audit
+(`docs/final_research_status.md`) found the comparison confounded by
+architectural differences beyond ecology, so it is labeled `CONFOUNDED`,
+not `SUPPORTED`; several others are `INCONCLUSIVE` or
+`INSUFFICIENT_DATA` at the sample sizes tested, and that is reported as
+the actual finding rather than adjusted.
 
 GENEVRA is an experimental research platform, not a source of settled
 conclusions: every result in `research_evidence/` depends on the

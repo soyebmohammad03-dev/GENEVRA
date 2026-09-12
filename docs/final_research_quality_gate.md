@@ -1,5 +1,16 @@
 # Final Research Quality Gate (Phase 19)
 
+> **Independent audit correction (2026-09-13):** RQ4's status has been
+> downgraded from `SUPPORTED` to `CONFOUNDED` after an independent review
+> found that the isolated and shared conditions differ in engine
+> architecture, selection mechanism, generation structure, and sensory
+> input dimensionality (`channels=2` vs `channels=3`), not only in
+> ecological sharing (see `research_evidence/research_questions/RQ4.json`
+> and `docs/final_research_status.md`). Every mention of RQ4 as
+> `SUPPORTED` below is superseded by that correction; the underlying
+> permutation-test numbers (p=0.0005, Cohen's d=2.77) are unchanged and
+> still real, they are just not attributable to ecology alone.
+
 Honest answers to the spec's 22 required questions, following the same
 convention as `docs/phase_15_16_quality_gate.md` and
 `docs/phase_17_18_quality_gate.md`. Every number cited here is from the

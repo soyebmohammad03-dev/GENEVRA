@@ -13,9 +13,10 @@
   ],
   "required_replication": 8,
   "statistical_plan": "permutation_test + cohens_d, seed as replication unit",
-  "evidence_status": "SUPPORTED",
+  "evidence_status": "CONFOUNDED",
   "limitations": [
-    "An infrastructure-comparable proxy metric across two different engines, not a within-one-engine controlled ecology manipulation."
+    "An infrastructure-comparable proxy metric across two different engines, not a within-one-engine controlled ecology manipulation.",
+    "Audit correction (independent review, 2026-09-13): the isolated (EvolutionEngine+GridWorld, discrete generations, tournament selection, channels=2) and shared (ContinuousEvolutionEngine+SharedGridWorld, overlapping generations, birth/death reproduction, channels=3) conditions differ in engine architecture, selection mechanism, generation structure, and sensory input dimensionality, not just ecological sharing. The permutation p=0.0005 / Cohen's d=2.77 result is a real, reproducible statistical fact about these two pipelines' output, but it cannot be attributed to ecological interaction structure alone and does not support the stated research question as a single-variable causal or associative claim. Downgraded from SUPPORTED to CONFOUNDED; underlying data unchanged."
   ],
   "experiment_ids": [
     "exp1_isolated_vs_shared"
