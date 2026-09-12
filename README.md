@@ -194,6 +194,25 @@ experiments (`genevra population-analysis`, `genevra predict-evolution`,
 for an explicit audit of which mechanisms are genuinely implemented vs.
 architecturally unsupported.
 
+## Research campaigns and literature reproduction at scale (Phase 17 + 18)
+
+`genevra.campaign` runs checkpointed, resumable, multi-condition,
+multi-replicate research campaigns with a hierarchical
+`SeedSequence`-based seed derivation, a frozen pre-registration-style
+analysis plan, confirmatory/exploratory separation, and a full
+`research_artifacts/campaigns/<campaign_id>/` provenance bundle — closing
+the Phase 15/16 traceability gap (`genevra campaign`, `genevra
+campaign-status`, `genevra campaign-resume`). `genevra.literature` gains
+reproduction quality levels (LEVEL_0-4, with mechanistic/robust levels
+never auto-assigned), a real boundary-condition sweep over one exposed
+parameter (`genevra boundary-search`), a literature comparison matrix, and
+a falsification-experiment ranking heuristic (`genevra
+literature-campaign`). See [`docs/research_campaigns.md`](docs/research_campaigns.md),
+[`docs/literature_at_scale.md`](docs/literature_at_scale.md), and
+[`docs/phase_17_18_quality_gate.md`](docs/phase_17_18_quality_gate.md) —
+every literature run performed during this phase's live validation
+returned `INCONCLUSIVE`, reported as the actual (small-sample) result.
+
 ## High-level architecture
 
 ```

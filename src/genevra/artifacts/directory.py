@@ -67,12 +67,18 @@ class ArtifactProvenance:
 class ArtifactDirectory:
     """Creates and gives typed access to
     `<root>/<experiment_id>/{raw_data,derived_data,metrics,figures,tables,
-    reports,provenance,configurations,seeds,logs,supplementary}/`."""
+    reports,provenance,configurations,seeds,logs,supplementary}/`.
 
-    def __init__(self, root: Path, experiment_id: str) -> None:
+    `extra_subdirs` (Phase 17.14) lets a campaign bundle add `conditions/`
+    and `runs/` to the same tree without a second, parallel directory
+    builder — pass `root=<root>/"campaigns"` and `experiment_id=campaign_id`
+    to get `research_artifacts/campaigns/<campaign_id>/...`.
+    """
+
+    def __init__(self, root: Path, experiment_id: str, extra_subdirs: tuple[str, ...] = ()) -> None:
         self.experiment_id = experiment_id
         self.base = root / experiment_id
-        for subdir in _SUBDIRS:
+        for subdir in (*_SUBDIRS, *extra_subdirs):
             (self.base / subdir).mkdir(parents=True, exist_ok=True)
 
     @property

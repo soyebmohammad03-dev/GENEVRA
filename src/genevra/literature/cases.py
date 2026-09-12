@@ -92,11 +92,15 @@ def _static_environment(regen_prob: float = 0.05) -> GridWorldConfig:
     )
 
 
-def _changing_environment() -> GridWorldConfig:
+def _changing_environment(period: int = 20) -> GridWorldConfig:
+    """`period` (steps per regime) is the Phase 18.5 sweep parameter for
+    CASE A's boundary-condition search — smaller periods mean faster
+    environmental change, the axis the source paper's "environmental
+    change rate" claim is about."""
     dynamics = PeriodicDynamics(
         regime_a=EnvironmentRegime(resource_regen_prob=0.02),
         regime_b=EnvironmentRegime(resource_regen_prob=0.12),
-        period=20,
+        period=period,
     )
     return GridWorldConfig(
         width=10, height=10, view_radius=_VIEW_RADIUS, max_steps=60, dynamics=dynamics
@@ -104,7 +108,10 @@ def _changing_environment() -> GridWorldConfig:
 
 
 def case_a_plasticity_evolvability_tradeoff(
-    population_size: int = 16, generations: int = 20, seeds: tuple[int, ...] = tuple(range(8))
+    population_size: int = 16,
+    generations: int = 20,
+    seeds: tuple[int, ...] = tuple(range(8)),
+    period: int = 20,
 ) -> tuple[LiteratureClaim, LiteratureExperimentSpec, dict[str, ConditionFactory]]:
     """CASE A, inspired by Cuypers, Rutten & Hogeweg (2017): does heritable
     phenotypic plasticity (learning) increase a population's evolvability
@@ -160,7 +167,7 @@ def case_a_plasticity_evolvability_tradeoff(
         ),
     )
     spec = LiteratureExperimentSpec(
-        spec_id="case_a_v1",
+        spec_id=f"case_a_v1_period{period}",
         claim_id=claim.claim_id,
         control_condition="no_learning",
         treatment_condition="evolvable_learning",
@@ -174,6 +181,9 @@ def case_a_plasticity_evolvability_tradeoff(
             "genotypic_diversity is used as a proxy for the source paper's "
             "mutational-robustness evolvability metric; no gene-regulatory-network "
             "developmental model exists in GENEVRA.",
+            f"environmental change period={period} steps (Phase 18.5 boundary-search axis; "
+            "the source paper explores a continuous range of change rates GENEVRA "
+            "approximates with this one discrete-period PeriodicDynamics parameter).",
         ),
     )
 
@@ -183,7 +193,7 @@ def case_a_plasticity_evolvability_tradeoff(
                 seed,
                 population_size,
                 generations,
-                _changing_environment(),
+                _changing_environment(period),
                 learning_rule_factory=HebbianLearning,
                 mutate_learning_genes=True,
             )

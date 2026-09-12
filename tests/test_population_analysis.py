@@ -282,3 +282,65 @@ def test_convergent_evolution_check_no_independent_pairs() -> None:
     result = convergent_evolution_check(events)
     assert result.n_independent_lineage_pairs_checked == 0
     assert result.convergence_rate is None
+
+
+# --- Phase 18.18: explicit data-leakage tests -------------------------------
+# These construct cases where, IF a held-out seed or held-out generations
+# leaked into training, the reported result would differ from what it
+# actually is — a passing test here is evidence the safeguard holds, not
+# just that the function runs.
+
+
+def test_leave_one_seed_out_does_not_leak_held_out_seed_into_training() -> None:
+    from genevra.population_analysis.temporal_validation import leave_one_seed_out
+
+    # Seeds 0, 1: clean negative relationship. Seed 2 (to be held out): a
+    # much larger, opposite-sign relationship. If seed 2's data leaked into
+    # its own held-out training fold, the pooled fit would flip positive
+    # (dominated by seed 2's magnitude) and *agree* with seed 2's own sign.
+    # Without leakage, the fold trained only on {0, 1} stays negative and
+    # *disagrees* with seed 2's positive sign.
+    x_by_seed = {
+        0: [0.0, 1.0, 2.0],
+        1: [0.0, 1.0, 2.0],
+        2: [0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0],
+    }
+    y_by_seed = {
+        0: [0.0, -1.0, -2.0],
+        1: [0.0, -1.0, -2.0],
+        2: [0.0, 1000.0, 2000.0, 3000.0, 4000.0, 5000.0, 6000.0, 7000.0, 8000.0, 9000.0],
+    }
+    result = leave_one_seed_out(x_by_seed, y_by_seed)
+    assert result.held_out_sign_matches_by_seed[2] is False
+
+    # Demonstrate what leakage WOULD look like: fitting on all seeds
+    # (including the held-out one) flips the fit positive, which WOULD
+    # agree with seed 2's own sign — showing the safeguard is load-bearing,
+    # not a no-op.
+    import numpy as np
+
+    all_x = [v for s in x_by_seed.values() for v in s]
+    all_y = [v for s in y_by_seed.values() for v in s]
+    leaky_slope = np.polyfit(all_x, all_y, 1)[0]
+    assert leaky_slope > 0  # the leaked fit's sign would have agreed with seed 2
+
+
+def test_within_seed_holdout_future_generations_never_enter_training_fit() -> None:
+    from genevra.population_analysis.temporal_validation import within_seed_holdout
+
+    x = list(range(10))
+    y_original = [float(i) for i in range(10)]
+    y_mutated_future = list(y_original)
+    y_mutated_future[5:] = [-999.0] * 5  # rewrite only the held-out half
+
+    result_original = within_seed_holdout(x, y_original, split_fraction=0.5)
+    result_mutated = within_seed_holdout(x, y_mutated_future, split_fraction=0.5)
+
+    assert result_original.train_fit is not None
+    assert result_mutated.train_fit is not None
+    # The train fit must be identical: it only ever saw x[:5]/y[:5], which
+    # is unchanged between the two calls.
+    assert result_original.train_fit == result_mutated.train_fit
+    # But the reported held-out agreement differs, since *that* correctly
+    # does depend on the (now-mutated) held-out segment.
+    assert result_original.held_out_sign_matches != result_mutated.held_out_sign_matches

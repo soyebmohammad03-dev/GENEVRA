@@ -346,3 +346,60 @@ mechanism only. See `docs/phase_15_16_quality_gate.md` for the full,
 itemized honesty audit, including which mechanisms (cooperation, three
 of seven listed ecological roles, graph modularity, N-species
 co-evolution) are explicitly unsupported and why.
+
+## Phase 17 + 18: research campaign engine and literature reproduction at scale
+
+**What Phase 17 adds:** a `ResearchCampaign` abstraction
+(`genevra.campaign`) that runs `condition x replicate` cells with a
+hierarchical, `SeedSequence`-based seed derivation
+(`campaign -> condition -> replicate`, deterministic and prefix-stable);
+genuine checkpointing and resume (`CampaignCheckpoint`/`CampaignRunner` —
+a cell left `RUNNING` by a killed process is reclassified `INTERRUPTED` on
+reload and redone, completed/failed cells are never re-executed); a
+pre-registration-style frozen `AnalysisPlan` (primary/secondary outcomes,
+expected direction, replication unit hard-validated to `"seed"`);
+confirmatory/exploratory separation and multiple-comparison correction
+reusing `genevra.discovery.multiple_testing.benjamini_hochberg`; and,
+critically, a fix for the Phase 15/16 traceability gap —
+`generate_campaign_bundle` writes a full `research_artifacts/campaigns/
+<campaign_id>/` tree (manifest, frozen analysis plan, per-condition
+seed accounting, every individual run's raw result, a quality-gate result
+reusing `genevra.innovation.quality_gates`, and the standard
+provenance/report structure).
+
+**What Phase 18 adds:** `genevra.literature.quality_levels`
+(`ReproductionQualityLevel` LEVEL_0-4, with LEVEL_3/mechanistic never
+auto-assigned and LEVEL_4/robust requiring >= 2 independently-tested,
+independently-replicated regimes); `genevra.literature.boundary_search`
+(a real parameter sweep over CASE A's newly-parametrized environmental-
+change `period`, reporting the evidence label at each value and any
+label transitions found — zero transitions is reported honestly, not
+treated as a failure); `genevra.literature.comparison_matrix` (the
+literature-claim-vs-GENEVRA-result table, exported via the existing
+table helpers); and `rank_falsification_experiments` (a documented
+heuristic priority order over Phase 11's existing confound hypotheses).
+
+**What is scientifically established:** the campaign machinery works —
+live-validated with a real 2-condition x 4-replicate isolated-vs-shared-
+ecology campaign, including a genuine interruption-and-resume
+demonstration (one cell forced into `RUNNING`, reloaded as `INTERRUPTED`,
+redone without touching the other 7 completed cells) and a determinism
+check (an independent rerun into a separate output directory produced a
+byte-identical per-cell result). Two explicit data-leakage tests were
+added and pass: one shows `leave_one_seed_out`'s train fit excludes the
+held-out seed's data even when including it would flip the predicted
+sign; the other shows `within_seed_holdout`'s train fit is unchanged by
+mutating the held-out segment.
+
+**What remains exploratory/unvalidated:** every literature run performed
+in this phase (boundary sweep and literature-campaign, both on CASE A, at
+pop=8-10/generations=6-8/4-6 seeds) returned `INCONCLUSIVE` — reported as
+the actual result, not adjusted. This is not evidence against the
+underlying claims, only "no detectable effect at this sample size."
+Neither `boundary-search` nor `literature-campaign`'s CLI output routes
+through the artifact bundle yet (only `campaign` does) — a real,
+documented traceability gap. `CampaignRunner`'s multi-worker parallel path
+exists but was not exercised live (CLI closures aren't
+`ProcessPoolExecutor`-picklable). No `STANDARD`/`RESEARCH`-scale campaign
+was run — only `PILOT`-scale smoke tests. See
+`docs/phase_17_18_quality_gate.md` for the full itemized audit.

@@ -65,6 +65,32 @@ def generate_falsification_hypotheses(
     return hypotheses
 
 
+def rank_falsification_experiments(
+    hypotheses: list[Hypothesis], experiments: list[ProposedExperiment]
+) -> list[tuple[Hypothesis, ProposedExperiment, float]]:
+    """Phase 18.8: rank generated experiments by a simple, documented
+    heuristic score (not a claim of optimality) —
+    `discriminative_power - normalized_cost`, where discriminative power
+    is 1.0 for the mechanism hypothesis itself (directly tests the
+    claimed cause) and 0.6 for each alternative-confound hypothesis
+    (tests a competing explanation, one step removed from the claim), and
+    cost is `generation_budget` normalized against the largest budget in
+    the batch. Higher score first. This never labels an experiment "the"
+    falsification test — only a relative priority order for which
+    discriminating experiment to run first given a fixed budget."""
+    if len(hypotheses) != len(experiments):
+        raise ValueError("hypotheses and experiments must have the same length, pairwise")
+    max_budget = max((e.generation_budget for e in experiments), default=1) or 1
+    scored = []
+    for hypothesis, experiment in zip(hypotheses, experiments, strict=True):
+        is_mechanism = hypothesis.hypothesis_id.endswith("::mechanism")
+        discriminative_power = 1.0 if is_mechanism else 0.6
+        normalized_cost = experiment.generation_budget / max_budget
+        score = discriminative_power - 0.3 * normalized_cost
+        scored.append((hypothesis, experiment, score))
+    return sorted(scored, key=lambda item: item[2], reverse=True)
+
+
 def generate_falsification_experiments(
     hypotheses: list[Hypothesis],
     sample_size: int = 8,
@@ -83,4 +109,8 @@ def generate_falsification_experiments(
     ]
 
 
-__all__ = ["generate_falsification_hypotheses", "generate_falsification_experiments"]
+__all__ = [
+    "generate_falsification_hypotheses",
+    "generate_falsification_experiments",
+    "rank_falsification_experiments",
+]

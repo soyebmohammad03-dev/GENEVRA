@@ -131,6 +131,168 @@ def _cmd_falsify(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_boundary_search(args: argparse.Namespace) -> int:
+    from genevra.literature.boundary_search import run_boundary_sweep
+    from genevra.literature.cases import case_a_plasticity_evolvability_tradeoff
+
+    values = [float(v) for v in args.values.split(",")]
+    result = run_boundary_sweep(
+        "period",
+        lambda p: case_a_plasticity_evolvability_tradeoff(
+            population_size=args.population_size,
+            generations=args.generations,
+            seeds=tuple(range(args.seeds)),
+            period=int(p),
+        ),
+        values,
+        np.random.default_rng(args.seed),
+    )
+    if args.output:
+        with open(args.output, "w") as f:
+            json.dump(result.to_dict(), f, indent=2)
+        print(f"wrote {args.output}")
+        return 0
+    for point in result.points:
+        print(f"period={point.parameter_value}: label={point.result.label.value}")
+    for a, b, la, lb in result.transitions():
+        print(f"transition: period {a} ({la}) -> period {b} ({lb})")
+    return 0
+
+
+def _cmd_literature_campaign(args: argparse.Namespace) -> int:
+    """Phase 18.4: the same case, run across more seeds than `reproduce`'s
+    smoke-test default, with its reproduction quality level reported
+    alongside the label — "more seeds" is Phase 18.4's literal ask, not a
+    second execution engine."""
+    from genevra.literature.quality_levels import classify_single_result
+    from genevra.literature.report import build_reproduction_report
+    from genevra.literature.runner import LiteratureReproductionRunner
+
+    cases = _literature_cases()
+    if args.case_id not in cases:
+        print(f"unknown case_id {args.case_id!r}; choices: {list(cases)}", file=sys.stderr)
+        return 1
+    claim, spec, conditions = cases[args.case_id](
+        population_size=args.population_size,
+        generations=args.generations,
+        seeds=tuple(range(args.seeds)),
+    )
+    rng = np.random.default_rng(args.seed)
+    result = LiteratureReproductionRunner().run(spec, conditions, rng, parallel=args.parallel)
+    level = classify_single_result(result)
+    report = build_reproduction_report(claim, spec, result)
+    payload = {"quality_level": level.name, "report": report.to_dict()}
+    if args.output:
+        with open(args.output, "w") as f:
+            json.dump(payload, f, indent=2)
+        print(f"wrote {args.output}")
+        return 0
+    print(f"label={result.label.value} quality_level={level.name} n_seeds={args.seeds}")
+    return 0
+
+
+def _cmd_campaign(args: argparse.Namespace) -> int:
+    """Phase 17.14 traceability demonstration: a small isolated-vs-
+    shared-competition ecology campaign, run through `CampaignRunner`
+    (checkpointed/resumable — re-run with the same `--output-root` and
+    `--campaign-id` to resume) and bundled through
+    `genevra.artifacts.directory`/`generate_campaign_bundle` so every
+    figure/table/report this produces traces back to
+    campaign+condition+seed+config+commit."""
+    from genevra.campaign.bundle import generate_campaign_bundle
+    from genevra.campaign.config import AnalysisPlan, CampaignConfig, CampaignMode
+    from genevra.campaign.report import CampaignReport
+    from genevra.campaign.runner import CampaignRunner, condition_values
+    from genevra.evolution.continuous import ContinuousEvolutionEngine
+    from genevra.population_analysis.replication_consistency import (
+        summarize_replication_consistency,
+    )
+
+    def run_fn(condition_id: str, seed: int, replicate_index: int) -> dict[str, Any]:
+        config = _small_ecology_setup(seed, total_steps=args.total_steps)
+        engine = ContinuousEvolutionEngine(config)
+        engine.run()
+        return {
+            "condition_id": condition_id,
+            "seed": seed,
+            "final_population_size": engine.history[-1].population_size if engine.history else 0,
+            "mean_energy": engine.history[-1].mean_energy if engine.history else 0.0,
+        }
+
+    plan = AnalysisPlan(
+        primary_outcome="final_population_size",
+        secondary_outcomes=("mean_energy",),
+        expected_direction="undirected",
+        comparison="isolated_vs_shared",
+        statistical_test="replication_consistency",
+    )
+    config = CampaignConfig(
+        campaign_id=args.campaign_id,
+        research_question="does final population size differ between isolated and shared-ecology "
+        "conditions run at this small scale?",
+        hypotheses=("H1: shared-ecology competitive turnover changes final population size",),
+        condition_ids=("isolated", "shared"),
+        mode=CampaignMode.PILOT,
+        n_replicates=args.seeds,
+        campaign_seed=args.seed,
+        analysis_plan=plan,
+        population_size=6,
+        generations_or_steps=args.total_steps,
+    )
+    runs_dir = Path(args.output_root) / "campaigns" / args.campaign_id / "runs"
+    runner = CampaignRunner(config, runs_dir)
+    run_result = runner.run(run_fn)
+
+    isolated = condition_values(run_result, "isolated", "final_population_size")
+    shared = condition_values(run_result, "shared", "final_population_size")
+    replication = (
+        summarize_replication_consistency(
+            {i: shared[i] - isolated[i] for i in set(isolated) & set(shared)}
+        )
+        if isolated and shared
+        else None
+    )
+    report = CampaignReport(
+        config=config,
+        run_result=run_result,
+        checkpoint_summary=runner.checkpoint.summary(),
+        replication_consistency=replication,
+        limitations=(
+            "Laptop-smoke-test scale (few steps/seeds); not a research-scale finding.",
+            "final_population_size is a single scalar per run, not a distribution.",
+        ),
+    )
+    directory = generate_campaign_bundle(
+        Path(args.output_root), config, runner.checkpoint, run_result, report, runs_dir
+    )
+    print(f"wrote {directory.base}")
+    print(f"checkpoint_summary={runner.checkpoint.summary()}")
+    if replication is not None:
+        print(f"agreement_fraction={replication.agreement_fraction}")
+    return 0
+
+
+def _cmd_campaign_status(args: argparse.Namespace) -> int:
+    from genevra.campaign.checkpoint import CampaignCheckpoint
+
+    path = Path(args.output_root) / "campaigns" / args.campaign_id / "runs" / "checkpoint.json"
+    if not path.exists():
+        print(f"no checkpoint found at {path}", file=sys.stderr)
+        return 1
+    checkpoint = CampaignCheckpoint.load_or_create(path)
+    print(f"summary={checkpoint.summary()}")
+    return 0
+
+
+def _cmd_campaign_resume(args: argparse.Namespace) -> int:
+    """Resuming is `CampaignRunner`'s default behavior against an
+    existing `runs/checkpoint.json` (Phase 17.4) — this command is the
+    same execution path as `campaign`, named separately per Phase 17.14's
+    CLI list so "resume" is discoverable without implying a different
+    resume mechanism exists."""
+    return _cmd_campaign(args)
+
+
 def _load_lineage_events(data: dict[str, Any]) -> Any:
     from genevra.evolution.lineage import LineageEvent
 
@@ -1030,6 +1192,63 @@ def build_parser() -> argparse.ArgumentParser:
     )
     falsify_parser.add_argument("--output", type=str, default=None)
     falsify_parser.set_defaults(func=_cmd_falsify)
+
+    boundary_search_parser = subparsers.add_parser(
+        "boundary-search",
+        help="sweep case_a's environmental-change period and report the evidence label at each",
+    )
+    boundary_search_parser.add_argument(
+        "--values", type=str, default="5,40", help="comma-separated period values to sweep"
+    )
+    boundary_search_parser.add_argument("--population-size", type=int, default=8)
+    boundary_search_parser.add_argument("--generations", type=int, default=6)
+    boundary_search_parser.add_argument("--seeds", type=int, default=4)
+    boundary_search_parser.add_argument("--seed", type=int, default=0)
+    boundary_search_parser.add_argument("--output", type=str, default=None)
+    boundary_search_parser.set_defaults(func=_cmd_boundary_search)
+
+    literature_campaign_parser = subparsers.add_parser(
+        "literature-campaign",
+        help="run one literature case across more seeds and report its reproduction quality level",
+    )
+    literature_campaign_parser.add_argument("case_id", type=str, choices=tuple(_literature_cases()))
+    literature_campaign_parser.add_argument("--population-size", type=int, default=16)
+    literature_campaign_parser.add_argument("--generations", type=int, default=20)
+    literature_campaign_parser.add_argument("--seeds", type=int, default=8)
+    literature_campaign_parser.add_argument("--seed", type=int, default=0)
+    literature_campaign_parser.add_argument("--parallel", action="store_true")
+    literature_campaign_parser.add_argument("--output", type=str, default=None)
+    literature_campaign_parser.set_defaults(func=_cmd_literature_campaign)
+
+    campaign_parser = subparsers.add_parser(
+        "campaign",
+        help="run a small checkpointed isolated-vs-shared-ecology campaign with a full "
+        "research_artifacts bundle",
+    )
+    campaign_parser.add_argument("--campaign-id", type=str, default="ecology_campaign")
+    campaign_parser.add_argument("--seeds", type=int, default=3, help="replicates per condition")
+    campaign_parser.add_argument("--seed", type=int, default=0, help="campaign_seed")
+    campaign_parser.add_argument("--total-steps", type=int, default=60, dest="total_steps")
+    campaign_parser.add_argument("--output-root", type=str, default="research_artifacts")
+    campaign_parser.set_defaults(func=_cmd_campaign)
+
+    campaign_status_parser = subparsers.add_parser(
+        "campaign-status", help="print the checkpoint summary of an existing campaign"
+    )
+    campaign_status_parser.add_argument("--campaign-id", type=str, default="ecology_campaign")
+    campaign_status_parser.add_argument("--output-root", type=str, default="research_artifacts")
+    campaign_status_parser.set_defaults(func=_cmd_campaign_status)
+
+    campaign_resume_parser = subparsers.add_parser(
+        "campaign-resume",
+        help="resume an interrupted campaign (same as `campaign` against the same output-root)",
+    )
+    campaign_resume_parser.add_argument("--campaign-id", type=str, default="ecology_campaign")
+    campaign_resume_parser.add_argument("--seeds", type=int, default=3)
+    campaign_resume_parser.add_argument("--seed", type=int, default=0)
+    campaign_resume_parser.add_argument("--total-steps", type=int, default=60, dest="total_steps")
+    campaign_resume_parser.add_argument("--output-root", type=str, default="research_artifacts")
+    campaign_resume_parser.set_defaults(func=_cmd_campaign_resume)
 
     open_endedness_parser = subparsers.add_parser(
         "open-endedness", help="run the open-endedness lab analysis on a stored result"
