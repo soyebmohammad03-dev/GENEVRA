@@ -25,6 +25,13 @@ RecordType = Literal[
     "experiment_result",
     "conclusion",
     "contradiction",
+    # Phase 11 (literature reproduction/falsification) additions:
+    "literature_claim",
+    "reproduction_result",
+    "alternative_explanation",
+    "falsification_hypothesis",
+    # Phase 12 (open-endedness/innovation) additions:
+    "innovation_event",
 ]
 
 

@@ -21,6 +21,228 @@ if TYPE_CHECKING:
     from genevra.discovery.correlation import RunSummary
     from genevra.discovery.report import DiscoveryReport
 
+_LITERATURE_CASES: dict[str, Any] = {}
+
+
+def _literature_cases() -> dict[str, Any]:
+    if not _LITERATURE_CASES:
+        from genevra.literature.cases import (
+            case_a_plasticity_evolvability_tradeoff,
+            case_b_volatility_and_plasticity,
+            case_c_history_dependence,
+            case_d_learning_strategy_predicts_potential,
+        )
+
+        _LITERATURE_CASES.update(
+            {
+                "case_a": case_a_plasticity_evolvability_tradeoff,
+                "case_b": case_b_volatility_and_plasticity,
+                "case_c": case_c_history_dependence,
+                "case_d": case_d_learning_strategy_predicts_potential,
+            }
+        )
+    return _LITERATURE_CASES
+
+
+def _cmd_literature(args: argparse.Namespace) -> int:
+    cases = _literature_cases()
+    if args.output:
+        payload = []
+        for case_id, factory in cases.items():
+            claim, spec, _conditions = factory(population_size=2, generations=1, seeds=(0, 1))
+            payload.append({"case_id": case_id, "claim": claim.to_dict(), "spec": spec.to_dict()})
+        with open(args.output, "w") as f:
+            json.dump(payload, f, indent=2)
+        print(f"wrote {args.output}")
+        return 0
+    for case_id, factory in cases.items():
+        claim, _spec, _conditions = factory(population_size=2, generations=1, seeds=(0, 1))
+        print(f"{case_id}: {claim.claim_id} ({claim.source_reference})")
+        print(f"  {claim.claim_text}")
+    return 0
+
+
+def _cmd_reproduce(args: argparse.Namespace) -> int:
+    from genevra.literature.falsification import (
+        generate_falsification_experiments,
+        generate_falsification_hypotheses,
+    )
+    from genevra.literature.report import build_reproduction_report
+    from genevra.literature.runner import LiteratureReproductionRunner
+
+    cases = _literature_cases()
+    if args.case_id not in cases:
+        print(f"unknown case_id {args.case_id!r}; choices: {list(cases)}", file=sys.stderr)
+        return 1
+    claim, spec, conditions = cases[args.case_id](
+        population_size=args.population_size,
+        generations=args.generations,
+        seeds=tuple(range(args.seeds)),
+    )
+    rng = np.random.default_rng(args.seed)
+    result = LiteratureReproductionRunner().run(spec, conditions, rng, parallel=args.parallel)
+    hypotheses = generate_falsification_hypotheses(
+        spec.control_condition + "_vs_" + spec.treatment_condition,
+        spec.primary_metric,
+        result.observed_direction,
+    )
+    report = build_reproduction_report(
+        claim, spec, result, falsification_hypotheses=hypotheses[:1]
+    )
+    if args.output:
+        with open(args.output, "w") as f:
+            json.dump(report.to_dict(), f, indent=2)
+        print(f"wrote {args.output}")
+    else:
+        print(report.to_text())
+    del generate_falsification_experiments
+    return 0
+
+
+def _cmd_falsify(args: argparse.Namespace) -> int:
+    from genevra.literature.falsification import (
+        generate_falsification_experiments,
+        generate_falsification_hypotheses,
+    )
+
+    hypotheses = generate_falsification_hypotheses(
+        args.independent_variable, args.dependent_variable, args.observed_direction
+    )
+    proposals = generate_falsification_experiments(hypotheses)
+    payload = {
+        "hypotheses": [
+            {"hypothesis_id": h.hypothesis_id, "statement": h.statement} for h in hypotheses
+        ],
+        "proposed_experiments": [
+            {
+                "hypothesis_id": p.hypothesis_id,
+                "conditions": list(p.conditions),
+                "sample_size": p.sample_size,
+                "generation_budget": p.generation_budget,
+            }
+            for p in proposals
+        ],
+    }
+    if args.output:
+        with open(args.output, "w") as f:
+            json.dump(payload, f, indent=2)
+        print(f"wrote {args.output}")
+    else:
+        for h in hypotheses:
+            print(f"- {h.statement}")
+    return 0
+
+
+def _load_lineage_events(data: dict[str, Any]) -> Any:
+    from genevra.evolution.lineage import LineageEvent
+
+    events = []
+    for raw in data.get("lineage", []):
+        events.append(
+            LineageEvent(
+                individual_id=raw["individual_id"],
+                parent_ids=tuple(raw["parent_ids"]),
+                generation=raw["generation"],
+                genome_hash=raw["genome_hash"],
+                death_generation=raw.get("death_generation"),
+                reproduced=raw.get("reproduced", False),
+                learning_strategy=tuple(raw.get("learning_strategy", (0.0, 1.0, 0.0))),
+            )
+        )
+    return events
+
+
+def _build_tracker(events: Any) -> Any:
+    from genevra.evolution.lineage import LineageTracker
+
+    tracker = LineageTracker()
+    for event in events:
+        tracker._events[event.individual_id] = event  # noqa: SLF001 - CLI-only reconstruction
+    return tracker
+
+
+def _cmd_open_endedness(args: argparse.Namespace) -> int:
+    from genevra.innovation.analyzer import OpenEndednessAnalyzer
+    from genevra.innovation.dependency_graph import build_innovation_dependency_graph
+    from genevra.innovation.report import build_open_endedness_lab_report
+
+    with open(args.result_path) as f:
+        data = json.load(f)
+    trajectory = data.get("trajectory") or []
+    if not trajectory:
+        print("empty trajectory: nothing to analyze")
+        return 1
+    events = _load_lineage_events(data)
+    tracker = _build_tracker(events)
+    rng = np.random.default_rng(args.seed)
+    analysis = OpenEndednessAnalyzer().analyze(trajectory, events, tracker, rng)
+    graph = None
+    if analysis.innovation_events is not None:
+        graph = build_innovation_dependency_graph(analysis.innovation_events, tracker)
+    report = build_open_endedness_lab_report(analysis, dependency_graph=graph)
+    if args.output:
+        with open(args.output, "w") as f:
+            json.dump(report.to_dict(), f, indent=2)
+        print(f"wrote {args.output}")
+    else:
+        print(report.to_text())
+    return 0
+
+
+def _cmd_innovation(args: argparse.Namespace) -> int:
+    from genevra.innovation.dependency_graph import build_innovation_dependency_graph
+    from genevra.innovation.events import detect_innovation_events
+
+    with open(args.result_path) as f:
+        data = json.load(f)
+    events = _load_lineage_events(data)
+    tracker = _build_tracker(events)
+    detected = detect_innovation_events(
+        events, tracker, z_threshold=args.z_threshold, min_cohort_size=args.min_cohort_size
+    )
+    graph = build_innovation_dependency_graph(detected, tracker)
+    if args.output:
+        payload = {
+            "events": [e.to_dict() for e in detected],
+            "n_dependency_edges": len(graph.edges),
+        }
+        with open(args.output, "w") as f:
+            json.dump(payload, f, indent=2)
+        print(f"wrote {args.output}")
+    else:
+        print(
+            f"{len(detected)} innovation event(s) detected, {len(graph.edges)} dependency edge(s)"
+        )
+        for event in detected:
+            print(
+                f"  gen={event.generation} lineage={event.lineage} "
+                f"novelty_score={event.novelty_score:.3f} descendants={event.descendant_count}"
+            )
+    return 0
+
+
+def _cmd_activity(args: argparse.Namespace) -> int:
+    from genevra.innovation.activity import build_activity_report
+
+    with open(args.result_path) as f:
+        data = json.load(f)
+    trajectory = data.get("trajectory") or []
+    if not trajectory:
+        print("empty trajectory: nothing to analyze")
+        return 1
+    events = _load_lineage_events(data)
+    report = build_activity_report(trajectory, events, np.random.default_rng(args.seed))
+    if args.output:
+        with open(args.output, "w") as f:
+            json.dump(report.to_dict(), f, indent=2)
+        print(f"wrote {args.output}")
+    else:
+        print(f"n_generations_observed={report.n_generations_observed}")
+        print(f"lineage_persistence={report.lineage_persistence:.3f}")
+        print(f"diversity_growth_decay_slope={report.diversity_growth_decay_slope:.4g}")
+        print(f"strategy_turnover_series={list(report.strategy_turnover_series)}")
+    return 0
+
 
 def _build_baseline_experiment_config(seed: int) -> Any:
     # Imported lazily: experiments/baseline.py lives outside the package
@@ -288,6 +510,62 @@ def build_parser() -> argparse.ArgumentParser:
     replicate_parser.add_argument("--dependent-variable", type=str, default="fitness_summary.mean")
     replicate_parser.add_argument("--seed", type=int, default=0)
     replicate_parser.set_defaults(func=_cmd_replicate)
+
+    literature_parser = subparsers.add_parser(
+        "literature", help="list the initial literature-inspired reproduction cases"
+    )
+    literature_parser.add_argument("--output", type=str, default=None)
+    literature_parser.set_defaults(func=_cmd_literature)
+
+    reproduce_parser = subparsers.add_parser(
+        "reproduce", help="run a literature-inspired reproduction case end-to-end"
+    )
+    reproduce_parser.add_argument(
+        "case_id", type=str, choices=["case_a", "case_b", "case_c", "case_d"]
+    )
+    reproduce_parser.add_argument("--population-size", type=int, default=16)
+    reproduce_parser.add_argument("--generations", type=int, default=20)
+    reproduce_parser.add_argument("--seeds", type=int, default=8, help="number of seeds (0..N-1)")
+    reproduce_parser.add_argument("--seed", type=int, default=0, help="RNG seed for the statistics")
+    reproduce_parser.add_argument("--parallel", action="store_true")
+    reproduce_parser.add_argument("--output", type=str, default=None)
+    reproduce_parser.set_defaults(func=_cmd_reproduce)
+
+    falsify_parser = subparsers.add_parser(
+        "falsify", help="generate falsification hypotheses/experiments for an observed association"
+    )
+    falsify_parser.add_argument("independent_variable", type=str)
+    falsify_parser.add_argument("dependent_variable", type=str)
+    falsify_parser.add_argument(
+        "--observed-direction", type=str, default=None, dest="observed_direction"
+    )
+    falsify_parser.add_argument("--output", type=str, default=None)
+    falsify_parser.set_defaults(func=_cmd_falsify)
+
+    open_endedness_parser = subparsers.add_parser(
+        "open-endedness", help="run the open-endedness lab analysis on a stored result"
+    )
+    open_endedness_parser.add_argument("result_path", type=str)
+    open_endedness_parser.add_argument("--seed", type=int, default=0)
+    open_endedness_parser.add_argument("--output", type=str, default=None)
+    open_endedness_parser.set_defaults(func=_cmd_open_endedness)
+
+    innovation_parser = subparsers.add_parser(
+        "innovation", help="detect innovation events and their lineage dependency graph"
+    )
+    innovation_parser.add_argument("result_path", type=str)
+    innovation_parser.add_argument("--z-threshold", type=float, default=2.0, dest="z_threshold")
+    innovation_parser.add_argument("--min-cohort-size", type=int, default=3, dest="min_cohort_size")
+    innovation_parser.add_argument("--output", type=str, default=None)
+    innovation_parser.set_defaults(func=_cmd_innovation)
+
+    activity_parser = subparsers.add_parser(
+        "activity", help="compute the evolutionary activity report for a stored result"
+    )
+    activity_parser.add_argument("result_path", type=str)
+    activity_parser.add_argument("--seed", type=int, default=0)
+    activity_parser.add_argument("--output", type=str, default=None)
+    activity_parser.set_defaults(func=_cmd_activity)
 
     return parser
 

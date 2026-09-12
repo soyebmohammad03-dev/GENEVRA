@@ -133,6 +133,21 @@ small populations, short runs), not scientific results — see
 [`docs/research_questions.md`](docs/research_questions.md) for exactly
 what would be needed to go further.
 
+## Literature reproduction and open-endedness lab (Phase 11 + 12)
+
+`genevra.literature` and `genevra.innovation` add a layer for testing
+whether published evolutionary claims hold under GENEVRA's own model
+assumptions (`genevra reproduce`, `genevra falsify`), and a
+multi-dimensional open-endedness/innovation diagnostic framework built on
+GENEVRA's lineage and strategy machinery (`genevra open-endedness`,
+`genevra innovation`, `genevra activity`). See
+[`docs/research_reproduction.md`](docs/research_reproduction.md),
+[`docs/falsification.md`](docs/falsification.md),
+[`docs/open_endedness.md`](docs/open_endedness.md),
+[`docs/innovation.md`](docs/innovation.md), and the "Phase 11 + 12"
+section of [`docs/research_questions.md`](docs/research_questions.md) for
+what is established vs. exploratory.
+
 ## High-level architecture
 
 ```

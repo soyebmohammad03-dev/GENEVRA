@@ -167,3 +167,58 @@ comparisons are controlled, results serialize, metrics compute correctly —
 not to answer any question in this document. Treat every printed number
 from those scripts as "the machinery produced a real, computed value,"
 never as "this is what GENEVRA has discovered about evolution."
+
+## Phase 11 + 12: what was added, and what remains exploratory
+
+Phase 11 (`genevra.literature`, see `docs/research_reproduction.md` and
+`docs/falsification.md`) added a framework for encoding a published
+evolutionary claim as an explicit, falsifiable
+`LiteratureClaim`/`LiteratureExperimentSpec`, running it under GENEVRA's
+own model assumptions via `LiteratureReproductionRunner`, and reporting a
+computed label (`SUPPORTED`/`PARTIALLY_SUPPORTED`/`NOT_SUPPORTED`/
+`CONTRADICTED`/`INCONCLUSIVE`/`INVALID_EXPERIMENT`) — plus alternative-
+explanation templates, falsification-hypothesis generation, and a
+provenance registry integrated into `ResearchMemory`. Phase 12
+(`genevra.innovation`, see `docs/open_endedness.md` and
+`docs/innovation.md`) added lineage-based innovation-event detection,
+temporal-vs-genealogical dependency inference, GENEVRA-specific
+evolutionary-activity analysis, potential-vs-realized innovation, and
+trajectory/phase-space diagnostics, assembled by `OpenEndednessAnalyzer`.
+
+**What is scientifically established by these two phases:** that the
+measurement and reporting *machinery* works end-to-end — a spec runs,
+produces a real computed statistical label, and a lab report assembles
+real (not fabricated) innovation events, activity statistics, and
+trajectory classifications from an actual run. Nothing more. The four
+initial literature cases (`genevra.literature.cases`) are templates that
+have been run on small (population <= 16, generations <= 20) pilot
+configurations during development — those pilot runs are demonstrations
+that the pipeline executes and produces valid labels, not findings about
+whether GENEVRA's model actually exhibits the claimed patterns at
+research scale.
+
+**What remains exploratory:**
+
+- Every one of the four literature cases documents an approximate mapping
+  from the source paper's model to GENEVRA's own (see each case's
+  `known_limitations`/`approximation_notes`); none has been run at a
+  scale (seeds, generations, population size) sufficient to draw a
+  confirmatory conclusion.
+- Innovation-event detection is scoped to heritable learning-strategy
+  outliers; it does not detect a general notion of behavioral novelty
+  that leaves the learning-strategy genes unchanged.
+- The innovation dependency graph reports lineage descent, which is
+  evidence of *opportunity*, not a validated causal-dependency test.
+- No open-endedness measurement in Phase 12 has been run over a
+  sufficiently long horizon, with sufficient independent seeds, to
+  support a claim about GENEVRA's long-run open-ended dynamics — every
+  report explicitly states this ("finite-run proxy," "no evidence of
+  saturation within the tested horizon").
+
+**Known limitations carried over from this phase's implementation:**
+`InnovationEvent.fitness_effect`/`complexity_score`/`ecological_impact`
+are always `None` in the current detector (see `docs/innovation.md`);
+`genevra.literature.runner`'s statistical core (`classify_evidence`)
+implements only a mean-difference permutation test, so Case C's
+contingency claim (properly about variance across replicate histories)
+is tested via a documented, weaker mean-based proxy.

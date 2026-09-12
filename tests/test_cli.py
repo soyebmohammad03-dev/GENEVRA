@@ -114,3 +114,111 @@ def test_replicate_command_compares_two_result_sets(tmp_path, capsys) -> None:
     captured = capsys.readouterr()
     assert "hypothesis_id=h1" in captured.out
     assert "replicated=" in captured.out
+
+
+def test_literature_command_lists_cases(capsys) -> None:
+    exit_code = main(["literature"])
+    assert exit_code == 0
+    captured = capsys.readouterr()
+    assert "case_a" in captured.out
+    assert "case_d" in captured.out
+
+
+def test_literature_command_writes_json_output(tmp_path) -> None:
+    output_path = tmp_path / "cases.json"
+    exit_code = main(["literature", "--output", str(output_path)])
+    assert exit_code == 0
+    with open(output_path) as f:
+        data = json.load(f)
+    assert len(data) == 4
+    assert {"case_id", "claim", "spec"} <= data[0].keys()
+
+
+def test_reproduce_command_runs_a_case_end_to_end(capsys) -> None:
+    exit_code = main(
+        ["reproduce", "case_a", "--population-size", "4", "--generations", "2", "--seeds", "4"]
+    )
+    assert exit_code == 0
+    captured = capsys.readouterr()
+    assert "Literature Reproduction Report" in captured.out
+    assert "qualitative pattern" in captured.out.lower()
+
+
+def test_reproduce_command_writes_json_output(tmp_path) -> None:
+    output_path = tmp_path / "report.json"
+    exit_code = main(
+        [
+            "reproduce",
+            "case_b",
+            "--population-size",
+            "4",
+            "--generations",
+            "2",
+            "--seeds",
+            "4",
+            "--output",
+            str(output_path),
+        ]
+    )
+    assert exit_code == 0
+    with open(output_path) as f:
+        data = json.load(f)
+    assert data["result"]["label"] in (
+        "SUPPORTED",
+        "PARTIALLY_SUPPORTED",
+        "NOT_SUPPORTED",
+        "CONTRADICTED",
+        "INCONCLUSIVE",
+        "INVALID_EXPERIMENT",
+    )
+
+
+def test_reproduce_command_rejects_unknown_case() -> None:
+    import pytest
+
+    with pytest.raises(SystemExit):
+        main(["reproduce", "not_a_case"])
+
+
+def test_falsify_command_prints_hypotheses(capsys) -> None:
+    exit_code = main(["falsify", "plasticity", "novelty"])
+    assert exit_code == 0
+    captured = capsys.readouterr()
+    assert "plasticity itself contributes to novelty" in captured.out
+
+
+def test_falsify_command_writes_json_output(tmp_path) -> None:
+    output_path = tmp_path / "falsify.json"
+    exit_code = main(["falsify", "plasticity", "novelty", "--output", str(output_path)])
+    assert exit_code == 0
+    with open(output_path) as f:
+        data = json.load(f)
+    assert len(data["hypotheses"]) == len(data["proposed_experiments"])
+
+
+def test_open_endedness_command_prints_report(tmp_path, capsys) -> None:
+    output_path = tmp_path / "result.json"
+    main(["run", "--seed", "0", "--output", str(output_path)])
+    exit_code = main(["open-endedness", str(output_path)])
+    assert exit_code == 0
+    captured = capsys.readouterr()
+    assert "Open-Endedness Lab Report" in captured.out
+    assert "NOT declared 'fully open-ended'" in captured.out
+
+
+def test_innovation_command_prints_events(tmp_path, capsys) -> None:
+    output_path = tmp_path / "result.json"
+    main(["run", "--seed", "0", "--output", str(output_path)])
+    exit_code = main(["innovation", str(output_path)])
+    assert exit_code == 0
+    captured = capsys.readouterr()
+    assert "innovation event(s) detected" in captured.out
+
+
+def test_activity_command_prints_summary(tmp_path, capsys) -> None:
+    output_path = tmp_path / "result.json"
+    main(["run", "--seed", "0", "--output", str(output_path)])
+    exit_code = main(["activity", str(output_path)])
+    assert exit_code == 0
+    captured = capsys.readouterr()
+    assert "lineage_persistence=" in captured.out
