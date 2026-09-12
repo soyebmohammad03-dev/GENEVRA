@@ -1,0 +1,272 @@
+{
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+  ],
+  "minimal_competition": [
+    {
+      "genotypic_diversity": 9.443293449034293,
+      "final_population_size": 16.0,
+      "mean_energy": 31.214095908915624
+    },
+    {
+      "genotypic_diversity": 8.134736660122872,
+      "final_population_size": 16.0,
+      "mean_energy": 21.4152917759493
+    },
+    {
+      "genotypic_diversity": 5.522067702809969,
+      "final_population_size": 16.0,
+      "mean_energy": 24.814012330258265
+    },
+    {
+      "genotypic_diversity": 4.508429821332296,
+      "final_population_size": 16.0,
+      "mean_energy": 23.548445011954755
+    },
+    {
+      "genotypic_diversity": 9.110183483113845,
+      "final_population_size": 16.0,
+      "mean_energy": 25.200204300228506
+    },
+    {
+      "genotypic_diversity": 9.55984639575084,
+      "final_population_size": 16.0,
+      "mean_energy": 25.46582570625469
+    },
+    {
+      "genotypic_diversity": 8.481021044651667,
+      "final_population_size": 16.0,
+      "mean_energy": 22.567659837193787
+    },
+    {
+      "genotypic_diversity": 9.767875252415736,
+      "final_population_size": 16.0,
+      "mean_energy": 26.42069512186572
+    },
+    {
+      "genotypic_diversity": 7.901369672020277,
+      "final_population_size": 16.0,
+      "mean_energy": 27.00983303016983
+    },
+    {
+      "genotypic_diversity": 3.9982274621725082,
+      "final_population_size": 16.0,
+      "mean_energy": 36.64691629866138
+    },
+    {
+      "genotypic_diversity": 9.84690849284331,
+      "final_population_size": 16.0,
+      "mean_energy": 20.59004126326181
+    },
+    {
+      "genotypic_diversity": 10.728130401670933,
+      "final_population_size": 16.0,
+      "mean_energy": 18.583194435806945
+    },
+    {
+      "genotypic_diversity": 4.361183140426874,
+      "final_population_size": 16.0,
+      "mean_energy": 31.889675334561616
+    },
+    {
+      "genotypic_diversity": 8.762296592444182,
+      "final_population_size": 16.0,
+      "mean_energy": 27.57755756820552
+    },
+    {
+      "genotypic_diversity": 6.518988741313418,
+      "final_population_size": 16.0,
+      "mean_energy": 21.042611645068973
+    },
+    {
+      "genotypic_diversity": 8.472300263121724,
+      "final_population_size": 16.0,
+      "mean_energy": 18.41365680459421
+    },
+    {
+      "genotypic_diversity": 6.898722759168595,
+      "final_population_size": 16.0,
+      "mean_energy": 30.22268468979746
+    },
+    {
+      "genotypic_diversity": 4.035042670120796,
+      "final_population_size": 16.0,
+      "mean_energy": 23.235619323560968
+    },
+    {
+      "genotypic_diversity": 8.051659434537093,
+      "final_population_size": 16.0,
+      "mean_energy": 24.899843968451023
+    },
+    {
+      "genotypic_diversity": 9.302276371171077,
+      "final_population_size": 16.0,
+      "mean_energy": 20.54400664800778
+    },
+    {
+      "genotypic_diversity": 9.332450529684623,
+      "final_population_size": 16.0,
+      "mean_energy": 28.611025019781664
+    },
+    {
+      "genotypic_diversity": 9.189563047140837,
+      "final_population_size": 16.0,
+      "mean_energy": 25.58172991988249
+    },
+    {
+      "genotypic_diversity": 9.489273754258951,
+      "final_population_size": 16.0,
+      "mean_energy": 22.793911714106798
+    },
+    {
+      "genotypic_diversity": 7.946432891239723,
+      "final_population_size": 16.0,
+      "mean_energy": 21.63484101765789
+    }
+  ],
+  "shared_competition": [
+    {
+      "genotypic_diversity": 6.792020439853271,
+      "final_population_size": 16.0,
+      "mean_energy": 31.370378613704816
+    },
+    {
+      "genotypic_diversity": 9.024550947525055,
+      "final_population_size": 16.0,
+      "mean_energy": 23.30442444817163
+    },
+    {
+      "genotypic_diversity": 8.544626475622257,
+      "final_population_size": 16.0,
+      "mean_energy": 31.36648200941272
+    },
+    {
+      "genotypic_diversity": 1.4967071217795214,
+      "final_population_size": 16.0,
+      "mean_energy": 25.061320732929744
+    },
+    {
+      "genotypic_diversity": 9.220034094154835,
+      "final_population_size": 16.0,
+      "mean_energy": 25.599633455858566
+    },
+    {
+      "genotypic_diversity": 9.533296152949333,
+      "final_population_size": 16.0,
+      "mean_energy": 25.500356865581125
+    },
+    {
+      "genotypic_diversity": 6.0814050575572995,
+      "final_population_size": 16.0,
+      "mean_energy": 28.209135659970343
+    },
+    {
+      "genotypic_diversity": 7.783424290556771,
+      "final_population_size": 16.0,
+      "mean_energy": 42.41261941916309
+    },
+    {
+      "genotypic_diversity": 9.602319976935783,
+      "final_population_size": 16.0,
+      "mean_energy": 30.7509501214372
+    },
+    {
+      "genotypic_diversity": 2.917161467671394,
+      "final_population_size": 16.0,
+      "mean_energy": 27.592804179294035
+    },
+    {
+      "genotypic_diversity": 8.677890684703986,
+      "final_population_size": 16.0,
+      "mean_energy": 23.05427392758429
+    },
+    {
+      "genotypic_diversity": 9.84282387420535,
+      "final_population_size": 16.0,
+      "mean_energy": 19.817501790937968
+    },
+    {
+      "genotypic_diversity": 5.066741496076187,
+      "final_population_size": 16.0,
+      "mean_energy": 24.969204685883597
+    },
+    {
+      "genotypic_diversity": 9.128517966717482,
+      "final_population_size": 16.0,
+      "mean_energy": 19.81653626449406
+    },
+    {
+      "genotypic_diversity": 9.359759472558896,
+      "final_population_size": 16.0,
+      "mean_energy": 28.216896157246083
+    },
+    {
+      "genotypic_diversity": 8.528853288913767,
+      "final_population_size": 16.0,
+      "mean_energy": 29.923982343869284
+    },
+    {
+      "genotypic_diversity": 4.931809110256533,
+      "final_population_size": 16.0,
+      "mean_energy": 21.922658316325396
+    },
+    {
+      "genotypic_diversity": 5.331967604160309,
+      "final_population_size": 16.0,
+      "mean_energy": 26.552684754133224
+    },
+    {
+      "genotypic_diversity": 7.48953795072933,
+      "final_population_size": 16.0,
+      "mean_energy": 30.570746120531112
+    },
+    {
+      "genotypic_diversity": 10.19556281665961,
+      "final_population_size": 16.0,
+      "mean_energy": 23.243904961273074
+    },
+    {
+      "genotypic_diversity": 10.107109634081523,
+      "final_population_size": 16.0,
+      "mean_energy": 28.401737964944914
+    },
+    {
+      "genotypic_diversity": 9.296721925834815,
+      "final_population_size": 16.0,
+      "mean_energy": 29.9159060199745
+    },
+    {
+      "genotypic_diversity": 8.9459838449955,
+      "final_population_size": 16.0,
+      "mean_energy": 22.485880309715867
+    },
+    {
+      "genotypic_diversity": 6.164477911094824,
+      "final_population_size": 16.0,
+      "mean_energy": 35.263831618009135
+    }
+  ]
+}

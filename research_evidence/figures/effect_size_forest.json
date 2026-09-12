@@ -1,0 +1,18 @@
+{
+  "figure_id": "effect_size_forest",
+  "experiment_id": "exp_ecology_corrected",
+  "data_source": "genevra.analysis.aggregation effect-size/bootstrap results",
+  "metrics": [
+    "effect_size"
+  ],
+  "analysis_version": "artifacts.figures.v1",
+  "seed_policy": "n/a",
+  "creation_timestamp": "2026-09-12T21:32:25.155786+00:00",
+  "git_commit": "40a551ecdd570926989af832f33e340b304782ed",
+  "parameters": {},
+  "caption": "Point estimate and 95% confidence interval for 1 effect size(s). A point-estimate label with no interval indicates the interval could not be computed (e.g. insufficient samples), not that the effect is exact.",
+  "limitations": "A point with no drawn interval means the interval could not be computed, not that it is zero-width.",
+  "files": [
+    "effect_size_forest.png"
+  ]
+}

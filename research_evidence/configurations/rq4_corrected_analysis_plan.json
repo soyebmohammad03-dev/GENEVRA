@@ -1,0 +1,15 @@
+{
+  "primary_outcome": "genotypic_diversity",
+  "secondary_outcomes": [
+    "final_population_size",
+    "mean_energy"
+  ],
+  "expected_direction": "undirected",
+  "comparison": "minimal_competition_vs_shared_competition",
+  "statistical_test": "permutation_test + cohens_d, seed as replication unit",
+  "replication_unit": "seed",
+  "exclusion_criteria": [
+    "nan genotypic_diversity (empty final population)"
+  ],
+  "min_sample_size": 20
+}

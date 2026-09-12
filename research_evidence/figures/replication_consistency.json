@@ -1,0 +1,18 @@
+{
+  "figure_id": "replication_consistency",
+  "experiment_id": "exp_ecology_corrected",
+  "data_source": "ReplicationConsistencyReport.per_seed_effect",
+  "metrics": [
+    "per_seed_effect"
+  ],
+  "analysis_version": "artifacts.figures.v1",
+  "seed_policy": "n/a",
+  "creation_timestamp": "2026-09-12T21:32:25.259532+00:00",
+  "git_commit": "40a551ecdd570926989af832f33e340b304782ed",
+  "parameters": {},
+  "caption": "effect estimate plotted against seed across 24 sampled genotypes. Each point is one independently sampled genotype; no trend line is fit unless explicitly noted.",
+  "limitations": "Each point is one independent seed's own effect estimate; this plot shows sign/magnitude agreement across seeds, not a pooled significance test.",
+  "files": [
+    "replication_consistency.png"
+  ]
+}

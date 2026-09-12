@@ -1,0 +1,38 @@
+{
+  "question_id": "RQ4b",
+  "title": "Corrected: does ecological competition intensity affect genotypic diversity within one engine?",
+  "description": "Same-engine correction of RQ4 (which was CONFOUNDED by comparing two different simulation engines). Both conditions use ContinuousEvolutionEngine + SharedGridWorld with identical architecture, organism config, mutation, reproduction thresholds, and seed sequence; only resource_a_density (competition intensity for a shared resource) differs: 0.30 (minimal_competition) vs. 0.05 (shared_competition).",
+  "hypothesis_ids": [
+    "rq4b_competition_intensity_diversity"
+  ],
+  "primary_outcome": "genotypic_diversity",
+  "secondary_outcomes": [
+    "final_population_size",
+    "mean_energy"
+  ],
+  "experimental_conditions": [
+    "minimal_competition",
+    "shared_competition"
+  ],
+  "required_replication": 20,
+  "actual_replication": 24,
+  "statistical_plan": "permutation_test + cohens_d, seed as replication unit (frozen in research_evidence/configurations/rq4_corrected_analysis_plan.json before execution)",
+  "analysis_plan_frozen_before_execution": true,
+  "evidence_status": "NOT_SUPPORTED",
+  "raw_p_value": 0.73125374925015,
+  "fdr_adjusted_p_value": 0.8170914542728636,
+  "cohens_d": -0.10081575329832572,
+  "replication_consistency": {
+    "agreement_fraction": 0.5,
+    "sign_reversals": 12,
+    "n_seeds": 24
+  },
+  "limitations": [
+    "n=24 per condition is well-powered relative to this project's other results, but only one manipulated parameter (resource_a_density) and one metric (genotypic_diversity) were tested; a null here does not rule out an effect via a different ecological parameter (e.g. max_agents, spatial structure) or a different metric.",
+    "agreement_fraction=0.5 across seeds (12 of 24 sign reversals) indicates the near-zero pooled effect is not a case of a real effect being masked by noise -- individual seeds are genuinely split on direction.",
+    "This experiment tests association only; no causal design (e.g. within-run intervention) was used."
+  ],
+  "experiment_ids": [
+    "exp_ecology_corrected"
+  ]
+}

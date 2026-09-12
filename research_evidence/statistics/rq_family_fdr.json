@@ -1,0 +1,30 @@
+{
+  "family_id": "confirmatory_rq_family_v1",
+  "family_membership_rationale": "Only tests with a predeclared primary metric and a raw p-value from a formal hypothesis test are included: RQ1/RQ6 (the same case_a_reproduction permutation test, counted once since RQ6 re-tabulates RQ1 rather than being an independent test) and RQ4b (the corrected same-engine ecology comparison). The original CONFOUNDED RQ4 result is excluded from this family: it is not a valid test of the stated research question and correcting its p-value would misleadingly imply it remains a candidate finding. RQ2 (a plain Pearson r with no formal significance test performed), RQ3 (leave-one-seed-out reports a sign-agreement rate, not a p-value), RQ5/RQ8 (descriptive/insufficient-data, no test performed), and RQ7 (a 3-point exploratory sweep, not a single confirmatory test) are excluded as exploratory/descriptive analyses per Phase 17.7's requirement not to apply FDR to unrelated exploratory analyses.",
+  "records": [
+    {
+      "hypothesis_id": "RQ1_RQ6_case_a_reproduction",
+      "metric": "genotypic_diversity",
+      "comparison": "case_a_control_vs_treatment",
+      "test": "permutation_test",
+      "raw_p_value": 0.8170914542728636,
+      "effect_size": -0.12340628559011019,
+      "is_primary": true,
+      "corrected_p_value": 0.8170914542728636,
+      "significant": false,
+      "label": "confirmatory"
+    },
+    {
+      "hypothesis_id": "RQ4b_corrected_ecology",
+      "metric": "genotypic_diversity",
+      "comparison": "minimal_competition_vs_shared_competition",
+      "test": "permutation_test",
+      "raw_p_value": 0.73125374925015,
+      "effect_size": -0.10081575329832572,
+      "is_primary": true,
+      "corrected_p_value": 0.8170914542728636,
+      "significant": false,
+      "label": "confirmatory"
+    }
+  ]
+}

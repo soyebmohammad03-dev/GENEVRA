@@ -1,0 +1,18 @@
+{
+  "figure_id": "rq4b_seed_level_diversity",
+  "experiment_id": "exp_ecology_corrected",
+  "data_source": "research_evidence/statistics/rq4_corrected.json",
+  "metrics": [
+    "genotypic_diversity"
+  ],
+  "analysis_version": "artifacts.figures.v1",
+  "seed_policy": "n/a",
+  "creation_timestamp": "2026-09-12T21:32:25.051199+00:00",
+  "git_commit": "40a551ecdd570926989af832f33e340b304782ed",
+  "parameters": {},
+  "caption": "Final genotypic diversity for each of 24 independent seeds per condition (minimal_competition: resource_a_density=0.30; shared_competition: resource_a_density=0.05), same ContinuousEvolutionEngine+SharedGridWorld configuration otherwise. Individual seeds are shown, not only condition means; permutation p=0.7313, Cohen d=-0.10 \u2014 no significant difference detected.",
+  "limitations": "Small horizontal jitter added only for visual separation; it carries no data.",
+  "files": [
+    "rq4b_seed_level_diversity.png"
+  ]
+}

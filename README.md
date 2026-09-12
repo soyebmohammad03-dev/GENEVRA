@@ -232,7 +232,11 @@ diversity, RQ4) produced a real, large, statistically significant
 difference between two pipelines, but an independent audit
 (`docs/final_research_status.md`) found the comparison confounded by
 architectural differences beyond ecology, so it is labeled `CONFOUNDED`,
-not `SUPPORTED`; several others are `INCONCLUSIVE` or
+not `SUPPORTED`. A corrected, same-engine replacement experiment (RQ4b,
+n=24 seeds/condition, pre-registered analysis plan) was then run and
+found no detectable effect (`NOT_SUPPORTED`, p=0.73, Cohen's d=-0.10) —
+reported as a genuine negative finding, not adjusted to manufacture
+significance. Several other research questions remain `INCONCLUSIVE` or
 `INSUFFICIENT_DATA` at the sample sizes tested, and that is reported as
 the actual finding rather than adjusted.
 

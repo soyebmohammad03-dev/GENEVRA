@@ -191,3 +191,44 @@ within-one-engine ecological manipulation (e.g. using
 `genevra.ecology.competition`'s regimes on `SharedGridWorld` alone,
 rather than comparing across two different engines) at
 `CampaignMode.STANDARD`/`RESEARCH` scale.
+
+---
+
+## Targeted-correction addendum (2026-09-13)
+
+The independent audit above found RQ4 CONFOUNDED and no FDR correction applied across the RQ family. This addendum answers the follow-up correction spec's 11 required questions after acting on those two findings.
+
+**1. Was the RQ4 confound corrected?**
+The original RQ4 result was NOT altered — its data, p-value, and Cohen's d remain exactly as computed, only its `evidence_status` label was changed to `CONFOUNDED` (already done by the audit). A new, separate research question (RQ4b) was added with a same-engine design and its own independently-determined status.
+
+**2. Was the corrected experiment performed using the same engine?**
+Yes: both `minimal_competition` and `shared_competition` conditions in `experiments/exp_ecology_corrected.py` use `ContinuousEvolutionEngine` + `SharedGridWorld`, identical `ControllerArchitecture`, identical `OrganismConfig` (`channels=3` in both), identical mutation/reproduction/population settings, and the same seed sequence (0-23). Verified by reading the script directly — there is exactly one line that differs between the two condition functions (`resource_a_density`).
+
+**3. Was the ecology variable isolated?**
+Yes for the one parameter tested (`resource_a_density`, which controls resource-A scarcity/competition intensity per `genevra.ecology.competition`'s own docstring). Not isolated in the sense of testing every ecological dimension — `max_agents`, spatial structure, and resource B were held constant, not varied, so this result speaks only to resource-A scarcity specifically.
+
+**4. Was FDR applied appropriately?**
+Yes: `research_evidence/statistics/rq_family_fdr.json` corrects exactly the two genuinely confirmatory permutation tests in the package (RQ1/RQ6's case_a_reproduction and RQ4b), with an explicit written rationale for excluding the original CONFOUNDED RQ4 and every exploratory/descriptive RQ (RQ2/RQ3/RQ5/RQ7/RQ8) from the family. Both included p-values remain non-significant after correction (adjusted p=0.8171 for both).
+
+**5. How many seeds were actually used?**
+24 independent seeds per condition (48 total simulation runs), seeds 0-23, all real — every seed's raw output is in `research_evidence/statistics/rq4b_raw.json`.
+
+**6. Was a 20+ seed experiment feasible?**
+Yes, easily: a 2-seed timing pilot showed ~0.55s per run, so 24+24=48 runs completed in ~24 seconds wall-clock. The original RQ4 script's assumption that a same-engine correction would be too slow to run within a normal session budget (stated in `docs/final_research_status.md` before this correction) was based on that script's own larger per-generation logging/step budget, not on the corrected design's actual cost — the corrected design is cheap.
+
+**7. Which findings now have stronger evidence?**
+Only RQ4b itself: it is now the best-powered (n=24), most cleanly single-variable experiment in the entire evidence package, precisely because it is a well-supported null, not because it found a positive effect. No other RQ's evidence strength changed.
+
+**8. Which findings remain exploratory?**
+RQ2 (Pearson correlation, no formal test), RQ5 (descriptive spread comparison), RQ7 (3-point sweep), RQ8 (discovery pipeline, no closed follow-up loop) — unchanged by this correction.
+
+**9. Which findings remain inconclusive?**
+RQ1/RQ6 (CASE A reproduction, p=0.8171, unchanged) remain INCONCLUSIVE. RQ2, RQ5's descriptive comparison, and RQ7's non-transition sweep points remain in their prior inconclusive/insufficient-data states.
+
+**10. Which findings remain confounded?**
+The original RQ4 (`exp1_isolated_vs_shared`) remains CONFOUNDED — this correction does not retroactively fix it or delete it; it stands as a permanent historical record alongside RQ4b in `research_evidence/tables/rq4_historical_vs_corrected.md`.
+
+**11. What claims remain prohibited?**
+- "Ecological interaction structure affects evolutionary dynamics" (the original RQ4 claim) — remains unsupported; the confound was never resolved into a positive finding, and the clean replacement test found nothing.
+- "Ecology doesn't matter in GENEVRA" — equally prohibited; RQ4b tested one parameter and one metric only, and a null there does not generalize.
+- Any claim that RQ4b "confirms" or "proves" the corrected design methodology by finding a null — a null result validates that the test could have detected an effect if a large one were present (n=24, d would need to be quite small to remain undetected at this n), but it is still a single experiment on a single parameter/metric pair, not a general finding about GENEVRA's ecology mechanisms.
