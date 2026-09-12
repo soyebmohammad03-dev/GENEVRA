@@ -22,6 +22,12 @@ class EvidenceStatus(StrEnum):
     CONTRADICTED = "CONTRADICTED"
     INSUFFICIENT_DATA = "INSUFFICIENT_DATA"
     NOT_TESTED = "NOT_TESTED"
+    CONFOUNDED = "CONFOUNDED"
+    """The comparison changed more than the intended independent
+    variable (e.g. two different simulation engines), so its statistic
+    cannot be attributed to the stated research question even though the
+    underlying numbers are real and reproducible. Never inferred
+    automatically — only ever set by an explicit audit finding."""
 
 
 @dataclass(frozen=True)

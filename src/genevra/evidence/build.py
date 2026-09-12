@@ -24,17 +24,26 @@ import numpy as np
 from genevra.analysis.aggregation import (
     EffectSizeResult,
     PermutationTestResult,
+    bootstrap_confidence_interval,
     cohens_d,
     permutation_test,
 )
 from genevra.analysis.comparison import ComparisonRunner, ComparisonValidation, validate_comparison
 from genevra.artifacts.figures import (
     plot_diversity_trajectory,
+    plot_effect_size_forest,
     plot_fitness_trajectory,
     plot_novelty_trajectory,
+    plot_replication_consistency,
     plot_robustness_vs_evolvability,
 )
+from genevra.artifacts.style import apply_style, require_matplotlib, save_figure
 from genevra.artifacts.tables import to_csv, to_markdown
+from genevra.campaign.config import AnalysisPlan
+from genevra.campaign.multiple_comparison import (
+    ComparisonRecord,
+    build_multiple_comparison_registry,
+)
 from genevra.discovery.followup import generate_followup_experiment
 from genevra.discovery.hypothesis import hypotheses_from_recurring_phenomena
 from genevra.discovery.phenomena import PhenomenonDetector
@@ -67,6 +76,7 @@ from genevra.organism.genome import ControllerArchitecture, Genome
 from genevra.organism.learning import NoLearning
 from genevra.organism.mutation import GaussianMutation
 from genevra.organism.organism import OrganismConfig
+from genevra.population_analysis.replication_consistency import summarize_replication_consistency
 from genevra.population_analysis.robustness_population import robustness_metric_association
 from genevra.population_analysis.temporal_validation import leave_one_seed_out
 from genevra.simulation.grid_world import GridWorldConfig
@@ -93,6 +103,11 @@ class ScaleConfig:
     boundary_periods: tuple[int, ...]
     robustness_n_genomes: int
     ecology_seeds: tuple[int, ...]
+    ecology_corrected_seeds: tuple[int, ...]
+    """RQ4b (same-engine correction): one seed sequence, both conditions
+    use it (`minimal_competition`/`shared_competition` from
+    experiments/exp_ecology_corrected.py) — required_replication=20 by
+    the frozen analysis plan, so `full` uses more than that."""
 
 
 QUICK = ScaleConfig(
@@ -105,6 +120,7 @@ QUICK = ScaleConfig(
     boundary_periods=(10, 30),
     robustness_n_genomes=4,
     ecology_seeds=(0, 1, 2),
+    ecology_corrected_seeds=(0, 1, 2, 3),
 )
 
 FULL = ScaleConfig(
@@ -117,6 +133,7 @@ FULL = ScaleConfig(
     boundary_periods=(10, 20, 40),
     robustness_n_genomes=10,
     ecology_seeds=tuple(range(8)),
+    ecology_corrected_seeds=tuple(range(24)),
 )
 
 
@@ -134,6 +151,21 @@ def _with_research_metrics(factory: Any) -> Any:
         return dataclasses.replace(config, evolution=evolution)
 
     return wrapped
+
+
+def _load_experiment_module(filename: str) -> Any:
+    """`experiments/` has no `__init__.py` (it is a script directory, not
+    a package), so its modules are loaded by file path rather than
+    `import experiments.<name>` — the same technique every
+    `experiments/exp*.py` script itself is run with."""
+    import importlib.util
+
+    path = Path(__file__).resolve().parents[3] / "experiments" / filename
+    spec_mod = importlib.util.spec_from_file_location(path.stem, path)
+    assert spec_mod is not None and spec_mod.loader is not None
+    module = importlib.util.module_from_spec(spec_mod)
+    spec_mod.loader.exec_module(module)
+    return module
 
 
 def _git_commit() -> str:
@@ -917,13 +949,7 @@ def build_evidence_package(output_root: Path, scale: ScaleConfig = QUICK) -> Evi
     )
 
     # ---- RQ4: ecology (isolated vs. shared), reusing experiments/exp1. ----
-    import importlib.util
-
-    exp1_path = Path(__file__).resolve().parents[3] / "experiments" / "exp1_isolated_vs_shared.py"
-    spec_mod = importlib.util.spec_from_file_location("exp1_isolated_vs_shared", exp1_path)
-    assert spec_mod is not None and spec_mod.loader is not None
-    exp1 = importlib.util.module_from_spec(spec_mod)
-    spec_mod.loader.exec_module(exp1)
+    exp1 = _load_experiment_module("exp1_isolated_vs_shared.py")
 
     isolated_values = [exp1.isolated_final_diversity(s) for s in scale.ecology_seeds]
     shared_values = [exp1.shared_final_diversity(s) for s in scale.ecology_seeds]
@@ -972,20 +998,17 @@ def build_evidence_package(output_root: Path, scale: ScaleConfig = QUICK) -> Evi
             git_commit=git_commit,
         )
     )
-    # Mirrors genevra.literature.runner.classify_evidence's significance/
-    # effect-size thresholds (alpha=0.1, |d|<0.2 negligible, <0.5 small-
-    # to-medium, >=0.5 medium-or-larger) rather than significance alone —
-    # a large p-value-only threshold would understate a large real effect.
-    if ecology_perm is None or ecology_effect is None:
-        rq4_status = EvidenceStatus.INSUFFICIENT_DATA
-    elif ecology_perm.p_value >= 0.1:
-        rq4_status = EvidenceStatus.INCONCLUSIVE
-    elif abs(ecology_effect.cohens_d) < 0.2:
-        rq4_status = EvidenceStatus.NOT_SUPPORTED
-    elif abs(ecology_effect.cohens_d) < 0.5:
-        rq4_status = EvidenceStatus.PARTIALLY_SUPPORTED
-    else:
-        rq4_status = EvidenceStatus.SUPPORTED
+    # An independent audit (2026-09-13) found this comparison changes the
+    # simulation engine, generation structure, selection mechanism, and
+    # sensory input dimensionality alongside ecology — not a single-
+    # variable manipulation. Regardless of what the permutation
+    # test/effect size come out to on a given scale, the result cannot be
+    # attributed to ecological interaction structure alone, so the status
+    # is fixed at CONFOUNDED rather than derived from significance
+    # thresholds. The raw numbers are still computed and recorded above
+    # (they are real and reproducible) — only their interpretation as
+    # ecological evidence is withdrawn. See RQ4b below for the same-engine
+    # correction.
     research_questions.append(
         ResearchQuestion(
             question_id="RQ4",
@@ -999,14 +1022,26 @@ def build_evidence_package(output_root: Path, scale: ScaleConfig = QUICK) -> Evi
             experimental_conditions=("isolated", "shared"),
             required_replication=len(scale.ecology_seeds),
             statistical_plan="permutation_test + cohens_d, seed as replication unit",
-            evidence_status=rq4_status,
+            evidence_status=EvidenceStatus.CONFOUNDED,
             limitations=(
                 "An infrastructure-comparable proxy metric across two different engines, "
                 "not a within-one-engine controlled ecology manipulation.",
+                "Audit correction (independent review, 2026-09-13): the isolated "
+                "(EvolutionEngine+GridWorld, discrete generations, tournament selection, "
+                "channels=2) and shared (ContinuousEvolutionEngine+SharedGridWorld, "
+                "overlapping generations, birth/death reproduction, channels=3) conditions "
+                "differ in engine architecture, selection mechanism, generation structure, "
+                "and sensory input dimensionality, not just ecological sharing. The "
+                "permutation p-value/Cohen's d recorded above are real and reproducible, "
+                "but cannot be attributed to ecological interaction structure alone. See "
+                "RQ4b for the same-engine correction.",
             ),
             experiment_ids=("exp1_isolated_vs_shared",),
         )
     )
+
+    # ---- RQ4b: same-engine correction of RQ4 (audit-required, 2026-09-13). ----
+    _build_rq4b(output_root, scale, fig_dir, manifest, research_questions, git_commit, perm)
 
     # ---- Development/validation seed split (Phase 19.4). ----
     # A real, non-overlapping partition of the seeds this build actually
@@ -1144,6 +1179,497 @@ def _reproduction_result_obj(
         validation=validation,
         n_control=len(control_values),
         n_treatment=len(treatment_values),
+    )
+
+
+def _status_from_significance(
+    perm: PermutationTestResult | None,
+    effect: EffectSizeResult | None,
+    n_per_condition: int = 0,
+    required_n: int = 0,
+) -> EvidenceStatus:
+    """`genevra.literature.runner.classify_evidence`'s significance/
+    effect-size thresholds (alpha=0.1, |d|<0.2 negligible, <0.5 small-to-
+    medium, >=0.5 medium-or-larger). One addition beyond that shared
+    convention: when a comparison actually meets its own pre-declared
+    `required_n` and finds a negligible effect size, that is reported as
+    a genuine well-powered null (`NOT_SUPPORTED`) rather than
+    `INCONCLUSIVE` — `INCONCLUSIVE` is reserved for comparisons that
+    lack the statistical power to distinguish a real effect from noise,
+    which a p-value threshold alone cannot tell apart from an adequately
+    powered comparison that simply found nothing."""
+    if perm is None or effect is None:
+        return EvidenceStatus.INSUFFICIENT_DATA
+    if n_per_condition >= required_n > 0 and abs(effect.cohens_d) < 0.2:
+        return EvidenceStatus.NOT_SUPPORTED
+    if perm.p_value >= 0.1:
+        return EvidenceStatus.INCONCLUSIVE
+    if abs(effect.cohens_d) < 0.2:
+        return EvidenceStatus.NOT_SUPPORTED
+    if abs(effect.cohens_d) < 0.5:
+        return EvidenceStatus.PARTIALLY_SUPPORTED
+    return EvidenceStatus.SUPPORTED
+
+
+def _plot_rq4b_seed_level_scatter(
+    minimal_values: list[float],
+    shared_values: list[float],
+    output_dir: Path,
+    experiment_id: str,
+    cohens_d_value: float,
+    p_value: float,
+) -> Any:
+    apply_style()
+    plt = require_matplotlib()
+    rng = np.random.default_rng(0)
+    fig, ax = plt.subplots()
+    jitter_minimal = rng.uniform(-0.05, 0.05, size=len(minimal_values))
+    jitter_shared = rng.uniform(-0.05, 0.05, size=len(shared_values))
+    ax.scatter(
+        np.zeros(len(minimal_values)) + jitter_minimal, minimal_values, label="minimal_competition"
+    )
+    ax.scatter(
+        np.ones(len(shared_values)) + jitter_shared, shared_values, label="shared_competition"
+    )
+    ax.set_xticks([0, 1])
+    ax.set_xticklabels(["minimal_competition", "shared_competition"])
+    ax.set_ylabel("final genotypic diversity")
+    ax.set_title("RQ4b: per-seed genotypic diversity by condition")
+    ax.legend()
+    fig.tight_layout()
+    return save_figure(
+        fig,
+        output_dir,
+        figure_id="rq4b_seed_level_diversity",
+        experiment_id=experiment_id,
+        data_source="research_evidence/statistics/rq4_corrected.json",
+        metrics=("genotypic_diversity",),
+        caption=(
+            f"Final genotypic diversity for each of {len(minimal_values)} independent "
+            "seeds per condition (minimal_competition: resource_a_density=0.30; "
+            "shared_competition: resource_a_density=0.05), same ContinuousEvolutionEngine"
+            "+SharedGridWorld configuration otherwise. Individual seeds are shown, not "
+            f"only condition means; permutation p={p_value:.4f}, Cohen d={cohens_d_value:.2f}."
+        ),
+        limitations="Small horizontal jitter added only for visual separation; it carries no data.",
+    )
+
+
+def _build_rq4b(
+    output_root: Path,
+    scale: ScaleConfig,
+    fig_dir: Path,
+    manifest: EvidenceManifest,
+    research_questions: list[ResearchQuestion],
+    git_commit: str,
+    case_a_perm: PermutationTestResult | None,
+) -> None:
+    """RQ4b: the audit-required same-engine correction of RQ4
+    (`experiments/exp_ecology_corrected.py`). Reused, not duplicated, by
+    both `reproduce-evidence` and the committed `research_evidence/`
+    package — this function is the only place this comparison's
+    statistics are computed."""
+    exp = _load_experiment_module("exp_ecology_corrected.py")
+    seeds = list(scale.ecology_corrected_seeds)
+
+    # The analysis plan is frozen to disk BEFORE the experiment runs
+    # below — a real ordering, not just a claimed one (Phase 19.2/17.8).
+    # Uses genevra.campaign.config.AnalysisPlan directly (Phase 17.8's
+    # existing frozen-plan dataclass) rather than a hand-built dict.
+    min_sample_size = 20
+    analysis_plan = AnalysisPlan(
+        primary_outcome="genotypic_diversity",
+        secondary_outcomes=("final_population_size", "mean_energy"),
+        expected_direction="undirected",
+        comparison="minimal_competition_vs_shared_competition",
+        statistical_test="permutation_test + cohens_d, seed as replication unit",
+        replication_unit="seed",
+        exclusion_criteria=("nan genotypic_diversity (empty final population)",),
+        min_sample_size=min_sample_size,
+    )
+    analysis_plan.save(output_root / "configurations" / "rq4_corrected_analysis_plan.json")
+    (output_root / "seeds" / "rq4b_seeds.json").write_text(json.dumps(seeds, indent=2))
+
+    minimal_raw = [exp.minimal_competition(seed) for seed in seeds]
+    shared_raw = [exp.shared_competition(seed) for seed in seeds]
+    (output_root / "statistics" / "rq4b_raw.json").write_text(
+        json.dumps(
+            {"seeds": seeds, "minimal_competition": minimal_raw, "shared_competition": shared_raw},
+            indent=2,
+        )
+    )
+
+    minimal_by_seed = {
+        seed: r["genotypic_diversity"]
+        for seed, r in zip(seeds, minimal_raw, strict=True)
+        if r["genotypic_diversity"] == r["genotypic_diversity"]  # drop NaN
+    }
+    shared_by_seed = {
+        seed: r["genotypic_diversity"]
+        for seed, r in zip(seeds, shared_raw, strict=True)
+        if r["genotypic_diversity"] == r["genotypic_diversity"]
+    }
+    paired_seeds = sorted(set(minimal_by_seed) & set(shared_by_seed))
+    minimal_values = [minimal_by_seed[s] for s in paired_seeds]
+    shared_values = [shared_by_seed[s] for s in paired_seeds]
+
+    have_enough = len(minimal_values) >= 2 and len(shared_values) >= 2
+    perm = (
+        permutation_test(
+            shared_values, minimal_values, np.random.default_rng(3), num_permutations=5000
+        )
+        if have_enough
+        else None
+    )
+    effect = cohens_d(shared_values, minimal_values) if have_enough else None
+    ci_shared = (
+        bootstrap_confidence_interval(
+            shared_values, np.random.default_rng(4), confidence_level=0.95
+        )
+        if have_enough
+        else None
+    )
+    ci_minimal = (
+        bootstrap_confidence_interval(
+            minimal_values, np.random.default_rng(5), confidence_level=0.95
+        )
+        if have_enough
+        else None
+    )
+    per_seed_effect = {s: shared_by_seed[s] - minimal_by_seed[s] for s in paired_seeds}
+    replication = summarize_replication_consistency(per_seed_effect)
+
+    rq4b_status = _status_from_significance(
+        perm, effect, n_per_condition=len(paired_seeds), required_n=min_sample_size
+    )
+
+    corrected_payload = {
+        "spec_id": "rq4_corrected_v1",
+        "research_question": "RQ4b",
+        "n_minimal": len(minimal_values),
+        "n_shared": len(shared_values),
+        "minimal_competition_values": minimal_values,
+        "shared_competition_values": shared_values,
+        "observed_direction": (
+            None if perm is None else ("negative" if perm.observed_difference < 0 else "positive")
+        ),
+        "permutation_test": (
+            None
+            if perm is None
+            else {
+                "observed_difference_shared_minus_minimal": perm.observed_difference,
+                "p_value": perm.p_value,
+                "num_permutations": perm.num_permutations,
+            }
+        ),
+        "cohens_d": effect.cohens_d if effect is not None else None,
+        "mean_difference": effect.mean_difference if effect is not None else None,
+        "pooled_std": effect.pooled_std if effect is not None else None,
+        "bootstrap_ci_95_shared_mean": (
+            None if ci_shared is None else [ci_shared.low, ci_shared.high]
+        ),
+        "bootstrap_ci_95_minimal_mean": (
+            None if ci_minimal is None else [ci_minimal.low, ci_minimal.high]
+        ),
+        "shared_mean": float(np.mean(shared_values)) if shared_values else None,
+        "minimal_mean": float(np.mean(minimal_values)) if minimal_values else None,
+        "replication_consistency": replication.to_dict(),
+    }
+    (output_root / "statistics" / "rq4_corrected.json").write_text(
+        json.dumps(corrected_payload, indent=2)
+    )
+    rq4b_config_hash = _config_hash({"seeds": seeds, "spec_id": "rq4_corrected_v1"})
+    manifest.add(
+        EvidenceArtifact(
+            artifact_id="rq4_corrected",
+            artifact_type="data",
+            research_question="RQ4b",
+            experiment_id="exp_ecology_corrected",
+            condition="minimal_competition_vs_shared_competition",
+            seed_set=tuple(paired_seeds),
+            source_data="experiments/exp_ecology_corrected.py",
+            metric_ids=("genotypic_diversity",),
+            analysis_version="genevra.evidence.build.v1",
+            config_hash=rq4b_config_hash,
+            relative_path="statistics/rq4_corrected.json",
+            limitations=(
+                "Same engine/architecture/config for both conditions; only "
+                "resource_a_density varies. n=24 per condition at full scale is "
+                "well-powered relative to this project's other results, but only one "
+                "manipulated parameter and one metric were tested.",
+            ),
+            git_commit=git_commit,
+        )
+    )
+
+    # ---- figures: seed-level scatter, effect-size forest, replication consistency. ----
+    if have_enough and perm is not None and effect is not None:
+        scatter_meta = _plot_rq4b_seed_level_scatter(
+            minimal_values,
+            shared_values,
+            fig_dir,
+            "exp_ecology_corrected",
+            effect.cohens_d,
+            perm.p_value,
+        )
+        forest_meta = plot_effect_size_forest(
+            [
+                {
+                    "label": "RQ4b: shared - minimal (genotypic_diversity)",
+                    "estimate": effect.mean_difference,
+                    "ci_low": ci_shared.low - ci_minimal.high if ci_shared and ci_minimal else None,
+                    "ci_high": ci_shared.high - ci_minimal.low
+                    if ci_shared and ci_minimal
+                    else None,
+                }
+            ],
+            fig_dir,
+            experiment_id="exp_ecology_corrected",
+        )
+        replication_meta = plot_replication_consistency(
+            paired_seeds,
+            [per_seed_effect[s] for s in paired_seeds],
+            fig_dir,
+            "exp_ecology_corrected",
+        )
+        for meta in (scatter_meta, forest_meta, replication_meta):
+            if meta is None:
+                continue
+            for filename in meta.files:
+                manifest.add(
+                    EvidenceArtifact(
+                        artifact_id=meta.figure_id,
+                        artifact_type="figure",
+                        research_question="RQ4b",
+                        experiment_id="exp_ecology_corrected",
+                        condition="minimal_competition_vs_shared_competition",
+                        seed_set=tuple(paired_seeds),
+                        source_data=meta.data_source,
+                        metric_ids=("genotypic_diversity",),
+                        analysis_version=meta.analysis_version,
+                        config_hash=rq4b_config_hash,
+                        relative_path=f"figures/{filename}",
+                        limitations=(meta.limitations,),
+                        git_commit=git_commit,
+                    )
+                )
+            manifest.add(
+                EvidenceArtifact(
+                    artifact_id=f"{meta.figure_id}_metadata",
+                    artifact_type="figure",
+                    research_question="RQ4b",
+                    experiment_id="exp_ecology_corrected",
+                    condition="minimal_competition_vs_shared_competition",
+                    seed_set=tuple(paired_seeds),
+                    source_data=meta.data_source,
+                    metric_ids=("genotypic_diversity",),
+                    analysis_version=meta.analysis_version,
+                    config_hash=rq4b_config_hash,
+                    relative_path=f"figures/{meta.figure_id}.json",
+                    git_commit=git_commit,
+                )
+            )
+
+    research_questions.append(
+        ResearchQuestion(
+            question_id="RQ4b",
+            title="Corrected: does ecological competition intensity affect genotypic "
+            "diversity within one engine?",
+            description="Same-engine correction of RQ4. Both conditions use "
+            "ContinuousEvolutionEngine + SharedGridWorld with identical architecture, "
+            "organism config, mutation, reproduction thresholds, and seed sequence; only "
+            "resource_a_density (competition intensity for a shared resource) differs: "
+            "0.30 (minimal_competition) vs. 0.05 (shared_competition).",
+            hypothesis_ids=("rq4b_competition_intensity_diversity",),
+            primary_outcome="genotypic_diversity",
+            secondary_outcomes=("final_population_size", "mean_energy"),
+            experimental_conditions=("minimal_competition", "shared_competition"),
+            required_replication=20,
+            statistical_plan="permutation_test + cohens_d, seed as replication unit "
+            "(analysis plan frozen in configurations/rq4_corrected_analysis_plan.json "
+            "before execution)",
+            evidence_status=rq4b_status,
+            limitations=(
+                f"n={len(paired_seeds)} per condition; only one manipulated parameter "
+                "(resource_a_density) and one metric (genotypic_diversity) were tested — "
+                "a null here does not rule out an effect via a different ecological "
+                "parameter (e.g. max_agents, spatial structure) or a different metric.",
+                (
+                    f"agreement_fraction={replication.agreement_fraction} across seeds "
+                    f"({replication.sign_reversals} of {replication.n_seeds} sign "
+                    "reversals) — see statistics/rq4_corrected.json for whether a "
+                    "near-zero pooled effect reflects genuine seed-to-seed disagreement."
+                    if replication.agreement_fraction is not None
+                    else "Replication consistency could not be computed (fewer than 2 "
+                    "seeds with a nonzero effect)."
+                ),
+                "This experiment tests association only; no causal design (e.g. a "
+                "within-run intervention) was used.",
+            ),
+            experiment_ids=("exp_ecology_corrected",),
+        )
+    )
+
+    # ---- FDR across the confirmatory RQ family (RQ1/RQ6's case_a test + RQ4b). ----
+    fdr_records = []
+    if case_a_perm is not None:
+        fdr_records.append(
+            ComparisonRecord(
+                hypothesis_id="RQ1_RQ6_case_a_reproduction",
+                metric="genotypic_diversity",
+                comparison="case_a_control_vs_treatment",
+                test="permutation_test",
+                raw_p_value=case_a_perm.p_value,
+                effect_size=None,
+                is_primary=True,
+            )
+        )
+    if perm is not None:
+        fdr_records.append(
+            ComparisonRecord(
+                hypothesis_id="RQ4b_corrected_ecology",
+                metric="genotypic_diversity",
+                comparison="minimal_competition_vs_shared_competition",
+                test="permutation_test",
+                raw_p_value=perm.p_value,
+                effect_size=effect.cohens_d if effect is not None else None,
+                is_primary=True,
+            )
+        )
+    corrected_records = build_multiple_comparison_registry(fdr_records)
+    fdr_payload = {
+        "family_id": "confirmatory_rq_family_v1",
+        "family_membership_rationale": (
+            "Only tests with a predeclared primary metric and a raw p-value from a "
+            "formal hypothesis test are included: RQ1/RQ6 (the same case_a_reproduction "
+            "permutation test, counted once since RQ6 re-tabulates RQ1 rather than "
+            "being an independent test) and RQ4b (the corrected same-engine ecology "
+            "comparison). The original CONFOUNDED RQ4 result is excluded from this "
+            "family: it is not a valid test of the stated research question and "
+            "correcting its p-value would misleadingly imply it remains a candidate "
+            "finding. RQ2 (a plain Pearson r with no formal significance test "
+            "performed), RQ3 (leave-one-seed-out reports a sign-agreement rate, not a "
+            "p-value), RQ5/RQ8 (descriptive/insufficient-data, no test performed), and "
+            "RQ7 (a 3-point exploratory sweep, not a single confirmatory test) are "
+            "excluded as exploratory/descriptive analyses per Phase 17.7's requirement "
+            "not to apply FDR to unrelated exploratory analyses."
+        ),
+        "records": [r.to_dict() for r in corrected_records],
+    }
+    (output_root / "statistics" / "rq_family_fdr.json").write_text(
+        json.dumps(fdr_payload, indent=2)
+    )
+    manifest.add(
+        EvidenceArtifact(
+            artifact_id="rq_family_fdr",
+            artifact_type="data",
+            research_question="RQ4b",
+            experiment_id="rq_family_fdr",
+            condition="all",
+            seed_set=tuple(paired_seeds),
+            source_data="genevra.campaign.multiple_comparison.build_multiple_comparison_registry",
+            metric_ids=("genotypic_diversity",),
+            analysis_version="genevra.discovery.multiple_testing.v1",
+            config_hash=_config_hash({"family": "confirmatory_rq_family_v1"}),
+            relative_path="statistics/rq_family_fdr.json",
+            limitations=(
+                "A 2-test confirmatory family; see family_membership_rationale in the "
+                "file itself for exactly which tests are included and why.",
+            ),
+            git_commit=git_commit,
+        )
+    )
+
+    # ---- historical-vs-corrected table (Phase: preserve, do not erase, history). ----
+    original_status = "CONFOUNDED"
+    original_reason = (
+        "Engine architecture, selection mechanism, generation structure, and sensory "
+        "input dimensionality all differ alongside ecology; the effect cannot be "
+        "attributed to ecological interaction structure alone."
+    )
+    corrected_reason = (
+        "Same-engine, single-variable comparison; no detectable effect found at "
+        f"n={len(paired_seeds)} per condition."
+        if rq4b_status in (EvidenceStatus.NOT_SUPPORTED, EvidenceStatus.INCONCLUSIVE)
+        else "Same-engine, single-variable comparison."
+    )
+    corrected_d_str = f"{effect.cohens_d:.2f}" if effect is not None else "n/a"
+    corrected_p_str = f"{perm.p_value:.4f}" if perm is not None else "n/a"
+    header = (
+        "| Experiment | Conditions | Engine(s) | Seeds | Primary metric | "
+        "Effect (Cohen's d) | Raw p | Status | Reason |"
+    )
+    original_row = (
+        "|"
+        + "|".join(
+            [
+                " exp1_isolated_vs_shared (original RQ4) ",
+                " isolated vs. shared ",
+                " Two different engines: `EvolutionEngine`+`GridWorld` (discrete "
+                "generations, tournament selection, channels=2) vs. "
+                "`ContinuousEvolutionEngine`+`SharedGridWorld` (continuous "
+                "generations, birth/death, channels=3) ",
+                f" {len(scale.ecology_seeds)} ",
+                " genotypic_diversity ",
+                " (see statistics/rq4_ecology.json) ",
+                " (see statistics/rq4_ecology.json) ",
+                f" {original_status} ",
+                f" {original_reason} ",
+            ]
+        )
+        + "|"
+    )
+    corrected_row = (
+        "|"
+        + "|".join(
+            [
+                " exp_ecology_corrected (RQ4b) ",
+                " minimal_competition vs. shared_competition ",
+                " One engine: `ContinuousEvolutionEngine`+`SharedGridWorld` for both "
+                "conditions, identical architecture/config, only `resource_a_density` "
+                "varied ",
+                f" {len(paired_seeds)} ",
+                " genotypic_diversity ",
+                f" {corrected_d_str} ",
+                f" {corrected_p_str} ",
+                f" {rq4b_status.value} ",
+                f" {corrected_reason} ",
+            ]
+        )
+        + "|"
+    )
+    historical_table = (
+        "# RQ4: original (confounded) result vs. corrected same-engine experiment\n\n"
+        "Scientific history is preserved, not erased. The original result's numbers\n"
+        "are real and reproducible; only its interpretation as ecological evidence\n"
+        "is withdrawn.\n\n"
+        f"{header}\n"
+        "|---|---|---|---|---|---|---|---|---|\n"
+        f"{original_row}\n"
+        f"{corrected_row}\n\n"
+        "The corrected experiment does not confirm the original's large effect, nor\n"
+        'does it retroactively prove the original effect was "caused by the engine\n'
+        'difference" in a formal sense — it only shows that when the engine\n'
+        "difference is removed, no comparable effect on this metric appears at this\n"
+        "sample size. Both facts stand: the original numbers are real; they do not\n"
+        "support the ecological claim they were originally used for.\n"
+    )
+    (output_root / "tables" / "rq4_historical_vs_corrected.md").write_text(historical_table)
+    manifest.add(
+        EvidenceArtifact(
+            artifact_id="rq4_historical_vs_corrected",
+            artifact_type="table",
+            research_question="RQ4b",
+            experiment_id="rq4_historical_vs_corrected",
+            condition="all",
+            seed_set=tuple(paired_seeds),
+            source_data="statistics/rq4_ecology.json, statistics/rq4_corrected.json",
+            metric_ids=("genotypic_diversity",),
+            analysis_version="genevra.evidence.build.v1",
+            config_hash=_config_hash({"table": "rq4_historical_vs_corrected"}),
+            relative_path="tables/rq4_historical_vs_corrected.md",
+            git_commit=git_commit,
+        )
     )
 
 

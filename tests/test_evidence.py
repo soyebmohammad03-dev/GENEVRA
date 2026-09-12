@@ -192,9 +192,44 @@ class TestBuildEvidencePackage:
         from genevra.evidence.build import QUICK, build_evidence_package
 
         result = build_evidence_package(tmp_path / "evidence", QUICK)
-        assert len(result.research_questions) == 8
+        assert len(result.research_questions) == 9
         report = verify_evidence_package(tmp_path / "evidence")
         assert report.ok(), report.to_dict()
+
+    def test_rq4_confounded_and_rq4b_corrected_both_present(self, tmp_path: Path) -> None:
+        """RQ4 must stay CONFOUNDED regardless of significance thresholds
+        (an audit finding about the experiment's design, not its data),
+        and its same-engine correction RQ4b must be independently
+        computed and traceable — closing the gap where RQ4b previously
+        existed only in the committed package, not in `reproduce-evidence`
+        itself."""
+        from genevra.evidence.build import QUICK, build_evidence_package
+        from genevra.evidence.research_question import EvidenceStatus
+
+        result = build_evidence_package(tmp_path / "evidence", QUICK)
+        by_id = {rq.question_id: rq for rq in result.research_questions}
+        assert by_id["RQ4"].evidence_status == EvidenceStatus.CONFOUNDED
+        assert by_id["RQ4b"].experiment_ids == ("exp_ecology_corrected",)
+        assert by_id["RQ4b"].evidence_status in (
+            EvidenceStatus.SUPPORTED,
+            EvidenceStatus.PARTIALLY_SUPPORTED,
+            EvidenceStatus.INCONCLUSIVE,
+            EvidenceStatus.NOT_SUPPORTED,
+            EvidenceStatus.CONTRADICTED,
+            EvidenceStatus.INSUFFICIENT_DATA,
+        )
+        root = tmp_path / "evidence"
+        assert (root / "statistics" / "rq4_corrected.json").exists()
+        assert (root / "statistics" / "rq_family_fdr.json").exists()
+        assert (root / "configurations" / "rq4_corrected_analysis_plan.json").exists()
+        fdr = json.loads((root / "statistics" / "rq_family_fdr.json").read_text())
+        hypothesis_ids = {r["hypothesis_id"] for r in fdr["records"]}
+        assert "RQ4b_corrected_ecology" in hypothesis_ids
+        # The CONFOUNDED original RQ4 is deliberately excluded from the FDR
+        # family (correcting its p-value would misleadingly imply it is
+        # still a candidate finding) — only its RQ4b_-prefixed correction
+        # may appear.
+        assert all(not h.startswith("RQ4_") for h in hypothesis_ids)
 
     def test_deterministic_case_a_metric_extraction(self, tmp_path: Path) -> None:
         from genevra.evidence.build import QUICK, build_evidence_package

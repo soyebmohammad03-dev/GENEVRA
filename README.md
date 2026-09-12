@@ -54,14 +54,21 @@ against those ideas empirically, on small, cheap, reproducible runs.
 
 ## Development status
 
-**Experimental research platform — Phase 1–6 complete.** GENEVRA now runs
-config-driven, reproducible evolutionary experiments end to end — isolated
-or ecologically shared, static or temporally dynamic — and can aggregate,
-compare, and analyze the results, though only at the small scales and
-handful of infrastructure-validation experiments described below, not yet
-as a validated tool for answering any of the research questions above (see
-[`docs/research_questions.md`](docs/research_questions.md) for that
-distinction, spelled out explicitly):
+**Experimental research platform — core simulation/evolution engine
+complete; research evidence package built and independently audited
+(see "Research evidence package" below).** GENEVRA runs config-driven,
+reproducible evolutionary experiments end to end — isolated or
+ecologically shared, static or temporally dynamic — and can aggregate,
+compare, and analyze the results. The distinction that matters more than
+a phase count: **implemented capabilities** (the machinery described in
+this section and the phase sections below) are broader than
+**empirically supported findings** (what `research_evidence/` and
+`docs/final_research_quality_gate.md` actually show evidence for as of
+this commit — currently, no research question in the committed evidence
+package has unconfounded evidence at the `SUPPORTED` level; see
+[`docs/research_questions.md`](docs/research_questions.md) and
+[`docs/final_claim_matrix.md`](docs/final_claim_matrix.md) for that
+distinction applied question-by-question):
 
 - `genevra.utils` — reproducible seeding, experiment logging.
 - `genevra.simulation` — the `Environment` protocol, a `VectorEnvironment`
@@ -221,10 +228,18 @@ runs, not a raw experiment dump (`research_artifacts/` stays gitignored
 for that). `genevra.evidence.build.build_evidence_package` (via
 `genevra reproduce-evidence`) runs a compact but real set of campaigns
 — CASE A's literature reproduction, a boundary-condition sweep,
-robustness/evolvability sampling, and an isolated-vs-shared ecology
-comparison — and writes a traceable, checksum-verified package
-(`genevra verify-evidence`). See
-[`docs/research_evidence.md`](docs/research_evidence.md) and
+robustness/evolvability sampling, an isolated-vs-shared ecology
+comparison, and (as of the post-audit cleanup below) its same-engine
+RQ4b correction plus a Benjamini-Hochberg FDR family over the package's
+confirmatory tests — and writes a traceable, checksum-verified package
+(`genevra verify-evidence`). `reproduce-evidence` regenerates every
+research question in the committed package, RQ4b included — there is no
+separate, undocumented step. See
+[`docs/research_evidence.md`](docs/research_evidence.md),
+[`docs/reproducibility.md`](docs/reproducibility.md),
+[`docs/statistical_methods.md`](docs/statistical_methods.md),
+[`docs/metric_registry.md`](docs/metric_registry.md),
+[`docs/experiment_design.md`](docs/experiment_design.md), and
 [`docs/final_research_quality_gate.md`](docs/final_research_quality_gate.md)
 for exactly what the current evidence does and does not show: one
 research question (ecological interaction structure and genetic

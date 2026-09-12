@@ -7,10 +7,10 @@
   ],
   "analysis_version": "artifacts.figures.v1",
   "seed_policy": "n/a",
-  "creation_timestamp": "2026-09-12T21:32:25.051199+00:00",
-  "git_commit": "40a551ecdd570926989af832f33e340b304782ed",
+  "creation_timestamp": "2026-09-12T22:14:31.731370+00:00",
+  "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
   "parameters": {},
-  "caption": "Final genotypic diversity for each of 24 independent seeds per condition (minimal_competition: resource_a_density=0.30; shared_competition: resource_a_density=0.05), same ContinuousEvolutionEngine+SharedGridWorld configuration otherwise. Individual seeds are shown, not only condition means; permutation p=0.7313, Cohen d=-0.10 \u2014 no significant difference detected.",
+  "caption": "Final genotypic diversity for each of 24 independent seeds per condition (minimal_competition: resource_a_density=0.30; shared_competition: resource_a_density=0.05), same ContinuousEvolutionEngine+SharedGridWorld configuration otherwise. Individual seeds are shown, not only condition means; permutation p=0.7303, Cohen d=-0.10.",
   "limitations": "Small horizontal jitter added only for visual separation; it carries no data.",
   "files": [
     "rq4b_seed_level_diversity.png"

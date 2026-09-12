@@ -58,19 +58,19 @@
   "observed_direction": "negative",
   "permutation_test": {
     "observed_difference_shared_minus_minimal": -0.22079068445720118,
-    "p_value": 0.73125374925015,
+    "p_value": 0.730253949210158,
     "num_permutations": 5000
   },
   "cohens_d": -0.10081575329832572,
   "mean_difference": -0.22079068445720118,
   "pooled_std": 2.1900415087298457,
   "bootstrap_ci_95_shared_mean": [
-    6.713680119330377,
-    8.521231368109046
+    6.656941221725244,
+    8.546508119781349
   ],
   "bootstrap_ci_95_minimal_mean": [
-    7.04324940999517,
-    8.66489468892994
+    7.121194450575148,
+    8.652735115127644
   ],
   "shared_mean": 7.669304316899734,
   "minimal_mean": 7.8900950013569355,

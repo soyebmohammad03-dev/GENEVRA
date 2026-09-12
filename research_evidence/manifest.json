@@ -20,8 +20,8 @@
       "limitations": [
         "Only the first 2 of 8 seeds per condition are kept; the rest are reproducible via the exact command in README.md."
       ],
-      "git_commit": "ff92bfbcb48e5b68ccefdd63311d0cc146f5c460",
-      "creation_timestamp": "2026-09-12T20:38:53.988714+00:00"
+      "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
+      "creation_timestamp": "2026-09-12T22:13:49.432840+00:00"
     },
     {
       "artifact_id": "case_a_reproduction_statistics",
@@ -47,8 +47,8 @@
       "config_hash": "e38af44042f739c6",
       "relative_path": "statistics/case_a_reproduction.json",
       "limitations": [],
-      "git_commit": "ff92bfbcb48e5b68ccefdd63311d0cc146f5c460",
-      "creation_timestamp": "2026-09-12T20:38:53.989339+00:00"
+      "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
+      "creation_timestamp": "2026-09-12T22:13:49.433302+00:00"
     },
     {
       "artifact_id": "fitness_trajectory",
@@ -69,8 +69,8 @@
       "limitations": [
         "One realized run; no cross-seed uncertainty band unless multiple seeds are pooled."
       ],
-      "git_commit": "ff92bfbcb48e5b68ccefdd63311d0cc146f5c460",
-      "creation_timestamp": "2026-09-12T20:38:54.812644+00:00"
+      "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
+      "creation_timestamp": "2026-09-12T22:13:50.265558+00:00"
     },
     {
       "artifact_id": "fitness_trajectory_metadata",
@@ -89,8 +89,8 @@
       "config_hash": "e38af44042f739c6",
       "relative_path": "figures/fitness_trajectory.json",
       "limitations": [],
-      "git_commit": "ff92bfbcb48e5b68ccefdd63311d0cc146f5c460",
-      "creation_timestamp": "2026-09-12T20:38:54.812663+00:00"
+      "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
+      "creation_timestamp": "2026-09-12T22:13:50.265582+00:00"
     },
     {
       "artifact_id": "diversity_trajectory",
@@ -112,8 +112,8 @@
       "limitations": [
         "Diversity may be computed on a capped random pair sample; see diversity_max_pairs."
       ],
-      "git_commit": "ff92bfbcb48e5b68ccefdd63311d0cc146f5c460",
-      "creation_timestamp": "2026-09-12T20:38:54.812672+00:00"
+      "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
+      "creation_timestamp": "2026-09-12T22:13:50.265591+00:00"
     },
     {
       "artifact_id": "diversity_trajectory_metadata",
@@ -133,8 +133,8 @@
       "config_hash": "e38af44042f739c6",
       "relative_path": "figures/diversity_trajectory.json",
       "limitations": [],
-      "git_commit": "ff92bfbcb48e5b68ccefdd63311d0cc146f5c460",
-      "creation_timestamp": "2026-09-12T20:38:54.812677+00:00"
+      "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
+      "creation_timestamp": "2026-09-12T22:13:50.265597+00:00"
     },
     {
       "artifact_id": "novelty_trajectory",
@@ -156,8 +156,8 @@
       "limitations": [
         "Novelty is relative to this run's own archive/population, not an absolute scale."
       ],
-      "git_commit": "ff92bfbcb48e5b68ccefdd63311d0cc146f5c460",
-      "creation_timestamp": "2026-09-12T20:38:54.812682+00:00"
+      "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
+      "creation_timestamp": "2026-09-12T22:13:50.265601+00:00"
     },
     {
       "artifact_id": "novelty_trajectory_metadata",
@@ -177,8 +177,8 @@
       "config_hash": "e38af44042f739c6",
       "relative_path": "figures/novelty_trajectory.json",
       "limitations": [],
-      "git_commit": "ff92bfbcb48e5b68ccefdd63311d0cc146f5c460",
-      "creation_timestamp": "2026-09-12T20:38:54.812686+00:00"
+      "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
+      "creation_timestamp": "2026-09-12T22:13:50.265605+00:00"
     },
     {
       "artifact_id": "rq3_lagged_prediction",
@@ -207,8 +207,8 @@
       "limitations": [
         "Held-out-seed sign agreement only; not a magnitude-calibrated forecast."
       ],
-      "git_commit": "ff92bfbcb48e5b68ccefdd63311d0cc146f5c460",
-      "creation_timestamp": "2026-09-12T20:38:54.814281+00:00"
+      "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
+      "creation_timestamp": "2026-09-12T22:13:50.267678+00:00"
     },
     {
       "artifact_id": "rq5_strategy_convergence",
@@ -236,8 +236,8 @@
       "limitations": [
         "Cross-seed spread of the population MEAN strategy vector, not individual organisms; a small number of seeds limits how reliable 'converged' is."
       ],
-      "git_commit": "ff92bfbcb48e5b68ccefdd63311d0cc146f5c460",
-      "creation_timestamp": "2026-09-12T20:38:54.814619+00:00"
+      "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
+      "creation_timestamp": "2026-09-12T22:13:50.268022+00:00"
     },
     {
       "artifact_id": "literature_comparison_matrix",
@@ -265,8 +265,8 @@
       "limitations": [
         "Only CASE A (Cuypers/Rutten/Hogeweg-inspired) is included this round; CASE B/C/D were not re-run at evidence-package scale this session \u2014 see docs/final_research_quality_gate.md."
       ],
-      "git_commit": "ff92bfbcb48e5b68ccefdd63311d0cc146f5c460",
-      "creation_timestamp": "2026-09-12T20:38:54.814983+00:00"
+      "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
+      "creation_timestamp": "2026-09-12T22:13:50.268385+00:00"
     },
     {
       "artifact_id": "literature_comparison_matrix",
@@ -294,8 +294,8 @@
       "limitations": [
         "Only CASE A (Cuypers/Rutten/Hogeweg-inspired) is included this round; CASE B/C/D were not re-run at evidence-package scale this session \u2014 see docs/final_research_quality_gate.md."
       ],
-      "git_commit": "ff92bfbcb48e5b68ccefdd63311d0cc146f5c460",
-      "creation_timestamp": "2026-09-12T20:38:54.814990+00:00"
+      "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
+      "creation_timestamp": "2026-09-12T22:13:50.268392+00:00"
     },
     {
       "artifact_id": "rq8_discovery",
@@ -321,8 +321,8 @@
       "limitations": [
         "Proposed follow-up experiments were generated but NOT executed this session \u2014 they remain proposals, not confirmatory results."
       ],
-      "git_commit": "ff92bfbcb48e5b68ccefdd63311d0cc146f5c460",
-      "creation_timestamp": "2026-09-12T20:38:54.816669+00:00"
+      "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
+      "creation_timestamp": "2026-09-12T22:13:50.270100+00:00"
     },
     {
       "artifact_id": "rq7_boundary_sweep",
@@ -346,8 +346,8 @@
       "limitations": [
         "Only 3 period values tested with 4 seeds each \u2014 a coarse sweep, not a continuous response surface."
       ],
-      "git_commit": "ff92bfbcb48e5b68ccefdd63311d0cc146f5c460",
-      "creation_timestamp": "2026-09-12T20:39:05.632419+00:00"
+      "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
+      "creation_timestamp": "2026-09-12T22:14:00.911039+00:00"
     },
     {
       "artifact_id": "rq2_robustness_evolvability",
@@ -378,8 +378,8 @@
       "limitations": [
         "One representative sampled genotype per seed, not a full evolved population per seed; a small n_genomes limits statistical power."
       ],
-      "git_commit": "ff92bfbcb48e5b68ccefdd63311d0cc146f5c460",
-      "creation_timestamp": "2026-09-12T20:39:05.992966+00:00"
+      "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
+      "creation_timestamp": "2026-09-12T22:14:01.261158+00:00"
     },
     {
       "artifact_id": "robustness_vs_evolvability",
@@ -408,8 +408,8 @@
       "config_hash": "7c1a8edf1fbf85c5",
       "relative_path": "figures/robustness_vs_evolvability.png",
       "limitations": [],
-      "git_commit": "ff92bfbcb48e5b68ccefdd63311d0cc146f5c460",
-      "creation_timestamp": "2026-09-12T20:39:06.133733+00:00"
+      "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
+      "creation_timestamp": "2026-09-12T22:14:01.387757+00:00"
     },
     {
       "artifact_id": "robustness_vs_evolvability_metadata",
@@ -438,8 +438,8 @@
       "config_hash": "7c1a8edf1fbf85c5",
       "relative_path": "figures/robustness_vs_evolvability.json",
       "limitations": [],
-      "git_commit": "ff92bfbcb48e5b68ccefdd63311d0cc146f5c460",
-      "creation_timestamp": "2026-09-12T20:39:06.133761+00:00"
+      "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
+      "creation_timestamp": "2026-09-12T22:14:01.387783+00:00"
     },
     {
       "artifact_id": "rq4_ecology",
@@ -467,395 +467,15 @@
       "limitations": [
         "Isolated (discrete-generation, one-organism-per-episode) and shared (continuous, multi-agent) conditions use different simulation engines; final genotypic_diversity is the one metric directly comparable across both, per experiments/exp1_isolated_vs_shared.py's own docstring."
       ],
-      "git_commit": "ff92bfbcb48e5b68ccefdd63311d0cc146f5c460",
-      "creation_timestamp": "2026-09-12T20:39:12.844248+00:00"
+      "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
+      "creation_timestamp": "2026-09-12T22:14:08.080900+00:00"
     },
     {
-      "artifact_id": "research_question_matrix",
-      "artifact_type": "table",
-      "research_question": "ALL",
-      "experiment_id": "research_question_matrix",
-      "condition": "all",
-      "seed_set": [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        100,
-        101,
-        102,
-        103
-      ],
-      "source_data": "genevra.evidence.research_question (aggregated across all RQs)",
-      "metric_ids": [],
-      "analysis_version": "genevra.evidence.build.v1",
-      "config_hash": "201edb6064c01352",
-      "relative_path": "tables/research_question_matrix.csv",
-      "limitations": [],
-      "git_commit": "ff92bfbcb48e5b68ccefdd63311d0cc146f5c460",
-      "creation_timestamp": "2026-09-12T20:39:12.847626+00:00"
-    },
-    {
-      "artifact_id": "research_question_matrix",
-      "artifact_type": "table",
-      "research_question": "ALL",
-      "experiment_id": "research_question_matrix",
-      "condition": "all",
-      "seed_set": [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        100,
-        101,
-        102,
-        103
-      ],
-      "source_data": "genevra.evidence.research_question (aggregated across all RQs)",
-      "metric_ids": [],
-      "analysis_version": "genevra.evidence.build.v1",
-      "config_hash": "201edb6064c01352",
-      "relative_path": "tables/research_question_matrix.md",
-      "limitations": [],
-      "git_commit": "ff92bfbcb48e5b68ccefdd63311d0cc146f5c460",
-      "creation_timestamp": "2026-09-12T20:39:12.847640+00:00"
-    },
-    {
-      "artifact_id": "negative_and_inconclusive_results",
-      "artifact_type": "report",
-      "research_question": "ALL",
-      "experiment_id": "negative_and_inconclusive_results",
-      "condition": "all",
-      "seed_set": [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        100,
-        101,
-        102,
-        103
-      ],
-      "source_data": "genevra.evidence.research_question (aggregated across all RQs)",
-      "metric_ids": [],
-      "analysis_version": "genevra.evidence.build.v1",
-      "config_hash": "201edb6064c01352",
-      "relative_path": "reports/negative_and_inconclusive_results.md",
-      "limitations": [],
-      "git_commit": "ff92bfbcb48e5b68ccefdd63311d0cc146f5c460",
-      "creation_timestamp": "2026-09-12T20:39:12.847650+00:00"
-    },
-    {
-      "artifact_id": "RQ1_report",
-      "artifact_type": "report",
-      "research_question": "RQ1",
-      "experiment_id": "case_a_v1_period20",
-      "condition": "no_learning; evolvable_learning",
-      "seed_set": [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        100,
-        101,
-        102,
-        103
-      ],
-      "source_data": "genevra.evidence.research_question",
-      "metric_ids": [
-        "genotypic_diversity"
-      ],
-      "analysis_version": "genevra.evidence.build.v1",
-      "config_hash": "03e1c6ac98563a53",
-      "relative_path": "reports/RQ1.md",
-      "limitations": [],
-      "git_commit": "ff92bfbcb48e5b68ccefdd63311d0cc146f5c460",
-      "creation_timestamp": "2026-09-12T20:39:12.847659+00:00"
-    },
-    {
-      "artifact_id": "RQ3_report",
-      "artifact_type": "report",
-      "research_question": "RQ3",
-      "experiment_id": "case_a_v1_period20",
-      "condition": "evolvable_learning",
-      "seed_set": [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        100,
-        101,
-        102,
-        103
-      ],
-      "source_data": "genevra.evidence.research_question",
-      "metric_ids": [
-        "instantaneous_novelty"
-      ],
-      "analysis_version": "genevra.evidence.build.v1",
-      "config_hash": "f0b21e75779608fd",
-      "relative_path": "reports/RQ3.md",
-      "limitations": [],
-      "git_commit": "ff92bfbcb48e5b68ccefdd63311d0cc146f5c460",
-      "creation_timestamp": "2026-09-12T20:39:12.847668+00:00"
-    },
-    {
-      "artifact_id": "RQ5_report",
-      "artifact_type": "report",
-      "research_question": "RQ5",
-      "experiment_id": "case_a_v1_period20",
-      "condition": "evolvable_learning",
-      "seed_set": [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        100,
-        101,
-        102,
-        103
-      ],
-      "source_data": "genevra.evidence.research_question",
-      "metric_ids": [
-        "final_mean_pairwise_strategy_distance"
-      ],
-      "analysis_version": "genevra.evidence.build.v1",
-      "config_hash": "b806a1efd1d9cd28",
-      "relative_path": "reports/RQ5.md",
-      "limitations": [],
-      "git_commit": "ff92bfbcb48e5b68ccefdd63311d0cc146f5c460",
-      "creation_timestamp": "2026-09-12T20:39:12.847676+00:00"
-    },
-    {
-      "artifact_id": "RQ6_report",
-      "artifact_type": "report",
-      "research_question": "RQ6",
-      "experiment_id": "case_a_v1_period20",
-      "condition": "no_learning; evolvable_learning",
-      "seed_set": [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        100,
-        101,
-        102,
-        103
-      ],
-      "source_data": "genevra.evidence.research_question",
-      "metric_ids": [
-        "genotypic_diversity"
-      ],
-      "analysis_version": "genevra.evidence.build.v1",
-      "config_hash": "002ff5bd36575210",
-      "relative_path": "reports/RQ6.md",
-      "limitations": [],
-      "git_commit": "ff92bfbcb48e5b68ccefdd63311d0cc146f5c460",
-      "creation_timestamp": "2026-09-12T20:39:12.847684+00:00"
-    },
-    {
-      "artifact_id": "RQ8_report",
-      "artifact_type": "report",
-      "research_question": "RQ8",
-      "experiment_id": "case_a_v1_period20",
-      "condition": "evolvable_learning",
-      "seed_set": [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        100,
-        101,
-        102,
-        103
-      ],
-      "source_data": "genevra.evidence.research_question",
-      "metric_ids": [
-        "n_recurring_hypotheses"
-      ],
-      "analysis_version": "genevra.evidence.build.v1",
-      "config_hash": "25c008979c877cf8",
-      "relative_path": "reports/RQ8.md",
-      "limitations": [],
-      "git_commit": "ff92bfbcb48e5b68ccefdd63311d0cc146f5c460",
-      "creation_timestamp": "2026-09-12T20:39:12.847691+00:00"
-    },
-    {
-      "artifact_id": "RQ7_report",
-      "artifact_type": "report",
-      "research_question": "RQ7",
-      "experiment_id": "case_a_boundary_sweep",
-      "condition": "period=10; period=20; period=40",
-      "seed_set": [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        100,
-        101,
-        102,
-        103
-      ],
-      "source_data": "genevra.evidence.research_question",
-      "metric_ids": [
-        "genotypic_diversity"
-      ],
-      "analysis_version": "genevra.evidence.build.v1",
-      "config_hash": "4413d0c72086b066",
-      "relative_path": "reports/RQ7.md",
-      "limitations": [],
-      "git_commit": "ff92bfbcb48e5b68ccefdd63311d0cc146f5c460",
-      "creation_timestamp": "2026-09-12T20:39:12.847699+00:00"
-    },
-    {
-      "artifact_id": "RQ2_report",
-      "artifact_type": "report",
-      "research_question": "RQ2",
-      "experiment_id": "rq2_robustness_evolvability",
-      "condition": "n/a: correlational design, not conditions",
-      "seed_set": [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        100,
-        101,
-        102,
-        103
-      ],
-      "source_data": "genevra.evidence.research_question",
-      "metric_ids": [
-        "evolvability_mean_behavioral_distance"
-      ],
-      "analysis_version": "genevra.evidence.build.v1",
-      "config_hash": "92a1b9ce2cdafddf",
-      "relative_path": "reports/RQ2.md",
-      "limitations": [],
-      "git_commit": "ff92bfbcb48e5b68ccefdd63311d0cc146f5c460",
-      "creation_timestamp": "2026-09-12T20:39:12.847706+00:00"
-    },
-    {
-      "artifact_id": "RQ4_report",
-      "artifact_type": "report",
-      "research_question": "RQ4",
-      "experiment_id": "exp1_isolated_vs_shared",
-      "condition": "isolated; shared",
-      "seed_set": [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        100,
-        101,
-        102,
-        103
-      ],
-      "source_data": "genevra.evidence.research_question",
-      "metric_ids": [
-        "genotypic_diversity"
-      ],
-      "analysis_version": "genevra.evidence.build.v1",
-      "config_hash": "706c21a325960602",
-      "relative_path": "reports/RQ4.md",
-      "limitations": [],
-      "git_commit": "ff92bfbcb48e5b68ccefdd63311d0cc146f5c460",
-      "creation_timestamp": "2026-09-12T20:39:12.847713+00:00"
-    },
-    {
-      "artifact_id": "rq4_corrected_analysis_plan",
-      "artifact_type": "config",
-      "research_question": "RQ4b",
-      "experiment_id": "exp_ecology_corrected",
-      "condition": "both",
-      "seed_set": [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20,
-        21,
-        22,
-        23
-      ],
-      "source_data": "genevra.campaign.config.AnalysisPlan",
-      "metric_ids": [
-        "genotypic_diversity"
-      ],
-      "analysis_version": "genevra.campaign.config.v1",
-      "config_hash": "c9c034e98cb39afd",
-      "relative_path": "configurations/rq4_corrected_analysis_plan.json",
-      "limitations": [
-        "Frozen before experiment execution; confirmatory."
-      ],
-      "git_commit": "40a551ecdd570926989af832f33e340b304782ed",
-      "creation_timestamp": "2026-09-12T21:33:08.003100+00:00"
-    },
-    {
-      "artifact_id": "rq4b_raw",
+      "artifact_id": "rq4_corrected",
       "artifact_type": "data",
       "research_question": "RQ4b",
       "experiment_id": "exp_ecology_corrected",
-      "condition": "both",
+      "condition": "minimal_competition_vs_shared_competition",
       "seed_set": [
         0,
         1,
@@ -886,82 +506,21 @@
       "metric_ids": [
         "genotypic_diversity"
       ],
-      "analysis_version": "exp_ecology_corrected.v1",
-      "config_hash": "c9c034e98cb39afd",
-      "relative_path": "statistics/rq4b_raw.json",
-      "limitations": [],
-      "git_commit": "40a551ecdd570926989af832f33e340b304782ed",
-      "creation_timestamp": "2026-09-12T21:33:08.021633+00:00"
-    },
-    {
-      "artifact_id": "rq4_corrected_statistics",
-      "artifact_type": "data",
-      "research_question": "RQ4b",
-      "experiment_id": "exp_ecology_corrected",
-      "condition": "both",
-      "seed_set": [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20,
-        21,
-        22,
-        23
-      ],
-      "source_data": "genevra.analysis.aggregation (permutation_test, cohens_d, bootstrap_confidence_interval), genevra.population_analysis.replication_consistency",
-      "metric_ids": [
-        "genotypic_diversity"
-      ],
-      "analysis_version": "genevra.analysis.aggregation.v1",
-      "config_hash": "c9c034e98cb39afd",
+      "analysis_version": "genevra.evidence.build.v1",
+      "config_hash": "51abcf8213910675",
       "relative_path": "statistics/rq4_corrected.json",
-      "limitations": [],
-      "git_commit": "40a551ecdd570926989af832f33e340b304782ed",
-      "creation_timestamp": "2026-09-12T21:33:08.038551+00:00"
-    },
-    {
-      "artifact_id": "rq_family_fdr",
-      "artifact_type": "data",
-      "research_question": "RQ1_RQ6_RQ4b",
-      "experiment_id": "confirmatory_rq_family_v1",
-      "condition": "both",
-      "seed_set": [],
-      "source_data": "genevra.campaign.multiple_comparison.build_multiple_comparison_registry",
-      "metric_ids": [
-        "genotypic_diversity"
-      ],
-      "analysis_version": "genevra.discovery.multiple_testing.benjamini_hochberg",
-      "config_hash": "aaf0bf6dc46d737d",
-      "relative_path": "statistics/rq_family_fdr.json",
       "limitations": [
-        "Family membership rationale documented inline in the file."
+        "Same engine/architecture/config for both conditions; only resource_a_density varies. n=24 per condition at full scale is well-powered relative to this project's other results, but only one manipulated parameter and one metric were tested."
       ],
-      "git_commit": "40a551ecdd570926989af832f33e340b304782ed",
-      "creation_timestamp": "2026-09-12T21:33:08.055517+00:00"
+      "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
+      "creation_timestamp": "2026-09-12T22:14:31.638180+00:00"
     },
     {
       "artifact_id": "rq4b_seed_level_diversity",
       "artifact_type": "figure",
       "research_question": "RQ4b",
       "experiment_id": "exp_ecology_corrected",
-      "condition": "both",
+      "condition": "minimal_competition_vs_shared_competition",
       "seed_set": [
         0,
         1,
@@ -993,208 +552,20 @@
         "genotypic_diversity"
       ],
       "analysis_version": "artifacts.figures.v1",
-      "config_hash": "c9c034e98cb39afd",
+      "config_hash": "51abcf8213910675",
       "relative_path": "figures/rq4b_seed_level_diversity.png",
-      "limitations": [],
-      "git_commit": "40a551ecdd570926989af832f33e340b304782ed",
-      "creation_timestamp": "2026-09-12T21:33:08.072166+00:00"
-    },
-    {
-      "artifact_id": "rq4b_effect_size_forest",
-      "artifact_type": "figure",
-      "research_question": "RQ4b",
-      "experiment_id": "exp_ecology_corrected",
-      "condition": "both",
-      "seed_set": [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20,
-        21,
-        22,
-        23
+      "limitations": [
+        "Small horizontal jitter added only for visual separation; it carries no data."
       ],
-      "source_data": "research_evidence/statistics/rq4_corrected.json",
-      "metric_ids": [
-        "genotypic_diversity"
-      ],
-      "analysis_version": "artifacts.figures.v1",
-      "config_hash": "c9c034e98cb39afd",
-      "relative_path": "figures/effect_size_forest.png",
-      "limitations": [],
-      "git_commit": "40a551ecdd570926989af832f33e340b304782ed",
-      "creation_timestamp": "2026-09-12T21:33:08.088935+00:00"
-    },
-    {
-      "artifact_id": "rq4b_replication_consistency",
-      "artifact_type": "figure",
-      "research_question": "RQ4b",
-      "experiment_id": "exp_ecology_corrected",
-      "condition": "both",
-      "seed_set": [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20,
-        21,
-        22,
-        23
-      ],
-      "source_data": "research_evidence/statistics/rq4_corrected.json",
-      "metric_ids": [
-        "genotypic_diversity"
-      ],
-      "analysis_version": "artifacts.figures.v1",
-      "config_hash": "c9c034e98cb39afd",
-      "relative_path": "figures/replication_consistency.png",
-      "limitations": [],
-      "git_commit": "40a551ecdd570926989af832f33e340b304782ed",
-      "creation_timestamp": "2026-09-12T21:33:08.104816+00:00"
-    },
-    {
-      "artifact_id": "rq4b_research_question",
-      "artifact_type": "data",
-      "research_question": "RQ4b",
-      "experiment_id": "exp_ecology_corrected",
-      "condition": "both",
-      "seed_set": [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20,
-        21,
-        22,
-        23
-      ],
-      "source_data": "research_evidence/statistics/rq4_corrected.json",
-      "metric_ids": [
-        "genotypic_diversity"
-      ],
-      "analysis_version": "genevra.evidence.research_question.v1",
-      "config_hash": "c9c034e98cb39afd",
-      "relative_path": "research_questions/RQ4b.json",
-      "limitations": [],
-      "git_commit": "40a551ecdd570926989af832f33e340b304782ed",
-      "creation_timestamp": "2026-09-12T21:33:08.120620+00:00"
-    },
-    {
-      "artifact_id": "rq4b_report",
-      "artifact_type": "report",
-      "research_question": "RQ4b",
-      "experiment_id": "exp_ecology_corrected",
-      "condition": "both",
-      "seed_set": [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13,
-        14,
-        15,
-        16,
-        17,
-        18,
-        19,
-        20,
-        21,
-        22,
-        23
-      ],
-      "source_data": "research_evidence/research_questions/RQ4b.json",
-      "metric_ids": [
-        "genotypic_diversity"
-      ],
-      "analysis_version": "genevra.evidence.build.v1",
-      "config_hash": "c9c034e98cb39afd",
-      "relative_path": "reports/RQ4b.md",
-      "limitations": [],
-      "git_commit": "40a551ecdd570926989af832f33e340b304782ed",
-      "creation_timestamp": "2026-09-12T21:33:08.136724+00:00"
-    },
-    {
-      "artifact_id": "rq4_historical_vs_corrected_table",
-      "artifact_type": "table",
-      "research_question": "RQ4_RQ4b",
-      "experiment_id": "exp1_isolated_vs_shared_and_exp_ecology_corrected",
-      "condition": "both",
-      "seed_set": [],
-      "source_data": "research_evidence/research_questions/RQ4.json, research_evidence/statistics/rq4_corrected.json",
-      "metric_ids": [
-        "genotypic_diversity"
-      ],
-      "analysis_version": "manual.v1",
-      "config_hash": "cda632c4c3553a8c",
-      "relative_path": "tables/rq4_historical_vs_corrected.md",
-      "limitations": [],
-      "git_commit": "40a551ecdd570926989af832f33e340b304782ed",
-      "creation_timestamp": "2026-09-12T21:33:08.152888+00:00"
+      "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
+      "creation_timestamp": "2026-09-12T22:14:31.945799+00:00"
     },
     {
       "artifact_id": "rq4b_seed_level_diversity_metadata",
       "artifact_type": "figure",
       "research_question": "RQ4b",
       "experiment_id": "exp_ecology_corrected",
-      "condition": "both",
+      "condition": "minimal_competition_vs_shared_competition",
       "seed_set": [
         0,
         1,
@@ -1226,18 +597,18 @@
         "genotypic_diversity"
       ],
       "analysis_version": "artifacts.figures.v1",
-      "config_hash": "c9c034e98cb39afd",
+      "config_hash": "51abcf8213910675",
       "relative_path": "figures/rq4b_seed_level_diversity.json",
       "limitations": [],
-      "git_commit": "40a551ecdd570926989af832f33e340b304782ed",
-      "creation_timestamp": "2026-09-12T21:33:27.172244+00:00"
+      "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
+      "creation_timestamp": "2026-09-12T22:14:31.945826+00:00"
     },
     {
-      "artifact_id": "rq4b_effect_size_forest_metadata",
+      "artifact_id": "effect_size_forest",
       "artifact_type": "figure",
       "research_question": "RQ4b",
       "experiment_id": "exp_ecology_corrected",
-      "condition": "both",
+      "condition": "minimal_competition_vs_shared_competition",
       "seed_set": [
         0,
         1,
@@ -1264,23 +635,68 @@
         22,
         23
       ],
-      "source_data": "research_evidence/statistics/rq4_corrected.json",
+      "source_data": "genevra.analysis.aggregation effect-size/bootstrap results",
       "metric_ids": [
         "genotypic_diversity"
       ],
       "analysis_version": "artifacts.figures.v1",
-      "config_hash": "c9c034e98cb39afd",
+      "config_hash": "51abcf8213910675",
+      "relative_path": "figures/effect_size_forest.png",
+      "limitations": [
+        "A point with no drawn interval means the interval could not be computed, not that it is zero-width."
+      ],
+      "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
+      "creation_timestamp": "2026-09-12T22:14:31.945838+00:00"
+    },
+    {
+      "artifact_id": "effect_size_forest_metadata",
+      "artifact_type": "figure",
+      "research_question": "RQ4b",
+      "experiment_id": "exp_ecology_corrected",
+      "condition": "minimal_competition_vs_shared_competition",
+      "seed_set": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "source_data": "genevra.analysis.aggregation effect-size/bootstrap results",
+      "metric_ids": [
+        "genotypic_diversity"
+      ],
+      "analysis_version": "artifacts.figures.v1",
+      "config_hash": "51abcf8213910675",
       "relative_path": "figures/effect_size_forest.json",
       "limitations": [],
-      "git_commit": "40a551ecdd570926989af832f33e340b304782ed",
-      "creation_timestamp": "2026-09-12T21:33:27.188735+00:00"
+      "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
+      "creation_timestamp": "2026-09-12T22:14:31.945844+00:00"
     },
     {
-      "artifact_id": "rq4b_replication_consistency_metadata",
+      "artifact_id": "replication_consistency",
       "artifact_type": "figure",
       "research_question": "RQ4b",
       "experiment_id": "exp_ecology_corrected",
-      "condition": "both",
+      "condition": "minimal_competition_vs_shared_competition",
       "seed_set": [
         0,
         1,
@@ -1307,23 +723,25 @@
         22,
         23
       ],
-      "source_data": "research_evidence/statistics/rq4_corrected.json",
+      "source_data": "ReplicationConsistencyReport.per_seed_effect",
       "metric_ids": [
         "genotypic_diversity"
       ],
       "analysis_version": "artifacts.figures.v1",
-      "config_hash": "c9c034e98cb39afd",
-      "relative_path": "figures/replication_consistency.json",
-      "limitations": [],
-      "git_commit": "40a551ecdd570926989af832f33e340b304782ed",
-      "creation_timestamp": "2026-09-12T21:33:27.205231+00:00"
+      "config_hash": "51abcf8213910675",
+      "relative_path": "figures/replication_consistency.png",
+      "limitations": [
+        "Each point is one independent seed's own effect estimate; this plot shows sign/magnitude agreement across seeds, not a pooled significance test."
+      ],
+      "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
+      "creation_timestamp": "2026-09-12T22:14:31.945848+00:00"
     },
     {
-      "artifact_id": "rq4b_seeds",
-      "artifact_type": "seeds",
+      "artifact_id": "replication_consistency_metadata",
+      "artifact_type": "figure",
       "research_question": "RQ4b",
       "experiment_id": "exp_ecology_corrected",
-      "condition": "both",
+      "condition": "minimal_competition_vs_shared_competition",
       "seed_set": [
         0,
         1,
@@ -1350,14 +768,470 @@
         22,
         23
       ],
-      "source_data": "experiments/exp_ecology_corrected.py --seeds 0..23",
-      "metric_ids": [],
-      "analysis_version": "n/a",
-      "config_hash": "33d8962ae0756da1",
-      "relative_path": "seeds/rq4b_seeds.json",
+      "source_data": "ReplicationConsistencyReport.per_seed_effect",
+      "metric_ids": [
+        "genotypic_diversity"
+      ],
+      "analysis_version": "artifacts.figures.v1",
+      "config_hash": "51abcf8213910675",
+      "relative_path": "figures/replication_consistency.json",
       "limitations": [],
-      "git_commit": "40a551ecdd570926989af832f33e340b304782ed",
-      "creation_timestamp": "2026-09-12T21:33:57.775492+00:00"
+      "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
+      "creation_timestamp": "2026-09-12T22:14:31.945852+00:00"
+    },
+    {
+      "artifact_id": "rq_family_fdr",
+      "artifact_type": "data",
+      "research_question": "RQ4b",
+      "experiment_id": "rq_family_fdr",
+      "condition": "all",
+      "seed_set": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "source_data": "genevra.campaign.multiple_comparison.build_multiple_comparison_registry",
+      "metric_ids": [
+        "genotypic_diversity"
+      ],
+      "analysis_version": "genevra.discovery.multiple_testing.v1",
+      "config_hash": "aaf0bf6dc46d737d",
+      "relative_path": "statistics/rq_family_fdr.json",
+      "limitations": [
+        "A 2-test confirmatory family; see family_membership_rationale in the file itself for exactly which tests are included and why."
+      ],
+      "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
+      "creation_timestamp": "2026-09-12T22:14:31.946193+00:00"
+    },
+    {
+      "artifact_id": "rq4_historical_vs_corrected",
+      "artifact_type": "table",
+      "research_question": "RQ4b",
+      "experiment_id": "rq4_historical_vs_corrected",
+      "condition": "all",
+      "seed_set": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "source_data": "statistics/rq4_ecology.json, statistics/rq4_corrected.json",
+      "metric_ids": [
+        "genotypic_diversity"
+      ],
+      "analysis_version": "genevra.evidence.build.v1",
+      "config_hash": "cda632c4c3553a8c",
+      "relative_path": "tables/rq4_historical_vs_corrected.md",
+      "limitations": [],
+      "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
+      "creation_timestamp": "2026-09-12T22:14:31.946368+00:00"
+    },
+    {
+      "artifact_id": "research_question_matrix",
+      "artifact_type": "table",
+      "research_question": "ALL",
+      "experiment_id": "research_question_matrix",
+      "condition": "all",
+      "seed_set": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        100,
+        101,
+        102,
+        103
+      ],
+      "source_data": "genevra.evidence.research_question (aggregated across all RQs)",
+      "metric_ids": [],
+      "analysis_version": "genevra.evidence.build.v1",
+      "config_hash": "328152d1cc46fe32",
+      "relative_path": "tables/research_question_matrix.csv",
+      "limitations": [],
+      "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
+      "creation_timestamp": "2026-09-12T22:14:31.949692+00:00"
+    },
+    {
+      "artifact_id": "research_question_matrix",
+      "artifact_type": "table",
+      "research_question": "ALL",
+      "experiment_id": "research_question_matrix",
+      "condition": "all",
+      "seed_set": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        100,
+        101,
+        102,
+        103
+      ],
+      "source_data": "genevra.evidence.research_question (aggregated across all RQs)",
+      "metric_ids": [],
+      "analysis_version": "genevra.evidence.build.v1",
+      "config_hash": "328152d1cc46fe32",
+      "relative_path": "tables/research_question_matrix.md",
+      "limitations": [],
+      "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
+      "creation_timestamp": "2026-09-12T22:14:31.949703+00:00"
+    },
+    {
+      "artifact_id": "negative_and_inconclusive_results",
+      "artifact_type": "report",
+      "research_question": "ALL",
+      "experiment_id": "negative_and_inconclusive_results",
+      "condition": "all",
+      "seed_set": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        100,
+        101,
+        102,
+        103
+      ],
+      "source_data": "genevra.evidence.research_question (aggregated across all RQs)",
+      "metric_ids": [],
+      "analysis_version": "genevra.evidence.build.v1",
+      "config_hash": "328152d1cc46fe32",
+      "relative_path": "reports/negative_and_inconclusive_results.md",
+      "limitations": [],
+      "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
+      "creation_timestamp": "2026-09-12T22:14:31.949713+00:00"
+    },
+    {
+      "artifact_id": "RQ1_report",
+      "artifact_type": "report",
+      "research_question": "RQ1",
+      "experiment_id": "case_a_v1_period20",
+      "condition": "no_learning; evolvable_learning",
+      "seed_set": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        100,
+        101,
+        102,
+        103
+      ],
+      "source_data": "genevra.evidence.research_question",
+      "metric_ids": [
+        "genotypic_diversity"
+      ],
+      "analysis_version": "genevra.evidence.build.v1",
+      "config_hash": "03e1c6ac98563a53",
+      "relative_path": "reports/RQ1.md",
+      "limitations": [],
+      "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
+      "creation_timestamp": "2026-09-12T22:14:31.949722+00:00"
+    },
+    {
+      "artifact_id": "RQ3_report",
+      "artifact_type": "report",
+      "research_question": "RQ3",
+      "experiment_id": "case_a_v1_period20",
+      "condition": "evolvable_learning",
+      "seed_set": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        100,
+        101,
+        102,
+        103
+      ],
+      "source_data": "genevra.evidence.research_question",
+      "metric_ids": [
+        "instantaneous_novelty"
+      ],
+      "analysis_version": "genevra.evidence.build.v1",
+      "config_hash": "f0b21e75779608fd",
+      "relative_path": "reports/RQ3.md",
+      "limitations": [],
+      "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
+      "creation_timestamp": "2026-09-12T22:14:31.949733+00:00"
+    },
+    {
+      "artifact_id": "RQ5_report",
+      "artifact_type": "report",
+      "research_question": "RQ5",
+      "experiment_id": "case_a_v1_period20",
+      "condition": "evolvable_learning",
+      "seed_set": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        100,
+        101,
+        102,
+        103
+      ],
+      "source_data": "genevra.evidence.research_question",
+      "metric_ids": [
+        "final_mean_pairwise_strategy_distance"
+      ],
+      "analysis_version": "genevra.evidence.build.v1",
+      "config_hash": "b806a1efd1d9cd28",
+      "relative_path": "reports/RQ5.md",
+      "limitations": [],
+      "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
+      "creation_timestamp": "2026-09-12T22:14:31.949741+00:00"
+    },
+    {
+      "artifact_id": "RQ6_report",
+      "artifact_type": "report",
+      "research_question": "RQ6",
+      "experiment_id": "case_a_v1_period20",
+      "condition": "no_learning; evolvable_learning",
+      "seed_set": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        100,
+        101,
+        102,
+        103
+      ],
+      "source_data": "genevra.evidence.research_question",
+      "metric_ids": [
+        "genotypic_diversity"
+      ],
+      "analysis_version": "genevra.evidence.build.v1",
+      "config_hash": "002ff5bd36575210",
+      "relative_path": "reports/RQ6.md",
+      "limitations": [],
+      "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
+      "creation_timestamp": "2026-09-12T22:14:31.949748+00:00"
+    },
+    {
+      "artifact_id": "RQ8_report",
+      "artifact_type": "report",
+      "research_question": "RQ8",
+      "experiment_id": "case_a_v1_period20",
+      "condition": "evolvable_learning",
+      "seed_set": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        100,
+        101,
+        102,
+        103
+      ],
+      "source_data": "genevra.evidence.research_question",
+      "metric_ids": [
+        "n_recurring_hypotheses"
+      ],
+      "analysis_version": "genevra.evidence.build.v1",
+      "config_hash": "25c008979c877cf8",
+      "relative_path": "reports/RQ8.md",
+      "limitations": [],
+      "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
+      "creation_timestamp": "2026-09-12T22:14:31.949755+00:00"
+    },
+    {
+      "artifact_id": "RQ7_report",
+      "artifact_type": "report",
+      "research_question": "RQ7",
+      "experiment_id": "case_a_boundary_sweep",
+      "condition": "period=10; period=20; period=40",
+      "seed_set": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        100,
+        101,
+        102,
+        103
+      ],
+      "source_data": "genevra.evidence.research_question",
+      "metric_ids": [
+        "genotypic_diversity"
+      ],
+      "analysis_version": "genevra.evidence.build.v1",
+      "config_hash": "4413d0c72086b066",
+      "relative_path": "reports/RQ7.md",
+      "limitations": [],
+      "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
+      "creation_timestamp": "2026-09-12T22:14:31.949761+00:00"
+    },
+    {
+      "artifact_id": "RQ2_report",
+      "artifact_type": "report",
+      "research_question": "RQ2",
+      "experiment_id": "rq2_robustness_evolvability",
+      "condition": "n/a: correlational design, not conditions",
+      "seed_set": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        100,
+        101,
+        102,
+        103
+      ],
+      "source_data": "genevra.evidence.research_question",
+      "metric_ids": [
+        "evolvability_mean_behavioral_distance"
+      ],
+      "analysis_version": "genevra.evidence.build.v1",
+      "config_hash": "92a1b9ce2cdafddf",
+      "relative_path": "reports/RQ2.md",
+      "limitations": [],
+      "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
+      "creation_timestamp": "2026-09-12T22:14:31.949769+00:00"
+    },
+    {
+      "artifact_id": "RQ4_report",
+      "artifact_type": "report",
+      "research_question": "RQ4",
+      "experiment_id": "exp1_isolated_vs_shared",
+      "condition": "isolated; shared",
+      "seed_set": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        100,
+        101,
+        102,
+        103
+      ],
+      "source_data": "genevra.evidence.research_question",
+      "metric_ids": [
+        "genotypic_diversity"
+      ],
+      "analysis_version": "genevra.evidence.build.v1",
+      "config_hash": "706c21a325960602",
+      "relative_path": "reports/RQ4.md",
+      "limitations": [],
+      "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
+      "creation_timestamp": "2026-09-12T22:14:31.949775+00:00"
+    },
+    {
+      "artifact_id": "RQ4b_report",
+      "artifact_type": "report",
+      "research_question": "RQ4b",
+      "experiment_id": "exp_ecology_corrected",
+      "condition": "minimal_competition; shared_competition",
+      "seed_set": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        100,
+        101,
+        102,
+        103
+      ],
+      "source_data": "genevra.evidence.research_question",
+      "metric_ids": [
+        "genotypic_diversity"
+      ],
+      "analysis_version": "genevra.evidence.build.v1",
+      "config_hash": "641254a280318024",
+      "relative_path": "reports/RQ4b.md",
+      "limitations": [],
+      "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
+      "creation_timestamp": "2026-09-12T22:14:31.949782+00:00"
     }
   ]
 }
