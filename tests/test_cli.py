@@ -222,3 +222,99 @@ def test_activity_command_prints_summary(tmp_path, capsys) -> None:
     assert exit_code == 0
     captured = capsys.readouterr()
     assert "lineage_persistence=" in captured.out
+
+
+def test_robustness_command_prints_dimensions(capsys) -> None:
+    exit_code = main(["robustness", "--seed", "0", "--num-samples", "2"])
+    assert exit_code == 0
+    captured = capsys.readouterr()
+    assert "genetic: mean=" in captured.out
+    assert "behavioral: mean=" in captured.out
+
+
+def test_robustness_command_writes_json_output(tmp_path) -> None:
+    output_path = tmp_path / "robustness.json"
+    exit_code = main(
+        ["robustness", "--seed", "0", "--num-samples", "2", "--output", str(output_path)]
+    )
+    assert exit_code == 0
+    data = json.loads(output_path.read_text())
+    assert "genetic" in data
+
+
+def test_generalization_command_prints_categories(capsys) -> None:
+    exit_code = main(["generalization", "--seed", "0"])
+    assert exit_code == 0
+    captured = capsys.readouterr()
+    assert "train_fitness=" in captured.out
+    assert "recurrent:" in captured.out
+
+
+def test_analyze_mechanisms_command_prints_report(capsys) -> None:
+    exit_code = main(["analyze-mechanisms", "--seed", "0", "--num-samples", "2"])
+    assert exit_code == 0
+    captured = capsys.readouterr()
+    assert "Evolutionary Mechanisms Report" in captured.out
+    assert "Scientific Note" in captured.out
+
+
+def test_figures_command_writes_expected_files(tmp_path) -> None:
+    result_path = tmp_path / "result.json"
+    main(["run", "--seed", "0", "--output", str(result_path)])
+    figures_dir = tmp_path / "figures"
+    exit_code = main(["figures", str(result_path), "--output-dir", str(figures_dir)])
+    assert exit_code == 0
+    assert (figures_dir / "fitness_trajectory.png").exists()
+    assert (figures_dir / "overview_panel.png").exists()
+
+
+def test_tables_command_writes_csv_and_markdown(tmp_path) -> None:
+    result_path = tmp_path / "result.json"
+    main(["run", "--seed", "0", "--output", str(result_path)])
+    tables_dir = tmp_path / "tables"
+    exit_code = main(["tables", str(result_path), "--output-dir", str(tables_dir)])
+    assert exit_code == 0
+    assert (tables_dir / "experiment_summary.csv").exists()
+    assert (tables_dir / "experiment_summary.md").exists()
+
+
+def test_artifacts_command_writes_full_tree(tmp_path) -> None:
+    result_path = tmp_path / "result.json"
+    main(["run", "--seed", "0", "--output", str(result_path)])
+    artifact_root = tmp_path / "research_artifacts"
+    exit_code = main(["artifacts", str(result_path), "--output-root", str(artifact_root)])
+    assert exit_code == 0
+    experiment_dirs = list(artifact_root.iterdir())
+    assert len(experiment_dirs) == 1
+    assert (experiment_dirs[0] / "reports" / "report.md").exists()
+    assert (experiment_dirs[0] / "provenance" / "provenance.json").exists()
+
+
+def test_report_command_prints_text_by_default(tmp_path, capsys) -> None:
+    result_path = tmp_path / "result.json"
+    main(["run", "--seed", "0", "--output", str(result_path)])
+    exit_code = main(
+        ["report", str(result_path), "--output-root", str(tmp_path / "research_artifacts")]
+    )
+    assert exit_code == 0
+    captured = capsys.readouterr()
+    assert "Scientific-Language Safeguards" in captured.out
+
+
+def test_report_command_writes_json_output(tmp_path) -> None:
+    result_path = tmp_path / "result.json"
+    main(["run", "--seed", "0", "--output", str(result_path)])
+    report_path = tmp_path / "report.json"
+    exit_code = main(
+        [
+            "report",
+            str(result_path),
+            "--output-root",
+            str(tmp_path / "research_artifacts"),
+            "--output",
+            str(report_path),
+        ]
+    )
+    assert exit_code == 0
+    data = json.loads(report_path.read_text())
+    assert data["seeds"] == [0]

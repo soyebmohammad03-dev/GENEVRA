@@ -148,6 +148,26 @@ GENEVRA's lineage and strategy machinery (`genevra open-endedness`,
 section of [`docs/research_questions.md`](docs/research_questions.md) for
 what is established vs. exploratory.
 
+## Evolutionary mechanisms and research artifact lab (Phase 13 + 14)
+
+`genevra.mechanisms` decomposes evolvability into independently-measured
+traits — robustness, plasticity cost, generalization, mutational
+landscape, learning-strategy evolution, regime classification, and a
+causal-chain scaffold (`genevra robustness`, `genevra generalization`,
+`genevra analyze-mechanisms`) — and `genevra.artifacts` generates
+publication-style figures, tables, and a structured, provenance-linked
+`research_artifacts/<experiment_id>/` directory from stored GENEVRA data
+(`genevra figures`, `genevra tables`, `genevra artifacts`,
+`genevra report`). See
+[`docs/evolutionary_mechanisms.md`](docs/evolutionary_mechanisms.md),
+[`docs/robustness_plasticity_evolvability.md`](docs/robustness_plasticity_evolvability.md),
+[`docs/generalization.md`](docs/generalization.md),
+[`docs/figure_system.md`](docs/figure_system.md),
+[`docs/research_artifacts.md`](docs/research_artifacts.md), and the
+"Phase 13 + 14" section of
+[`docs/research_questions.md`](docs/research_questions.md) for what is
+established vs. exploratory.
+
 ## High-level architecture
 
 ```

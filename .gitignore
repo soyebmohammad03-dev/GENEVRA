@@ -36,6 +36,11 @@ results/*
 !results/.gitkeep
 experiments/results/*
 !experiments/results/.gitkeep
+
+# Phase 14 research artifact bundles (figures/tables/reports/raw data) are
+# reproducible generated output, regenerated on demand from a stored
+# ExperimentResult — never committed. See docs/research_artifacts.md.
+research_artifacts/
 *.ckpt
 *.npz
 *.npy

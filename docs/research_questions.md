@@ -222,3 +222,73 @@ are always `None` in the current detector (see `docs/innovation.md`);
 implements only a mean-difference permutation test, so Case C's
 contingency claim (properly about variance across replicate histories)
 is tested via a documented, weaker mean-based proxy.
+
+## Phase 13 + 14: what was added, and what remains exploratory
+
+Phase 13 (`genevra.mechanisms`, see `docs/evolutionary_mechanisms.md`,
+`docs/robustness_plasticity_evolvability.md`, `docs/generalization.md`)
+decomposed "evolvability" into independently-measured traits: genetic/
+behavioral/fitness/environmental robustness distributions
+(`RobustnessAnalyzer`), a robustness-evolvability association function
+that takes no position on direction, plasticity-cost associations scoped
+to what GENEVRA's metabolism model can actually support, a
+`GeneralizationAnalyzer` distinguishing train/recurrent/related-unseen/
+novel environment categories, one-step and sampled two-step mutational-
+landscape characterization, deepened learning-strategy-evolution queries
+(lineage inheritance, environment dependence), quantile-threshold regime
+classification, and a seven-link causal-chain scaffold whose links are
+each tested independently. Phase 14 (`genevra.artifacts`, see
+`docs/figure_system.md` and `docs/research_artifacts.md`) added a
+publication-style figure library (10 of the 20 types the spec lists, with
+the rest documented as skipped and why), CSV/Markdown/LaTeX table
+export, a structured `research_artifacts/<experiment_id>/` directory with
+provenance linking every file to its experiment id/seeds/git commit/
+metric+analysis versions, a research artifact index, and an automated
+report bundle — plus `genevra robustness`/`generalization`/
+`analyze-mechanisms`/`figures`/`tables`/`artifacts`/`report` CLI commands.
+
+**What is scientifically established by these two phases:** the same
+kind of claim as Phase 11/12 — that the measurement and artifact-
+generation *machinery* works end-to-end on real GENEVRA data. A live
+`analyze-mechanisms` run against a freshly-sampled genome produces real
+robustness/generalization/mutational-landscape numbers; a live
+`artifacts` run against a real stored `ExperimentResult` produces real
+non-trivial figure files, tables, and a report whose provenance
+cross-references the same experiment id and seed set
+(`tests/test_artifacts_integration.py`). Nothing about the *content* of
+those numbers — whether GENEVRA's model actually exhibits a
+robustness-evolvability relationship, a plasticity cost, or meaningful
+generalization — has been evaluated at research scale (many seeds, many
+genotypes, many conditions); every Phase 13 analyzer has so far only been
+exercised on single genomes or small pilot samples during development.
+
+**What remains exploratory:**
+
+- Every Phase 13 analyzer operates on one genome (or a small sampled
+  set) at a time; no experiment-matrix-scale run comparing conditions on
+  these mechanisms has been performed.
+- The robustness-evolvability association, and every plasticity-cost
+  association, is reported with no fixed sign or magnitude claim — the
+  actual direction found on any given sample is not evidence of a
+  general GENEVRA-wide relationship until replicated across many
+  independent genotypes/seeds.
+- `canalization_proxy` is a behavioral-stability-across-environments
+  proxy only; GENEVRA has no gene-regulatory-network model, so it cannot
+  speak to canalization in the developmental-biology sense the term
+  usually carries.
+- The figure/table/artifact-bundle system has been exercised on single-
+  run results; multi-seed/multi-condition aggregation into these figures
+  (e.g. an uncertainty band across seeds) is not yet implemented.
+- Ten of the twenty figure types the Phase 14 spec lists are not yet
+  implemented (see `docs/figure_system.md` for the itemized list and
+  reasons) — mostly because the underlying multi-condition/multi-seed
+  data they would plot does not yet exist from a default experiment run.
+
+**Known limitations carried over from this phase's implementation:**
+GENEVRA's `Metabolism` model attaches no cost to a nonzero
+`plasticity_gate`/`learning_rate`, so no metabolic-cost measurement is
+fabricated anywhere in `genevra.mechanisms.plasticity_cost` — only
+correlational costs computable from existing quantities are reported
+(see `docs/robustness_plasticity_evolvability.md`). "Novel" environments
+in `GeneralizationAnalyzer` are parameter shifts within `GridWorldConfig`,
+not a qualitatively different environment class.

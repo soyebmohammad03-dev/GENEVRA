@@ -242,6 +242,84 @@ def _cmd_activity(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_figures(args: argparse.Namespace) -> int:
+    from genevra.artifacts import figures as figure_lib
+
+    with open(args.result_path) as f:
+        data = json.load(f)
+    trajectory = data.get("trajectory") or []
+    if not trajectory:
+        print("empty trajectory: nothing to plot")
+        return 1
+    output_dir = Path(args.output_dir)
+    experiment_id = f"{data.get('name', 'experiment')}_seed{data.get('seed', 0)}"
+    written = [
+        figure_lib.plot_fitness_trajectory(trajectory, output_dir, experiment_id),
+        figure_lib.plot_novelty_trajectory(trajectory, output_dir, experiment_id),
+        figure_lib.plot_diversity_trajectory(trajectory, output_dir, experiment_id),
+        figure_lib.plot_overview_panel(trajectory, output_dir, experiment_id),
+    ]
+    learning_figure = figure_lib.plot_learning_strategy_trajectory(
+        trajectory, output_dir, experiment_id
+    )
+    if learning_figure is not None:
+        written.append(learning_figure)
+    for metadata in written:
+        print(f"wrote {output_dir / metadata.figure_id}.png")
+    return 0
+
+
+def _cmd_tables(args: argparse.Namespace) -> int:
+    from genevra.artifacts.tables import (
+        EXPERIMENT_SUMMARY_COLUMNS,
+        experiment_summary_rows,
+        to_csv,
+        to_markdown,
+    )
+
+    results_path = Path(args.results_path)
+    if results_path.is_dir():
+        results = [json.loads(p.read_text()) for p in sorted(results_path.glob("*.json"))]
+    else:
+        results = [json.loads(results_path.read_text())]
+    rows = experiment_summary_rows(results)
+    output_dir = Path(args.output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+    (output_dir / "experiment_summary.csv").write_text(to_csv(rows, EXPERIMENT_SUMMARY_COLUMNS))
+    (output_dir / "experiment_summary.md").write_text(to_markdown(rows, EXPERIMENT_SUMMARY_COLUMNS))
+    print(f"wrote {output_dir / 'experiment_summary.csv'}")
+    print(f"wrote {output_dir / 'experiment_summary.md'}")
+    return 0
+
+
+def _cmd_artifacts(args: argparse.Namespace) -> int:
+    from genevra.artifacts.bundle import generate_artifact_bundle
+
+    with open(args.result_path) as f:
+        data = json.load(f)
+    bundle = generate_artifact_bundle(data, Path(args.output_root), research_question=args.question)
+    experiment_dir = Path(args.output_root) / bundle.experiment_id
+    print(f"wrote {experiment_dir}")
+    for subdir in ("figures", "tables", "reports", "provenance", "configurations", "seeds"):
+        print(f"  {experiment_dir / subdir}")
+    return 0
+
+
+def _cmd_report(args: argparse.Namespace) -> int:
+    from genevra.artifacts.bundle import generate_artifact_bundle
+
+    with open(args.result_path) as f:
+        data = json.load(f)
+    bundle = generate_artifact_bundle(data, Path(args.output_root), research_question=args.question)
+    if args.output:
+        with open(args.output, "w") as f:
+            json.dump(bundle.to_dict(), f, indent=2)
+        print(f"wrote {args.output}")
+    else:
+        print(bundle.to_text())
+    return 0
+
+
 def _build_baseline_experiment_config(seed: int) -> Any:
     # Imported lazily: experiments/baseline.py lives outside the package
     # and is only needed for the `run` subcommand.
@@ -255,6 +333,150 @@ def _build_baseline_experiment_config(seed: int) -> Any:
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module.build_config(seed)
+
+
+def _mechanisms_setup(seed: int, max_steps: int = 60) -> Any:
+    """A small genome + the baseline experiment's organism/environment/
+    fitness configuration (max_steps overridden down for CLI speed), used
+    by the `robustness`/`generalization`/`analyze-mechanisms` subcommands
+    — Phase 13's analyzers all take an already-existing `Genome`, they
+    never build one themselves, so the CLI needs to supply one."""
+    import dataclasses
+
+    from genevra.organism.genome import Genome
+
+    experiment_config = _build_baseline_experiment_config(seed)
+    evolution = experiment_config.evolution
+    environment_config = dataclasses.replace(evolution.environment_config, max_steps=max_steps)
+    genome = Genome.random(evolution.population_config.architecture, np.random.default_rng(seed))
+    return (
+        genome,
+        evolution.population_config.organism_config,
+        environment_config,
+        evolution.fitness_function,
+    )
+
+
+def _cmd_robustness(args: argparse.Namespace) -> int:
+    from genevra.mechanisms.robustness import RobustnessAnalyzer
+    from genevra.metrics.diversity import EuclideanDistance
+    from genevra.organism.learning import NoLearning
+    from genevra.organism.mutation import GaussianMutation
+
+    genome, organism_config, environment_config, fitness_function = _mechanisms_setup(args.seed)
+    analyzer = RobustnessAnalyzer(
+        environment_config=environment_config,
+        organism_config=organism_config,
+        learning_rule=NoLearning(),
+        mutation_operator=GaussianMutation(),
+        distance=EuclideanDistance(),
+        fitness_function=fitness_function,
+        num_samples=args.num_samples,
+        max_steps=environment_config.max_steps,
+    )
+    profile = analyzer.analyze(genome, np.random.default_rng(args.seed))
+    if args.output:
+        with open(args.output, "w") as f:
+            json.dump(profile.to_dict(), f, indent=2)
+        print(f"wrote {args.output}")
+        return 0
+    print(f"genetic: mean={profile.genetic.mean:.4f} std={profile.genetic.std:.4f}")
+    print(f"behavioral: mean={profile.behavioral.mean:.4f} std={profile.behavioral.std:.4f}")
+    if profile.fitness is not None:
+        print(f"fitness |delta|: mean={profile.fitness.mean:.4f}")
+    return 0
+
+
+def _cmd_generalization(args: argparse.Namespace) -> int:
+    from genevra.mechanisms.generalization import GeneralizationAnalyzer
+    from genevra.metrics.diversity import EuclideanDistance
+    from genevra.organism.learning import NoLearning
+
+    genome, organism_config, environment_config, fitness_function = _mechanisms_setup(args.seed)
+    analyzer = GeneralizationAnalyzer(
+        organism_config=organism_config,
+        learning_rule=NoLearning(),
+        fitness_function=fitness_function,
+        distance=EuclideanDistance(),
+        max_steps=environment_config.max_steps,
+    )
+    profile = analyzer.analyze(genome, environment_config, np.random.default_rng(args.seed))
+    if args.output:
+        with open(args.output, "w") as f:
+            json.dump(profile.to_dict(), f, indent=2)
+        print(f"wrote {args.output}")
+        return 0
+    print(f"train_fitness={profile.train.fitness:.4f}")
+    for result in profile.results:
+        retention = profile.retention(result.category)
+        retention_str = f"{retention:.3f}" if retention is not None else "n/a"
+        print(f"{result.category}: fitness={result.fitness:.4f} retention={retention_str}")
+    return 0
+
+
+def _cmd_analyze_mechanisms(args: argparse.Namespace) -> int:
+    from genevra.mechanisms.generalization import GeneralizationAnalyzer
+    from genevra.mechanisms.mutational_landscape import MutationalLandscapeAnalyzer
+    from genevra.mechanisms.report import MechanismsReport
+    from genevra.mechanisms.robustness import RobustnessAnalyzer
+    from genevra.metrics.behavior import behavioral_signature
+    from genevra.metrics.diversity import EuclideanDistance
+    from genevra.organism.learning import NoLearning
+    from genevra.organism.mutation import GaussianMutation
+
+    genome, organism_config, environment_config, fitness_function = _mechanisms_setup(args.seed)
+    rng = np.random.default_rng(args.seed)
+    distance = EuclideanDistance()
+
+    robustness = RobustnessAnalyzer(
+        environment_config=environment_config,
+        organism_config=organism_config,
+        learning_rule=NoLearning(),
+        mutation_operator=GaussianMutation(),
+        distance=distance,
+        fitness_function=fitness_function,
+        num_samples=args.num_samples,
+        max_steps=environment_config.max_steps,
+    ).analyze(genome, rng)
+
+    generalization = GeneralizationAnalyzer(
+        organism_config=organism_config,
+        learning_rule=NoLearning(),
+        fitness_function=fitness_function,
+        distance=distance,
+        max_steps=environment_config.max_steps,
+    ).analyze(genome, environment_config, rng)
+
+    from genevra.evolution.lifetime import run_single_lifetime
+
+    def run_lifetime(g: Any) -> Any:
+        return run_single_lifetime(
+            g,
+            environment_config,
+            organism_config,
+            NoLearning(),
+            int(rng.integers(0, 2**31 - 1)),
+            int(rng.integers(0, 2**31 - 1)),
+            environment_config.max_steps,
+        )
+
+    landscape = MutationalLandscapeAnalyzer(
+        mutation_operator=GaussianMutation(),
+        behavioral_evaluator=lambda g: behavioral_signature(run_lifetime(g)),
+        distance=distance,
+        fitness_evaluator=lambda g: fitness_function.compute(run_lifetime(g)),
+    ).analyze(genome, rng, num_samples=args.num_samples)
+
+    report = MechanismsReport(
+        robustness=robustness, generalization=generalization, mutational_landscape=landscape
+    )
+    if args.output:
+        with open(args.output, "w") as f:
+            json.dump(report.to_dict(), f, indent=2)
+        print(f"wrote {args.output}")
+    else:
+        print(report.to_text())
+    return 0
 
 
 def _cmd_run(args: argparse.Namespace) -> int:
@@ -564,6 +786,65 @@ def build_parser() -> argparse.ArgumentParser:
     activity_parser.add_argument("--seed", type=int, default=0)
     activity_parser.add_argument("--output", type=str, default=None)
     activity_parser.set_defaults(func=_cmd_activity)
+
+    robustness_parser = subparsers.add_parser(
+        "robustness", help="run the robustness analyzer against a small genome"
+    )
+    robustness_parser.add_argument("--seed", type=int, default=0)
+    robustness_parser.add_argument("--num-samples", type=int, default=8, dest="num_samples")
+    robustness_parser.add_argument("--output", type=str, default=None)
+    robustness_parser.set_defaults(func=_cmd_robustness)
+
+    generalization_parser = subparsers.add_parser(
+        "generalization", help="run the generalization analyzer against a small genome"
+    )
+    generalization_parser.add_argument("--seed", type=int, default=0)
+    generalization_parser.add_argument("--output", type=str, default=None)
+    generalization_parser.set_defaults(func=_cmd_generalization)
+
+    analyze_mechanisms_parser = subparsers.add_parser(
+        "analyze-mechanisms",
+        help="run robustness/generalization/mutational-landscape analysis against a small genome",
+    )
+    analyze_mechanisms_parser.add_argument("--seed", type=int, default=0)
+    analyze_mechanisms_parser.add_argument("--num-samples", type=int, default=8, dest="num_samples")
+    analyze_mechanisms_parser.add_argument("--output", type=str, default=None)
+    analyze_mechanisms_parser.set_defaults(func=_cmd_analyze_mechanisms)
+
+    figures_parser = subparsers.add_parser(
+        "figures", help="generate publication-style figures from a stored result"
+    )
+    figures_parser.add_argument("result_path", type=str)
+    figures_parser.add_argument("--output-dir", type=str, default="figures", dest="output_dir")
+    figures_parser.set_defaults(func=_cmd_figures)
+
+    tables_parser = subparsers.add_parser(
+        "tables", help="generate scientific tables from a stored result or directory of results"
+    )
+    tables_parser.add_argument("results_path", type=str)
+    tables_parser.add_argument("--output-dir", type=str, default="tables", dest="output_dir")
+    tables_parser.set_defaults(func=_cmd_tables)
+
+    artifacts_parser = subparsers.add_parser(
+        "artifacts", help="generate the full research_artifacts/<experiment_id>/ tree"
+    )
+    artifacts_parser.add_argument("result_path", type=str)
+    artifacts_parser.add_argument(
+        "--output-root", type=str, default="research_artifacts", dest="output_root"
+    )
+    artifacts_parser.add_argument("--question", type=str, default="(not specified by caller)")
+    artifacts_parser.set_defaults(func=_cmd_artifacts)
+
+    report_parser = subparsers.add_parser(
+        "report", help="generate the research report bundle text/JSON for a stored result"
+    )
+    report_parser.add_argument("result_path", type=str)
+    report_parser.add_argument(
+        "--output-root", type=str, default="research_artifacts", dest="output_root"
+    )
+    report_parser.add_argument("--question", type=str, default="(not specified by caller)")
+    report_parser.add_argument("--output", type=str, default=None)
+    report_parser.set_defaults(func=_cmd_report)
 
     return parser
 
