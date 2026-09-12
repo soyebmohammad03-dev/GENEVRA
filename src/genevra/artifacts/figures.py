@@ -423,6 +423,72 @@ def plot_overview_panel(
     )
 
 
+def plot_population_size_trajectory(
+    steps: Sequence[int],
+    population_sizes: Sequence[int],
+    output_dir: Path,
+    experiment_id: str,
+) -> FigureMetadata:
+    """Phase 16.11: population size over a `ContinuousEvolutionEngine`
+    run's `EcologicalSnapshot` history (or a `Metapopulation`'s per-patch
+    history, summed/plotted per patch by the caller)."""
+    apply_style()
+    plt = require_matplotlib()
+    fig, ax = plt.subplots()
+    ax.plot(list(steps), list(population_sizes), marker="o", markersize=3)
+    ax.set_xlabel("step")
+    ax.set_ylabel("population size")
+    ax.set_title("Population size trajectory")
+    fig.tight_layout()
+    return save_figure(
+        fig,
+        output_dir,
+        figure_id="population_size_trajectory",
+        experiment_id=experiment_id,
+        data_source="EcologicalSnapshot.population_size",
+        metrics=("population_size",),
+        caption=trajectory_caption("Population size", len(steps), experiment_id),
+        limitations=(
+            "One realized run; a `ContinuousEvolutionEngine`'s population size can "
+            "reflect capacity limits (max_population) as much as ecological dynamics."
+        ),
+    )
+
+
+def plot_replication_consistency(
+    seeds: Sequence[int],
+    effects: Sequence[float],
+    output_dir: Path,
+    experiment_id: str,
+) -> FigureMetadata:
+    """Phase 16.11/16.8: one point per independent seed's effect
+    estimate, with a zero-effect reference line — makes seed-to-seed
+    sign disagreement visible rather than hidden behind a pooled p-value
+    (`genevra.population_analysis.replication_consistency`)."""
+    apply_style()
+    plt = require_matplotlib()
+    fig, ax = plt.subplots()
+    ax.axhline(0.0, linestyle="--", linewidth=1, alpha=0.6)
+    ax.scatter(list(seeds), list(effects))
+    ax.set_xlabel("seed")
+    ax.set_ylabel("effect estimate")
+    ax.set_title("Replication consistency across seeds")
+    fig.tight_layout()
+    return save_figure(
+        fig,
+        output_dir,
+        figure_id="replication_consistency",
+        experiment_id=experiment_id,
+        data_source="ReplicationConsistencyReport.per_seed_effect",
+        metrics=("per_seed_effect",),
+        caption=scatter_caption("seed", "effect estimate", len(seeds)),
+        limitations=(
+            "Each point is one independent seed's own effect estimate; this plot shows "
+            "sign/magnitude agreement across seeds, not a pooled significance test."
+        ),
+    )
+
+
 __all__ = [
     "plot_fitness_trajectory",
     "plot_novelty_trajectory",
@@ -434,4 +500,6 @@ __all__ = [
     "plot_innovation_event_timeline",
     "plot_effect_size_forest",
     "plot_overview_panel",
+    "plot_population_size_trajectory",
+    "plot_replication_consistency",
 ]

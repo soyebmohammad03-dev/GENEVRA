@@ -135,6 +135,114 @@ compact history — only the aggregates.
 - Automatic niche detection/labeling: niches emerge from configuration,
   but nothing currently identifies or names them.
 
+## Phase 15/16 update: typed interactions, niches, spatial patches, co-evolution
+
+Everything above is Phase 5/6. Phase 15 (`genevra.ecology`) and Phase 16
+(`genevra.population_analysis`) build on it — extending, not rewriting,
+`SharedGridWorld`/`ContinuousEvolutionEngine`/`LineageTracker`.
+
+**Typed interaction records** (`genevra.ecology.interactions`).
+`SpatialCompetition` gained a `last_blocked_pairs: list[tuple[int, int]]`
+instance attribute (populated on every `resolve_movements()` call,
+`InteractionSystem`'s return contract unchanged) so
+`derive_competition_interactions` can turn "who got blocked by whom this
+step" into an `EcologicalInteraction` record: `actor`, `target`,
+`interaction_type` (`COMPETITION` or `RESOURCE_ACQUISITION`), `outcome`,
+provenance (`EcologicalContext`). `SharedGridWorld._attempt_eat` now
+returns which resource type was consumed, surfaced as
+`StepResult.info["resource_type"]`, feeding
+`derive_resource_acquisition_interactions`.
+`genevra.ecology.interactions.InteractionNetwork` computes degree,
+density, and interaction-type diversity (Shannon entropy) from a list of
+these records; `genevra.ecology.network.EcologicalNetworkAnalyzer` adds
+an explicit `INSUFFICIENT_DATA`-style result (< 6 nodes or < 6 edges)
+rather than a misleading density/degree number on a tiny graph, and
+`interaction_turnover` (Jaccard distance between two time windows' edge
+sets). **Cooperation/costly-helping is not implemented**: `Action` has no
+resource/fitness-transfer action, and every controller's output size is
+pinned to `len(Action)` throughout the stack — adding one would be
+backward-incompatible with every existing genome/architecture/stored
+result. Implementing it would mean adding an `Action.SHARE` member, a
+corresponding `SharedGridWorld` transfer rule, and re-deriving every
+architecture's `output_size`.
+
+**Niches** (`genevra.ecology.niches`). Built entirely on the two resource
+types that already existed — no third type was added. `NicheProfile`
+tracks, per agent, `preference_a` (fraction of acquisitions that were
+type A), `specialization` = `abs(preference_a - 0.5) * 2` (0 = used both
+equally, 1 = single-type use), and `breadth` = normalized Shannon entropy
+over the type distribution. `PopulationNicheSummary.niche_overlap` = `1 -
+mean(|pairwise preference_a difference|)` across agents with data.
+
+**Competition metrics** (`genevra.ecology.competition`), computed from a
+`ContinuousEvolutionEngine` run's `history`/`LineageTracker`: population
+turnover = `(total births + total deaths) / mean population size`;
+`gini_coefficient` (standard formula, `None` for < 2 values or an
+all-zero sample) applied to per-founding-lineage descendant-family
+size as a *reproductive-success inequality* proxy (GENEVRA does not
+track a per-individual scalar fitness in a continuous run — descendant
+count is the closest realized-success quantity that exists);
+`pielou_evenness` (Shannon entropy / ln(number of non-zero categories))
+and `herfindahl_index` (sum of squared shares) over the same family-size
+distribution; `lineage_survival_fraction` = fraction of generation-0
+founders with a living descendant (or themselves alive) at the end.
+
+**Spatial structure and migration** (`genevra.ecology.spatial`). Rather
+than adding disconnected patches to `SharedGridWorld` itself, a spatial
+regime here is multiple independent `ContinuousEvolutionEngine` patches
+(own grid, population, lineage) plus a connectivity graph
+(`WELL_MIXED`/`PATCHY`/`FRAGMENTED`/`CONNECTED`) controlling which
+patches a migrant can move between. `ContinuousEvolutionEngine` gained
+three small public methods to support this: `step()` (advance one tick,
+for orchestration code that needs to interleave patches), `emigrate
+(agent_id)` (remove + return the genome), and `spawn_migrant(genome)`
+(introduce a genome with no local parent, not counted as a birth). No
+organism senses which patch it is in or another patch's state — the
+observation boundary is untouched; `Metapopulation` is simulator-level
+bookkeeping exactly like grid coordinates. `diversity_by_patch()` reports
+per-patch genotypic diversity and lineage persistence.
+
+**Co-evolution** (`genevra.ecology.coevolution`). Two "species" are two
+founding sub-populations sharing one `ContinuousEvolutionEngine` run
+(first half of the initial population vs. the second half); every
+descendant's species is its ultimate founder's species, looked up via
+`LineageEvent.parent_ids` ancestry. Per-species population size and mean
+learning strategy over time are reconstructed entirely from
+`LineageEvent.generation`/`death_generation` — no extra per-step engine
+hook needed. "Species" here means "founding sub-population, tracked
+separately," not a claim of biological speciation.
+
+**Ecological roles** (`genevra.ecology.roles`). Three roles are
+data-driven: `SPECIALIST`/`GENERALIST` from `NicheProfile.specialization`
+thresholded against the population's own median; `COMPETITOR` from
+competition-event count relative to the population median.
+`EXPLORER`/`COOPERATIVE_PARTICIPANT`/`OPPORTUNIST`/`STABILIZER` are not
+implemented — see `genevra.ecology.roles`'s module docstring for exactly
+what each would need (a per-agent behavioral signature computed *during*
+a continuous run, a cooperation mechanism, or per-individual lifetime
+behavior-change tracking, none of which currently exist).
+
+**Regime transitions** (`genevra.ecology.regime_transitions`) reuse
+`genevra.analysis.regime_detection.detect_change_points` (the existing
+permutation-tested detector) and only add a post-hoc label
+(`diversity_collapse`, `coexistence_emergence`, `competitive_exclusion`,
+...) for what a detected change is *consistent with* — never a causal
+claim, and every transition's `confidence` field is literally the string
+`"candidate"`.
+
+**Ecology x evolvability hypotheses** (`genevra.ecology.hypotheses`): five
+pre-registered `EcologyHypothesis` records (H1-H5) with explicit
+null/alternative/IV/DV/control/test fields, mirroring
+`genevra.literature.claims.LiteratureClaim`'s convention.
+`test_ecology_hypothesis` runs a permutation test + Cohen's d + bootstrap
+CI on seed-level samples, returning `INSUFFICIENT_DATA` (not a fabricated
+p-value) below `min_seeds` (default 3) per side.
+
+**Population-level scaling** (`genevra.population_analysis`) — see
+`docs/population_analysis.md`, `docs/evolutionary_prediction.md`,
+`docs/perturbation_experiments.md`, and `docs/ecological_statistics.md`
+for the rest of Phase 16.
+
 ## The question this phase exists to make askable, not answer
 
 "Does ecological interaction create evolutionary novelty that would not

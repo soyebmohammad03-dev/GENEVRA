@@ -168,6 +168,32 @@ publication-style figures, tables, and a structured, provenance-linked
 [`docs/research_questions.md`](docs/research_questions.md) for what is
 established vs. exploratory.
 
+## Advanced ecology and population-level analysis (Phase 15 + 16)
+
+`genevra.ecology` adds typed interaction records, resource-niche
+measurement, competition-structure metrics, real multi-patch spatial
+structure with migration, an interaction-network analyzer, two-founding-
+group co-evolution, data-driven ecological roles, and five pre-registered
+ecology x evolvability hypotheses (`genevra ecology`, `genevra
+coevolution`, `genevra niches`, `genevra interactions`). `genevra.
+population_analysis` scales Phase 13's per-genome mechanism analyzers to
+proper seed-as-replication-unit population statistics, lagged prediction,
+genuine held-out temporal validation, a Learning x Ecology x Environment
+experiment matrix, and controlled before/during/after perturbation
+experiments (`genevra population-analysis`, `genevra predict-evolution`,
+`genevra perturbation`, `genevra replication`). See
+[`docs/ecology.md`](docs/ecology.md),
+[`docs/interactions.md`](docs/interactions.md),
+[`docs/co_evolution.md`](docs/co_evolution.md),
+[`docs/niche_dynamics.md`](docs/niche_dynamics.md),
+[`docs/population_analysis.md`](docs/population_analysis.md),
+[`docs/evolutionary_prediction.md`](docs/evolutionary_prediction.md),
+[`docs/perturbation_experiments.md`](docs/perturbation_experiments.md),
+[`docs/ecological_statistics.md`](docs/ecological_statistics.md), and
+[`docs/phase_15_16_quality_gate.md`](docs/phase_15_16_quality_gate.md)
+for an explicit audit of which mechanisms are genuinely implemented vs.
+architecturally unsupported.
+
 ## High-level architecture
 
 ```

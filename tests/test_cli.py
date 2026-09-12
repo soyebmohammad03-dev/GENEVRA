@@ -318,3 +318,94 @@ def test_report_command_writes_json_output(tmp_path) -> None:
     assert exit_code == 0
     data = json.loads(report_path.read_text())
     assert data["seeds"] == [0]
+
+
+def test_ecology_command_prints_metrics(capsys) -> None:
+    exit_code = main(["ecology", "--seed", "1", "--total-steps", "20", "--num-agents", "4"])
+    assert exit_code == 0
+    captured = capsys.readouterr()
+    assert "population_turnover=" in captured.out
+    assert "niche_overlap=" in captured.out
+
+
+def test_ecology_command_writes_json_output(tmp_path) -> None:
+    output_path = tmp_path / "ecology.json"
+    exit_code = main(
+        [
+            "ecology",
+            "--seed",
+            "1",
+            "--total-steps",
+            "20",
+            "--num-agents",
+            "4",
+            "--output",
+            str(output_path),
+        ]
+    )
+    assert exit_code == 0
+    data = json.loads(output_path.read_text())
+    assert "competition" in data
+    assert "niches" in data
+
+
+def test_coevolution_command_prints_populations(capsys) -> None:
+    exit_code = main(["coevolution", "--seed", "1", "--total-steps", "20"])
+    assert exit_code == 0
+    captured = capsys.readouterr()
+    assert "final_population_a=" in captured.out
+    assert "final_population_b=" in captured.out
+
+
+def test_niches_command_prints_overlap(capsys) -> None:
+    exit_code = main(["niches", "--seed", "1", "--steps", "20", "--num-agents", "4"])
+    assert exit_code == 0
+    captured = capsys.readouterr()
+    assert "niche_overlap=" in captured.out
+
+
+def test_interactions_command_prints_network_stats(capsys) -> None:
+    exit_code = main(["interactions", "--seed", "1", "--steps", "30", "--num-agents", "4"])
+    assert exit_code == 0
+    captured = capsys.readouterr()
+    assert "n_nodes=" in captured.out
+
+
+def test_population_analysis_command_prints_summary(capsys) -> None:
+    exit_code = main(["population-analysis", "--seeds", "2", "--num-samples", "3"])
+    assert exit_code == 0
+    captured = capsys.readouterr()
+    assert "n_seeds=2" in captured.out
+
+
+def test_predict_evolution_command_prints_correlation(capsys) -> None:
+    exit_code = main(["predict-evolution", "--seed", "1", "--total-steps", "40", "--lag", "1"])
+    assert exit_code == 0
+    captured = capsys.readouterr()
+    assert "mean_correlation=" in captured.out
+
+
+def test_perturbation_command_prints_resistance(capsys) -> None:
+    exit_code = main(
+        [
+            "perturbation",
+            "--seed",
+            "1",
+            "--before-steps",
+            "10",
+            "--during-steps",
+            "5",
+            "--after-steps",
+            "10",
+        ]
+    )
+    assert exit_code == 0
+    captured = capsys.readouterr()
+    assert "resistance=" in captured.out
+
+
+def test_replication_command_prints_agreement(capsys) -> None:
+    exit_code = main(["replication", "--seeds", "3", "--total-steps", "20"])
+    assert exit_code == 0
+    captured = capsys.readouterr()
+    assert "agreement_fraction=" in captured.out

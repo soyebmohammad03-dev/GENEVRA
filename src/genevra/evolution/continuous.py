@@ -119,6 +119,47 @@ class ContinuousEvolutionEngine:
             self._tick()
         return self.history
 
+    @property
+    def config(self) -> ContinuousEvolutionConfig:
+        return self._config
+
+    @property
+    def environment(self) -> SharedGridWorld:
+        """Read/write access to this engine's `SharedGridWorld` (Phase
+        16.9: perturbation experiments need to call e.g.
+        `perturb_resources` on the live environment mid-run)."""
+        return self._environment
+
+    def step(self) -> None:
+        """Advance exactly one timestep (Phase 15/16: lets ecology
+        orchestration code — multi-patch metapopulations, before/during/
+        after perturbation windows — drive the tick loop itself instead
+        of only calling the all-at-once `run()`)."""
+        self._tick()
+
+    def emigrate(self, agent_id: int) -> Genome:
+        """Remove a living organism from this patch (Phase 15.6 migration
+        / Phase 16.9 perturbation: "introduce/remove a population"),
+        recording its death in this patch's lineage as any other death,
+        and return its genome so the caller can spawn it elsewhere."""
+        if agent_id not in self.population:
+            raise ValueError(f"agent {agent_id} is not present")
+        living = self.population[agent_id]
+        genome = living.genome
+        self._environment.remove_agent(agent_id)
+        self.lineage.record_death(agent_id, self.step_index)
+        del self.population[agent_id]
+        self._deaths_since_snapshot += 1
+        return genome
+
+    def spawn_migrant(self, genome: Genome) -> int:
+        """Introduce an organism carrying `genome` (typically one
+        returned by another patch's `emigrate()`) as a new individual
+        with no parent in this patch's lineage. Returns the new agent id."""
+        agent_id = self._next_id
+        self._spawn(genome=genome, parent_ids=())  # not counted as a birth (see _spawn)
+        return agent_id
+
     def _tick(self) -> None:
         observations = {oid: self._environment.observe(oid) for oid in self.population}
         actions = {

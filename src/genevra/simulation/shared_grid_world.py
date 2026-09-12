@@ -184,9 +184,12 @@ class SharedGridWorld:
         self._agent_positions.update(resolved)
 
         rewards: dict[int, float] = dict.fromkeys(actions, 0.0)
+        eaten_types: dict[int, str | None] = dict.fromkeys(actions)
         for agent_id, action in actions.items():
             if action is Action.EAT:
-                rewards[agent_id] = self._attempt_eat(self._agent_positions[agent_id])
+                rewards[agent_id], eaten_types[agent_id] = self._attempt_eat(
+                    self._agent_positions[agent_id]
+                )
 
         self._regenerate_resources()
         self._step_count += 1
@@ -199,9 +202,54 @@ class SharedGridWorld:
                 observation=self.observe(agent_id),
                 reward=rewards[agent_id],
                 done=done,
-                info={"position": position, "step_count": self._step_count},
+                info={
+                    "position": position,
+                    "step_count": self._step_count,
+                    "resource_type": eaten_types[agent_id],
+                },
             )
         return results
+
+    @property
+    def interaction_system(self) -> InteractionSystem:
+        """The `InteractionSystem` this world was constructed with (Phase
+        15.1) — read-only introspection so ecology code can derive
+        `EcologicalInteraction` records (e.g. via
+        `SpatialCompetition.last_blocked_pairs`) without `SharedGridWorld`
+        needing to know what an "interaction record" is."""
+        return self._interaction
+
+    def perturb_resources(
+        self, resource: str, remove_fraction: float, rng: np.random.Generator
+    ) -> int:
+        """Zero out a random `remove_fraction` of currently-present cells
+        of one resource type (Phase 16.9's controlled ecological
+        perturbation: "remove a resource"). Returns the number of cells
+        cleared. Does not affect regeneration — cleared cells can respawn
+        on a later step exactly as any other empty cell would."""
+        if not 0.0 <= remove_fraction <= 1.0:
+            raise ValueError("remove_fraction must be in [0, 1]")
+        grid = self._resource_grid(resource)
+        present = np.argwhere(grid > 0.0)
+        if len(present) == 0:
+            return 0
+        n_remove = int(round(len(present) * remove_fraction))
+        if n_remove <= 0:
+            return 0
+        chosen = rng.choice(len(present), size=n_remove, replace=False)
+        for idx in chosen:
+            y, x = present[idx]
+            grid[y, x] = 0.0
+        return n_remove
+
+    def _resource_grid(self, resource: str) -> FloatArray:
+        if resource == "A":
+            assert self._resources_a is not None
+            return self._resources_a
+        if resource == "B":
+            assert self._resources_b is not None
+            return self._resources_b
+        raise ValueError(f"unknown resource type {resource!r}, expected 'A' or 'B'")
 
     def snapshot(self) -> SharedGridWorldState:
         self._require_reset()
@@ -268,19 +316,19 @@ class SharedGridWorld:
         dx, dy = _ACTION_DELTAS[action]
         return Position(current.x + dx, current.y + dy)
 
-    def _attempt_eat(self, position: Position) -> float:
+    def _attempt_eat(self, position: Position) -> tuple[float, str | None]:
         assert self._resources_a is not None
         assert self._resources_b is not None
         x, y = position
         amount_a = float(self._resources_a[y, x])
         if amount_a > 0:
             self._resources_a[y, x] = 0.0
-            return amount_a
+            return amount_a, "A"
         amount_b = float(self._resources_b[y, x])
         if amount_b > 0:
             self._resources_b[y, x] = 0.0
-            return amount_b
-        return 0.0
+            return amount_b, "B"
+        return 0.0, None
 
     def _regenerate_resources(self) -> None:
         assert self._rng is not None

@@ -45,6 +45,19 @@ class SpatialCompetition:
        obstacle this step.
     """
 
+    def __init__(self) -> None:
+        self.last_blocked_pairs: list[tuple[int, int]] = []
+        """`(blocked_agent_id, blocking_agent_id)` pairs from the most
+        recent `resolve_movements()` call — the agent that lost a
+        contested cell, and the agent that occupies it afterward (either
+        because it was already stationary there or won the tie-break).
+        Additive introspection only (Phase 15.1): the `InteractionSystem`
+        Protocol's return value is unchanged, so this is safe for any
+        other implementation to ignore. Used to derive real
+        `EcologicalInteraction` (competition) records from what
+        `SharedGridWorld` already does, instead of inventing a parallel
+        interaction-detection mechanism."""
+
     def resolve_movements(
         self,
         current_positions: dict[int, Position],
@@ -53,6 +66,7 @@ class SpatialCompetition:
         width: int,
         height: int,
     ) -> dict[int, Position]:
+        self.last_blocked_pairs = []
         stationary_ids = [
             agent_id
             for agent_id, target in desired_positions.items()
@@ -77,6 +91,8 @@ class SpatialCompetition:
             blocked = (not in_bounds) or bool(obstacles[target.y, target.x]) or target in claimed
             if blocked:
                 final_positions[agent_id] = current_positions[agent_id]
+                if in_bounds and not obstacles[target.y, target.x] and target in claimed:
+                    self.last_blocked_pairs.append((agent_id, claimed[target]))
             else:
                 claimed[target] = agent_id
                 final_positions[agent_id] = target

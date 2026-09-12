@@ -292,3 +292,57 @@ correlational costs computable from existing quantities are reported
 (see `docs/robustness_plasticity_evolvability.md`). "Novel" environments
 in `GeneralizationAnalyzer` are parameter shifts within `GridWorldConfig`,
 not a qualitatively different environment class.
+
+## Phase 15 + 16: advanced ecology and population-level analysis
+
+**What Phase 15 adds:** typed `EcologicalInteraction` records derived
+from `SpatialCompetition.last_blocked_pairs` and resource-acquisition
+events (`genevra.ecology.interactions`); resource-niche measurement over
+the existing two resource types (`genevra.ecology.niches`);
+competition-structure metrics (Gini/Pielou/Herfindahl over
+descendant-family size, `genevra.ecology.competition`); real spatial
+structure via multi-patch `Metapopulation` with configurable migration
+(`genevra.ecology.spatial`, backed by three new `ContinuousEvolutionEngine`
+public methods: `step`, `emigrate`, `spawn_migrant`); an interaction
+network analyzer with an explicit insufficient-data path
+(`genevra.ecology.network`); two-founding-group co-evolution
+(`genevra.ecology.coevolution`); data-driven ecological roles
+(`genevra.ecology.roles`); regime-transition labeling reusing the
+existing change-point detector (`genevra.ecology.regime_transitions`);
+and five pre-registered ecology x evolvability hypotheses
+(`genevra.ecology.hypotheses`).
+
+**What Phase 16 adds:** a seed-as-replication-unit aggregation layer
+(`genevra.population_analysis.aggregation`) and population-level
+robustness/evolvability analyzers built on it; lagged-prediction and
+genuine train/test temporal-validation tools (`prediction.py`,
+`temporal_validation.py`, including a real leave-one-seed-out holdout);
+a Learning x Ecology x Environment experiment matrix with pilot/standard/
+research size presets (`matrix.py`); convergent-evolution checking over
+lineage ancestry (`lineage_ecology.py`); seed-level replication-consistency
+reporting that surfaces sign disagreement rather than hiding it behind a
+pooled p-value (`replication_consistency.py`); and controlled before/
+during/after perturbation experiments with resistance and recovery
+reported separately (`perturbation.py`).
+
+**What is scientifically established:** the mechanisms themselves work —
+migration genuinely moves genomes between patches and changes population
+structure (live-validated: `CONNECTED` patches retained genotypic
+diversity of ~6.6-9.9 after 80 steps vs. `FRAGMENTED` patches collapsing
+to 0.0 at the same seeds, with 22 vs. 0 migration events), and the
+niche/competition/co-evolution/perturbation pipelines produce real,
+finite, reproducible numbers end-to-end (verified: reruns with the same
+seed produce identical trajectories; different seeds produce genuinely
+different outcomes; no NaN/Inf reached any output).
+
+**What remains exploratory:** none of the five ecology hypotheses (H1-H5)
+have been tested at a sample size (`>= 3` independent seeds per
+condition, per `genevra.ecology.hypotheses`'s own minimum) sufficient to
+report a real association/no-association finding — the live validation
+ran small pilot-scale demonstrations of the pipeline, not a
+research-grade comparison. The lagged-prediction and temporal-validation
+live-validation runs used a single seed each, illustrative of the
+mechanism only. See `docs/phase_15_16_quality_gate.md` for the full,
+itemized honesty audit, including which mechanisms (cooperation, three
+of seven listed ecological roles, graph modularity, N-species
+co-evolution) are explicitly unsupported and why.

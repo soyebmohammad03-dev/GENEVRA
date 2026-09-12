@@ -320,6 +320,275 @@ def _cmd_report(args: argparse.Namespace) -> int:
     return 0
 
 
+def _small_ecology_setup(seed: int, total_steps: int = 60) -> Any:
+    """A small `ContinuousEvolutionConfig` for the Phase 15/16
+    ecology/population-analysis subcommands — laptop-fast, not a
+    research-scale run."""
+    from genevra.organism.genome import ControllerArchitecture
+    from genevra.organism.organism import OrganismConfig
+    from genevra.simulation.shared_grid_world import SharedGridWorldConfig
+    from genevra.simulation.types import Action
+
+    view_radius, memory_size = 1, 2
+    input_size = (2 * view_radius + 1) ** 2 * 3 + 2 + memory_size
+    architecture = ControllerArchitecture(
+        input_size=input_size, hidden_size=6, output_size=len(Action)
+    )
+    organism_config = OrganismConfig(
+        view_radius=view_radius, memory_size=memory_size, initial_energy=15.0, channels=3
+    )
+    environment_config = SharedGridWorldConfig(
+        width=8, height=8, view_radius=view_radius, max_agents=10, max_steps=10_000
+    )
+    from genevra.evolution.continuous import ContinuousEvolutionConfig
+
+    return ContinuousEvolutionConfig(
+        total_steps=total_steps,
+        initial_population=6,
+        max_population=10,
+        environment_config=environment_config,
+        architecture=architecture,
+        organism_config=organism_config,
+        reproduction_energy_threshold=18.0,
+        offspring_energy_cost=5.0,
+        seed=seed,
+        log_every=5,
+    )
+
+
+def _cmd_ecology(args: argparse.Namespace) -> int:
+    from genevra.ecology.competition import compute_competition_metrics
+    from genevra.ecology.niches import (
+        compute_niche_profile,
+        resource_types_from_step_infos,
+        summarize_population_niches,
+    )
+    from genevra.evolution.continuous import ContinuousEvolutionEngine
+    from genevra.simulation.shared_grid_world import SharedGridWorld, SharedGridWorldConfig
+    from genevra.simulation.types import Action
+
+    config = _small_ecology_setup(args.seed, total_steps=args.total_steps)
+    engine = ContinuousEvolutionEngine(config)
+    engine.run()
+    metrics = compute_competition_metrics(engine.history, engine.lineage.events())
+
+    # Niches need per-step StepResult.info["resource_type"], which the
+    # discrete-generation-agnostic ContinuousEvolutionEngine loop above
+    # does not surface — driven here via a small raw SharedGridWorld with
+    # random-walking agents instead (same pattern as `genevra interactions`).
+    world = SharedGridWorld(SharedGridWorldConfig(width=6, height=6, max_agents=args.num_agents))
+    world.reset(seed=args.seed)
+    for aid in range(args.num_agents):
+        world.add_agent(aid)
+    rng = np.random.default_rng(args.seed)
+    resource_history: dict[int, list[str]] = {aid: [] for aid in range(args.num_agents)}
+    for _ in range(args.total_steps):
+        actions = {aid: Action(int(rng.integers(0, len(Action)))) for aid in world.agent_ids}
+        results = world.step(actions)
+        for aid, result in results.items():
+            resource_type = result.info.get("resource_type")
+            if resource_type is not None:
+                resource_history[aid].append(resource_type)
+    profiles = [
+        compute_niche_profile(
+            aid, resource_types_from_step_infos([{"resource_type": t} for t in types])
+        )
+        for aid, types in resource_history.items()
+    ]
+    niche_summary = summarize_population_niches(profiles)
+    output = {"competition": metrics.to_dict(), "niches": niche_summary.to_dict()}
+    if args.output:
+        with open(args.output, "w") as f:
+            json.dump(output, f, indent=2)
+        print(f"wrote {args.output}")
+        return 0
+    print(f"population_turnover={metrics.population_turnover}")
+    print(f"lineage_survival_fraction={metrics.lineage_survival_fraction}")
+    print(f"niche_overlap={niche_summary.niche_overlap}")
+    return 0
+
+
+def _cmd_coevolution(args: argparse.Namespace) -> int:
+    from genevra.ecology.coevolution import CoEvolutionAnalyzer, run_coevolution_experiment
+
+    config = _small_ecology_setup(args.seed, total_steps=args.total_steps)
+    _engine, trajectory = run_coevolution_experiment(config)
+    comparison = CoEvolutionAnalyzer().compare(trajectory)
+    if args.output:
+        with open(args.output, "w") as f:
+            json.dump(comparison.to_dict(), f, indent=2)
+        print(f"wrote {args.output}")
+        return 0
+    print(f"final_population_a={comparison.final_population_a}")
+    print(f"final_population_b={comparison.final_population_b}")
+    print(f"final_strategy_divergence={comparison.final_strategy_divergence}")
+    return 0
+
+
+def _cmd_niches(args: argparse.Namespace) -> int:
+    args.total_steps = args.steps
+    return _cmd_ecology(args)
+
+
+def _cmd_interactions(args: argparse.Namespace) -> int:
+    from genevra.ecology.interactions import (
+        EcologicalContext,
+        derive_competition_interactions,
+        derive_resource_acquisition_interactions,
+        require_shared_grid_world_with_spatial_competition,
+    )
+    from genevra.ecology.network import EcologicalNetworkAnalyzer
+    from genevra.simulation.shared_grid_world import SharedGridWorld, SharedGridWorldConfig
+    from genevra.simulation.types import Action
+
+    world = SharedGridWorld(SharedGridWorldConfig(width=5, height=5, max_agents=args.num_agents))
+    world.reset(seed=args.seed)
+    for aid in range(args.num_agents):
+        world.add_agent(aid)
+    system = require_shared_grid_world_with_spatial_competition(world)
+    rng = np.random.default_rng(args.seed)
+    all_interactions = []
+    for step in range(args.steps):
+        actions = {aid: Action(int(rng.integers(0, len(Action)))) for aid in world.agent_ids}
+        results = world.step(actions)
+        context = EcologicalContext("cli_interactions", args.seed, step)
+        all_interactions.extend(derive_competition_interactions(system, context))
+        rewards = {aid: r.reward for aid, r in results.items()}
+        types = {aid: r.info.get("resource_type") for aid, r in results.items()}
+        all_interactions.extend(derive_resource_acquisition_interactions(rewards, types, context))
+    result = EcologicalNetworkAnalyzer().analyze(all_interactions)
+    if args.output:
+        with open(args.output, "w") as f:
+            json.dump(result.to_dict(), f, indent=2)
+        print(f"wrote {args.output}")
+        return 0
+    print(f"n_nodes={result.n_nodes} n_edges={result.n_edges}")
+    print(f"structure_analysis_available={result.structure_analysis_available}")
+    if result.insufficient_data_reason:
+        print(f"insufficient_data_reason={result.insufficient_data_reason}")
+    return 0
+
+
+def _cmd_population_analysis(args: argparse.Namespace) -> int:
+    from genevra.evolution.lifetime import run_single_lifetime
+    from genevra.metrics.behavior import behavioral_signature
+    from genevra.metrics.diversity import EuclideanDistance
+    from genevra.metrics.evolvability import EvolvabilityAnalyzer
+    from genevra.organism.genome import Genome
+    from genevra.organism.learning import NoLearning
+    from genevra.organism.mutation import GaussianMutation
+    from genevra.population_analysis.evolvability_population import (
+        PopulationEvolvabilityAnalyzer,
+    )
+
+    genome, organism_config, environment_config, _fitness = _mechanisms_setup(0)
+    reports = []
+    for seed in range(args.seeds):
+        rng = np.random.default_rng(seed)
+
+        def behavioral_evaluator(g: Any, rng: np.random.Generator = rng) -> Any:
+            observations = run_single_lifetime(
+                g,
+                environment_config,
+                organism_config,
+                NoLearning(),
+                int(rng.integers(0, 2**31 - 1)),
+                int(rng.integers(0, 2**31 - 1)),
+                environment_config.max_steps,
+            )
+            return behavioral_signature(observations)
+
+        analyzer = EvolvabilityAnalyzer(
+            mutation_operator=GaussianMutation(),
+            behavioral_evaluator=behavioral_evaluator,
+            distance=EuclideanDistance(),
+            num_samples=args.num_samples,
+        )
+        report = analyzer.analyze(Genome.random(genome.architecture, rng), rng)
+        reports.append(report)
+    profile = PopulationEvolvabilityAnalyzer().summarize(reports)
+    if args.output:
+        with open(args.output, "w") as f:
+            json.dump(profile.to_dict(), f, indent=2)
+        print(f"wrote {args.output}")
+        return 0
+    print(f"n_seeds={profile.n_seeds}")
+    print(f"mean_behavioral_distance: mean={profile.mean_behavioral_distance.mean}")
+    print(f"viable_fraction: mean={profile.viable_fraction.mean}")
+    return 0
+
+
+def _cmd_predict_evolution(args: argparse.Namespace) -> int:
+    from genevra.evolution.continuous import ContinuousEvolutionEngine
+    from genevra.population_analysis.prediction import test_lagged_prediction
+
+    config = _small_ecology_setup(args.seed, total_steps=args.total_steps)
+    engine = ContinuousEvolutionEngine(config)
+    engine.run()
+    population_series = [s.population_size for s in engine.history]
+    energy_series = [s.mean_energy for s in engine.history]
+    rng = np.random.default_rng(args.seed)
+    result = test_lagged_prediction(
+        {args.seed: population_series}, {args.seed: energy_series}, lag=args.lag, rng=rng
+    )
+    if args.output:
+        with open(args.output, "w") as f:
+            json.dump(result.to_dict(), f, indent=2)
+        print(f"wrote {args.output}")
+        return 0
+    print(f"n_seeds={result.n_seeds} mean_correlation={result.mean_correlation}")
+    return 0
+
+
+def _cmd_perturbation(args: argparse.Namespace) -> int:
+    from genevra.evolution.continuous import ContinuousEvolutionEngine
+    from genevra.population_analysis.perturbation import run_perturbation_experiment
+
+    config = _small_ecology_setup(
+        args.seed, total_steps=args.before_steps + args.during_steps + args.after_steps
+    )
+    engine = ContinuousEvolutionEngine(config)
+
+    def perturb(e: Any) -> None:
+        e.environment.perturb_resources("A", args.remove_fraction, np.random.default_rng(args.seed))
+
+    def metric(e: Any) -> float:
+        return float(len(e.population))
+
+    result = run_perturbation_experiment(
+        engine, args.before_steps, args.during_steps, args.after_steps, perturb, metric
+    )
+    if args.output:
+        with open(args.output, "w") as f:
+            json.dump(result.to_dict(), f, indent=2)
+        print(f"wrote {args.output}")
+        return 0
+    print(f"resistance={result.resistance} recovered={result.recovered}")
+    return 0
+
+
+def _cmd_replication(args: argparse.Namespace) -> int:
+    from genevra.evolution.continuous import ContinuousEvolutionEngine
+    from genevra.population_analysis.replication_consistency import (
+        summarize_replication_consistency,
+    )
+
+    effect_by_seed = {}
+    for seed in range(args.seeds):
+        config = _small_ecology_setup(seed, total_steps=args.total_steps)
+        engine = ContinuousEvolutionEngine(config)
+        engine.run()
+        effect_by_seed[seed] = engine.history[-1].population_size - config.initial_population
+    report = summarize_replication_consistency(effect_by_seed)
+    if args.output:
+        with open(args.output, "w") as f:
+            json.dump(report.to_dict(), f, indent=2)
+        print(f"wrote {args.output}")
+        return 0
+    print(f"agreement_fraction={report.agreement_fraction} sign_reversals={report.sign_reversals}")
+    return 0
+
+
 def _build_baseline_experiment_config(seed: int) -> Any:
     # Imported lazily: experiments/baseline.py lives outside the package
     # and is only needed for the `run` subcommand.
@@ -845,6 +1114,83 @@ def build_parser() -> argparse.ArgumentParser:
     report_parser.add_argument("--question", type=str, default="(not specified by caller)")
     report_parser.add_argument("--output", type=str, default=None)
     report_parser.set_defaults(func=_cmd_report)
+
+    ecology_parser = subparsers.add_parser(
+        "ecology", help="run a small shared-ecology run and report competition/niche metrics"
+    )
+    ecology_parser.add_argument("--seed", type=int, default=0)
+    ecology_parser.add_argument("--total-steps", type=int, default=60, dest="total_steps")
+    ecology_parser.add_argument("--num-agents", type=int, default=6, dest="num_agents")
+    ecology_parser.add_argument("--output", type=str, default=None)
+    ecology_parser.set_defaults(func=_cmd_ecology)
+
+    coevolution_parser = subparsers.add_parser(
+        "coevolution", help="run a small two-founding-group co-evolution experiment"
+    )
+    coevolution_parser.add_argument("--seed", type=int, default=0)
+    coevolution_parser.add_argument("--total-steps", type=int, default=60, dest="total_steps")
+    coevolution_parser.add_argument("--output", type=str, default=None)
+    coevolution_parser.set_defaults(func=_cmd_coevolution)
+
+    niches_parser = subparsers.add_parser(
+        "niches", help="run a small resource-niche scenario and report specialization/overlap"
+    )
+    niches_parser.add_argument("--seed", type=int, default=0)
+    niches_parser.add_argument("--steps", type=int, default=60)
+    niches_parser.add_argument("--num-agents", type=int, default=6, dest="num_agents")
+    niches_parser.add_argument("--output", type=str, default=None)
+    niches_parser.set_defaults(func=_cmd_niches)
+
+    interactions_parser = subparsers.add_parser(
+        "interactions", help="build a small interaction network and report its structure"
+    )
+    interactions_parser.add_argument("--seed", type=int, default=0)
+    interactions_parser.add_argument("--steps", type=int, default=100)
+    interactions_parser.add_argument("--num-agents", type=int, default=8, dest="num_agents")
+    interactions_parser.add_argument("--output", type=str, default=None)
+    interactions_parser.set_defaults(func=_cmd_interactions)
+
+    population_analysis_parser = subparsers.add_parser(
+        "population-analysis", help="aggregate per-seed evolvability reports across seeds"
+    )
+    population_analysis_parser.add_argument("--seeds", type=int, default=3)
+    population_analysis_parser.add_argument(
+        "--num-samples", type=int, default=6, dest="num_samples"
+    )
+    population_analysis_parser.add_argument("--output", type=str, default=None)
+    population_analysis_parser.set_defaults(func=_cmd_population_analysis)
+
+    predict_evolution_parser = subparsers.add_parser(
+        "predict-evolution", help="test a lagged within-run prediction (population size -> energy)"
+    )
+    predict_evolution_parser.add_argument("--seed", type=int, default=0)
+    predict_evolution_parser.add_argument(
+        "--total-steps", type=int, default=100, dest="total_steps"
+    )
+    predict_evolution_parser.add_argument("--lag", type=int, default=1)
+    predict_evolution_parser.add_argument("--output", type=str, default=None)
+    predict_evolution_parser.set_defaults(func=_cmd_predict_evolution)
+
+    perturbation_parser = subparsers.add_parser(
+        "perturbation", help="run a controlled before/during/after resource-removal perturbation"
+    )
+    perturbation_parser.add_argument("--seed", type=int, default=0)
+    perturbation_parser.add_argument("--before-steps", type=int, default=20, dest="before_steps")
+    perturbation_parser.add_argument("--during-steps", type=int, default=10, dest="during_steps")
+    perturbation_parser.add_argument("--after-steps", type=int, default=20, dest="after_steps")
+    perturbation_parser.add_argument(
+        "--remove-fraction", type=float, default=0.8, dest="remove_fraction"
+    )
+    perturbation_parser.add_argument("--output", type=str, default=None)
+    perturbation_parser.set_defaults(func=_cmd_perturbation)
+
+    replication_parser = subparsers.add_parser(
+        "replication", help="run several seeds and report replication consistency of one effect"
+    )
+    replication_parser.add_argument("--seeds", type=int, default=5)
+    replication_parser.add_argument("--total-steps", type=int, default=60, dest="total_steps")
+    replication_parser.add_argument("--output", type=str, default=None)
+    replication_parser.set_defaults(func=_cmd_replication)
 
     return parser
 
