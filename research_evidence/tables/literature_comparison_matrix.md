@@ -1,0 +1,3 @@
+| literature_claim | genevra_result | direction | effect_size | confidence | reproduction_level | model_mismatch | status |
+|---|---|---|---|---|---|---|---|
+| case_a_plasticity_evolvability_tradeoff | n_control=8 n_treatment=8 | negative | -0.123 | p=0.8171 | LEVEL_0_CONCEPTUAL | GENEVRA has no gene-regulatory-network developmental model; 'evolvability' here is approximated by standing genetic diversity, not mutational robustness.; Single environmental regime (one PeriodicDynamics configuration) tested; the source paper explores a range of environmental change rates. | INCONCLUSIVE |

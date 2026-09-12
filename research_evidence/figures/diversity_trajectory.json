@@ -1,0 +1,19 @@
+{
+  "figure_id": "diversity_trajectory",
+  "experiment_id": "case_a_evolvable_learning_seed0",
+  "data_source": "ExperimentResult.trajectory[*].{genotypic_diversity,behavioral_diversity}",
+  "metrics": [
+    "genotypic_diversity",
+    "behavioral_diversity"
+  ],
+  "analysis_version": "artifacts.figures.v1",
+  "seed_policy": "n/a",
+  "creation_timestamp": "2026-09-12T20:38:54.670308+00:00",
+  "git_commit": "ff92bfbcb48e5b68ccefdd63311d0cc146f5c460",
+  "parameters": {},
+  "caption": "Genotypic and behavioral diversity across 15 generations for experiment 'case_a_evolvable_learning_seed0'. One value per generation from the stored trajectory; no smoothing or interpolation is applied.",
+  "limitations": "Diversity may be computed on a capped random pair sample; see diversity_max_pairs.",
+  "files": [
+    "diversity_trajectory.png"
+  ]
+}

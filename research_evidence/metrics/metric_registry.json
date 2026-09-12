@@ -1,0 +1,114 @@
+{
+  "fitness": {
+    "metric_id": "fitness",
+    "units": "fitness units (SurvivalResourceFitness scale)",
+    "aggregation_level": "organism -> generation mean",
+    "replication_level": "seed",
+    "definition": {
+      "name": "fitness",
+      "definition": "The scalar reward `SurvivalResourceFitness` assigns to one organism's lifetime.",
+      "input_data": "One organism's `LifetimeObservations` (survival time, resources collected).",
+      "math_definition": "A weighted sum of survival steps and resources collected; see genevra.evolution.fitness.SurvivalResourceFitness.compute.",
+      "interpretation": "Higher values mean the organism survived longer and/or gathered more resources under the tested environment; not a general biological fitness measure.",
+      "limitations": "Specific to the one fitness function used; a different weighting would reorder organisms differently.",
+      "is_realized": true,
+      "provenance_version": "genevra.evolution.fitness.v1"
+    }
+  },
+  "genotypic_diversity": {
+    "metric_id": "genotypic_diversity",
+    "units": "mean pairwise Euclidean distance (controller-weight space)",
+    "aggregation_level": "generation (population snapshot)",
+    "replication_level": "seed",
+    "definition": {
+      "name": "genotypic_diversity",
+      "definition": "Mean pairwise Euclidean distance between controller-weight vectors in a population (or sampled pairs, above `diversity_max_pairs`).",
+      "input_data": "A population's genomes at one generation/snapshot.",
+      "math_definition": "mean_{(i,j) in pairs} ||weights_i - weights_j||_2",
+      "interpretation": "Higher values indicate more standing genetic variation in the sampled population at that moment.",
+      "limitations": "A capped random pair sample above the size threshold, not exhaustive enumeration; says nothing about which variation is adaptive.",
+      "is_realized": true,
+      "provenance_version": "genevra.metrics.diversity.v1"
+    }
+  },
+  "instantaneous_novelty": {
+    "metric_id": "instantaneous_novelty",
+    "units": "mean k-NN behavioral-signature distance",
+    "aggregation_level": "generation (population snapshot)",
+    "replication_level": "seed",
+    "definition": {
+      "name": "instantaneous_novelty",
+      "definition": "Mean distance from each individual's behavioral signature to its nearest neighbors in that generation's population plus the running novelty archive.",
+      "input_data": "One generation's behavioral signatures and the accumulated novelty archive.",
+      "math_definition": "mean_i k-nearest-neighbor distance(signature_i, archive union population)",
+      "interpretation": "Relative to this run's own archive/population, not an absolute scale comparable across runs with different archives.",
+      "limitations": "Sensitive to archive size/eviction policy and k; not compared across runs with different novelty-archive configurations.",
+      "is_realized": true,
+      "provenance_version": "genevra.metrics.novelty.v1"
+    }
+  },
+  "robustness": {
+    "metric_id": "robustness",
+    "units": "behavioral-signature distance / |fitness delta| (dimension-dependent)",
+    "aggregation_level": "one sampled genotype -> seed-level mean",
+    "replication_level": "seed",
+    "definition": {
+      "name": "robustness",
+      "definition": "Preservation of phenotype, behavior, fitness, or lifetime-learned behavior under a controlled perturbation (one-step mutation, repeated stochastic re-evaluation, or an environment-parameter shift).",
+      "input_data": "One genome; a mutation operator, environment config(s), organism config, and learning rule sufficient to run repeated lifetimes.",
+      "math_definition": "For a set of N perturbed evaluations, the distribution (mean, std, 10th percentile) of a distance/delta from the unperturbed baseline: behavioral signature distance for genetic/behavioral/learning robustness, |fitness delta| for fitness/environmental robustness. Lower values indicate higher robustness; this module reports the raw distribution, never inverts it into a single 'robustness score.'",
+      "interpretation": "A tight (low-mean, low-std) distribution means this genotype's evaluated outcome is stable under the tested perturbation kind. It is not a claim about robustness under perturbation kinds not tested here.",
+      "limitations": "Sampled, not exhaustive (bounded num_samples for laptop feasibility). Single-genotype, on-demand measurement, not a per-generation population statistic. Robustness is not the inverse of fitness \u2014 a robust genotype can have low fitness.",
+      "is_realized": false,
+      "provenance_version": "mechanisms.robustness.v1"
+    }
+  },
+  "evolvability_mean_behavioral_distance": {
+    "metric_id": "evolvability_mean_behavioral_distance",
+    "units": "mean behavioral-signature distance across a one-step mutational neighborhood",
+    "aggregation_level": "one sampled genotype -> seed-level value",
+    "replication_level": "seed",
+    "definition": {
+      "name": "evolvability_profile",
+      "definition": "A multidimensional composition of existing evolvability measurements (genevra.metrics.evolvability) plus generalization-potential and strategy-space components, kept as a vector rather than collapsed into one score.",
+      "input_data": "One or more EvolvabilityReport/GeneralizationProfile results for a genome.",
+      "math_definition": "A frozen dataclass of independently-computed fields: mutational_phenotypic_variance, beneficial_fraction, novel_environment_fitness, recurrent_environment_fitness, adaptation_gain. No default aggregate weighting is applied; a caller-supplied weight mapping is required to produce a scalar.",
+      "interpretation": "Each field answers a different question about evolutionary potential; a high value on one field does not imply a high value on another.",
+      "limitations": "All fields are potential (mutation/environment-perturbation) measurements at one point in time, not observed evolutionary outcomes.",
+      "is_realized": false,
+      "provenance_version": "mechanisms.evolvability_profile.v1"
+    }
+  },
+  "plasticity_cost_association": {
+    "metric_id": "plasticity_cost_association",
+    "units": "Pearson correlation coefficient (dimensionless, [-1, 1])",
+    "aggregation_level": "sampled genotypes -> single correlation",
+    "replication_level": "n/a (correlational, not a seed-level replicated comparison)",
+    "definition": {
+      "name": "plasticity_cost",
+      "definition": "Association between an evolved population's plasticity_gate (heritable control of how much lifetime-learned change is expressed; see genevra.organism.learning.LearningParams) and other measured traits, reported as benefit-vs-cost evidence rather than an assumed net benefit.",
+      "input_data": "Sampled genomes from a population (or a stored ExperimentResult's final generation), each yielding a LearningStrategy, an initial_competence value, and (optionally) an EvolvabilityReport/RobustnessProfile.",
+      "math_definition": "Pearson correlation between plasticity_gate and each of: initial_competence (pre-learning baseline performance), genetic robustness, and evolvability viable_fraction/mean_behavioral_distance, computed only when >= 3 non-missing paired observations exist (genevra.analysis.tradeoff's convention).",
+      "interpretation": "A negative correlation with initial_competence is consistent with a 'plasticity trades off against baseline competence' cost; this module makes no claim of causation from a correlational finding.",
+      "limitations": "GENEVRA's metabolism model (genevra.organism.metabolism) does not currently attach a metabolic energy cost to a nonzero plasticity_gate or learning_rate \u2014 that mechanism does not exist in the organism model, so no metabolic-cost measurement is fabricated here. Only costs measurable from existing model quantities (competence, robustness, evolvability) are reported. Computational cost of the Hebbian update itself is negligible at GENEVRA's scale and is not measured.",
+      "is_realized": true,
+      "provenance_version": "mechanisms.plasticity_cost.v1"
+    }
+  },
+  "generalization_retention": {
+    "metric_id": "generalization_retention",
+    "units": "ratio (fitness in category / fitness in train)",
+    "aggregation_level": "one sampled genotype per environment category",
+    "replication_level": "seed",
+    "definition": {
+      "name": "generalization",
+      "definition": "Fitness, adaptation speed, and behavioral change when the same genome is evaluated in environments other than the one it evolved in.",
+      "input_data": "One genome; a labeled set of GridWorldConfig variants (train / recurrent: same config, new seed / related_unseen: one parameter shifted moderately / novel: parameters shifted substantially).",
+      "math_definition": "Per environment: fitness (FitnessFunction.compute), AdaptationCurve (initial/final competence via genevra.metrics.adaptation), and behavioral signature distance from the train-environment baseline signature.",
+      "interpretation": "Retention is fitness_in_environment / fitness_in_train (>1 means it performed better in that environment than its own training one). This profile reports where performance held up; it does not attribute *why* (genetic, lifetime-learned, or behavioral generalization) without a separate learning-rule-ablated comparison.",
+      "limitations": "'Novel' environments here are parameter shifts within the same GridWorld model (density/size), not qualitatively new dynamics \u2014 this is a bounded, operational notion of novelty, not a claim of unbounded generalization.",
+      "is_realized": true,
+      "provenance_version": "mechanisms.generalization.v1"
+    }
+  }
+}

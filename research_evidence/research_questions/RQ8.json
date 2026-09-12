@@ -1,0 +1,20 @@
+{
+  "question_id": "RQ8",
+  "title": "Can the discovery engine generate testable follow-up hypotheses?",
+  "description": "Runs PhenomenonDetector across CASE A's seeds, groups recurring phenomena into hypotheses, and generates (but does not execute) a follow-up experiment proposal.",
+  "hypothesis_ids": [],
+  "primary_outcome": "n_recurring_hypotheses",
+  "secondary_outcomes": [],
+  "experimental_conditions": [
+    "evolvable_learning"
+  ],
+  "required_replication": 2,
+  "statistical_plan": "recurrence across >= 2 independent seeds (no significance test)",
+  "evidence_status": "INSUFFICIENT_DATA",
+  "limitations": [
+    "'NOT_TESTED' here means hypotheses were generated but the generated follow-up experiment itself was not executed \u2014 the pipeline runs end-to-end, but the loop was not closed with a real follow-up run."
+  ],
+  "experiment_ids": [
+    "case_a_v1_period20"
+  ]
+}

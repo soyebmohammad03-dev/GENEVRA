@@ -1,0 +1,29 @@
+{
+  "spec_id": "case_a_v1_period20",
+  "claim_id": "case_a_plasticity_evolvability_tradeoff",
+  "control_condition": "no_learning",
+  "treatment_condition": "evolvable_learning",
+  "population_size": 16,
+  "generations": 15,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "primary_metric": "genotypic_diversity",
+  "statistical_test": "permutation_test",
+  "expected_direction": "positive",
+  "confidence_level": 0.9,
+  "replication_required_seeds": 4,
+  "held_out_validation": true,
+  "approximation_notes": [
+    "genotypic_diversity is used as a proxy for the source paper's mutational-robustness evolvability metric; no gene-regulatory-network developmental model exists in GENEVRA.",
+    "environmental change period=20 steps (Phase 18.5 boundary-search axis; the source paper explores a continuous range of change rates GENEVRA approximates with this one discrete-period PeriodicDynamics parameter)."
+  ],
+  "notes": ""
+}

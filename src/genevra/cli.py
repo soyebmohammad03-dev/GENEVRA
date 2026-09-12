@@ -751,6 +751,43 @@ def _cmd_replication(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_reproduce_evidence(args: argparse.Namespace) -> int:
+    """Phase 19.15: builds the curated `research_evidence/` package for
+    real. `--mode quick` (the default) runs a fast, laptop-smoke-test
+    version of the exact same pipeline that produced the checked-in
+    `research_evidence/` (which used `--mode full`) — see
+    docs/research_evidence.md for the exact command used."""
+    from genevra.evidence.build import FULL, QUICK, build_evidence_package
+
+    scale = FULL if args.mode == "full" else QUICK
+    output_root = Path(args.output)
+    print(
+        f"budget: case_a seeds={len(scale.case_a_seeds)} pop={scale.case_a_population} "
+        f"generations={scale.case_a_generations}; boundary seeds={len(scale.boundary_seeds)} "
+        f"x periods={scale.boundary_periods}; robustness genomes={scale.robustness_n_genomes}; "
+        f"ecology seeds={len(scale.ecology_seeds)}"
+    )
+    result = build_evidence_package(output_root, scale)
+    print(f"wrote {result.output_root} ({len(result.research_questions)} research questions)")
+    return 0
+
+
+def _cmd_verify_evidence(args: argparse.Namespace) -> int:
+    """Phase 19.16: checks the curated `research_evidence/` package
+    against what is actually on disk — checksums, manifest-reference
+    validity, and orphaned figures/tables/reports."""
+    from genevra.evidence.verify import verify_evidence_package
+
+    report = verify_evidence_package(Path(args.evidence_root))
+    if args.output:
+        with open(args.output, "w") as f:
+            json.dump(report.to_dict(), f, indent=2)
+        print(f"wrote {args.output}")
+    else:
+        print(json.dumps(report.to_dict(), indent=2))
+    return 0 if report.ok() else 1
+
+
 def _build_baseline_experiment_config(seed: int) -> Any:
     # Imported lazily: experiments/baseline.py lives outside the package
     # and is only needed for the `run` subcommand.
@@ -1410,6 +1447,21 @@ def build_parser() -> argparse.ArgumentParser:
     replication_parser.add_argument("--total-steps", type=int, default=60, dest="total_steps")
     replication_parser.add_argument("--output", type=str, default=None)
     replication_parser.set_defaults(func=_cmd_replication)
+
+    reproduce_evidence_parser = subparsers.add_parser(
+        "reproduce-evidence",
+        help="build the curated research_evidence/ package from real campaigns",
+    )
+    reproduce_evidence_parser.add_argument("--mode", choices=("quick", "full"), default="quick")
+    reproduce_evidence_parser.add_argument("--output", type=str, default="research_evidence")
+    reproduce_evidence_parser.set_defaults(func=_cmd_reproduce_evidence)
+
+    verify_evidence_parser = subparsers.add_parser(
+        "verify-evidence", help="verify checksums/provenance/references in research_evidence/"
+    )
+    verify_evidence_parser.add_argument("evidence_root", nargs="?", default="research_evidence")
+    verify_evidence_parser.add_argument("--output", type=str, default=None)
+    verify_evidence_parser.set_defaults(func=_cmd_verify_evidence)
 
     return parser
 

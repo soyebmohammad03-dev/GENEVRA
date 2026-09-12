@@ -1,0 +1,18 @@
+{
+  "figure_id": "fitness_trajectory",
+  "experiment_id": "case_a_evolvable_learning_seed0",
+  "data_source": "ExperimentResult.trajectory[*].fitness_summary.mean",
+  "metrics": [
+    "fitness_summary.mean"
+  ],
+  "analysis_version": "artifacts.figures.v1",
+  "seed_policy": "n/a",
+  "creation_timestamp": "2026-09-12T20:38:54.541668+00:00",
+  "git_commit": "ff92bfbcb48e5b68ccefdd63311d0cc146f5c460",
+  "parameters": {},
+  "caption": "Mean population fitness across 15 generations for experiment 'case_a_evolvable_learning_seed0'. One value per generation from the stored trajectory; no smoothing or interpolation is applied.",
+  "limitations": "One realized run; no cross-seed uncertainty band unless multiple seeds are pooled.",
+  "files": [
+    "fitness_trajectory.png"
+  ]
+}

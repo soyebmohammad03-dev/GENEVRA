@@ -1,0 +1,17 @@
+{
+  "predictor": "genotypic_diversity(t)",
+  "target": "instantaneous_novelty(t+5)",
+  "lag": 5,
+  "n_seeds": 8,
+  "held_out_sign_matches_by_seed": {
+    "0": false,
+    "1": true,
+    "2": false,
+    "3": false,
+    "4": true,
+    "5": false,
+    "6": false,
+    "7": false
+  },
+  "agreement_rate": 0.25
+}

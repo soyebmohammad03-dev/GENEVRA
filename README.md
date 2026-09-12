@@ -213,6 +213,31 @@ literature-campaign`). See [`docs/research_campaigns.md`](docs/research_campaign
 every literature run performed during this phase's live validation
 returned `INCONCLUSIVE`, reported as the actual (small-sample) result.
 
+## Research evidence package (Phase 19)
+
+`research_evidence/` is a small, curated, **committed** sample of real
+GENEVRA output — figures, tables, statistics, and reports from actual
+runs, not a raw experiment dump (`research_artifacts/` stays gitignored
+for that). `genevra.evidence.build.build_evidence_package` (via
+`genevra reproduce-evidence`) runs a compact but real set of campaigns
+— CASE A's literature reproduction, a boundary-condition sweep,
+robustness/evolvability sampling, and an isolated-vs-shared ecology
+comparison — and writes a traceable, checksum-verified package
+(`genevra verify-evidence`). See
+[`docs/research_evidence.md`](docs/research_evidence.md) and
+[`docs/final_research_quality_gate.md`](docs/final_research_quality_gate.md)
+for exactly what the current evidence does and does not show: one
+research question (ecological interaction structure and genetic
+diversity) has a real, large, statistically significant effect; several
+others are `INCONCLUSIVE` or `INSUFFICIENT_DATA` at the sample sizes
+tested, and that is reported as the actual finding rather than adjusted.
+
+GENEVRA is an experimental research platform, not a source of settled
+conclusions: every result in `research_evidence/` depends on the
+specific configuration, sample size, and model approximations used to
+produce it, and none of it should be read as a general biological claim
+or as validating or refuting any cited paper.
+
 ## High-level architecture
 
 ```

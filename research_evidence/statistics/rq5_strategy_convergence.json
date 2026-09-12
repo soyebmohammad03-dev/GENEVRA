@@ -1,0 +1,8 @@
+{
+  "n_seeds_initial": 8,
+  "n_seeds_final": 8,
+  "initial_mean_pairwise_strategy_distance": 0.0,
+  "final_mean_pairwise_strategy_distance": 0.030884163046855123,
+  "converged": null,
+  "note": "initial_mean_pairwise_strategy_distance is exactly 0.0 (deterministic gene initialization before mutation) \u2014 'converged relative to initial spread' is undefined here, not a genuine negative finding."
+}

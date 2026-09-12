@@ -1,0 +1,9 @@
+question_id,title,hypothesis_ids,experiment_ids,required_replication,primary_outcome,statistical_plan,evidence_status
+RQ1,"Environmental change, plasticity, and genetic-diversity retention",case_a_plasticity_evolvability_tradeoff,case_a_v1_period20,4,genotypic_diversity,permutation_test,INCONCLUSIVE
+RQ3,Does current genetic diversity predict future novelty?,rq3_diversity_predicts_future_novelty,case_a_v1_period20,3,instantaneous_novelty,leave_one_seed_out sign-agreement rate,NOT_SUPPORTED
+RQ5,Do independent runs converge on similar learning strategies?,rq5_strategy_convergence,case_a_v1_period20,3,final_mean_pairwise_strategy_distance,"descriptive spread comparison (no significance test — 1 observation per seed, no repeated sampling to permute)",INSUFFICIENT_DATA
+RQ6,Which literature-inspired claims are supported in GENEVRA?,case_a_plasticity_evolvability_tradeoff,case_a_v1_period20,4,genotypic_diversity,permutation_test,INCONCLUSIVE
+RQ8,Can the discovery engine generate testable follow-up hypotheses?,,case_a_v1_period20,2,n_recurring_hypotheses,recurrence across >= 2 independent seeds (no significance test),INSUFFICIENT_DATA
+RQ7,Under what environmental-change rates does the CASE A pattern change?,rq7_boundary_condition,case_a_boundary_sweep,4,genotypic_diversity,per-value classify_evidence label; transitions = consecutive differing labels,PARTIALLY_SUPPORTED
+RQ2,How does robustness relate to evolvability?,rq2_robustness_evolvability_association,rq2_robustness_evolvability,3,evolvability_mean_behavioral_distance,Pearson correlation at the seed level (>=3 seeds required),INCONCLUSIVE
+RQ4,Does ecological interaction structure affect evolutionary dynamics?,rq4_isolated_vs_shared_diversity,exp1_isolated_vs_shared,8,genotypic_diversity,"permutation_test + cohens_d, seed as replication unit",SUPPORTED

@@ -1,0 +1,14 @@
+{
+  "n_phenomena_observed": 1,
+  "observations": [
+    {
+      "name": "repeated_regime_oscillation",
+      "experiment": "case_a_evolvable",
+      "seed": 5,
+      "description": "Fitness trend direction reversed repeatedly across the run."
+    }
+  ],
+  "n_recurring_hypotheses": 0,
+  "hypotheses": [],
+  "followup_proposals": []
+}

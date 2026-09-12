@@ -1,0 +1,23 @@
+{
+  "question_id": "RQ6",
+  "title": "Which literature-inspired claims are supported in GENEVRA?",
+  "description": "Structured comparison of GENEVRA's reproduction result against the literature-inspired claim(s) it was tested against.",
+  "hypothesis_ids": [
+    "case_a_plasticity_evolvability_tradeoff"
+  ],
+  "primary_outcome": "genotypic_diversity",
+  "secondary_outcomes": [],
+  "experimental_conditions": [
+    "no_learning",
+    "evolvable_learning"
+  ],
+  "required_replication": 4,
+  "statistical_plan": "permutation_test",
+  "evidence_status": "INCONCLUSIVE",
+  "limitations": [
+    "Only 1 of GENEVRA's 4 literature cases (A/B/C/D) is represented in this evidence package; B/C/D remain NOT_TESTED here (machinery exists, not run at this scale this session)."
+  ],
+  "experiment_ids": [
+    "case_a_v1_period20"
+  ]
+}

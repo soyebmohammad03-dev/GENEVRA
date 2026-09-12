@@ -1,0 +1,14 @@
+{
+  "development_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "validation_seeds": [
+    6,
+    7
+  ]
+}

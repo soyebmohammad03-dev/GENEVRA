@@ -1,0 +1,24 @@
+{
+  "question_id": "RQ7",
+  "title": "Under what environmental-change rates does the CASE A pattern change?",
+  "description": "Sweeps the environmental-change period parameter and records the reproduction label found at each value.",
+  "hypothesis_ids": [
+    "rq7_boundary_condition"
+  ],
+  "primary_outcome": "genotypic_diversity",
+  "secondary_outcomes": [],
+  "experimental_conditions": [
+    "period=10",
+    "period=20",
+    "period=40"
+  ],
+  "required_replication": 4,
+  "statistical_plan": "per-value classify_evidence label; transitions = consecutive differing labels",
+  "evidence_status": "PARTIALLY_SUPPORTED",
+  "limitations": [
+    "A coarse, discrete sweep over one GENEVRA-exposed parameter approximating the source paper's continuous environmental-change-rate axis."
+  ],
+  "experiment_ids": [
+    "case_a_boundary_sweep"
+  ]
+}

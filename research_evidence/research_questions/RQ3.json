@@ -1,0 +1,23 @@
+{
+  "question_id": "RQ3",
+  "title": "Does current genetic diversity predict future novelty?",
+  "description": "Leave-one-seed-out test of whether genotypic_diversity at generation t predicts instantaneous_novelty at t+5.",
+  "hypothesis_ids": [
+    "rq3_diversity_predicts_future_novelty"
+  ],
+  "primary_outcome": "instantaneous_novelty",
+  "secondary_outcomes": [],
+  "experimental_conditions": [
+    "evolvable_learning"
+  ],
+  "required_replication": 3,
+  "statistical_plan": "leave_one_seed_out sign-agreement rate",
+  "evidence_status": "NOT_SUPPORTED",
+  "limitations": [
+    "Sign-agreement across seeds, not a magnitude/R^2 predictive benchmark.",
+    "n_seeds=8; agreement_rate is None below 3 usable seeds."
+  ],
+  "experiment_ids": [
+    "case_a_v1_period20"
+  ]
+}

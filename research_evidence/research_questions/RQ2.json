@@ -1,0 +1,23 @@
+{
+  "question_id": "RQ2",
+  "title": "How does robustness relate to evolvability?",
+  "description": "Correlates genetic robustness with mutational-neighborhood evolvability across independently sampled genotypes (seed = replication unit).",
+  "hypothesis_ids": [
+    "rq2_robustness_evolvability_association"
+  ],
+  "primary_outcome": "evolvability_mean_behavioral_distance",
+  "secondary_outcomes": [],
+  "experimental_conditions": [
+    "n/a: correlational design, not conditions"
+  ],
+  "required_replication": 3,
+  "statistical_plan": "Pearson correlation at the seed level (>=3 seeds required)",
+  "evidence_status": "INCONCLUSIVE",
+  "limitations": [
+    "Association only; direction of causality (if any) is not established.",
+    "This measures 'current evolvability' (mutational neighborhood), not 'future evolvability realized over generations' \u2014 a genuinely stronger claim this evidence package does not attempt."
+  ],
+  "experiment_ids": [
+    "rq2_robustness_evolvability"
+  ]
+}

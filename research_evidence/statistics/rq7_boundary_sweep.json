@@ -1,0 +1,27 @@
+{
+  "parameter_name": "environmental_change_period",
+  "claim_id": "case_a_plasticity_evolvability_tradeoff",
+  "points": [
+    {
+      "parameter_value": 10.0,
+      "label": "INCONCLUSIVE",
+      "n_control": 4,
+      "n_treatment": 4,
+      "cohens_d": 0.851615837611178
+    },
+    {
+      "parameter_value": 20.0,
+      "label": "INCONCLUSIVE",
+      "n_control": 4,
+      "n_treatment": 4,
+      "cohens_d": -0.42151257427553607
+    },
+    {
+      "parameter_value": 40.0,
+      "label": "SUPPORTED",
+      "n_control": 4,
+      "n_treatment": 4,
+      "cohens_d": 1.4061901253417601
+    }
+  ]
+}

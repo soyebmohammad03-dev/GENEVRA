@@ -1,0 +1,25 @@
+{
+  "question_id": "RQ5",
+  "title": "Do independent runs converge on similar learning strategies?",
+  "description": "Compares the spread of independent seeds' mean learning-strategy vector at generation 0 vs. the final generation.",
+  "hypothesis_ids": [
+    "rq5_strategy_convergence"
+  ],
+  "primary_outcome": "final_mean_pairwise_strategy_distance",
+  "secondary_outcomes": [
+    "initial_mean_pairwise_strategy_distance"
+  ],
+  "experimental_conditions": [
+    "evolvable_learning"
+  ],
+  "required_replication": 3,
+  "statistical_plan": "descriptive spread comparison (no significance test \u2014 1 observation per seed, no repeated sampling to permute)",
+  "evidence_status": "INSUFFICIENT_DATA",
+  "limitations": [
+    "Descriptive only; a single spread comparison is not a hypothesis test.",
+    "GENEVRA's mutation/selection noise is itself a 'shared environmental constraint' independent of learning \u2014 this does not distinguish convergence from that shared constraint (Phase 17.13's caveat)."
+  ],
+  "experiment_ids": [
+    "case_a_v1_period20"
+  ]
+}

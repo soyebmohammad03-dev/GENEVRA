@@ -1,0 +1,24 @@
+{
+  "question_id": "RQ1",
+  "title": "Environmental change, plasticity, and genetic-diversity retention",
+  "description": "How does environmental change influence plasticity, learning, and evolvability (approximated here by standing genotypic diversity)?",
+  "hypothesis_ids": [
+    "case_a_plasticity_evolvability_tradeoff"
+  ],
+  "primary_outcome": "genotypic_diversity",
+  "secondary_outcomes": [],
+  "experimental_conditions": [
+    "no_learning",
+    "evolvable_learning"
+  ],
+  "required_replication": 4,
+  "statistical_plan": "permutation_test",
+  "evidence_status": "INCONCLUSIVE",
+  "limitations": [
+    "GENEVRA has no gene-regulatory-network developmental model; 'evolvability' here is approximated by standing genetic diversity, not mutational robustness.",
+    "Single environmental regime (one PeriodicDynamics configuration) tested; the source paper explores a range of environmental change rates."
+  ],
+  "experiment_ids": [
+    "case_a_v1_period20"
+  ]
+}

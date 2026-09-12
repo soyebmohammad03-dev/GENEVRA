@@ -1,0 +1,23 @@
+{
+  "question_id": "RQ4",
+  "title": "Does ecological interaction structure affect evolutionary dynamics?",
+  "description": "Compares final genotypic diversity between isolated (single-organism-per-episode) and shared (multi-agent, resource-competing) conditions.",
+  "hypothesis_ids": [
+    "rq4_isolated_vs_shared_diversity"
+  ],
+  "primary_outcome": "genotypic_diversity",
+  "secondary_outcomes": [],
+  "experimental_conditions": [
+    "isolated",
+    "shared"
+  ],
+  "required_replication": 8,
+  "statistical_plan": "permutation_test + cohens_d, seed as replication unit",
+  "evidence_status": "SUPPORTED",
+  "limitations": [
+    "An infrastructure-comparable proxy metric across two different engines, not a within-one-engine controlled ecology manipulation."
+  ],
+  "experiment_ids": [
+    "exp1_isolated_vs_shared"
+  ]
+}

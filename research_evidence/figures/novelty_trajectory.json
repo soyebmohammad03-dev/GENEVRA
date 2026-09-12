@@ -1,0 +1,19 @@
+{
+  "figure_id": "novelty_trajectory",
+  "experiment_id": "case_a_evolvable_learning_seed0",
+  "data_source": "ExperimentResult.trajectory[*].{mean_novelty,instantaneous_novelty}",
+  "metrics": [
+    "mean_novelty",
+    "instantaneous_novelty"
+  ],
+  "analysis_version": "artifacts.figures.v1",
+  "seed_policy": "n/a",
+  "creation_timestamp": "2026-09-12T20:38:54.791649+00:00",
+  "git_commit": "ff92bfbcb48e5b68ccefdd63311d0cc146f5c460",
+  "parameters": {},
+  "caption": "Cumulative and instantaneous novelty across 15 generations for experiment 'case_a_evolvable_learning_seed0'. One value per generation from the stored trajectory; no smoothing or interpolation is applied.",
+  "limitations": "Novelty is relative to this run's own archive/population, not an absolute scale.",
+  "files": [
+    "novelty_trajectory.png"
+  ]
+}

@@ -409,3 +409,21 @@ def test_replication_command_prints_agreement(capsys) -> None:
     assert exit_code == 0
     captured = capsys.readouterr()
     assert "agreement_fraction=" in captured.out
+
+
+def test_reproduce_evidence_then_verify_evidence_roundtrip(tmp_path, capsys) -> None:
+    output_root = tmp_path / "evidence"
+    exit_code = main(["reproduce-evidence", "--mode", "quick", "--output", str(output_root)])
+    assert exit_code == 0
+    captured = capsys.readouterr()
+    assert "research questions" in captured.out
+
+    exit_code = main(["verify-evidence", str(output_root)])
+    assert exit_code == 0
+    captured = capsys.readouterr()
+    assert '"ok": true' in captured.out
+
+
+def test_verify_evidence_fails_on_missing_package(tmp_path) -> None:
+    exit_code = main(["verify-evidence", str(tmp_path / "does_not_exist")])
+    assert exit_code == 1

@@ -1,0 +1,20 @@
+{
+  "finding_id": "rq2_robustness_evolvability_association",
+  "tested_variants": {
+    "genome_0": 4.1476808220148085,
+    "genome_1": 6.755613899230957,
+    "genome_2": 3.6454283833503722,
+    "genome_3": 5.316694724559784,
+    "genome_4": 5.937418031692505,
+    "genome_5": 6.042996835708618,
+    "genome_6": 3.064159393310547,
+    "genome_7": 9.327023696899413,
+    "genome_8": 1.6235073149204253,
+    "genome_9": 4.348520493507385
+  },
+  "agreement_fraction": 1.0,
+  "classification": "ROBUST",
+  "reasons": [
+    "100% of tested variants agree in sign."
+  ]
+}

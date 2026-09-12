@@ -1,0 +1,19 @@
+{
+  "figure_id": "robustness_vs_evolvability",
+  "experiment_id": "rq2_robustness_evolvability",
+  "data_source": "genevra.mechanisms.robustness / genevra.metrics.evolvability, sampled genotypes",
+  "metrics": [
+    "genetic_robustness_mean",
+    "evolvability_mean_behavioral_distance"
+  ],
+  "analysis_version": "artifacts.figures.v1",
+  "seed_policy": "n/a",
+  "creation_timestamp": "2026-09-12T20:39:06.101428+00:00",
+  "git_commit": "ff92bfbcb48e5b68ccefdd63311d0cc146f5c460",
+  "parameters": {},
+  "caption": "evolvability plotted against robustness across 10 sampled genotypes. Each point is one independently sampled genotype; no trend line is fit unless explicitly noted.",
+  "limitations": "Association only (Pearson r reported separately); no causal direction is implied.",
+  "files": [
+    "robustness_vs_evolvability.png"
+  ]
+}
