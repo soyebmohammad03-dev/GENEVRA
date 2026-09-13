@@ -261,6 +261,29 @@ specific configuration, sample size, and model approximations used to
 produce it, and none of it should be read as a general biological claim
 or as validating or refuting any cited paper.
 
+## Research Evidence and Figures
+
+GENEVRA has real experimental outputs committed to the repository, not
+just source code. The figures below are generated directly from stored
+experiment data — see
+[`docs/research_evidence_gallery.md`](docs/research_evidence_gallery.md)
+for full captions, sample sizes, and stated limitations for each one.
+
+| RQ4b: seed-level diversity | RQ4b: effect size | RQ4b: replication |
+|---|---|---|
+| ![RQ4b seed-level diversity](research_evidence/figures/rq4b_seed_level_diversity.png) | ![Effect size forest](research_evidence/figures/effect_size_forest.png) | ![Replication consistency](research_evidence/figures/replication_consistency.png) |
+
+| Robustness vs. evolvability | Fitness trajectory (one run) |
+|---|---|
+| ![Robustness vs evolvability](research_evidence/figures/robustness_vs_evolvability.png) | ![Fitness trajectory](research_evidence/figures/fitness_trajectory.png) |
+
+The RQ4b figures above are the package's best-powered result (n=24
+seeds/condition, same-engine controlled design) — and it is a null result
+(`NOT_SUPPORTED`, p=0.73, Cohen's d=-0.10) for the specific ecology
+manipulation and metric tested, reported as-is rather than adjusted.
+
+[View the complete research evidence gallery](docs/research_evidence_gallery.md)
+
 ## High-level architecture
 
 ```

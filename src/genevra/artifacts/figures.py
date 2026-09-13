@@ -20,6 +20,7 @@ from typing import TYPE_CHECKING, Any
 
 from genevra.artifacts.captions import (
     bar_caption,
+    evidence_status_caption,
     forest_plot_caption,
     histogram_caption,
     scatter_caption,
@@ -489,6 +490,50 @@ def plot_replication_consistency(
     )
 
 
+def plot_research_question_summary(
+    rows: Sequence[Mapping[str, str]], output_dir: Path
+) -> FigureMetadata:
+    """Categorical evidence-status figure generated only from already-committed
+    `research_evidence/tables/research_question_matrix.csv` rows (each row a
+    `{"question_id": ..., "evidence_status": ...}` mapping). No numeric score is
+    invented: `evidence_status` values are not commensurable across research
+    questions, so the x-axis is a categorical, alphabetically-ordered list of the
+    distinct statuses actually present in the table, not a ranking or a scale."""
+    apply_style()
+    plt = require_matplotlib()
+    ordered_rows = sorted(rows, key=lambda r: r["question_id"])
+    statuses = sorted({r["evidence_status"] for r in ordered_rows})
+    status_index = {status: i for i, status in enumerate(statuses)}
+    colors = plt.get_cmap("tab10").colors
+    fig, ax = plt.subplots(figsize=(7.5, 0.5 * len(ordered_rows) + 2))
+    for y, row in enumerate(ordered_rows):
+        x = status_index[row["evidence_status"]]
+        ax.scatter(x, y, s=90, color=colors[x % len(colors)], zorder=3)
+    ax.set_yticks(range(len(ordered_rows)))
+    ax.set_yticklabels([r["question_id"] for r in ordered_rows])
+    ax.set_xticks(range(len(statuses)))
+    ax.set_xticklabels(statuses, rotation=20, ha="right")
+    ax.set_xlim(-0.5, len(statuses) - 0.5)
+    ax.grid(axis="y", alpha=0.2)
+    ax.set_xlabel("evidence status (categorical; alphabetical, not a ranking or scale)")
+    ax.set_title("Research question evidence status")
+    fig.tight_layout()
+    return save_figure(
+        fig,
+        output_dir,
+        figure_id="research_question_summary",
+        experiment_id="ALL",
+        data_source="research_evidence/tables/research_question_matrix.csv",
+        metrics=("evidence_status",),
+        caption=evidence_status_caption(len(ordered_rows)),
+        limitations=(
+            "Categorical status only; no numeric effect size is aggregated across "
+            "research questions because their metrics and designs are not comparable. "
+            "No research question in this table is labeled SUPPORTED."
+        ),
+    )
+
+
 __all__ = [
     "plot_fitness_trajectory",
     "plot_novelty_trajectory",
@@ -502,4 +547,5 @@ __all__ = [
     "plot_overview_panel",
     "plot_population_size_trajectory",
     "plot_replication_consistency",
+    "plot_research_question_summary",
 ]

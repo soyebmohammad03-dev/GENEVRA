@@ -50,10 +50,20 @@ def forest_plot_caption(n_effects: int, ci_level: float) -> str:
     )
 
 
+def evidence_status_caption(n_questions: int) -> str:
+    return (
+        f"Evidence status of all {n_questions} research questions in "
+        "research_evidence/tables/research_question_matrix.csv, grouped by category "
+        "(not a numeric score — statuses are not commensurable across research questions). "
+        "Reflects the current committed evidence package only."
+    )
+
+
 __all__ = [
     "trajectory_caption",
     "scatter_caption",
     "bar_caption",
     "histogram_caption",
     "forest_plot_caption",
+    "evidence_status_caption",
 ]

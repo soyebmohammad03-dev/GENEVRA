@@ -1,0 +1,18 @@
+{
+  "figure_id": "research_question_summary",
+  "experiment_id": "ALL",
+  "data_source": "research_evidence/tables/research_question_matrix.csv",
+  "metrics": [
+    "evidence_status"
+  ],
+  "analysis_version": "artifacts.figures.v1",
+  "seed_policy": "n/a",
+  "creation_timestamp": "2026-09-13T14:48:37.053531+00:00",
+  "git_commit": "ad7a266d5b318655fdb7e792e49176dfb9164254",
+  "parameters": {},
+  "caption": "Evidence status of all 9 research questions in research_evidence/tables/research_question_matrix.csv, grouped by category (not a numeric score \u2014 statuses are not commensurable across research questions). Reflects the current committed evidence package only.",
+  "limitations": "Categorical status only; no numeric effect size is aggregated across research questions because their metrics and designs are not comparable. No research question in this table is labeled SUPPORTED.",
+  "files": [
+    "research_question_summary.png"
+  ]
+}

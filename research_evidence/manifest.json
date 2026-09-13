@@ -1232,6 +1232,46 @@
       "limitations": [],
       "git_commit": "d415fabe235bfb9b7adcf1f975a7e19577446ef6",
       "creation_timestamp": "2026-09-12T22:14:31.949782+00:00"
+    },
+    {
+      "artifact_id": "research_question_summary",
+      "artifact_type": "figure",
+      "research_question": "ALL",
+      "experiment_id": "ALL",
+      "condition": "all",
+      "seed_set": [],
+      "source_data": "research_evidence/tables/research_question_matrix.csv",
+      "metric_ids": [
+        "evidence_status"
+      ],
+      "analysis_version": "artifacts.figures.v1",
+      "config_hash": "c38a4df08195ce97",
+      "relative_path": "figures/research_question_summary.png",
+      "limitations": [
+        "Categorical status only; no numeric effect size is aggregated across research questions because their metrics and designs are not comparable. No research question in this table is labeled SUPPORTED."
+      ],
+      "git_commit": "ad7a266d5b318655fdb7e792e49176dfb9164254",
+      "creation_timestamp": "2026-09-13T14:48:37.094719+00:00"
+    },
+    {
+      "artifact_id": "research_question_summary_metadata",
+      "artifact_type": "figure",
+      "research_question": "ALL",
+      "experiment_id": "ALL",
+      "condition": "all",
+      "seed_set": [],
+      "source_data": "research_evidence/tables/research_question_matrix.csv",
+      "metric_ids": [
+        "evidence_status"
+      ],
+      "analysis_version": "artifacts.figures.v1",
+      "config_hash": "c38a4df08195ce97",
+      "relative_path": "figures/research_question_summary.json",
+      "limitations": [
+        "Categorical status only; no numeric effect size is aggregated across research questions because their metrics and designs are not comparable. No research question in this table is labeled SUPPORTED."
+      ],
+      "git_commit": "ad7a266d5b318655fdb7e792e49176dfb9164254",
+      "creation_timestamp": "2026-09-13T14:48:37.094758+00:00"
     }
   ]
 }
