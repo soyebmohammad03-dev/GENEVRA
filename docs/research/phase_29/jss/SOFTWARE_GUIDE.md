@@ -10,7 +10,7 @@ out=$(mktemp -d)
 uv venv --python 3.12.15 "$out/install"
 p="$out/install/bin/python"
 uv pip install --python "$p" -r docs/research/phase_23/requirements-macos-arm64.txt
-uv pip install --python "$p" --no-deps .
+uv pip install --python "$p" --no-deps -e .
 uv pip check --python "$p"
 "$out/install/bin/genevra" --help
 "$out/install/bin/genevra" verify-evidence research_evidence
@@ -18,7 +18,7 @@ uv pip check --python "$p"
 "$p" scripts/benchmark_reference.py --help
 ```
 
-The lock lists NumPy, plotting and notebook dependencies, and pytest. Installing the project from source also resolves its declared Hatchling build dependency. The installed command covers the general GENEVRA simulator. The standalone publication scripts below additionally require the checked-out research inputs.
+The package declares Python 3.11 or later and NumPy 1.26 or later. The macOS arm64 replay lock supplies exact NumPy, plotting, notebook, and test versions for the verified environment. Installing the project from source also resolves its declared Hatchling build dependency. Keep the checkout in place. The editable install makes the legacy simulator commands and evidence builder resolve the checked-out `experiments/` directory. A non-editable wheel installs, but commands that load the legacy experiment files fail because those files are outside the installed package. The publication scripts below also use the checkout.
 
 ## Worked example
 
@@ -51,6 +51,10 @@ Compare `$out/replay/final/audit-receipt.json` with the [tracked receipt](../ren
 | `scripts/build_jss_manuscript.py`, `scripts/reproduce_jss_manuscript.sh` | Transcribe the frozen manuscript into JSS LaTeX, preserve the citation and asset inventory, compile, and check references and layout warnings. |
 
 For the historical package details see the [supplement](../SUPPLEMENT.md). For units, denominator distinctions, and assumptions see the [statistical review](../STATISTICAL_REVIEW.md). The separate reference implementation shares synthetic evidence inputs with the primary analysis. Its numerical check provides internal corroboration.
+
+## Packaging for review
+
+Generate a source snapshot from the verified commit with `git archive --format=tar.gz --prefix=GENEVRA/ -o GENEVRA-JSS-preparation.tar.gz HEAD`. Record its digest with `shasum -a 256 GENEVRA-JSS-preparation.tar.gz`. After extraction, check the preparation manifest as in the worked example. The source snapshot includes the frozen figure and table inputs and the supplement. The replay driver downloads the separately archived raw inputs, checks their digests, and reconstructs the full supplement. The JSS build stages the candidate manuscript upload directory and obtains the pinned official styles.
 
 ## Troubleshooting and license
 

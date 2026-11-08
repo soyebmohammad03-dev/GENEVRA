@@ -1,6 +1,6 @@
 # GENEVRA JSS preparation package
 
-This candidate package reformats the [corrected Phase 29 manuscript](../rendered/manuscript.pdf) for the Journal of Statistical Software. The frozen benchmark, evidence, and technical review copy remain the scientific source. See the [Phase 29 record](../README.md) for the research scope and decision.
+This candidate package reformats the [corrected Phase 29 manuscript](../rendered/GENEVRA-manuscript.pdf) for the Journal of Statistical Software. The frozen benchmark, evidence, and technical review copy remain the scientific source. See the [Phase 29 record](../README.md) for the research scope and decision.
 
 | Material | Location |
 |---|---|
