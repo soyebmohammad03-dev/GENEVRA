@@ -20,7 +20,7 @@ For a paired difference D in [−M,M], Hoeffding gives radius M sqrt(2 log(2/α)
 
 ## Frozen protocols and provenance
 
-- [Phase 18 frozen matched-access package](../../model_repair/phase_18/MATCHED_ACCESS_PROTOCOL.md)
+- Phase 18 frozen matched-access protocol is at `archive/phase-18/docs/model_repair/phase_18/MATCHED_ACCESS_PROTOCOL.md` after unpacking the [verified public capsule](../archive.json).
 - [Phase 19 coverage-envelope protocol](../../model_repair/phase_19/extension/EXPERIMENT_PROTOCOL.md)
 - [Phase 25 paid-pilot allocation and statistical plan](../phase_25/PROTOCOL.md)
 - [Phase 26 separate exploratory sensitivity protocol](../phase_26/PROTOCOL.md)
