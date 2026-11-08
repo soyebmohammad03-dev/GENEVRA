@@ -32,6 +32,7 @@ biological validity remain unestablished.
 | [Phase 23 external review package](docs/research/phase_23/README.md) | Claim audit, internally simulated reviews, partner qualification and submission gates |
 | [Phase 24 reproduction challenge](docs/research/phase_24/README.md) | Frozen benchmark, raw-data verification and competing-implementation scorer |
 | [Phase 25 comparative allocation](docs/research/phase_25/README.md) | Paid-pilot variance comparator, matched budgets and exploratory challenge |
+| [Phase 26 adversarial audit](docs/research/phase_26/README.md) | Allocation failure attribution, sensitivity and revised benchmark contribution |
 | [Citation](CITATION.cff) and [license](LICENSE) | Cite a versioned commit and frozen protocol |
 
 ## Coverage and certification research

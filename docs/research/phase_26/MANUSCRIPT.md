@@ -1,0 +1,23 @@
+# When better allocation cannot repair undercoverage
+
+## Abstract
+
+We study bounded-mean inference and anchor certification when sampling channels share an inaccessible target component. GENEVRA supplies frozen known-truth stress cases, matched-cost allocation comparisons and independently implemented numerical verification. In the prespecified public small-omission comparison, the GENEVRA width proxy yielded one covered-and-precise interval in 256 runs versus 104 for paid-pilot cost-adjusted Neyman allocation and 229 for equal spend. The paired proxy-minus-Neyman difference was −40.23 percentage points (95% Hoeffding interval −57.21 to −23.26). Reconstruction attributes the interval-width gap primarily to the high-variance stratum, with essentially unchanged envelope increments. Valid mass bounds can restore coverage without achieving useful precision. Invalid restrictions can defeat both allocators. The contribution is a reproducible benchmark for diagnosing these failures under declared access and costs. The results are synthetic and require independent artifact review before submission.
+
+## Problem, gap and contribution
+
+Calibration and evaluation samples may agree while jointly omitting target units. The practical question is how to distinguish sampling precision, target identification and decision error when comparing policies. Partial identification and cost-optimal stratification already supply mathematical tools. The benchmark gap under review is a reproducible paired test that varies shared omission, cap validity and acquisition policies while measuring separate decision endpoints. GENEVRA contributes the specific stress suite and its audit path. See the [literature and novelty positioning](POSITIONING.md).
+
+## Mathematical formulation and methods
+
+Write the reachable tail rate as r = sum of reachable weights times stratum rates. The target rate is (1−m)r+mz with omitted mass m and hidden tail rate z. The score mean is .3+234.2 times that rate. Under an external cap U and unrestricted hidden support, the identification width at exact r is 234.2U. Fixed-look stratum likelihood bounds propagate through the envelope. Coverage, width ≤ .60, abstention at the .60 threshold and an anchor tolerance .30 are different endpoints. Certification requires the entire interval to lie within the tolerance.
+
+The frozen Phase 25 design used nine laws, two charged budgets and 256 paired runs per cell, including a paid common pilot and separate common-prefix inference draws. Use the same scoring procedure for width proxy, cost-adjusted pilot variance, minimax variance, proportional and equal spend. Report direct reachable calibration as a diagnostic, true-rate allocation as an oracle and no-acquisition abstention separately. Phase 26 independently reconstructs Phase 25 and then changes one named factor at a time in a separate 96-run exploratory sensitivity sweep. The primary paired Hoeffding interval and secondary multiplicity apply to the historical contrast only.
+
+## Results and failure analysis
+
+At 32,768 charged units with small omission, width proxy produced 1/256 covered-and-precise intervals, pilot variance 104/256, equal spend 229/256. Proxy minus variance was −.40234 [−.57211, −.23258]. All three covered every target. The width-proxy high-stratum contribution was .4393 score units versus .3702 for pilot variance. Almost identical omission increments did not drive their difference. The continuous-to-integer displacement was under half a high-stratum draw, ruling out grid rounding as the allocation gap. Valid large-omission caps restored coverage but produced an identification floor above the width target. A wrong mass cap or population weights could destroy coverage regardless of the allocation. Full counts and sensitivity results are in the [audit](FINDINGS.md).
+
+## Threats, discussion and future research
+
+Synthetic scenario prevalence is unknown. Cap evidence is supplied, acquisition prices omit field frame construction, and pilot behavior and interval trade-offs may change outside the declared strata and cost model. A favorable sweep cell does not justify a superiority claim. Neither width loss nor observed certification implies general method quality. Shared blindness has a distinct archived Phase 18 stress case. The allocation results here assume positive access to both reachable strata. The Census comparison is descriptive and separate. The strongest route is a benchmark and systems paper after independent replay, comparison to the nearest prior benchmark and a separately governed holdout. A narrow negative feasibility report is a fallback. New methodological or empirical claims need different evidence.
