@@ -1,0 +1,93 @@
+{
+  "schema": "genevra-final-audit-v1",
+  "status": "passed",
+  "reference_sha256": "59267706155a805bc7795d7171488e86aa04bb0f453d9a1afe3354388826ffd9",
+  "phase25_raw_sha256": "9b8f43cea437004ecb9143ec8846bab1ff5fdc354149b28f4772b168ed22008f",
+  "source_sha256": {
+    "docs/research/phase_29/MANUSCRIPT.md": "ed9169d1a490776f4d0d7fa785ea64d48739434e2c18347d72e3c5ddfa33e889",
+    "docs/research/phase_28/REFERENCES.md": "3b36a2b109acf5efd47f2894904c4a0333f60db70d6272c542cbb7c1ed216440",
+    "scripts/final_research_audit.py": "96f8fca7591de5c5d27f1bde12cd8d1b02a90a5cabc02d15857539e46e236a35"
+  },
+  "pdf_sha256": "995dc7cbf57dae0abce7891618898028cc5c7b0803d3cf2cee05f5886308b140",
+  "primary_width_reconstruction": {
+    "width_proxy": {
+      "mean_width": 0.6726319536448303,
+      "mean_low_stratum_width": 0.11646207588386881,
+      "mean_high_stratum_width": 0.43934778269024855,
+      "mean_envelope_increment": 0.11682209507071294,
+      "n": 256,
+      "covered": 256,
+      "precise": 1,
+      "covered_and_precise": 1
+    },
+    "variance": {
+      "mean_width": 0.6113434166080821,
+      "mean_low_stratum_width": 0.12432922977133082,
+      "mean_high_stratum_width": 0.3701614321677208,
+      "mean_envelope_increment": 0.11685275466903047,
+      "n": 256,
+      "covered": 256,
+      "precise": 104,
+      "covered_and_precise": 104
+    },
+    "equal_spend": {
+      "mean_width": 0.5576074146527142,
+      "mean_low_stratum_width": 0.14541889118612555,
+      "mean_high_stratum_width": 0.2953088873558597,
+      "mean_envelope_increment": 0.116879636110729,
+      "n": 256,
+      "covered": 256,
+      "precise": 229,
+      "covered_and_precise": 229
+    }
+  },
+  "matched_large_omission": {
+    "n": 512,
+    "reachable_only_covered": 0,
+    "equal_envelope_covered": 512,
+    "equal_envelope_covered_and_precise": 0,
+    "matched_charged_units": 32768
+  },
+  "rendered_evidence_tokens": {
+    "shared_n": 512,
+    "shared_cover": 0,
+    "shared_issued": 180,
+    "shared_false": 180,
+    "shared_wrong_label": 0,
+    "shared_upper": "40.73",
+    "n": 256,
+    "budget": "32,768",
+    "proxy": 1,
+    "neyman": 104,
+    "equal": 229,
+    "difference": "-40.23",
+    "low": "-57.21",
+    "high": "-23.26",
+    "discordant": 103,
+    "secondary": 17,
+    "large_n": 512,
+    "large_cover": 512,
+    "large_useful": 0,
+    "large_floor": "1.171",
+    "cells": 144,
+    "records": "36,864",
+    "proxy_n1": "3652.0000",
+    "proxy_low_stratum_width": "0.1165",
+    "proxy_high_stratum_width": "0.4393",
+    "proxy_envelope_increment": "0.1168",
+    "proxy_width": "0.6726",
+    "neyman_n1": "5248.0898",
+    "neyman_low_stratum_width": "0.1243",
+    "neyman_high_stratum_width": "0.3702",
+    "neyman_envelope_increment": "0.1169",
+    "neyman_width": "0.6113",
+    "equal_n1": "8096.0000",
+    "equal_low_stratum_width": "0.1454",
+    "equal_high_stratum_width": "0.2953",
+    "equal_envelope_increment": "0.1169",
+    "equal_width": "0.5576",
+    "large_direct_cover": 0
+  },
+  "external_reproduction": "outstanding",
+  "empirical_validation": "outstanding"
+}

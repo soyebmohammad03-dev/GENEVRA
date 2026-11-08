@@ -36,14 +36,23 @@ journal submission remain outstanding.
 | [Phase 26 adversarial audit](docs/research/phase_26/README.md) | Allocation failure attribution, sensitivity and revised benchmark contribution |
 | [Phase 27 separate reference and review](docs/research/phase_27/README.md) | Clean reproduction, closest-work audit, manuscript and external evaluation |
 | [Phase 28 journal manuscript and package](docs/research/phase_28/README.md) | Rendered PDF, evidence-linked figures and tables, venue assessment and review audit |
+| [Phase 29 final research release](docs/research/phase_29/README.md) | Final manuscript, scientific audit, and voluntary reproduction challenge |
 | [Citation](CITATION.cff) and [license](LICENSE) | Cite a versioned commit and frozen protocol |
 
 ## Publication status
 
-The [Phase 28 manuscript](docs/research/phase_28/rendered/GENEVRA-manuscript.pdf)
-and [reproducible publication package](docs/research/phase_28/README.md) are ready
-for independent technical scrutiny. External reproduction and empirical
-validation remain outstanding. Journal submission is on hold.
+The [final manuscript](docs/research/phase_29/rendered/GENEVRA-manuscript.pdf),
+[claim-to-evidence matrix](docs/research/phase_29/CLAIM_TO_EVIDENCE.md) and
+[reproduction release](docs/research/phase_29/README.md) are ready for independent
+technical assessment. The [public challenge](docs/research/phase_29/CHALLENGE.md)
+includes the command, expected outputs and discrepancy reporting. External
+reproduction and empirical validation remain outstanding. Journal submission
+is on hold.
+
+[Benchmark architecture](docs/research/phase_28/rendered/figures/design.png) ·
+[Shared-blindness figure](docs/research/phase_28/rendered/figures/shared.png) ·
+[Matched allocation figure](docs/research/phase_28/rendered/figures/allocation.png)
+
 
 ## Coverage and certification research
 
