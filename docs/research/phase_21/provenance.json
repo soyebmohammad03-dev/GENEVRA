@@ -1,0 +1,18 @@
+{
+  "march_2022_workbook": {
+    "url": "https://www2.census.gov/programs-surveys/popest/tables/2020/2020-demographic-analysis-estimates/Table-3_PES-sex.xlsx",
+    "sha256": "0e543b235e1604dbeb1072491a227a1f300d05fc06167a96efbc7d1ed9c00e6e",
+    "sheet": "Table 3",
+    "cells": "A4:E5; C3:E3"
+  },
+  "april_2024_release": {
+    "url": "https://www.census.gov/newsroom/press-releases/2024/undercounts-overcounts-children-2020-census.html",
+    "retrieved_html_sha256": "b890b3a8d328b19af55eb589160dfa409507830d45874c67da83db2c7f3c5c9b",
+    "row": ["United States", "19,462,879", "18,400,235", "-5.46"]
+  },
+  "excluded_state_workbook": {
+    "url": "https://www2.census.gov/programs-surveys/popest/tables/2020/2020-demographic-analysis-estimates/Table-1_0-4_ST.xlsx",
+    "sha256": "ff7e5b76d638322d79f6f2df7f0d82e40c268b84ab38cd3396ad69b23e07579a",
+    "reason": "No national row"
+  }
+}
