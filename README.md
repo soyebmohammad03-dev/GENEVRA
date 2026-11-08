@@ -29,6 +29,7 @@ biological validity remain unestablished.
 | [Publication foundation](docs/research/MANUSCRIPT_FOUNDATION.md) | Negative findings and remaining independent evidence |
 | [Phase 21 external feasibility](docs/research/phase_21/PHASE_21_COMPLETION_REPORT.md) | Census diagnostic, eligible data requirements and prospective validation design |
 | [Phase 22 prospective validation](docs/research/phase_22/PHASE_22_COMPLETION_REPORT.md) | Independent frame, feasibility gates, sample-size checks and registration draft |
+| [Phase 23 external review package](docs/research/phase_23/README.md) | Claim audit, internally simulated reviews, partner qualification and submission gates |
 | [Citation](CITATION.cff) and [license](LICENSE) | Cite a versioned commit and frozen protocol |
 
 ## Coverage and certification research
@@ -99,7 +100,7 @@ against those ideas empirically, on small, cheap, reproducible runs.
 ## Development status
 
 **Experimental research platform — core simulation/evolution engine
-complete; research evidence package built and independently audited
+complete; research evidence package built and internally audited
 (see "Research evidence package" below).** GENEVRA runs config-driven,
 reproducible evolutionary experiments end to end — isolated or
 ecologically shared, static or temporally dynamic — and can aggregate,
