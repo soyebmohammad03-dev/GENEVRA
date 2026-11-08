@@ -1,0 +1,28 @@
+{
+  "design": {
+    "version": "phase25-v1",
+    "phase19_config_sha256": "e41d0c223d8e6cd4b5d109e488270b18a61e71640d32da8e6fd41c6d1c40fb3a",
+    "seed": 251902,
+    "replicates": 256,
+    "pilot_per_stratum": 128,
+    "minimum_per_stratum": 1,
+    "comparative_alpha": 0.05,
+    "practical_margin": 0.05
+  },
+  "freeze": {
+    "PROTOCOL.md": "148376915f48caaeb8e58708d7106ea6ff731a6a80fa393dbe153406018d7fdc",
+    "design.json": "4f99125ba7902a73a1f0cc97414ec1234f653b14c8fc7c45300e9d9d9132c8a8"
+  },
+  "runner_sha256": "350e60705ea2a5c427c8775fe608516a31fab4ed4668bf8d7e968c2d39b76126",
+  "inference_sha256": "d55819811f2509c2c7e6def8263ed56107183864a1861d59f5c6580f18fb547a",
+  "entrant_sha256": null,
+  "python": "3.12.15",
+  "numpy": "2.5.4",
+  "outputs": {
+    "allocation.png": "ab5381f189f917e6d96e5e728b7927831b01e69a7df6e350ba80121b2141426d",
+    "allocation.svg": "7321c4b1502a8bb26652d82574475477c93fe9aad482440e5e71023803063dbe",
+    "contrasts.csv": "52472c270d788141868efd8374cf1a141169d74098c53cc9b519f403627e4cad",
+    "raw.csv": "9b8f43cea437004ecb9143ec8846bab1ff5fdc354149b28f4772b168ed22008f",
+    "results.json": "2da8824f782e314d9c24557a2935fd377489f9805a2fc29ed50c61c78aef7d9a"
+  }
+}
