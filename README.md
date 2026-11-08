@@ -28,6 +28,7 @@ biological validity remain unestablished.
 | [Analysis notebook](notebooks/certification_evidence.ipynb) | Precision, matched access, failure modes, and sensitivity |
 | [Publication foundation](docs/research/MANUSCRIPT_FOUNDATION.md) | Negative findings and remaining independent evidence |
 | [Phase 21 external feasibility](docs/research/phase_21/PHASE_21_COMPLETION_REPORT.md) | Census diagnostic, eligible data requirements and prospective validation design |
+| [Phase 22 prospective validation](docs/research/phase_22/PHASE_22_COMPLETION_REPORT.md) | Independent frame, feasibility gates, sample-size checks and registration draft |
 | [Citation](CITATION.cff) and [license](LICENSE) | Cite a versioned commit and frozen protocol |
 
 ## Coverage and certification research

@@ -1,0 +1,15 @@
+# Preregistration foundation
+
+**Draft only. Independent review and actual registration are pending.** The [protocol](PROTOCOL.md) is the authoritative design. The following binds the required declarations before a partner can launch.
+
+- **Question and hypotheses.** At matched representative access and cost, can the combined policy control adverse certification and improve useful correct decisions over direct calibration? The operational claim requires both unconditional adverse probability ≤.05 and paired usefulness gain >.10. The baseline may win.
+- **Target and eligibility.** Register region, season, watershed episode sampling, reach-week definition, assay and units, and the independent enumeration and area-audit procedure. Exclude only predeclared out-of-scope units and adjudicated duplicates. Keep eligible nonresponse and unresolved labels.
+- **Estimands and endpoints.** Specify episode-weighted risk and paired usefulness, both with nonissues counted. Freeze the anchor rule, certificate tolerance delta, useful width w and any threshold label. Record mean coverage, interval width, issuance, false risk among issued, unresolved reference and cost separately.
+- **Sampling and independence.** Register episode and within-episode inclusion, strata, sample counts, blinding, overlap, frame error bound and audit error allocation. Confirm support for off-channel units and document dependence. Freeze a policy and comparator implementation and input digest before evaluation.
+- **Power and inference.** Set sample size after blinded operational feasibility and before confirmatory data. Use the .01 joint reference family and one-sided .02 for each primary gate. The 12-episode feasibility design has no confirmation claim. Use the actual sampling design for inference if IID assumptions fail.
+- **Missingness.** Retain unresolved labels in worst-case completion bounds. Unresolved issued decisions are adverse for safety and count against the conservative candidate gain. Register handling for whole episodes lost before decisions. Record every attempt and missingness reason.
+- **Stopping and deviations.** No interim efficacy stopping. Halt on safety, access, provenance or permission failures and retain all attempts. Changes require versioned rationale, timestamp and independent review. Deviations after outcome access do not replace the registered analysis.
+- **Provenance and release.** Hash roster version, randomization, selected sample escrow, decision and cost package, measurement receipts and adjudication. Specify custody, allowed disclosure and the independently reproducible release plan.
+- **Limitations.** Bound validity, target coverage, lab uncertainty, assumed deployment independence and costs must be justified outside the program. No extrapolation to biological validity.
+
+Registration fields still missing are the named organizations and independent roles, the study region and roster, assay threshold, delta, w, visit windows, area-audit allocation, QC limits, cost ceiling, sample sizes, software freeze and governance approvals. Do not recruit or evaluate while these fields remain unresolved.
