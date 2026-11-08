@@ -1,0 +1,22 @@
+{
+  "source_sha256": {
+    "docs/research/phase_28/MANUSCRIPT.md": "04251bd1e2152bcb1d5965ff7e8f39f80eab68d47153f4d4df64b708f0ca57d8",
+    "docs/research/phase_28/REFERENCES.md": "3b36a2b109acf5efd47f2894904c4a0333f60db70d6272c542cbb7c1ed216440",
+    "docs/research/phase_28/requirements-publication.txt": "dc26280afef2444698cb5bbc4aacfb64f62debb355ffed26de53500d1d7b7b82",
+    "docs/research/phase_23/requirements-macos-arm64.txt": "ca63d73300f5d023a6395da0dc431ba3b321c5c73f90425c3537eb710e747546",
+    "scripts/build_publication.py": "dad16bb802cf48aaae36b760db803a0cf5e749121aaa6ea3bfb1d39768e29cf2"
+  },
+  "outputs_sha256": {
+    "GENEVRA-manuscript.pdf": "0a8f44038857b560d8c14eb9545fae96bfaec71ec5a912af04caf7808c6ddc08",
+    "evidence.json": "511891483ae68ad8cb91faf2a5c40f25180ac365b25760cbdfdc27abded8044c",
+    "figures/allocation.png": "68b2e1b4ff48851af665e550013daf8d1d151e6a8a61277ade1a570ce73c1bf7",
+    "figures/design.png": "166bb680fc2b99f3051130b97fc3806b7d31a4faa52bc6c0381eb1a70235ddf5",
+    "figures/diagnostic.png": "5d1f9e000523fba8fc55b8a64143eecbfeb8c54c279a0ed6eab83891393d82d5",
+    "figures/sensitivity.png": "a7a391a11ff13c2b1e1a3ad838c7d02edc03551257af3dc3f49a0f4f09551ecf",
+    "figures/shared.png": "0a48dec3bdeddc0a627b56a367344d06c1a657237da564fe38135f0bd79e86ed",
+    "tables/allocation.csv": "560157e07f951276a5766a40a86a8b8ab62a1b494bebeaa88b6a437d7e309f28",
+    "tables/notation.csv": "35e16b632e84e6be8504e8d3f387eef85c4504ecee5ef4ce8082b161391cca17",
+    "tables/sensitivity.csv": "97fea514f43fe70665f16cee5a34e2741498513706906b7ed110fd6bc40a083c",
+    "tables/shared.csv": "1275bbe3669b1f45d44473ec82dbc6079bc4ac2e5cbe3bb137847f2a1af7faf0"
+  }
+}

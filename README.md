@@ -35,7 +35,15 @@ journal submission remain outstanding.
 | [Phase 25 comparative allocation](docs/research/phase_25/README.md) | Paid-pilot variance comparator, matched budgets and exploratory challenge |
 | [Phase 26 adversarial audit](docs/research/phase_26/README.md) | Allocation failure attribution, sensitivity and revised benchmark contribution |
 | [Phase 27 separate reference and review](docs/research/phase_27/README.md) | Clean reproduction, closest-work audit, manuscript and external evaluation |
+| [Phase 28 journal manuscript and package](docs/research/phase_28/README.md) | Rendered PDF, evidence-linked figures and tables, venue assessment and review audit |
 | [Citation](CITATION.cff) and [license](LICENSE) | Cite a versioned commit and frozen protocol |
+
+## Publication status
+
+The [Phase 28 manuscript](docs/research/phase_28/rendered/GENEVRA-manuscript.pdf)
+and [reproducible publication package](docs/research/phase_28/README.md) are ready
+for independent technical scrutiny. External reproduction and empirical
+validation remain outstanding. Journal submission is on hold.
 
 ## Coverage and certification research
 

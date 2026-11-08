@@ -1,0 +1,6 @@
+Endpoint,Count,Denominator
+Mean coverage,0,512
+Certificates issued,180,512
+False certificates (all runs),180,512
+False certificates (among issued),180,180
+Wrong threshold labels,0,512

@@ -1,0 +1,8 @@
+Symbol,Meaning
+"T, F_A, F_B",Target population and two sampling frames
+"w_h, p_h",Reachable stratum weight and Bernoulli tail rate
+"r, m, z","Reachable mixture rate, omitted mass, hidden tail rate"
+"U, V",Externally supplied upper bounds on omitted mass and hidden tail rate
+"c_h, n_h, B","Unit price, independent-unit count, charged acquisition budget"
+"a, δ, ε, τ","Anchor score, certificate tolerance, decision threshold, width limit"
+"I=[L,H], θ",Score interval and target score mean
