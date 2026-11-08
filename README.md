@@ -30,6 +30,7 @@ biological validity remain unestablished.
 | [Phase 21 external feasibility](docs/research/phase_21/PHASE_21_COMPLETION_REPORT.md) | Census diagnostic, eligible data requirements and prospective validation design |
 | [Phase 22 prospective validation](docs/research/phase_22/PHASE_22_COMPLETION_REPORT.md) | Independent frame, feasibility gates, sample-size checks and registration draft |
 | [Phase 23 external review package](docs/research/phase_23/README.md) | Claim audit, internally simulated reviews, partner qualification and submission gates |
+| [Phase 24 reproduction challenge](docs/research/phase_24/README.md) | Frozen benchmark, raw-data verification and competing-implementation scorer |
 | [Citation](CITATION.cff) and [license](LICENSE) | Cite a versioned commit and frozen protocol |
 
 ## Coverage and certification research
