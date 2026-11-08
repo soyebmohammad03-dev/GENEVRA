@@ -8,6 +8,27 @@ It is not a chatbot, not a RAG app, not an agent framework, and not another
 "watch shapes evolve" artificial-life toy. It is a system for running
 controlled evolutionary experiments and measuring what happens.
 
+## Research in brief
+
+GENEVRA combines a digital-evolution simulator with a measurement laboratory
+for calibration, uncertainty and certification under incomplete sampling.
+The strongest current evidence is a **synthetic negative feasibility result**.
+Under matched access, a shared blind spot produced 180 false certificates in
+512 runs. Valid external omission bounds restored coverage in a separate
+synthetic case. An allocation planner reduced realized precision at equal
+cost. Independent reconstruction verifies the calculations. Empirical and
+biological validity remain unestablished.
+
+| Start here | Contents |
+|---|---|
+| [Research guide](docs/research/README.md) | Clean replay command, archive and review instructions |
+| [Capability inventory](docs/research/INVENTORY.md) | Simulator, evidence, experiment and notebook responsibilities |
+| [Frozen experiment index](docs/research/EXPERIMENT_INDEX.md) | Phase 11–19 questions, controls, and outcomes |
+| [Methodology and contributions](docs/research/METHODOLOGY.md) | Established methods, project evidence, and claim limits |
+| [Analysis notebook](notebooks/certification_evidence.ipynb) | Precision, matched access, failure modes, and sensitivity |
+| [Publication foundation](docs/research/MANUSCRIPT_FOUNDATION.md) | Negative findings and remaining independent evidence |
+| [Citation](CITATION.cff) and [license](LICENSE) | Cite a versioned commit and frozen protocol |
+
 ## Coverage and certification research
 
 The [Phase 19 coverage-envelope extension](docs/model_repair/phase_19/extension/PHASE_19_COMPLETION_REPORT.md)
