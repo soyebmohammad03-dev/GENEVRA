@@ -8,6 +8,27 @@ It is not a chatbot, not a RAG app, not an agent framework, and not another
 "watch shapes evolve" artificial-life toy. It is a system for running
 controlled evolutionary experiments and measuring what happens.
 
+## Coverage and certification research
+
+The [Phase 19 coverage-envelope extension](docs/model_repair/phase_19/extension/PHASE_19_COMPLETION_REPORT.md)
+tests how bounded information about a jointly unreachable population affects
+statistical certification. A valid external bound recovered synthetic mean
+coverage in the planted large-omission case. A worst-case allocation proxy
+reduced useful precision at the same charged budget. Incorrect external bounds
+still caused failures. These are synthetic calibration results. Biological
+measurement validity and field transport remain open.
+
+- [Frozen experiment and cost model](docs/model_repair/phase_19/extension/EXPERIMENT_PROTOCOL.md)
+- [Analysis architecture and scope](docs/model_repair/phase_19/extension/METHOD_DESIGN.md)
+- [Results and baselines](docs/model_repair/phase_19/extension/BASELINE_COMPARISON.md)
+- [Installation and reproduction](docs/model_repair/phase_19/extension/REPRODUCIBILITY.md)
+- [Reviewer and contribution guide](docs/model_repair/phase_19/extension/EXTERNAL_REVIEW_GUIDE.md)
+- [Literature and limitations](docs/model_repair/phase_19/extension/LITERATURE_AND_NOVELTY_AUDIT.md)
+
+The package uses Python and NumPy. The existing [MIT license](LICENSE) applies
+to the code. Review the protocol version and cite the commit when reporting a
+reproduction. Keep credentials and private observations out of artifacts.
+
 ## Research motivation
 
 Most evolutionary/artificial-life demos evolve a fixed behavior against a

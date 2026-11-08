@@ -1,0 +1,24 @@
+{
+  "version":"coverage-envelope-v1",
+  "seed":202611081901,
+  "replicates":512,
+  "budgets":[8192,32768],
+  "weights":[0.9,0.1],
+  "tariffs":[1,2],
+  "alpha":0.05,
+  "epsilon":0.6,
+  "target_width":0.6,
+  "tolerance":0.3,
+  "anchor":0.004,
+  "cases":[
+    {"name":"complete","rates":[0.0002,0.0382],"mass":0,"cap":0,"hidden":0,"hidden_cap":1,"block":1},
+    {"name":"small_omission","rates":[0.0002,0.0382],"mass":0.0002,"cap":0.0005,"hidden":1,"hidden_cap":1,"block":1},
+    {"name":"large_omission","rates":[0.0002,0.0382],"mass":0.004,"cap":0.005,"hidden":1,"hidden_cap":1,"block":1},
+    {"name":"shifted_reachable","rates":[0.0002,0.0782],"mass":0.0002,"cap":0.0005,"hidden":1,"hidden_cap":1,"block":1},
+    {"name":"near_threshold","rates":[0.0002,0.011],"mass":0.0002,"cap":0.0005,"hidden":0,"hidden_cap":1,"block":1},
+    {"name":"verified_hidden_support","rates":[0.0002,0.0382],"mass":0.004,"cap":0.005,"hidden":0.01,"hidden_cap":0.02,"block":1},
+    {"name":"bad_mass_cap","rates":[0.0002,0.0382],"mass":0.004,"cap":0.0005,"hidden":1,"hidden_cap":1,"block":1},
+    {"name":"bad_hidden_support","rates":[0.0002,0.0382],"mass":0.004,"cap":0.005,"hidden":1,"hidden_cap":0.02,"block":1},
+    {"name":"duplicates","rates":[0.0002,0.0382],"mass":0.0002,"cap":0.0005,"hidden":1,"hidden_cap":1,"block":8}
+  ]
+}

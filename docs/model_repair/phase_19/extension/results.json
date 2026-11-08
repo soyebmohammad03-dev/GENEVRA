@@ -1,0 +1,7214 @@
+{
+  "primary": {
+    "difference": -0.859375,
+    "interval": [
+      -0.97941534891499,
+      -0.73933465108501
+    ],
+    "n": 512,
+    "passes": false
+  },
+  "replicates": 9216,
+  "summary": [
+    {
+      "acquisition_cost": 8192,
+      "budget": 8192,
+      "case": "complete",
+      "charged_rows": 6144,
+      "independent_units": [
+        4096,
+        2048
+      ],
+      "median_width": 0.9333225756007244,
+      "method": "reachable_only",
+      "oracle_width": 0.0,
+      "p90_width": 1.0890265792057847,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 1.2368
+    },
+    {
+      "acquisition_cost": 8192,
+      "budget": 8192,
+      "case": "complete",
+      "charged_rows": 6144,
+      "independent_units": [
+        4096,
+        2048
+      ],
+      "median_width": 0.9333225756007244,
+      "method": "equal_envelope",
+      "oracle_width": 0.0,
+      "p90_width": 1.0890265792057847,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 1.2368
+    },
+    {
+      "acquisition_cost": 8192,
+      "budget": 8192,
+      "case": "complete",
+      "charged_rows": 7268,
+      "independent_units": [
+        6344,
+        924
+      ],
+      "median_width": 1.130861056815261,
+      "method": "planned_envelope",
+      "oracle_width": 0.0,
+      "p90_width": 1.2652594142961795,
+      "rates": {
+        "abstention": {
+          "count": 6,
+          "n": 512,
+          "rate": 0.01171875,
+          "wilson": [
+            0.0053815716968398115,
+            0.02532836553253786
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 506,
+          "n": 512,
+          "rate": 0.98828125,
+          "wilson": [
+            0.9746716344674621,
+            0.9946184283031602
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 1.2368
+    },
+    {
+      "acquisition_cost": 8192,
+      "budget": 8192,
+      "case": "complete",
+      "charged_rows": 7268,
+      "independent_units": [
+        6344,
+        924
+      ],
+      "median_width": 1.130861056815261,
+      "method": "full_hidden_support",
+      "oracle_width": 0.0,
+      "p90_width": 1.2652594142961795,
+      "rates": {
+        "abstention": {
+          "count": 6,
+          "n": 512,
+          "rate": 0.01171875,
+          "wilson": [
+            0.0053815716968398115,
+            0.02532836553253786
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 506,
+          "n": 512,
+          "rate": 0.98828125,
+          "wilson": [
+            0.9746716344674621,
+            0.9946184283031602
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 1.2368
+    },
+    {
+      "acquisition_cost": 0,
+      "budget": 8192,
+      "case": "complete",
+      "charged_rows": 0,
+      "independent_units": [
+        0,
+        0
+      ],
+      "median_width": 480.0,
+      "method": "abstain",
+      "oracle_width": 0.0,
+      "p90_width": 480.0,
+      "rates": {
+        "abstention": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 1.2368
+    },
+    {
+      "acquisition_cost": 32768,
+      "budget": 32768,
+      "case": "complete",
+      "charged_rows": 24576,
+      "independent_units": [
+        16384,
+        8192
+      ],
+      "median_width": 0.43927913749549674,
+      "method": "reachable_only",
+      "oracle_width": 0.0,
+      "p90_width": 0.48305172223914317,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 358,
+          "n": 512,
+          "rate": 0.69921875,
+          "wilson": [
+            0.6581322873328272,
+            0.7373380582775866
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        }
+      },
+      "truth": 1.2368
+    },
+    {
+      "acquisition_cost": 32768,
+      "budget": 32768,
+      "case": "complete",
+      "charged_rows": 24576,
+      "independent_units": [
+        16384,
+        8192
+      ],
+      "median_width": 0.43927913749549674,
+      "method": "equal_envelope",
+      "oracle_width": 0.0,
+      "p90_width": 0.48305172223914317,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 358,
+          "n": 512,
+          "rate": 0.69921875,
+          "wilson": [
+            0.6581322873328272,
+            0.7373380582775866
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        }
+      },
+      "truth": 1.2368
+    },
+    {
+      "acquisition_cost": 32768,
+      "budget": 32768,
+      "case": "complete",
+      "charged_rows": 29073,
+      "independent_units": [
+        25378,
+        3695
+      ],
+      "median_width": 0.5524668788260543,
+      "method": "planned_envelope",
+      "oracle_width": 0.0,
+      "p90_width": 0.58717657586644,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 133,
+          "n": 512,
+          "rate": 0.259765625,
+          "wilson": [
+            0.2236711319675959,
+            0.2994381571492579
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 485,
+          "n": 512,
+          "rate": 0.947265625,
+          "wilson": [
+            0.9243620032866211,
+            0.963507694211269
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 485,
+          "n": 512,
+          "rate": 0.947265625,
+          "wilson": [
+            0.9243620032866211,
+            0.963507694211269
+          ]
+        }
+      },
+      "truth": 1.2368
+    },
+    {
+      "acquisition_cost": 32768,
+      "budget": 32768,
+      "case": "complete",
+      "charged_rows": 29073,
+      "independent_units": [
+        25378,
+        3695
+      ],
+      "median_width": 0.5524668788260543,
+      "method": "full_hidden_support",
+      "oracle_width": 0.0,
+      "p90_width": 0.58717657586644,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 133,
+          "n": 512,
+          "rate": 0.259765625,
+          "wilson": [
+            0.2236711319675959,
+            0.2994381571492579
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 485,
+          "n": 512,
+          "rate": 0.947265625,
+          "wilson": [
+            0.9243620032866211,
+            0.963507694211269
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 485,
+          "n": 512,
+          "rate": 0.947265625,
+          "wilson": [
+            0.9243620032866211,
+            0.963507694211269
+          ]
+        }
+      },
+      "truth": 1.2368
+    },
+    {
+      "acquisition_cost": 0,
+      "budget": 32768,
+      "case": "complete",
+      "charged_rows": 0,
+      "independent_units": [
+        0,
+        0
+      ],
+      "median_width": 480.0,
+      "method": "abstain",
+      "oracle_width": 0.0,
+      "p90_width": 480.0,
+      "rates": {
+        "abstention": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 1.2368
+    },
+    {
+      "acquisition_cost": 8192,
+      "budget": 8192,
+      "case": "small_omission",
+      "charged_rows": 6144,
+      "independent_units": [
+        4096,
+        2048
+      ],
+      "median_width": 0.9051975628133122,
+      "method": "reachable_only",
+      "oracle_width": 0.1170999999999999,
+      "p90_width": 1.0677663162337812,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 1.28345264
+    },
+    {
+      "acquisition_cost": 8192,
+      "budget": 8192,
+      "case": "small_omission",
+      "charged_rows": 6144,
+      "independent_units": [
+        4096,
+        2048
+      ],
+      "median_width": 1.0218449640319056,
+      "method": "equal_envelope",
+      "oracle_width": 0.1170999999999999,
+      "p90_width": 1.1843324330756644,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 1.28345264
+    },
+    {
+      "acquisition_cost": 8192,
+      "budget": 8192,
+      "case": "small_omission",
+      "charged_rows": 7268,
+      "independent_units": [
+        6344,
+        924
+      ],
+      "median_width": 1.2356706301290807,
+      "method": "planned_envelope",
+      "oracle_width": 0.1170999999999999,
+      "p90_width": 1.3600992933228844,
+      "rates": {
+        "abstention": {
+          "count": 11,
+          "n": 512,
+          "rate": 0.021484375,
+          "wilson": [
+            0.012038074956831065,
+            0.03805766352795904
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 501,
+          "n": 512,
+          "rate": 0.978515625,
+          "wilson": [
+            0.9619423364720409,
+            0.9879619250431689
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 1.28345264
+    },
+    {
+      "acquisition_cost": 8192,
+      "budget": 8192,
+      "case": "small_omission",
+      "charged_rows": 7268,
+      "independent_units": [
+        6344,
+        924
+      ],
+      "median_width": 1.2356706301290807,
+      "method": "full_hidden_support",
+      "oracle_width": 0.1170999999999999,
+      "p90_width": 1.3600992933228844,
+      "rates": {
+        "abstention": {
+          "count": 11,
+          "n": 512,
+          "rate": 0.021484375,
+          "wilson": [
+            0.012038074956831065,
+            0.03805766352795904
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 501,
+          "n": 512,
+          "rate": 0.978515625,
+          "wilson": [
+            0.9619423364720409,
+            0.9879619250431689
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 1.28345264
+    },
+    {
+      "acquisition_cost": 0,
+      "budget": 8192,
+      "case": "small_omission",
+      "charged_rows": 0,
+      "independent_units": [
+        0,
+        0
+      ],
+      "median_width": 480.0,
+      "method": "abstain",
+      "oracle_width": 0.1170999999999999,
+      "p90_width": 480.0,
+      "rates": {
+        "abstention": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 1.28345264
+    },
+    {
+      "acquisition_cost": 32768,
+      "budget": 32768,
+      "case": "small_omission",
+      "charged_rows": 24576,
+      "independent_units": [
+        16384,
+        8192
+      ],
+      "median_width": 0.437043245281475,
+      "method": "reachable_only",
+      "oracle_width": 0.1170999999999999,
+      "p90_width": 0.4874796359917905,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 348,
+          "n": 512,
+          "rate": 0.6796875,
+          "wilson": [
+            0.6380617858369023,
+            0.7186369572626866
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        }
+      },
+      "truth": 1.28345264
+    },
+    {
+      "acquisition_cost": 32768,
+      "budget": 32768,
+      "case": "small_omission",
+      "charged_rows": 24576,
+      "independent_units": [
+        16384,
+        8192
+      ],
+      "median_width": 0.5539247236588343,
+      "method": "equal_envelope",
+      "oracle_width": 0.1170999999999999,
+      "p90_width": 0.6043358961737948,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 61,
+          "n": 512,
+          "rate": 0.119140625,
+          "wilson": [
+            0.09387748677973778,
+            0.1500762642591768
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 450,
+          "n": 512,
+          "rate": 0.87890625,
+          "wilson": [
+            0.8477906572251377,
+            0.9043784314848653
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 450,
+          "n": 512,
+          "rate": 0.87890625,
+          "wilson": [
+            0.8477906572251377,
+            0.9043784314848653
+          ]
+        }
+      },
+      "truth": 1.28345264
+    },
+    {
+      "acquisition_cost": 32768,
+      "budget": 32768,
+      "case": "small_omission",
+      "charged_rows": 29073,
+      "independent_units": [
+        25378,
+        3695
+      ],
+      "median_width": 0.6674725276574938,
+      "method": "planned_envelope",
+      "oracle_width": 0.1170999999999999,
+      "p90_width": 0.7087099096418885,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 10,
+          "n": 512,
+          "rate": 0.01953125,
+          "wilson": [
+            0.010642921854633286,
+            0.03557565637907434
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 10,
+          "n": 512,
+          "rate": 0.01953125,
+          "wilson": [
+            0.010642921854633286,
+            0.03557565637907434
+          ]
+        }
+      },
+      "truth": 1.28345264
+    },
+    {
+      "acquisition_cost": 32768,
+      "budget": 32768,
+      "case": "small_omission",
+      "charged_rows": 29073,
+      "independent_units": [
+        25378,
+        3695
+      ],
+      "median_width": 0.6674725276574938,
+      "method": "full_hidden_support",
+      "oracle_width": 0.1170999999999999,
+      "p90_width": 0.7087099096418885,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 10,
+          "n": 512,
+          "rate": 0.01953125,
+          "wilson": [
+            0.010642921854633286,
+            0.03557565637907434
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 10,
+          "n": 512,
+          "rate": 0.01953125,
+          "wilson": [
+            0.010642921854633286,
+            0.03557565637907434
+          ]
+        }
+      },
+      "truth": 1.28345264
+    },
+    {
+      "acquisition_cost": 0,
+      "budget": 32768,
+      "case": "small_omission",
+      "charged_rows": 0,
+      "independent_units": [
+        0,
+        0
+      ],
+      "median_width": 480.0,
+      "method": "abstain",
+      "oracle_width": 0.1170999999999999,
+      "p90_width": 480.0,
+      "rates": {
+        "abstention": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 1.28345264
+    },
+    {
+      "acquisition_cost": 8192,
+      "budget": 8192,
+      "case": "large_omission",
+      "charged_rows": 6144,
+      "independent_units": [
+        4096,
+        2048
+      ],
+      "median_width": 0.9176836906235495,
+      "method": "reachable_only",
+      "oracle_width": 1.171,
+      "p90_width": 1.0820387135750336,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 15,
+          "n": 512,
+          "rate": 0.029296875,
+          "wilson": [
+            0.017833270017133897,
+            0.04777110947198617
+          ]
+        },
+        "coverage": {
+          "count": 15,
+          "n": 512,
+          "rate": 0.029296875,
+          "wilson": [
+            0.017833270017133897,
+            0.04777110947198617
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 2.1698527999999997
+    },
+    {
+      "acquisition_cost": 8192,
+      "budget": 8192,
+      "case": "large_omission",
+      "charged_rows": 6144,
+      "independent_units": [
+        4096,
+        2048
+      ],
+      "median_width": 2.084095272170432,
+      "method": "equal_envelope",
+      "oracle_width": 1.171,
+      "p90_width": 2.247628520007158,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 2.1698527999999997
+    },
+    {
+      "acquisition_cost": 8192,
+      "budget": 8192,
+      "case": "large_omission",
+      "charged_rows": 7268,
+      "independent_units": [
+        6344,
+        924
+      ],
+      "median_width": 2.27827683694294,
+      "method": "planned_envelope",
+      "oracle_width": 1.171,
+      "p90_width": 2.419242650443618,
+      "rates": {
+        "abstention": {
+          "count": 17,
+          "n": 512,
+          "rate": 0.033203125,
+          "wilson": [
+            0.02083204403601035,
+            0.052526655955274705
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 495,
+          "n": 512,
+          "rate": 0.966796875,
+          "wilson": [
+            0.9474733440447254,
+            0.9791679559639896
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 2.1698527999999997
+    },
+    {
+      "acquisition_cost": 8192,
+      "budget": 8192,
+      "case": "large_omission",
+      "charged_rows": 7268,
+      "independent_units": [
+        6344,
+        924
+      ],
+      "median_width": 2.27827683694294,
+      "method": "full_hidden_support",
+      "oracle_width": 1.171,
+      "p90_width": 2.419242650443618,
+      "rates": {
+        "abstention": {
+          "count": 17,
+          "n": 512,
+          "rate": 0.033203125,
+          "wilson": [
+            0.02083204403601035,
+            0.052526655955274705
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 495,
+          "n": 512,
+          "rate": 0.966796875,
+          "wilson": [
+            0.9474733440447254,
+            0.9791679559639896
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 2.1698527999999997
+    },
+    {
+      "acquisition_cost": 0,
+      "budget": 8192,
+      "case": "large_omission",
+      "charged_rows": 0,
+      "independent_units": [
+        0,
+        0
+      ],
+      "median_width": 480.0,
+      "method": "abstain",
+      "oracle_width": 1.171,
+      "p90_width": 480.0,
+      "rates": {
+        "abstention": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 2.1698527999999997
+    },
+    {
+      "acquisition_cost": 32768,
+      "budget": 32768,
+      "case": "large_omission",
+      "charged_rows": 24576,
+      "independent_units": [
+        16384,
+        8192
+      ],
+      "median_width": 0.4368184567608564,
+      "method": "reachable_only",
+      "oracle_width": 1.171,
+      "p90_width": 0.4812506870261529,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 350,
+          "n": 512,
+          "rate": 0.68359375,
+          "wilson": [
+            0.6420693344375219,
+            0.7223837291642321
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 350,
+          "n": 512,
+          "rate": 0.68359375,
+          "wilson": [
+            0.6420693344375219,
+            0.7223837291642321
+          ]
+        },
+        "precision": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        }
+      },
+      "truth": 2.1698527999999997
+    },
+    {
+      "acquisition_cost": 32768,
+      "budget": 32768,
+      "case": "large_omission",
+      "charged_rows": 24576,
+      "independent_units": [
+        16384,
+        8192
+      ],
+      "median_width": 1.6056343644770519,
+      "method": "equal_envelope",
+      "oracle_width": 1.171,
+      "p90_width": 1.6498444335910223,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 2.1698527999999997
+    },
+    {
+      "acquisition_cost": 32768,
+      "budget": 32768,
+      "case": "large_omission",
+      "charged_rows": 29073,
+      "independent_units": [
+        25378,
+        3695
+      ],
+      "median_width": 1.722026341033572,
+      "method": "planned_envelope",
+      "oracle_width": 1.171,
+      "p90_width": 1.7593946907277223,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 2.1698527999999997
+    },
+    {
+      "acquisition_cost": 32768,
+      "budget": 32768,
+      "case": "large_omission",
+      "charged_rows": 29073,
+      "independent_units": [
+        25378,
+        3695
+      ],
+      "median_width": 1.722026341033572,
+      "method": "full_hidden_support",
+      "oracle_width": 1.171,
+      "p90_width": 1.7593946907277223,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 2.1698527999999997
+    },
+    {
+      "acquisition_cost": 0,
+      "budget": 32768,
+      "case": "large_omission",
+      "charged_rows": 0,
+      "independent_units": [
+        0,
+        0
+      ],
+      "median_width": 480.0,
+      "method": "abstain",
+      "oracle_width": 1.171,
+      "p90_width": 480.0,
+      "rates": {
+        "abstention": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 2.1698527999999997
+    },
+    {
+      "acquisition_cost": 8192,
+      "budget": 8192,
+      "case": "shifted_reachable",
+      "charged_rows": 6144,
+      "independent_units": [
+        4096,
+        2048
+      ],
+      "median_width": 1.180194867658696,
+      "method": "reachable_only",
+      "oracle_width": 0.11710000000000009,
+      "p90_width": 1.3224748854269472,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 511,
+          "n": 512,
+          "rate": 0.998046875,
+          "wilson": [
+            0.989020721787578,
+            0.9996551422384564
+          ]
+        },
+        "coverage": {
+          "count": 511,
+          "n": 512,
+          "rate": 0.998046875,
+          "wilson": [
+            0.989020721787578,
+            0.9996551422384564
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 2.22006528
+    },
+    {
+      "acquisition_cost": 8192,
+      "budget": 8192,
+      "case": "shifted_reachable",
+      "charged_rows": 6144,
+      "independent_units": [
+        4096,
+        2048
+      ],
+      "median_width": 1.296704770224867,
+      "method": "equal_envelope",
+      "oracle_width": 0.11710000000000009,
+      "p90_width": 1.4389136479842337,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 511,
+          "n": 512,
+          "rate": 0.998046875,
+          "wilson": [
+            0.989020721787578,
+            0.9996551422384564
+          ]
+        },
+        "coverage": {
+          "count": 511,
+          "n": 512,
+          "rate": 0.998046875,
+          "wilson": [
+            0.989020721787578,
+            0.9996551422384564
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 2.22006528
+    },
+    {
+      "acquisition_cost": 8192,
+      "budget": 8192,
+      "case": "shifted_reachable",
+      "charged_rows": 7268,
+      "independent_units": [
+        6344,
+        924
+      ],
+      "median_width": 1.5961759229852277,
+      "method": "planned_envelope",
+      "oracle_width": 0.11710000000000009,
+      "p90_width": 1.7303118187369422,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 2.22006528
+    },
+    {
+      "acquisition_cost": 8192,
+      "budget": 8192,
+      "case": "shifted_reachable",
+      "charged_rows": 7268,
+      "independent_units": [
+        6344,
+        924
+      ],
+      "median_width": 1.5961759229852277,
+      "method": "full_hidden_support",
+      "oracle_width": 0.11710000000000009,
+      "p90_width": 1.7303118187369422,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 2.22006528
+    },
+    {
+      "acquisition_cost": 0,
+      "budget": 8192,
+      "case": "shifted_reachable",
+      "charged_rows": 0,
+      "independent_units": [
+        0,
+        0
+      ],
+      "median_width": 480.0,
+      "method": "abstain",
+      "oracle_width": 0.11710000000000009,
+      "p90_width": 480.0,
+      "rates": {
+        "abstention": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 2.22006528
+    },
+    {
+      "acquisition_cost": 32768,
+      "budget": 32768,
+      "case": "shifted_reachable",
+      "charged_rows": 24576,
+      "independent_units": [
+        16384,
+        8192
+      ],
+      "median_width": 0.5564295778582343,
+      "method": "reachable_only",
+      "oracle_width": 0.11710000000000009,
+      "p90_width": 0.6043831361809665,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 511,
+          "n": 512,
+          "rate": 0.998046875,
+          "wilson": [
+            0.989020721787578,
+            0.9996551422384564
+          ]
+        },
+        "coverage": {
+          "count": 511,
+          "n": 512,
+          "rate": 0.998046875,
+          "wilson": [
+            0.989020721787578,
+            0.9996551422384564
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 447,
+          "n": 512,
+          "rate": 0.873046875,
+          "wilson": [
+            0.8414051435005794,
+            0.899132464456176
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 448,
+          "n": 512,
+          "rate": 0.875,
+          "wilson": [
+            0.8435314068192066,
+            0.9008833613886313
+          ]
+        }
+      },
+      "truth": 2.22006528
+    },
+    {
+      "acquisition_cost": 32768,
+      "budget": 32768,
+      "case": "shifted_reachable",
+      "charged_rows": 24576,
+      "independent_units": [
+        16384,
+        8192
+      ],
+      "median_width": 0.673251363069305,
+      "method": "equal_envelope",
+      "oracle_width": 0.11710000000000009,
+      "p90_width": 0.7211809446128764,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 16,
+          "n": 512,
+          "rate": 0.03125,
+          "wilson": [
+            0.019325484326306944,
+            0.05015605541389562
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 16,
+          "n": 512,
+          "rate": 0.03125,
+          "wilson": [
+            0.019325484326306944,
+            0.05015605541389562
+          ]
+        }
+      },
+      "truth": 2.22006528
+    },
+    {
+      "acquisition_cost": 32768,
+      "budget": 32768,
+      "case": "shifted_reachable",
+      "charged_rows": 29073,
+      "independent_units": [
+        25378,
+        3695
+      ],
+      "median_width": 0.8453823849086974,
+      "method": "planned_envelope",
+      "oracle_width": 0.11710000000000009,
+      "p90_width": 0.8807805545122892,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 2.22006528
+    },
+    {
+      "acquisition_cost": 32768,
+      "budget": 32768,
+      "case": "shifted_reachable",
+      "charged_rows": 29073,
+      "independent_units": [
+        25378,
+        3695
+      ],
+      "median_width": 0.8453823849086974,
+      "method": "full_hidden_support",
+      "oracle_width": 0.11710000000000009,
+      "p90_width": 0.8807805545122892,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 2.22006528
+    },
+    {
+      "acquisition_cost": 0,
+      "budget": 32768,
+      "case": "shifted_reachable",
+      "charged_rows": 0,
+      "independent_units": [
+        0,
+        0
+      ],
+      "median_width": 480.0,
+      "method": "abstain",
+      "oracle_width": 0.11710000000000009,
+      "p90_width": 480.0,
+      "rates": {
+        "abstention": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 2.22006528
+    },
+    {
+      "acquisition_cost": 8192,
+      "budget": 8192,
+      "case": "near_threshold",
+      "charged_rows": 6144,
+      "independent_units": [
+        4096,
+        2048
+      ],
+      "median_width": 0.6687561100335235,
+      "method": "reachable_only",
+      "oracle_width": 0.1171,
+      "p90_width": 0.823163627437373,
+      "rates": {
+        "abstention": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 219,
+          "n": 512,
+          "rate": 0.427734375,
+          "wilson": [
+            0.3855742560818471,
+            0.4709708146281008
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 219,
+          "n": 512,
+          "rate": 0.427734375,
+          "wilson": [
+            0.3855742560818471,
+            0.4709708146281008
+          ]
+        }
+      },
+      "truth": 0.5997160448000001
+    },
+    {
+      "acquisition_cost": 8192,
+      "budget": 8192,
+      "case": "near_threshold",
+      "charged_rows": 6144,
+      "independent_units": [
+        4096,
+        2048
+      ],
+      "median_width": 0.7855217319785067,
+      "method": "equal_envelope",
+      "oracle_width": 0.1171,
+      "p90_width": 0.9398520456236541,
+      "rates": {
+        "abstention": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 10,
+          "n": 512,
+          "rate": 0.01953125,
+          "wilson": [
+            0.010642921854633286,
+            0.03557565637907434
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 10,
+          "n": 512,
+          "rate": 0.01953125,
+          "wilson": [
+            0.010642921854633286,
+            0.03557565637907434
+          ]
+        }
+      },
+      "truth": 0.5997160448000001
+    },
+    {
+      "acquisition_cost": 8192,
+      "budget": 8192,
+      "case": "near_threshold",
+      "charged_rows": 7268,
+      "independent_units": [
+        6344,
+        924
+      ],
+      "median_width": 0.8437398120528354,
+      "method": "planned_envelope",
+      "oracle_width": 0.1171,
+      "p90_width": 0.9943961089684906,
+      "rates": {
+        "abstention": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 8,
+          "n": 512,
+          "rate": 0.015625,
+          "wilson": [
+            0.007938224978408947,
+            0.030526032753133703
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 8,
+          "n": 512,
+          "rate": 0.015625,
+          "wilson": [
+            0.007938224978408947,
+            0.030526032753133703
+          ]
+        }
+      },
+      "truth": 0.5997160448000001
+    },
+    {
+      "acquisition_cost": 8192,
+      "budget": 8192,
+      "case": "near_threshold",
+      "charged_rows": 7268,
+      "independent_units": [
+        6344,
+        924
+      ],
+      "median_width": 0.8437398120528354,
+      "method": "full_hidden_support",
+      "oracle_width": 0.1171,
+      "p90_width": 0.9943961089684906,
+      "rates": {
+        "abstention": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 8,
+          "n": 512,
+          "rate": 0.015625,
+          "wilson": [
+            0.007938224978408947,
+            0.030526032753133703
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 8,
+          "n": 512,
+          "rate": 0.015625,
+          "wilson": [
+            0.007938224978408947,
+            0.030526032753133703
+          ]
+        }
+      },
+      "truth": 0.5997160448000001
+    },
+    {
+      "acquisition_cost": 0,
+      "budget": 8192,
+      "case": "near_threshold",
+      "charged_rows": 0,
+      "independent_units": [
+        0,
+        0
+      ],
+      "median_width": 480.0,
+      "method": "abstain",
+      "oracle_width": 0.1171,
+      "p90_width": 480.0,
+      "rates": {
+        "abstention": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 0.5997160448000001
+    },
+    {
+      "acquisition_cost": 32768,
+      "budget": 32768,
+      "case": "near_threshold",
+      "charged_rows": 24576,
+      "independent_units": [
+        16384,
+        8192
+      ],
+      "median_width": 0.3045911144286607,
+      "method": "reachable_only",
+      "oracle_width": 0.1171,
+      "p90_width": 0.3515865271766315,
+      "rates": {
+        "abstention": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        }
+      },
+      "truth": 0.5997160448000001
+    },
+    {
+      "acquisition_cost": 32768,
+      "budget": 32768,
+      "case": "near_threshold",
+      "charged_rows": 24576,
+      "independent_units": [
+        16384,
+        8192
+      ],
+      "median_width": 0.4215388188714464,
+      "method": "equal_envelope",
+      "oracle_width": 0.1171,
+      "p90_width": 0.4685107339130432,
+      "rates": {
+        "abstention": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        }
+      },
+      "truth": 0.5997160448000001
+    },
+    {
+      "acquisition_cost": 32768,
+      "budget": 32768,
+      "case": "near_threshold",
+      "charged_rows": 29073,
+      "independent_units": [
+        25378,
+        3695
+      ],
+      "median_width": 0.466673856407921,
+      "method": "planned_envelope",
+      "oracle_width": 0.1171,
+      "p90_width": 0.5057112481406879,
+      "rates": {
+        "abstention": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        }
+      },
+      "truth": 0.5997160448000001
+    },
+    {
+      "acquisition_cost": 32768,
+      "budget": 32768,
+      "case": "near_threshold",
+      "charged_rows": 29073,
+      "independent_units": [
+        25378,
+        3695
+      ],
+      "median_width": 0.466673856407921,
+      "method": "full_hidden_support",
+      "oracle_width": 0.1171,
+      "p90_width": 0.5057112481406879,
+      "rates": {
+        "abstention": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        }
+      },
+      "truth": 0.5997160448000001
+    },
+    {
+      "acquisition_cost": 0,
+      "budget": 32768,
+      "case": "near_threshold",
+      "charged_rows": 0,
+      "independent_units": [
+        0,
+        0
+      ],
+      "median_width": 480.0,
+      "method": "abstain",
+      "oracle_width": 0.1171,
+      "p90_width": 480.0,
+      "rates": {
+        "abstention": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 0.5997160448000001
+    },
+    {
+      "acquisition_cost": 8192,
+      "budget": 8192,
+      "case": "verified_hidden_support",
+      "charged_rows": 6144,
+      "independent_units": [
+        4096,
+        2048
+      ],
+      "median_width": 0.9371538062197955,
+      "method": "reachable_only",
+      "oracle_width": 0.02342000000000006,
+      "p90_width": 1.0781528377709522,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 1.2424207999999999
+    },
+    {
+      "acquisition_cost": 8192,
+      "budget": 8192,
+      "case": "verified_hidden_support",
+      "charged_rows": 6144,
+      "independent_units": [
+        4096,
+        2048
+      ],
+      "median_width": 0.9558880371886966,
+      "method": "equal_envelope",
+      "oracle_width": 0.02342000000000006,
+      "p90_width": 1.0961820735820977,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 1.2424207999999999
+    },
+    {
+      "acquisition_cost": 8192,
+      "budget": 8192,
+      "case": "verified_hidden_support",
+      "charged_rows": 7268,
+      "independent_units": [
+        6344,
+        924
+      ],
+      "median_width": 1.137055478699459,
+      "method": "planned_envelope",
+      "oracle_width": 0.02342000000000006,
+      "p90_width": 1.2664982107079046,
+      "rates": {
+        "abstention": {
+          "count": 10,
+          "n": 512,
+          "rate": 0.01953125,
+          "wilson": [
+            0.010642921854633286,
+            0.03557565637907434
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 502,
+          "n": 512,
+          "rate": 0.98046875,
+          "wilson": [
+            0.9644243436209257,
+            0.9893570781453667
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 1.2424207999999999
+    },
+    {
+      "acquisition_cost": 8192,
+      "budget": 8192,
+      "case": "verified_hidden_support",
+      "charged_rows": 7268,
+      "independent_units": [
+        6344,
+        924
+      ],
+      "median_width": 2.2846354786994594,
+      "method": "full_hidden_support",
+      "oracle_width": 0.02342000000000006,
+      "p90_width": 2.4140782107079044,
+      "rates": {
+        "abstention": {
+          "count": 10,
+          "n": 512,
+          "rate": 0.01953125,
+          "wilson": [
+            0.010642921854633286,
+            0.03557565637907434
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 502,
+          "n": 512,
+          "rate": 0.98046875,
+          "wilson": [
+            0.9644243436209257,
+            0.9893570781453667
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 1.2424207999999999
+    },
+    {
+      "acquisition_cost": 0,
+      "budget": 8192,
+      "case": "verified_hidden_support",
+      "charged_rows": 0,
+      "independent_units": [
+        0,
+        0
+      ],
+      "median_width": 480.0,
+      "method": "abstain",
+      "oracle_width": 0.02342000000000006,
+      "p90_width": 480.0,
+      "rates": {
+        "abstention": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 1.2424207999999999
+    },
+    {
+      "acquisition_cost": 32768,
+      "budget": 32768,
+      "case": "verified_hidden_support",
+      "charged_rows": 24576,
+      "independent_units": [
+        16384,
+        8192
+      ],
+      "median_width": 0.4399459537853321,
+      "method": "reachable_only",
+      "oracle_width": 0.02342000000000006,
+      "p90_width": 0.48472618049257216,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 356,
+          "n": 512,
+          "rate": 0.6953125,
+          "wilson": [
+            0.6541115676165162,
+            0.7336044574917328
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        }
+      },
+      "truth": 1.2424207999999999
+    },
+    {
+      "acquisition_cost": 32768,
+      "budget": 32768,
+      "case": "verified_hidden_support",
+      "charged_rows": 24576,
+      "independent_units": [
+        16384,
+        8192
+      ],
+      "median_width": 0.4611662240164055,
+      "method": "equal_envelope",
+      "oracle_width": 0.02342000000000006,
+      "p90_width": 0.5057225495901092,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 311,
+          "n": 512,
+          "rate": 0.607421875,
+          "wilson": [
+            0.5644739555080028,
+            0.6487698583015341
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        }
+      },
+      "truth": 1.2424207999999999
+    },
+    {
+      "acquisition_cost": 32768,
+      "budget": 32768,
+      "case": "verified_hidden_support",
+      "charged_rows": 29073,
+      "independent_units": [
+        25378,
+        3695
+      ],
+      "median_width": 0.5734548602858494,
+      "method": "planned_envelope",
+      "oracle_width": 0.02342000000000006,
+      "p90_width": 0.6085474193494607,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 95,
+          "n": 512,
+          "rate": 0.185546875,
+          "wilson": [
+            0.15426026458865083,
+            0.22151693498706837
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 423,
+          "n": 512,
+          "rate": 0.826171875,
+          "wilson": [
+            0.7909499792318174,
+            0.8565357826989582
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 423,
+          "n": 512,
+          "rate": 0.826171875,
+          "wilson": [
+            0.7909499792318174,
+            0.8565357826989582
+          ]
+        }
+      },
+      "truth": 1.2424207999999999
+    },
+    {
+      "acquisition_cost": 32768,
+      "budget": 32768,
+      "case": "verified_hidden_support",
+      "charged_rows": 29073,
+      "independent_units": [
+        25378,
+        3695
+      ],
+      "median_width": 1.721034860285849,
+      "method": "full_hidden_support",
+      "oracle_width": 0.02342000000000006,
+      "p90_width": 1.7561274193494603,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 1.2424207999999999
+    },
+    {
+      "acquisition_cost": 0,
+      "budget": 32768,
+      "case": "verified_hidden_support",
+      "charged_rows": 0,
+      "independent_units": [
+        0,
+        0
+      ],
+      "median_width": 480.0,
+      "method": "abstain",
+      "oracle_width": 0.02342000000000006,
+      "p90_width": 480.0,
+      "rates": {
+        "abstention": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 1.2424207999999999
+    },
+    {
+      "acquisition_cost": 8192,
+      "budget": 8192,
+      "case": "bad_mass_cap",
+      "charged_rows": 6144,
+      "independent_units": [
+        4096,
+        2048
+      ],
+      "median_width": 0.9294606125873097,
+      "method": "reachable_only",
+      "oracle_width": 0.1170999999999999,
+      "p90_width": 1.0713726189817596,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 13,
+          "n": 512,
+          "rate": 0.025390625,
+          "wilson": [
+            0.014897398253755445,
+            0.042952660733199644
+          ]
+        },
+        "coverage": {
+          "count": 13,
+          "n": 512,
+          "rate": 0.025390625,
+          "wilson": [
+            0.014897398253755445,
+            0.042952660733199644
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 2.1698527999999997
+    },
+    {
+      "acquisition_cost": 8192,
+      "budget": 8192,
+      "case": "bad_mass_cap",
+      "charged_rows": 6144,
+      "independent_units": [
+        4096,
+        2048
+      ],
+      "median_width": 1.0460958822810162,
+      "method": "equal_envelope",
+      "oracle_width": 0.1170999999999999,
+      "p90_width": 1.1879369326722686,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 49,
+          "n": 512,
+          "rate": 0.095703125,
+          "wilson": [
+            0.07314916891397412,
+            0.12427865911195062
+          ]
+        },
+        "coverage": {
+          "count": 49,
+          "n": 512,
+          "rate": 0.095703125,
+          "wilson": [
+            0.07314916891397412,
+            0.12427865911195062
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 2.1698527999999997
+    },
+    {
+      "acquisition_cost": 8192,
+      "budget": 8192,
+      "case": "bad_mass_cap",
+      "charged_rows": 7268,
+      "independent_units": [
+        6344,
+        924
+      ],
+      "median_width": 1.2356706301290807,
+      "method": "planned_envelope",
+      "oracle_width": 0.1170999999999999,
+      "p90_width": 1.3592363659003595,
+      "rates": {
+        "abstention": {
+          "count": 9,
+          "n": 512,
+          "rate": 0.017578125,
+          "wilson": [
+            0.009274933048931776,
+            0.03306648493369336
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 127,
+          "n": 512,
+          "rate": 0.248046875,
+          "wilson": [
+            0.21260657818251497,
+            0.2872397494278439
+          ]
+        },
+        "coverage": {
+          "count": 127,
+          "n": 512,
+          "rate": 0.248046875,
+          "wilson": [
+            0.21260657818251497,
+            0.2872397494278439
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 2.1698527999999997
+    },
+    {
+      "acquisition_cost": 8192,
+      "budget": 8192,
+      "case": "bad_mass_cap",
+      "charged_rows": 7268,
+      "independent_units": [
+        6344,
+        924
+      ],
+      "median_width": 1.2356706301290807,
+      "method": "full_hidden_support",
+      "oracle_width": 0.1170999999999999,
+      "p90_width": 1.3592363659003595,
+      "rates": {
+        "abstention": {
+          "count": 9,
+          "n": 512,
+          "rate": 0.017578125,
+          "wilson": [
+            0.009274933048931776,
+            0.03306648493369336
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 127,
+          "n": 512,
+          "rate": 0.248046875,
+          "wilson": [
+            0.21260657818251497,
+            0.2872397494278439
+          ]
+        },
+        "coverage": {
+          "count": 127,
+          "n": 512,
+          "rate": 0.248046875,
+          "wilson": [
+            0.21260657818251497,
+            0.2872397494278439
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 2.1698527999999997
+    },
+    {
+      "acquisition_cost": 0,
+      "budget": 8192,
+      "case": "bad_mass_cap",
+      "charged_rows": 0,
+      "independent_units": [
+        0,
+        0
+      ],
+      "median_width": 480.0,
+      "method": "abstain",
+      "oracle_width": 0.1170999999999999,
+      "p90_width": 480.0,
+      "rates": {
+        "abstention": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 2.1698527999999997
+    },
+    {
+      "acquisition_cost": 32768,
+      "budget": 32768,
+      "case": "bad_mass_cap",
+      "charged_rows": 24576,
+      "independent_units": [
+        16384,
+        8192
+      ],
+      "median_width": 0.43861035535312376,
+      "method": "reachable_only",
+      "oracle_width": 0.1170999999999999,
+      "p90_width": 0.48662154619333364,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 358,
+          "n": 512,
+          "rate": 0.69921875,
+          "wilson": [
+            0.6581322873328272,
+            0.7373380582775866
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 358,
+          "n": 512,
+          "rate": 0.69921875,
+          "wilson": [
+            0.6581322873328272,
+            0.7373380582775866
+          ]
+        },
+        "precision": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        }
+      },
+      "truth": 2.1698527999999997
+    },
+    {
+      "acquisition_cost": 32768,
+      "budget": 32768,
+      "case": "bad_mass_cap",
+      "charged_rows": 24576,
+      "independent_units": [
+        16384,
+        8192
+      ],
+      "median_width": 0.5554910501754472,
+      "method": "equal_envelope",
+      "oracle_width": 0.1170999999999999,
+      "p90_width": 0.603478235420237,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 53,
+          "n": 512,
+          "rate": 0.103515625,
+          "wilson": [
+            0.08001453353690521,
+            0.13292193549334946
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 53,
+          "n": 512,
+          "rate": 0.103515625,
+          "wilson": [
+            0.08001453353690521,
+            0.13292193549334946
+          ]
+        },
+        "precision": {
+          "count": 451,
+          "n": 512,
+          "rate": 0.880859375,
+          "wilson": [
+            0.8499237357408231,
+            0.9061225132202622
+          ]
+        }
+      },
+      "truth": 2.1698527999999997
+    },
+    {
+      "acquisition_cost": 32768,
+      "budget": 32768,
+      "case": "bad_mass_cap",
+      "charged_rows": 29073,
+      "independent_units": [
+        25378,
+        3695
+      ],
+      "median_width": 0.6685818665907141,
+      "method": "planned_envelope",
+      "oracle_width": 0.1170999999999999,
+      "p90_width": 0.7048597848246948,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 7,
+          "n": 512,
+          "rate": 0.013671875,
+          "wilson": [
+            0.006638096992250363,
+            0.027949000488209794
+          ]
+        }
+      },
+      "truth": 2.1698527999999997
+    },
+    {
+      "acquisition_cost": 32768,
+      "budget": 32768,
+      "case": "bad_mass_cap",
+      "charged_rows": 29073,
+      "independent_units": [
+        25378,
+        3695
+      ],
+      "median_width": 0.6685818665907141,
+      "method": "full_hidden_support",
+      "oracle_width": 0.1170999999999999,
+      "p90_width": 0.7048597848246948,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 7,
+          "n": 512,
+          "rate": 0.013671875,
+          "wilson": [
+            0.006638096992250363,
+            0.027949000488209794
+          ]
+        }
+      },
+      "truth": 2.1698527999999997
+    },
+    {
+      "acquisition_cost": 0,
+      "budget": 32768,
+      "case": "bad_mass_cap",
+      "charged_rows": 0,
+      "independent_units": [
+        0,
+        0
+      ],
+      "median_width": 480.0,
+      "method": "abstain",
+      "oracle_width": 0.1170999999999999,
+      "p90_width": 480.0,
+      "rates": {
+        "abstention": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 2.1698527999999997
+    },
+    {
+      "acquisition_cost": 8192,
+      "budget": 8192,
+      "case": "bad_hidden_support",
+      "charged_rows": 6144,
+      "independent_units": [
+        4096,
+        2048
+      ],
+      "median_width": 0.9409549332413176,
+      "method": "reachable_only",
+      "oracle_width": 0.02342000000000006,
+      "p90_width": 1.0851940522408559,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 22,
+          "n": 512,
+          "rate": 0.04296875,
+          "wilson": [
+            0.028544698829875797,
+            0.0641998024168217
+          ]
+        },
+        "coverage": {
+          "count": 22,
+          "n": 512,
+          "rate": 0.04296875,
+          "wilson": [
+            0.028544698829875797,
+            0.0641998024168217
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 2.1698527999999997
+    },
+    {
+      "acquisition_cost": 8192,
+      "budget": 8192,
+      "case": "bad_hidden_support",
+      "charged_rows": 6144,
+      "independent_units": [
+        4096,
+        2048
+      ],
+      "median_width": 0.9596701585751111,
+      "method": "equal_envelope",
+      "oracle_width": 0.02342000000000006,
+      "p90_width": 1.1031880819796511,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 25,
+          "n": 512,
+          "rate": 0.048828125,
+          "wilson": [
+            0.033289430544156826,
+            0.07108655145578814
+          ]
+        },
+        "coverage": {
+          "count": 25,
+          "n": 512,
+          "rate": 0.048828125,
+          "wilson": [
+            0.033289430544156826,
+            0.07108655145578814
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 2.1698527999999997
+    },
+    {
+      "acquisition_cost": 8192,
+      "budget": 8192,
+      "case": "bad_hidden_support",
+      "charged_rows": 7268,
+      "independent_units": [
+        6344,
+        924
+      ],
+      "median_width": 1.1464301055074055,
+      "method": "planned_envelope",
+      "oracle_width": 0.02342000000000006,
+      "p90_width": 1.2922255124850395,
+      "rates": {
+        "abstention": {
+          "count": 8,
+          "n": 512,
+          "rate": 0.015625,
+          "wilson": [
+            0.007938224978408947,
+            0.030526032753133703
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 86,
+          "n": 512,
+          "rate": 0.16796875,
+          "wilson": [
+            0.1380860415541461,
+            0.20279671576183073
+          ]
+        },
+        "coverage": {
+          "count": 86,
+          "n": 512,
+          "rate": 0.16796875,
+          "wilson": [
+            0.1380860415541461,
+            0.20279671576183073
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 2.1698527999999997
+    },
+    {
+      "acquisition_cost": 8192,
+      "budget": 8192,
+      "case": "bad_hidden_support",
+      "charged_rows": 7268,
+      "independent_units": [
+        6344,
+        924
+      ],
+      "median_width": 2.294010105507405,
+      "method": "full_hidden_support",
+      "oracle_width": 0.02342000000000006,
+      "p90_width": 2.43980551248504,
+      "rates": {
+        "abstention": {
+          "count": 8,
+          "n": 512,
+          "rate": 0.015625,
+          "wilson": [
+            0.007938224978408947,
+            0.030526032753133703
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 504,
+          "n": 512,
+          "rate": 0.984375,
+          "wilson": [
+            0.9694739672468663,
+            0.9920617750215911
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 2.1698527999999997
+    },
+    {
+      "acquisition_cost": 0,
+      "budget": 8192,
+      "case": "bad_hidden_support",
+      "charged_rows": 0,
+      "independent_units": [
+        0,
+        0
+      ],
+      "median_width": 480.0,
+      "method": "abstain",
+      "oracle_width": 0.02342000000000006,
+      "p90_width": 480.0,
+      "rates": {
+        "abstention": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 2.1698527999999997
+    },
+    {
+      "acquisition_cost": 32768,
+      "budget": 32768,
+      "case": "bad_hidden_support",
+      "charged_rows": 24576,
+      "independent_units": [
+        16384,
+        8192
+      ],
+      "median_width": 0.44016757529313777,
+      "method": "reachable_only",
+      "oracle_width": 0.02342000000000006,
+      "p90_width": 0.48943783536872254,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 356,
+          "n": 512,
+          "rate": 0.6953125,
+          "wilson": [
+            0.6541115676165162,
+            0.7336044574917328
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 356,
+          "n": 512,
+          "rate": 0.6953125,
+          "wilson": [
+            0.6541115676165162,
+            0.7336044574917328
+          ]
+        },
+        "precision": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        }
+      },
+      "truth": 2.1698527999999997
+    },
+    {
+      "acquisition_cost": 32768,
+      "budget": 32768,
+      "case": "bad_hidden_support",
+      "charged_rows": 24576,
+      "independent_units": [
+        16384,
+        8192
+      ],
+      "median_width": 0.46138673741667224,
+      "method": "equal_envelope",
+      "oracle_width": 0.02342000000000006,
+      "p90_width": 0.5104106461918788,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 308,
+          "n": 512,
+          "rate": 0.6015625,
+          "wilson": [
+            0.5585509792394101,
+            0.6430613538168792
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 308,
+          "n": 512,
+          "rate": 0.6015625,
+          "wilson": [
+            0.5585509792394101,
+            0.6430613538168792
+          ]
+        },
+        "precision": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        }
+      },
+      "truth": 2.1698527999999997
+    },
+    {
+      "acquisition_cost": 32768,
+      "budget": 32768,
+      "case": "bad_hidden_support",
+      "charged_rows": 29073,
+      "independent_units": [
+        25378,
+        3695
+      ],
+      "median_width": 0.5734548602858494,
+      "method": "planned_envelope",
+      "oracle_width": 0.02342000000000006,
+      "p90_width": 0.6090101226341381,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 101,
+          "n": 512,
+          "rate": 0.197265625,
+          "wilson": [
+            0.16510605271370546,
+            0.23393410836850873
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 101,
+          "n": 512,
+          "rate": 0.197265625,
+          "wilson": [
+            0.16510605271370546,
+            0.23393410836850873
+          ]
+        },
+        "precision": {
+          "count": 425,
+          "n": 512,
+          "rate": 0.830078125,
+          "wilson": [
+            0.7951173271721453,
+            0.8601227552607954
+          ]
+        }
+      },
+      "truth": 2.1698527999999997
+    },
+    {
+      "acquisition_cost": 32768,
+      "budget": 32768,
+      "case": "bad_hidden_support",
+      "charged_rows": 29073,
+      "independent_units": [
+        25378,
+        3695
+      ],
+      "median_width": 1.721034860285849,
+      "method": "full_hidden_support",
+      "oracle_width": 0.02342000000000006,
+      "p90_width": 1.7565901226341378,
+      "rates": {
+        "abstention": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 2.1698527999999997
+    },
+    {
+      "acquisition_cost": 0,
+      "budget": 32768,
+      "case": "bad_hidden_support",
+      "charged_rows": 0,
+      "independent_units": [
+        0,
+        0
+      ],
+      "median_width": 480.0,
+      "method": "abstain",
+      "oracle_width": 0.02342000000000006,
+      "p90_width": 480.0,
+      "rates": {
+        "abstention": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 2.1698527999999997
+    },
+    {
+      "acquisition_cost": 8192,
+      "budget": 8192,
+      "case": "duplicates",
+      "charged_rows": 6144,
+      "independent_units": [
+        512,
+        256
+      ],
+      "median_width": 3.4972966920323256,
+      "method": "reachable_only",
+      "oracle_width": 0.1170999999999999,
+      "p90_width": 4.0170366259473855,
+      "rates": {
+        "abstention": {
+          "count": 236,
+          "n": 512,
+          "rate": 0.4609375,
+          "wilson": [
+            0.418211361690564,
+            0.5042454332877861
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 276,
+          "n": 512,
+          "rate": 0.5390625,
+          "wilson": [
+            0.4957545667122138,
+            0.581788638309436
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 1.28345264
+    },
+    {
+      "acquisition_cost": 8192,
+      "budget": 8192,
+      "case": "duplicates",
+      "charged_rows": 6144,
+      "independent_units": [
+        512,
+        256
+      ],
+      "median_width": 3.6126480436863107,
+      "method": "equal_envelope",
+      "oracle_width": 0.1170999999999999,
+      "p90_width": 4.132128107634412,
+      "rates": {
+        "abstention": {
+          "count": 236,
+          "n": 512,
+          "rate": 0.4609375,
+          "wilson": [
+            0.418211361690564,
+            0.5042454332877861
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 276,
+          "n": 512,
+          "rate": 0.5390625,
+          "wilson": [
+            0.4957545667122138,
+            0.581788638309436
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 1.28345264
+    },
+    {
+      "acquisition_cost": 8192,
+      "budget": 8192,
+      "case": "duplicates",
+      "charged_rows": 7272,
+      "independent_units": [
+        794,
+        115
+      ],
+      "median_width": 3.9744369071540726,
+      "method": "planned_envelope",
+      "oracle_width": 0.1170999999999999,
+      "p90_width": 4.754720486205387,
+      "rates": {
+        "abstention": {
+          "count": 425,
+          "n": 512,
+          "rate": 0.830078125,
+          "wilson": [
+            0.7951173271721453,
+            0.8601227552607954
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 87,
+          "n": 512,
+          "rate": 0.169921875,
+          "wilson": [
+            0.13987724473920465,
+            0.20488267282785466
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 1.28345264
+    },
+    {
+      "acquisition_cost": 8192,
+      "budget": 8192,
+      "case": "duplicates",
+      "charged_rows": 7272,
+      "independent_units": [
+        794,
+        115
+      ],
+      "median_width": 3.9744369071540726,
+      "method": "full_hidden_support",
+      "oracle_width": 0.1170999999999999,
+      "p90_width": 4.754720486205387,
+      "rates": {
+        "abstention": {
+          "count": 425,
+          "n": 512,
+          "rate": 0.830078125,
+          "wilson": [
+            0.7951173271721453,
+            0.8601227552607954
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 87,
+          "n": 512,
+          "rate": 0.169921875,
+          "wilson": [
+            0.13987724473920465,
+            0.20488267282785466
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 1.28345264
+    },
+    {
+      "acquisition_cost": 0,
+      "budget": 8192,
+      "case": "duplicates",
+      "charged_rows": 0,
+      "independent_units": [
+        0,
+        0
+      ],
+      "median_width": 480.0,
+      "method": "abstain",
+      "oracle_width": 0.1170999999999999,
+      "p90_width": 480.0,
+      "rates": {
+        "abstention": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 1.28345264
+    },
+    {
+      "acquisition_cost": 32768,
+      "budget": 32768,
+      "case": "duplicates",
+      "charged_rows": 24576,
+      "independent_units": [
+        2048,
+        1024
+      ],
+      "median_width": 1.3316207755126985,
+      "method": "reachable_only",
+      "oracle_width": 0.1170999999999999,
+      "p90_width": 1.6390914738986984,
+      "rates": {
+        "abstention": {
+          "count": 2,
+          "n": 512,
+          "rate": 0.00390625,
+          "wilson": [
+            0.0010718890803936704,
+            0.014129407144654042
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 510,
+          "n": 512,
+          "rate": 0.99609375,
+          "wilson": [
+            0.985870592855346,
+            0.9989281109196064
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 1.28345264
+    },
+    {
+      "acquisition_cost": 32768,
+      "budget": 32768,
+      "case": "duplicates",
+      "charged_rows": 24576,
+      "independent_units": [
+        2048,
+        1024
+      ],
+      "median_width": 1.4480549651249424,
+      "method": "equal_envelope",
+      "oracle_width": 0.1170999999999999,
+      "p90_width": 1.7553719281617488,
+      "rates": {
+        "abstention": {
+          "count": 2,
+          "n": 512,
+          "rate": 0.00390625,
+          "wilson": [
+            0.0010718890803936704,
+            0.014129407144654042
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 510,
+          "n": 512,
+          "rate": 0.99609375,
+          "wilson": [
+            0.985870592855346,
+            0.9989281109196064
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 1.28345264
+    },
+    {
+      "acquisition_cost": 32768,
+      "budget": 32768,
+      "case": "duplicates",
+      "charged_rows": 29072,
+      "independent_units": [
+        3172,
+        462
+      ],
+      "median_width": 1.7582063509047634,
+      "method": "planned_envelope",
+      "oracle_width": 0.1170999999999999,
+      "p90_width": 2.0150001246538585,
+      "rates": {
+        "abstention": {
+          "count": 106,
+          "n": 512,
+          "rate": 0.20703125,
+          "wilson": [
+            0.1741797850792416,
+            0.24424617725838504
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 406,
+          "n": 512,
+          "rate": 0.79296875,
+          "wilson": [
+            0.7557538227416151,
+            0.8258202149207584
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 1.28345264
+    },
+    {
+      "acquisition_cost": 32768,
+      "budget": 32768,
+      "case": "duplicates",
+      "charged_rows": 29072,
+      "independent_units": [
+        3172,
+        462
+      ],
+      "median_width": 1.7582063509047634,
+      "method": "full_hidden_support",
+      "oracle_width": 0.1170999999999999,
+      "p90_width": 2.0150001246538585,
+      "rates": {
+        "abstention": {
+          "count": 106,
+          "n": 512,
+          "rate": 0.20703125,
+          "wilson": [
+            0.1741797850792416,
+            0.24424617725838504
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 406,
+          "n": 512,
+          "rate": 0.79296875,
+          "wilson": [
+            0.7557538227416151,
+            0.8258202149207584
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 1.28345264
+    },
+    {
+      "acquisition_cost": 0,
+      "budget": 32768,
+      "case": "duplicates",
+      "charged_rows": 0,
+      "independent_units": [
+        0,
+        0
+      ],
+      "median_width": 480.0,
+      "method": "abstain",
+      "oracle_width": 0.1170999999999999,
+      "p90_width": 480.0,
+      "rates": {
+        "abstention": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "correct_decisive_coverage": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "coverage": {
+          "count": 512,
+          "n": 512,
+          "rate": 1.0,
+          "wilson": [
+            0.9925530242771171,
+            0.9999999999999999
+          ]
+        },
+        "coverage_with_precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "false_certificate": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        },
+        "precision": {
+          "count": 0,
+          "n": 512,
+          "rate": 0.0,
+          "wilson": [
+            0,
+            0.007446975722882734
+          ]
+        }
+      },
+      "truth": 1.28345264
+    }
+  ]
+}
