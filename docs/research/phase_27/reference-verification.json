@@ -1,0 +1,1893 @@
+{
+  "schema": "genevra-reference-v1",
+  "status": "passed",
+  "absolute_numeric_tolerance": 1e-09,
+  "phase25_raw_sha256": "9b8f43cea437004ecb9143ec8846bab1ff5fdc354149b28f4772b168ed22008f",
+  "reference_sha256": "af83c3a51d5a531553a26d28f73fe0d2648400e8abb646dd6fda3389ba92578a",
+  "phase18": {
+    "simultaneous_false_certificate_upper": {
+      "registered_matched": 0.01009123221198116,
+      "registered_shift": 0.01009123221198116,
+      "near_threshold": 0.01009123221198116,
+      "clustered": 0.01009123221198116,
+      "restricted_matched": 0.01009123221198116,
+      "frame_stale": 0.01009123221198116,
+      "audit_stale": 0.01009123221198116,
+      "shared_blind": 0.4072946235754177,
+      "missing_stratum": 0.01009123221198116
+    },
+    "shared_blind": {
+      "coverage": 0,
+      "abstention": 0,
+      "wrong_call": 0,
+      "certificate": 180,
+      "false_certificate": 180
+    },
+    "contrast_order": [
+      "difference",
+      "low",
+      "high"
+    ],
+    "contrasts": {
+      "direct": [
+        0.1064453125,
+        -0.03030679761257693,
+        0.24319742261257693
+      ],
+      "stratified": [
+        0.09619140625,
+        -0.04056070386257693,
+        0.23294351636257693
+      ],
+      "abstain": [
+        0.00390625,
+        -0.13284586011257693,
+        0.14065836011257693
+      ]
+    },
+    "method_cells": 40
+  },
+  "phase25": {
+    "replicate_records": 36864,
+    "cells": [
+      {
+        "case": "complete",
+        "budget": 8192,
+        "method": "width_proxy",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 6,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "complete",
+        "budget": 8192,
+        "method": "variance",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "complete",
+        "budget": 8192,
+        "method": "minimax",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 31,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "complete",
+        "budget": 8192,
+        "method": "equal_spend",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "complete",
+        "budget": 8192,
+        "method": "proportional",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 14,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "complete",
+        "budget": 8192,
+        "method": "direct",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "complete",
+        "budget": 8192,
+        "method": "oracle",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "complete",
+        "budget": 8192,
+        "method": "abstain",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 256,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "complete",
+        "budget": 32768,
+        "method": "width_proxy",
+        "coverage": 256,
+        "useful": 241,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 72,
+        "false_certificate": 0
+      },
+      {
+        "case": "complete",
+        "budget": 32768,
+        "method": "variance",
+        "coverage": 256,
+        "useful": 251,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 128,
+        "false_certificate": 0
+      },
+      {
+        "case": "complete",
+        "budget": 32768,
+        "method": "minimax",
+        "coverage": 256,
+        "useful": 1,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "complete",
+        "budget": 32768,
+        "method": "equal_spend",
+        "coverage": 256,
+        "useful": 256,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 176,
+        "false_certificate": 0
+      },
+      {
+        "case": "complete",
+        "budget": 32768,
+        "method": "proportional",
+        "coverage": 256,
+        "useful": 122,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 18,
+        "false_certificate": 0
+      },
+      {
+        "case": "complete",
+        "budget": 32768,
+        "method": "direct",
+        "coverage": 256,
+        "useful": 256,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 176,
+        "false_certificate": 0
+      },
+      {
+        "case": "complete",
+        "budget": 32768,
+        "method": "oracle",
+        "coverage": 256,
+        "useful": 256,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 149,
+        "false_certificate": 0
+      },
+      {
+        "case": "complete",
+        "budget": 32768,
+        "method": "abstain",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 256,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "small_omission",
+        "budget": 8192,
+        "method": "width_proxy",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 4,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "small_omission",
+        "budget": 8192,
+        "method": "variance",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "small_omission",
+        "budget": 8192,
+        "method": "minimax",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 36,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "small_omission",
+        "budget": 8192,
+        "method": "equal_spend",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "small_omission",
+        "budget": 8192,
+        "method": "proportional",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 16,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "small_omission",
+        "budget": 8192,
+        "method": "direct",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "small_omission",
+        "budget": 8192,
+        "method": "oracle",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "small_omission",
+        "budget": 8192,
+        "method": "abstain",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 256,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "small_omission",
+        "budget": 32768,
+        "method": "width_proxy",
+        "coverage": 256,
+        "useful": 1,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "small_omission",
+        "budget": 32768,
+        "method": "variance",
+        "coverage": 256,
+        "useful": 104,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 15,
+        "false_certificate": 0
+      },
+      {
+        "case": "small_omission",
+        "budget": 32768,
+        "method": "minimax",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "small_omission",
+        "budget": 32768,
+        "method": "equal_spend",
+        "coverage": 256,
+        "useful": 229,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 28,
+        "false_certificate": 0
+      },
+      {
+        "case": "small_omission",
+        "budget": 32768,
+        "method": "proportional",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "small_omission",
+        "budget": 32768,
+        "method": "direct",
+        "coverage": 256,
+        "useful": 256,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 180,
+        "false_certificate": 0
+      },
+      {
+        "case": "small_omission",
+        "budget": 32768,
+        "method": "oracle",
+        "coverage": 256,
+        "useful": 209,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 21,
+        "false_certificate": 0
+      },
+      {
+        "case": "small_omission",
+        "budget": 32768,
+        "method": "abstain",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 256,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "large_omission",
+        "budget": 8192,
+        "method": "width_proxy",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 2,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "large_omission",
+        "budget": 8192,
+        "method": "variance",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "large_omission",
+        "budget": 8192,
+        "method": "minimax",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 34,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "large_omission",
+        "budget": 8192,
+        "method": "equal_spend",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "large_omission",
+        "budget": 8192,
+        "method": "proportional",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 13,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "large_omission",
+        "budget": 8192,
+        "method": "direct",
+        "coverage": 8,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "large_omission",
+        "budget": 8192,
+        "method": "oracle",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "large_omission",
+        "budget": 8192,
+        "method": "abstain",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 256,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "large_omission",
+        "budget": 32768,
+        "method": "width_proxy",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "large_omission",
+        "budget": 32768,
+        "method": "variance",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "large_omission",
+        "budget": 32768,
+        "method": "minimax",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "large_omission",
+        "budget": 32768,
+        "method": "equal_spend",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "large_omission",
+        "budget": 32768,
+        "method": "proportional",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "large_omission",
+        "budget": 32768,
+        "method": "direct",
+        "coverage": 0,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 189,
+        "false_certificate": 189
+      },
+      {
+        "case": "large_omission",
+        "budget": 32768,
+        "method": "oracle",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "large_omission",
+        "budget": 32768,
+        "method": "abstain",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 256,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "shifted_reachable",
+        "budget": 8192,
+        "method": "width_proxy",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "shifted_reachable",
+        "budget": 8192,
+        "method": "variance",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "shifted_reachable",
+        "budget": 8192,
+        "method": "minimax",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "shifted_reachable",
+        "budget": 8192,
+        "method": "equal_spend",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "shifted_reachable",
+        "budget": 8192,
+        "method": "proportional",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "shifted_reachable",
+        "budget": 8192,
+        "method": "direct",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "shifted_reachable",
+        "budget": 8192,
+        "method": "oracle",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "shifted_reachable",
+        "budget": 8192,
+        "method": "abstain",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 256,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "shifted_reachable",
+        "budget": 32768,
+        "method": "width_proxy",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "shifted_reachable",
+        "budget": 32768,
+        "method": "variance",
+        "coverage": 256,
+        "useful": 1,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "shifted_reachable",
+        "budget": 32768,
+        "method": "minimax",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "shifted_reachable",
+        "budget": 32768,
+        "method": "equal_spend",
+        "coverage": 256,
+        "useful": 8,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "shifted_reachable",
+        "budget": 32768,
+        "method": "proportional",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "shifted_reachable",
+        "budget": 32768,
+        "method": "direct",
+        "coverage": 256,
+        "useful": 216,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "shifted_reachable",
+        "budget": 32768,
+        "method": "oracle",
+        "coverage": 256,
+        "useful": 55,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "shifted_reachable",
+        "budget": 32768,
+        "method": "abstain",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 256,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "near_threshold",
+        "budget": 8192,
+        "method": "width_proxy",
+        "coverage": 255,
+        "useful": 1,
+        "abstention": 255,
+        "wrong_call": 1,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "near_threshold",
+        "budget": 8192,
+        "method": "variance",
+        "coverage": 256,
+        "useful": 1,
+        "abstention": 256,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "near_threshold",
+        "budget": 8192,
+        "method": "minimax",
+        "coverage": 256,
+        "useful": 2,
+        "abstention": 256,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "near_threshold",
+        "budget": 8192,
+        "method": "equal_spend",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 256,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "near_threshold",
+        "budget": 8192,
+        "method": "proportional",
+        "coverage": 256,
+        "useful": 1,
+        "abstention": 256,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "near_threshold",
+        "budget": 8192,
+        "method": "direct",
+        "coverage": 256,
+        "useful": 99,
+        "abstention": 256,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "near_threshold",
+        "budget": 8192,
+        "method": "oracle",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 256,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "near_threshold",
+        "budget": 8192,
+        "method": "abstain",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 256,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "near_threshold",
+        "budget": 32768,
+        "method": "width_proxy",
+        "coverage": 256,
+        "useful": 256,
+        "abstention": 256,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "near_threshold",
+        "budget": 32768,
+        "method": "variance",
+        "coverage": 256,
+        "useful": 251,
+        "abstention": 256,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "near_threshold",
+        "budget": 32768,
+        "method": "minimax",
+        "coverage": 256,
+        "useful": 247,
+        "abstention": 256,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "near_threshold",
+        "budget": 32768,
+        "method": "equal_spend",
+        "coverage": 256,
+        "useful": 256,
+        "abstention": 256,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "near_threshold",
+        "budget": 32768,
+        "method": "proportional",
+        "coverage": 256,
+        "useful": 256,
+        "abstention": 256,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "near_threshold",
+        "budget": 32768,
+        "method": "direct",
+        "coverage": 256,
+        "useful": 256,
+        "abstention": 256,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "near_threshold",
+        "budget": 32768,
+        "method": "oracle",
+        "coverage": 256,
+        "useful": 256,
+        "abstention": 256,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "near_threshold",
+        "budget": 32768,
+        "method": "abstain",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 256,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "verified_hidden_support",
+        "budget": 8192,
+        "method": "width_proxy",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 7,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "verified_hidden_support",
+        "budget": 8192,
+        "method": "variance",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 2,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "verified_hidden_support",
+        "budget": 8192,
+        "method": "minimax",
+        "coverage": 255,
+        "useful": 0,
+        "abstention": 38,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "verified_hidden_support",
+        "budget": 8192,
+        "method": "equal_spend",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "verified_hidden_support",
+        "budget": 8192,
+        "method": "proportional",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 15,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "verified_hidden_support",
+        "budget": 8192,
+        "method": "direct",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "verified_hidden_support",
+        "budget": 8192,
+        "method": "oracle",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "verified_hidden_support",
+        "budget": 8192,
+        "method": "abstain",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 256,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "verified_hidden_support",
+        "budget": 32768,
+        "method": "width_proxy",
+        "coverage": 256,
+        "useful": 211,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 40,
+        "false_certificate": 0
+      },
+      {
+        "case": "verified_hidden_support",
+        "budget": 32768,
+        "method": "variance",
+        "coverage": 256,
+        "useful": 247,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 112,
+        "false_certificate": 0
+      },
+      {
+        "case": "verified_hidden_support",
+        "budget": 32768,
+        "method": "minimax",
+        "coverage": 256,
+        "useful": 2,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "verified_hidden_support",
+        "budget": 32768,
+        "method": "equal_spend",
+        "coverage": 256,
+        "useful": 256,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 168,
+        "false_certificate": 0
+      },
+      {
+        "case": "verified_hidden_support",
+        "budget": 32768,
+        "method": "proportional",
+        "coverage": 256,
+        "useful": 60,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 1,
+        "false_certificate": 0
+      },
+      {
+        "case": "verified_hidden_support",
+        "budget": 32768,
+        "method": "direct",
+        "coverage": 256,
+        "useful": 256,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 187,
+        "false_certificate": 0
+      },
+      {
+        "case": "verified_hidden_support",
+        "budget": 32768,
+        "method": "oracle",
+        "coverage": 256,
+        "useful": 254,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 137,
+        "false_certificate": 0
+      },
+      {
+        "case": "verified_hidden_support",
+        "budget": 32768,
+        "method": "abstain",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 256,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "bad_mass_cap",
+        "budget": 8192,
+        "method": "width_proxy",
+        "coverage": 81,
+        "useful": 0,
+        "abstention": 3,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "bad_mass_cap",
+        "budget": 8192,
+        "method": "variance",
+        "coverage": 52,
+        "useful": 0,
+        "abstention": 1,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "bad_mass_cap",
+        "budget": 8192,
+        "method": "minimax",
+        "coverage": 156,
+        "useful": 0,
+        "abstention": 32,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "bad_mass_cap",
+        "budget": 8192,
+        "method": "equal_spend",
+        "coverage": 43,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "bad_mass_cap",
+        "budget": 8192,
+        "method": "proportional",
+        "coverage": 128,
+        "useful": 0,
+        "abstention": 11,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "bad_mass_cap",
+        "budget": 8192,
+        "method": "direct",
+        "coverage": 14,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "bad_mass_cap",
+        "budget": 8192,
+        "method": "oracle",
+        "coverage": 81,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "bad_mass_cap",
+        "budget": 8192,
+        "method": "abstain",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 256,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "bad_mass_cap",
+        "budget": 32768,
+        "method": "width_proxy",
+        "coverage": 0,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "bad_mass_cap",
+        "budget": 32768,
+        "method": "variance",
+        "coverage": 0,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 12,
+        "false_certificate": 12
+      },
+      {
+        "case": "bad_mass_cap",
+        "budget": 32768,
+        "method": "minimax",
+        "coverage": 0,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "bad_mass_cap",
+        "budget": 32768,
+        "method": "equal_spend",
+        "coverage": 0,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 25,
+        "false_certificate": 25
+      },
+      {
+        "case": "bad_mass_cap",
+        "budget": 32768,
+        "method": "proportional",
+        "coverage": 0,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "bad_mass_cap",
+        "budget": 32768,
+        "method": "direct",
+        "coverage": 0,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 178,
+        "false_certificate": 178
+      },
+      {
+        "case": "bad_mass_cap",
+        "budget": 32768,
+        "method": "oracle",
+        "coverage": 0,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 20,
+        "false_certificate": 20
+      },
+      {
+        "case": "bad_mass_cap",
+        "budget": 32768,
+        "method": "abstain",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 256,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "bad_hidden_support",
+        "budget": 8192,
+        "method": "width_proxy",
+        "coverage": 43,
+        "useful": 0,
+        "abstention": 3,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "bad_hidden_support",
+        "budget": 8192,
+        "method": "variance",
+        "coverage": 18,
+        "useful": 0,
+        "abstention": 1,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "bad_hidden_support",
+        "budget": 8192,
+        "method": "minimax",
+        "coverage": 110,
+        "useful": 0,
+        "abstention": 27,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "bad_hidden_support",
+        "budget": 8192,
+        "method": "equal_spend",
+        "coverage": 11,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "bad_hidden_support",
+        "budget": 8192,
+        "method": "proportional",
+        "coverage": 71,
+        "useful": 0,
+        "abstention": 9,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "bad_hidden_support",
+        "budget": 8192,
+        "method": "direct",
+        "coverage": 8,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "bad_hidden_support",
+        "budget": 8192,
+        "method": "oracle",
+        "coverage": 40,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "bad_hidden_support",
+        "budget": 8192,
+        "method": "abstain",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 256,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "bad_hidden_support",
+        "budget": 32768,
+        "method": "width_proxy",
+        "coverage": 0,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 42,
+        "false_certificate": 42
+      },
+      {
+        "case": "bad_hidden_support",
+        "budget": 32768,
+        "method": "variance",
+        "coverage": 0,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 113,
+        "false_certificate": 113
+      },
+      {
+        "case": "bad_hidden_support",
+        "budget": 32768,
+        "method": "minimax",
+        "coverage": 0,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "bad_hidden_support",
+        "budget": 32768,
+        "method": "equal_spend",
+        "coverage": 0,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 160,
+        "false_certificate": 160
+      },
+      {
+        "case": "bad_hidden_support",
+        "budget": 32768,
+        "method": "proportional",
+        "coverage": 0,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 3,
+        "false_certificate": 3
+      },
+      {
+        "case": "bad_hidden_support",
+        "budget": 32768,
+        "method": "direct",
+        "coverage": 0,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 185,
+        "false_certificate": 185
+      },
+      {
+        "case": "bad_hidden_support",
+        "budget": 32768,
+        "method": "oracle",
+        "coverage": 0,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 131,
+        "false_certificate": 131
+      },
+      {
+        "case": "bad_hidden_support",
+        "budget": 32768,
+        "method": "abstain",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 256,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "duplicates",
+        "budget": 8192,
+        "method": "width_proxy",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 216,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "duplicates",
+        "budget": 8192,
+        "method": "variance",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 207,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "duplicates",
+        "budget": 8192,
+        "method": "minimax",
+        "coverage": 255,
+        "useful": 0,
+        "abstention": 238,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "duplicates",
+        "budget": 8192,
+        "method": "equal_spend",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 178,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "duplicates",
+        "budget": 8192,
+        "method": "proportional",
+        "coverage": 255,
+        "useful": 0,
+        "abstention": 235,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "duplicates",
+        "budget": 8192,
+        "method": "direct",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 178,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "duplicates",
+        "budget": 8192,
+        "method": "oracle",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 128,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "duplicates",
+        "budget": 8192,
+        "method": "abstain",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 256,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "duplicates",
+        "budget": 32768,
+        "method": "width_proxy",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 85,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "duplicates",
+        "budget": 32768,
+        "method": "variance",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 32,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "duplicates",
+        "budget": 32768,
+        "method": "minimax",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 138,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "duplicates",
+        "budget": 32768,
+        "method": "equal_spend",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 4,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "duplicates",
+        "budget": 32768,
+        "method": "proportional",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 105,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "duplicates",
+        "budget": 32768,
+        "method": "direct",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 4,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "duplicates",
+        "budget": 32768,
+        "method": "oracle",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      },
+      {
+        "case": "duplicates",
+        "budget": 32768,
+        "method": "abstain",
+        "coverage": 256,
+        "useful": 0,
+        "abstention": 256,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0
+      }
+    ],
+    "contrasts": [
+      {
+        "case": "complete",
+        "budget": 8192,
+        "primary": false,
+        "n": 256,
+        "alpha": 0.0029411764705882353,
+        "difference": 0.0,
+        "interval": [
+          -0.22572959483794833,
+          0.22572959483794833
+        ],
+        "proxy_only": 0,
+        "variance_only": 0
+      },
+      {
+        "case": "complete",
+        "budget": 32768,
+        "primary": false,
+        "n": 256,
+        "alpha": 0.0029411764705882353,
+        "difference": -0.0390625,
+        "interval": [
+          -0.2647920948379483,
+          0.18666709483794833
+        ],
+        "proxy_only": 5,
+        "variance_only": 15
+      },
+      {
+        "case": "small_omission",
+        "budget": 8192,
+        "primary": false,
+        "n": 256,
+        "alpha": 0.0029411764705882353,
+        "difference": 0.0,
+        "interval": [
+          -0.22572959483794833,
+          0.22572959483794833
+        ],
+        "proxy_only": 0,
+        "variance_only": 0
+      },
+      {
+        "case": "small_omission",
+        "budget": 32768,
+        "primary": true,
+        "n": 256,
+        "alpha": 0.05,
+        "difference": -0.40234375,
+        "interval": [
+          -0.5721064394675774,
+          -0.23258106053242256
+        ],
+        "proxy_only": 0,
+        "variance_only": 103
+      },
+      {
+        "case": "large_omission",
+        "budget": 8192,
+        "primary": false,
+        "n": 256,
+        "alpha": 0.0029411764705882353,
+        "difference": 0.0,
+        "interval": [
+          -0.22572959483794833,
+          0.22572959483794833
+        ],
+        "proxy_only": 0,
+        "variance_only": 0
+      },
+      {
+        "case": "large_omission",
+        "budget": 32768,
+        "primary": false,
+        "n": 256,
+        "alpha": 0.0029411764705882353,
+        "difference": 0.0,
+        "interval": [
+          -0.22572959483794833,
+          0.22572959483794833
+        ],
+        "proxy_only": 0,
+        "variance_only": 0
+      },
+      {
+        "case": "shifted_reachable",
+        "budget": 8192,
+        "primary": false,
+        "n": 256,
+        "alpha": 0.0029411764705882353,
+        "difference": 0.0,
+        "interval": [
+          -0.22572959483794833,
+          0.22572959483794833
+        ],
+        "proxy_only": 0,
+        "variance_only": 0
+      },
+      {
+        "case": "shifted_reachable",
+        "budget": 32768,
+        "primary": false,
+        "n": 256,
+        "alpha": 0.0029411764705882353,
+        "difference": -0.00390625,
+        "interval": [
+          -0.22963584483794833,
+          0.22182334483794833
+        ],
+        "proxy_only": 0,
+        "variance_only": 1
+      },
+      {
+        "case": "near_threshold",
+        "budget": 8192,
+        "primary": false,
+        "n": 256,
+        "alpha": 0.0029411764705882353,
+        "difference": 0.0,
+        "interval": [
+          -0.22572959483794833,
+          0.22572959483794833
+        ],
+        "proxy_only": 0,
+        "variance_only": 0
+      },
+      {
+        "case": "near_threshold",
+        "budget": 32768,
+        "primary": false,
+        "n": 256,
+        "alpha": 0.0029411764705882353,
+        "difference": 0.01953125,
+        "interval": [
+          -0.20619834483794833,
+          0.24526084483794833
+        ],
+        "proxy_only": 5,
+        "variance_only": 0
+      },
+      {
+        "case": "verified_hidden_support",
+        "budget": 8192,
+        "primary": false,
+        "n": 256,
+        "alpha": 0.0029411764705882353,
+        "difference": 0.0,
+        "interval": [
+          -0.22572959483794833,
+          0.22572959483794833
+        ],
+        "proxy_only": 0,
+        "variance_only": 0
+      },
+      {
+        "case": "verified_hidden_support",
+        "budget": 32768,
+        "primary": false,
+        "n": 256,
+        "alpha": 0.0029411764705882353,
+        "difference": -0.140625,
+        "interval": [
+          -0.3663545948379483,
+          0.08510459483794833
+        ],
+        "proxy_only": 5,
+        "variance_only": 41
+      },
+      {
+        "case": "bad_mass_cap",
+        "budget": 8192,
+        "primary": false,
+        "n": 256,
+        "alpha": 0.0029411764705882353,
+        "difference": 0.0,
+        "interval": [
+          -0.22572959483794833,
+          0.22572959483794833
+        ],
+        "proxy_only": 0,
+        "variance_only": 0
+      },
+      {
+        "case": "bad_mass_cap",
+        "budget": 32768,
+        "primary": false,
+        "n": 256,
+        "alpha": 0.0029411764705882353,
+        "difference": 0.0,
+        "interval": [
+          -0.22572959483794833,
+          0.22572959483794833
+        ],
+        "proxy_only": 0,
+        "variance_only": 0
+      },
+      {
+        "case": "bad_hidden_support",
+        "budget": 8192,
+        "primary": false,
+        "n": 256,
+        "alpha": 0.0029411764705882353,
+        "difference": 0.0,
+        "interval": [
+          -0.22572959483794833,
+          0.22572959483794833
+        ],
+        "proxy_only": 0,
+        "variance_only": 0
+      },
+      {
+        "case": "bad_hidden_support",
+        "budget": 32768,
+        "primary": false,
+        "n": 256,
+        "alpha": 0.0029411764705882353,
+        "difference": 0.0,
+        "interval": [
+          -0.22572959483794833,
+          0.22572959483794833
+        ],
+        "proxy_only": 0,
+        "variance_only": 0
+      },
+      {
+        "case": "duplicates",
+        "budget": 8192,
+        "primary": false,
+        "n": 256,
+        "alpha": 0.0029411764705882353,
+        "difference": 0.0,
+        "interval": [
+          -0.22572959483794833,
+          0.22572959483794833
+        ],
+        "proxy_only": 0,
+        "variance_only": 0
+      },
+      {
+        "case": "duplicates",
+        "budget": 32768,
+        "primary": false,
+        "n": 256,
+        "alpha": 0.0029411764705882353,
+        "difference": 0.0,
+        "interval": [
+          -0.22572959483794833,
+          0.22572959483794833
+        ],
+        "proxy_only": 0,
+        "variance_only": 0
+      }
+    ]
+  }
+}

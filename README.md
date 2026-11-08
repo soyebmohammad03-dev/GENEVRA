@@ -1,23 +1,24 @@
 # GENEVRA
 
-GENEVRA is a research laboratory for studying **open-ended evolution,
-evolvability, and adaptive intelligence** in small, neural-network-based
-digital organisms — designed to run on a laptop, not a GPU cluster.
-
-It is not a chatbot, not a RAG app, not an agent framework, and not another
-"watch shapes evolve" artificial-life toy. It is a system for running
-controlled evolutionary experiments and measuring what happens.
-
 ## Research in brief
 
-GENEVRA combines a digital-evolution simulator with a measurement laboratory
-for calibration, uncertainty and certification under incomplete sampling.
-The strongest current evidence is a **synthetic negative feasibility result**.
-Under matched access, a shared blind spot produced 180 false certificates in
-512 runs. Valid external omission bounds restored coverage in a separate
-synthetic case. An allocation planner reduced realized precision at equal
-cost. Independent reconstruction verifies the calculations. Empirical and
-biological validity remain unestablished.
+Can a calibration system issue reliable certificates when its sampling and audit
+frames omit the same target units? GENEVRA provides a frozen synthetic benchmark
+for that question, with matched acquisition costs and a separate reference
+implementation. The broader repository also contains a laptop-scale
+digital-evolution simulator. Biological validity remains unestablished.
+
+- **Shared blindness.** None of 512 intervals covered the target. All 180 issued certificates were false, even though no threshold labels were wrong.
+- **Allocation failure.** At equal charged cost, GENEVRA's width proxy gave 1/256 covered-and-precise intervals, versus 104/256 for paid-pilot cost-adjusted Neyman and 229/256 for equal spend.
+- **What additional information buys.** A valid omission cap restored coverage in a separate case. Its remaining identification width prevented useful precision.
+
+The architecture separates the simulator, frozen experiment and archive runners,
+raw-count reference checks, and research reports. Start with the [Phase 27 reproduction
+challenge](docs/research/phase_27/README.md), [mathematical design](docs/research/phase_27/DESIGN_AND_COMPARATORS.md),
+[allocation figure](docs/research/phase_25/allocation.svg) and [identification floor](docs/research/identification_floor.png).
+Cite the exact commit and frozen protocol using [CITATION.cff](CITATION.cff).
+Verification is internal. External reproduction, empirical validation, and
+journal submission remain outstanding.
 
 | Start here | Contents |
 |---|---|
@@ -33,6 +34,7 @@ biological validity remain unestablished.
 | [Phase 24 reproduction challenge](docs/research/phase_24/README.md) | Frozen benchmark, raw-data verification and competing-implementation scorer |
 | [Phase 25 comparative allocation](docs/research/phase_25/README.md) | Paid-pilot variance comparator, matched budgets and exploratory challenge |
 | [Phase 26 adversarial audit](docs/research/phase_26/README.md) | Allocation failure attribution, sensitivity and revised benchmark contribution |
+| [Phase 27 separate reference and review](docs/research/phase_27/README.md) | Clean reproduction, closest-work audit, manuscript and external evaluation |
 | [Citation](CITATION.cff) and [license](LICENSE) | Cite a versioned commit and frozen protocol |
 
 ## Coverage and certification research
