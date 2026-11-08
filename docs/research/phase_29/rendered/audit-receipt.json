@@ -1,14 +1,15 @@
 {
-  "schema": "genevra-final-audit-v1",
-  "status": "passed",
-  "reference_sha256": "59267706155a805bc7795d7171488e86aa04bb0f453d9a1afe3354388826ffd9",
-  "phase25_raw_sha256": "9b8f43cea437004ecb9143ec8846bab1ff5fdc354149b28f4772b168ed22008f",
-  "source_sha256": {
-    "docs/research/phase_29/MANUSCRIPT.md": "ed9169d1a490776f4d0d7fa785ea64d48739434e2c18347d72e3c5ddfa33e889",
-    "docs/research/phase_28/REFERENCES.md": "3b36a2b109acf5efd47f2894904c4a0333f60db70d6272c542cbb7c1ed216440",
-    "scripts/final_research_audit.py": "96f8fca7591de5c5d27f1bde12cd8d1b02a90a5cabc02d15857539e46e236a35"
+  "empirical_validation": "outstanding",
+  "external_reproduction": "outstanding",
+  "matched_large_omission": {
+    "n": 512,
+    "reachable_only_covered": 0,
+    "equal_envelope_covered": 512,
+    "equal_envelope_covered_and_precise": 0,
+    "matched_charged_units": 32768
   },
-  "pdf_sha256": "995dc7cbf57dae0abce7891618898028cc5c7b0803d3cf2cee05f5886308b140",
+  "pdf_sha256": "5c3d07db5d10ffe949005d9a96f2f046d09a1fae905bb5e4e1b1348680f17a96",
+  "phase25_raw_sha256": "9b8f43cea437004ecb9143ec8846bab1ff5fdc354149b28f4772b168ed22008f",
   "primary_width_reconstruction": {
     "width_proxy": {
       "mean_width": 0.6726319536448303,
@@ -41,13 +42,7 @@
       "covered_and_precise": 229
     }
   },
-  "matched_large_omission": {
-    "n": 512,
-    "reachable_only_covered": 0,
-    "equal_envelope_covered": 512,
-    "equal_envelope_covered_and_precise": 0,
-    "matched_charged_units": 32768
-  },
+  "reference_sha256": "59267706155a805bc7795d7171488e86aa04bb0f453d9a1afe3354388826ffd9",
   "rendered_evidence_tokens": {
     "shared_n": 512,
     "shared_cover": 0,
@@ -88,6 +83,11 @@
     "equal_width": "0.5576",
     "large_direct_cover": 0
   },
-  "external_reproduction": "outstanding",
-  "empirical_validation": "outstanding"
+  "schema": "genevra-final-audit-v1",
+  "source_sha256": {
+    "docs/research/phase_29/MANUSCRIPT.md": "ed9169d1a490776f4d0d7fa785ea64d48739434e2c18347d72e3c5ddfa33e889",
+    "docs/research/phase_29/REFERENCES.md": "a58ffb81bf7ab7b9e09fd96002ae8a1287d196835ea37e0324a5cc53de6d36dd",
+    "scripts/final_research_audit.py": "f3b31c00e97600f879af5307ea8611ef48877a3888a7326837c43ea19d3bf6a9"
+  },
+  "status": "passed"
 }

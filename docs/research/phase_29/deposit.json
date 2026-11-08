@@ -1,6 +1,6 @@
 {
   "title": "GENEVRA: Final research benchmark and reproduction artifact",
-  "version": "phase-29-research",
+  "version": "phase-29-research-correction-1",
   "creators": [{"name": "Mohammad, Soyeb"}],
   "description": "Frozen synthetic benchmark, separate numerical verification, manuscript and reproduction materials for certification under shared sampling-frame undercoverage. Internal reproduction completed. Independent external evaluation is outstanding.",
   "keywords": ["partial identification", "sampling-frame undercoverage", "statistical certification", "reproducibility"],

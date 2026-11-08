@@ -4,6 +4,7 @@ import argparse
 import csv
 import json
 import math
+import re
 from collections import defaultdict
 from pathlib import Path
 from statistics import mean
@@ -102,55 +103,69 @@ def compare_large_omission():
     }
 
 
-def main():
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("replay", type=Path, help="completed Phase 28 reproduction directory")
-    parser.add_argument("output", type=Path, help="new final audit directory")
-    args = parser.parse_args()
-    replay, output = args.replay, args.output
-    reference = replay / "reference-verification.json"
-    expected = ROOT / "docs/research/phase_27/reference-verification.json"
-    ref.require(ref.sha(reference) == ref.sha(expected), "Phase 27 reference reproduction")
-    raw = replay / "phase25/raw.csv"
-    ref.require(
-        ref.sha(raw) == json.loads(expected.read_text())["phase25_raw_sha256"],
-        "Phase 25 raw evidence digest",
-    )
-    data = publication.evidence()
-    values = check_width_records(raw, data)
-    large = compare_large_omission()
-    data["tokens"]["large_direct_cover"] = large["reachable_only_covered"]
+def render_final(output, figures, data, receipt):
     source_path = DOC / "MANUSCRIPT.md"
-    bibliography = PHASE28 / "REFERENCES.md"
+    bibliography = DOC / "REFERENCES.md"
     source = publication.substitute(source_path.read_text(), data["tokens"])
+    references = bibliography.read_text()
+    cited = dict.fromkeys(
+        int(n) for group in re.findall(r"\[([0-9, ]+)\]", source) for n in group.split(",")
+    )
+    listed = [int(n) for n in re.findall(r"^\[([0-9]+)\] ", references, re.MULTILINE)]
+    ref.require(list(cited) == listed == list(range(1, 13)), "citation inventory and order")
     output.mkdir()
-    # The Phase 28 replay separately byte-checks these reused publication figures.
-    (output / "figures").symlink_to((replay / "manuscript/figures").resolve())
+    (output / "figures").symlink_to(figures.resolve())
     try:
-        publication.render(
-            output, source + "\n\n" + bibliography.read_text(), publication.tables(data)
-        )
+        publication.render(output, source + "\n\n" + references, publication.tables(data))
     finally:
         (output / "figures").unlink()
-    publication.write_json(
-        output / "audit-receipt.json",
-        {
+    updated = {
+        **receipt,
+        "source_sha256": {
+            str(p.relative_to(ROOT)): ref.sha(p)
+            for p in (source_path, bibliography, Path(__file__))
+        },
+        "pdf_sha256": ref.sha(output / "GENEVRA-manuscript.pdf"),
+        "rendered_evidence_tokens": data["tokens"],
+    }
+    publication.write_json(output / "audit-receipt.json", dict(sorted(updated.items())))
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("replay", type=Path, nargs="?", help="completed Phase 28 reproduction")
+    parser.add_argument("output", type=Path, help="new final audit directory")
+    args = parser.parse_args()
+    data = publication.evidence()
+    large = compare_large_omission()
+    data["tokens"]["large_direct_cover"] = large["reachable_only_covered"]
+    expected = ROOT / "docs/research/phase_27/reference-verification.json"
+    expected_raw = json.loads(expected.read_text())["phase25_raw_sha256"]
+    if args.replay is None:
+        # Publication-only path. Reuse the audited counts and frozen figure bytes.
+        receipt = json.loads((DOC / "rendered/audit-receipt.json").read_text())
+        ref.require(receipt["reference_sha256"] == ref.sha(expected), "frozen reference receipt")
+        ref.require(receipt["phase25_raw_sha256"] == expected_raw, "frozen raw digest")
+        ref.require(receipt["rendered_evidence_tokens"] == data["tokens"], "frozen numeric text")
+        ref.require(receipt["matched_large_omission"] == large, "frozen omission comparison")
+        figures = PHASE28 / "rendered/figures"
+    else:
+        reference = args.replay / "reference-verification.json"
+        raw = args.replay / "phase25/raw.csv"
+        ref.require(ref.sha(reference) == ref.sha(expected), "Phase 27 reference reproduction")
+        ref.require(ref.sha(raw) == expected_raw, "Phase 25 raw evidence digest")
+        receipt = {
             "schema": "genevra-final-audit-v1",
             "status": "passed",
             "reference_sha256": ref.sha(reference),
             "phase25_raw_sha256": ref.sha(raw),
-            "source_sha256": {
-                str(p.relative_to(ROOT)): ref.sha(p)
-                for p in (source_path, bibliography, Path(__file__))
-            },
-            "pdf_sha256": ref.sha(output / "GENEVRA-manuscript.pdf"),
-            "primary_width_reconstruction": values,
+            "primary_width_reconstruction": check_width_records(raw, data),
             "matched_large_omission": large,
-            "rendered_evidence_tokens": data["tokens"],
             "external_reproduction": "outstanding",
             "empirical_validation": "outstanding",
-        },
-    )
+        }
+        figures = args.replay / "manuscript/figures"
+    render_final(args.output, figures, data, receipt)
 
 
 if __name__ == "__main__":

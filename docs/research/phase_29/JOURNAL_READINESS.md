@@ -1,5 +1,19 @@
 # Journal readiness decision
 
+## Journal of Statistical Software requirements recheck
+
+Current [author requirements](https://www.jstatsoft.org/authors), [submission guide](https://www.jstatsoft.org/guides/submission) and [style guide](https://www.jstatsoft.org/style) were checked again for this correction. Submission remains on hold.
+
+| Requirement | Current status |
+|---|---|
+| English manuscript in LaTeX with JSS style files, submitted as PDF | The corrected PDF is a technical review copy built with ReportLab. A JSS LaTeX conversion and style check are outstanding. |
+| Source code, ASCII, documented and installable | The public release includes human-readable code, a package configuration and run instructions. The rendering code includes Unicode notation, so an ASCII submission-source check and conversion, formatted help review and installable submission-package review remain open. Standard package-repository distribution is encouraged. |
+| GPL or GPL-compatible licensing | The repository declares MIT. Review the full submission bundle and all bundled materials for license compatibility before submission. |
+| Standalone replication material, exact results on at least one platform and platform disclosure | Phase 29 recorded the complete benchmark replay on macOS arm64. The correction checks the frozen-input publication build separately. Recheck the submission-formatted outputs and supplement once prepared. Cross-platform exactness remains unverified. |
+| Scope and review | JSS emphasizes useful software and comparison with similar implementations, with empirical illustration where applicable. Independent use and demonstrated added value remain outstanding. |
+| Uploads and fees | JSS states no author fees and a 50 MB upload limit. Recheck file sizes and portal requirements for the exact submission package. |
+
+
 Publisher and agency requirements checked on 9 November 2026. A technical review package is ready. Journal submission remains on hold.
 
 | Candidate | Scope and contribution fit | Method, software and data requirements | External evidence gate | Format and verified costs |
@@ -16,7 +30,7 @@ Dear Editors of the Journal of Statistical Software,
 
 Please consider “When sampling frames share a blind spot: a reproducible benchmark for population-mean certification” as a statistical software contribution. GENEVRA supplies a frozen synthetic benchmark and separately implemented reference calculations for distinguishing population coverage, useful precision, and anchor certification under shared undercoverage. Its matched-cost primary comparison shows that the width-proxy allocation underperforms a paid-pilot variance baseline. The artifact preserves that negative result and makes the raw counts, costs and reference decisions reproducible with a standalone command.
 
-The manuscript applies established methods and scopes its contribution to the benchmark and verification workflow. The package contains synthetic data, a pinned environment, and scripts for rebuilding every result and the manuscript figures and tables.
+The manuscript applies established methods and scopes its contribution to the benchmark and verification workflow. The corrected research release contains synthetic data, a pinned environment, and scripts for rebuilding the results and publication materials. Before sending this letter, attach the JSS-style LaTeX manuscript and PDF, checked software source and help, and the exact replication materials.
 
 Soyeb Mohammad
 

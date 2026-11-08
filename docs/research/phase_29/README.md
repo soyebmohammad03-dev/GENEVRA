@@ -1,14 +1,24 @@
 # GENEVRA final scientific audit and reproduction release
 
-[Final manuscript PDF](rendered/GENEVRA-manuscript.pdf) · [Source](MANUSCRIPT.md) · [Bibliography](../phase_28/REFERENCES.md) · [Supplement](SUPPLEMENT.md) · [Claim-to-evidence matrix](CLAIM_TO_EVIDENCE.md)
+[Final manuscript PDF](rendered/GENEVRA-manuscript.pdf) · [Source](MANUSCRIPT.md) · [Bibliography](REFERENCES.md) · [Bibliographic audit](BIBLIOGRAPHY_AUDIT.md) · [Supplement](SUPPLEMENT.md) · [Claim-to-evidence matrix](CLAIM_TO_EVIDENCE.md)
 
 [Statistical review](STATISTICAL_REVIEW.md) · [Journal readiness and unsent cover letter](JOURNAL_READINESS.md) · [Voluntary challenge](CHALLENGE.md) · [Release notes](RELEASE_NOTES.md) · [Deposit metadata](deposit.json)
 
 The contribution is a synthetic benchmark and verification path for shared sampling-frame undercoverage. The original allocator remains an unsuccessful comparator in its frozen primary case. The release is ready for independent technical assessment. Journal submission, empirical validation and outside reproduction remain outstanding.
 
+## Rebuild the corrected publication from frozen evidence
+
+From the corrected tag or extracted source archive, run:
+
+```sh
+sh scripts/reproduce_final_research.sh --publication-only "$PWD/../genevra-publication"
+```
+
+This verifies both publication manifests, regenerates the corrected PDF and audit receipt, and compares them byte for byte. It uses already frozen results and figures. The full historical replay commands below are retained for separate technical use.
+
 ## Reproduce
 
-Download and verify the checksummed source and capsule archive from [the research release](https://github.com/soyebmohammad03-dev/GENEVRA/releases/tag/phase-29-research). From the extracted source directory run:
+Download and verify the checksummed source and capsule archive from [the research release](https://github.com/soyebmohammad03-dev/GENEVRA/releases/tag/phase-29-research-correction-1). From the extracted source directory run:
 
 ```sh
 shasum -a 256 -c RELEASE-SHA256SUMS
@@ -19,7 +29,7 @@ sh scripts/reproduce_final_research.sh "$PWD/../genevra-run" \
 Alternatively start from a clean checkout and let the runner download the pinned historical capsule:
 
 ```sh
-git clone --branch phase-29-research https://github.com/soyebmohammad03-dev/GENEVRA.git
+git clone --branch phase-29-research-correction-1 https://github.com/soyebmohammad03-dev/GENEVRA.git
 cd GENEVRA
 sh scripts/reproduce_final_research.sh "$PWD/../genevra-run"
 ```
