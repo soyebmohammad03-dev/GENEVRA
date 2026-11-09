@@ -1,0 +1,1238 @@
+{
+  "manuscript": {
+    "docs/research/phase_29/jss/manuscript.tex": {
+      "ascii": true,
+      "lf_only": true
+    },
+    "docs/research/phase_29/jss/references.bib": {
+      "ascii": true,
+      "lf_only": true
+    }
+  },
+  "wheel": {
+    "genevra/__init__.py": {
+      "ascii": true,
+      "lf_only": true
+    },
+    "genevra/analysis/__init__.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/analysis/aggregation.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/analysis/comparison.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/analysis/counterfactual.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/analysis/coverage_envelope.py": {
+      "ascii": true,
+      "lf_only": true
+    },
+    "genevra/analysis/evolvability_over_time.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/analysis/learning_strategy.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/analysis/lineage_analysis.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/analysis/open_endedness.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/analysis/regime_detection.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/analysis/report.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/analysis/stagnation.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/analysis/strategy_clustering.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "COMMENT",
+        "STRING"
+      ]
+    },
+    "genevra/analysis/tradeoff.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/analysis/validation_design.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/arrays.py": {
+      "ascii": true,
+      "lf_only": true
+    },
+    "genevra/artifacts/__init__.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/artifacts/bundle.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/artifacts/captions.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/artifacts/directory.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/artifacts/figures.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/artifacts/index.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/artifacts/report.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/artifacts/style.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/artifacts/tables.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/campaign/__init__.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/campaign/bundle.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "COMMENT",
+        "STRING"
+      ]
+    },
+    "genevra/campaign/checkpoint.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/campaign/config.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/campaign/multiple_comparison.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/campaign/report.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/campaign/runner.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/campaign/seeding.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/cli.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "COMMENT",
+        "STRING"
+      ]
+    },
+    "genevra/discovery/__init__.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/discovery/anomaly.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/discovery/contradiction.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/discovery/correlation.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/discovery/followup.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/discovery/hypothesis.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/discovery/loop.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/discovery/memory.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/discovery/multiple_testing.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/discovery/phenomena.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/discovery/replication.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/discovery/report.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/ecology/__init__.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/ecology/coevolution.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/ecology/competition.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/ecology/hypotheses.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/ecology/interactions.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/ecology/network.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/ecology/niches.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/ecology/regime_transitions.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/ecology/roles.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/ecology/spatial.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/evidence/__init__.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/evidence/build.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "COMMENT",
+        "STRING"
+      ]
+    },
+    "genevra/evidence/checksums.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/evidence/manifest.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/evidence/metric_registry.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/evidence/research_question.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/evidence/robustness_classifier.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/evidence/validation_split.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/evidence/verify.py": {
+      "ascii": true,
+      "lf_only": true
+    },
+    "genevra/evolution/__init__.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/evolution/continuous.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/evolution/engine.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/evolution/fitness.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/evolution/lifetime.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/evolution/lineage.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/evolution/population.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/evolution/reproduction.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/evolution/selection.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/experiments/__init__.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/experiments/_resources.py": {
+      "ascii": true,
+      "lf_only": true
+    },
+    "genevra/experiments/_scripts/baseline.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/experiments/_scripts/exp1_isolated_vs_shared.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/experiments/_scripts/exp_ecology_corrected.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/experiments/conditions.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/experiments/config.py": {
+      "ascii": true,
+      "lf_only": true
+    },
+    "genevra/experiments/matrix.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/experiments/result.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/experiments/runner.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/innovation/__init__.py": {
+      "ascii": true,
+      "lf_only": true
+    },
+    "genevra/innovation/activity.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/innovation/analyzer.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/innovation/dependency_graph.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/innovation/events.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/innovation/phase_space.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/innovation/potential_vs_realized.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/innovation/quality_gates.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/innovation/report.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/innovation/trajectory.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/literature/__init__.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/literature/alternative_explanations.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/literature/boundary_search.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/literature/cases.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/literature/claims.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/literature/comparison_matrix.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/literature/falsification.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/literature/quality_levels.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/literature/registry.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/literature/report.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/literature/runner.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/literature/spec.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/mechanisms/__init__.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/mechanisms/causal_chain.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/mechanisms/definitions.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/mechanisms/generalization.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/mechanisms/learning_strategy_evolution.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/mechanisms/mutational_landscape.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/mechanisms/plasticity_cost.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/mechanisms/regime.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/mechanisms/report.py": {
+      "ascii": true,
+      "lf_only": true
+    },
+    "genevra/mechanisms/robustness.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/metrics/__init__.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/metrics/adaptation.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/metrics/behavior.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/metrics/distribution.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/metrics/diversity.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/metrics/evolvability.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/metrics/fitness_metrics.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/metrics/novelty.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "COMMENT",
+        "STRING"
+      ]
+    },
+    "genevra/metrics/trajectory.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/organism/__init__.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/organism/controller.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/organism/genome.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "COMMENT",
+        "STRING"
+      ]
+    },
+    "genevra/organism/learning.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/organism/memory.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/organism/metabolism.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/organism/mutation.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "COMMENT",
+        "STRING"
+      ]
+    },
+    "genevra/organism/organism.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/organism/phenotype.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/organism/reproduction.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/organism/sensors.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/population_analysis/__init__.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/population_analysis/aggregation.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/population_analysis/evolvability_population.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/population_analysis/lineage_ecology.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/population_analysis/matrix.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/population_analysis/perturbation.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/population_analysis/prediction.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/population_analysis/replication_consistency.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/population_analysis/robustness_population.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/population_analysis/temporal_validation.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/simulation/__init__.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/simulation/dynamics.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/simulation/environment.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/simulation/grid_world.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/simulation/interaction.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/simulation/shared_grid_world.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/simulation/types.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "genevra/utils/__init__.py": {
+      "ascii": true,
+      "lf_only": true
+    },
+    "genevra/utils/logging.py": {
+      "ascii": true,
+      "lf_only": true
+    },
+    "genevra/utils/provenance.py": {
+      "ascii": true,
+      "lf_only": true
+    },
+    "genevra/utils/seeding.py": {
+      "ascii": true,
+      "lf_only": true
+    },
+    "genevra/visualization.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    }
+  },
+  "tracked_research_scripts_review_pool": {
+    "experiments/allocation_audit.py": {
+      "ascii": true,
+      "lf_only": true
+    },
+    "experiments/allocation_challenge.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "experiments/baseline.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "experiments/coverage_envelope_study.py": {
+      "ascii": true,
+      "lf_only": true
+    },
+    "experiments/exp1_isolated_vs_shared.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "experiments/exp2_static_vs_changing.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "experiments/exp3_fixed_vs_heritable_mutation.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "experiments/exp_ecology_corrected.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "experiments/pilot_study.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "experiments/prospective_design_check.py": {
+      "ascii": true,
+      "lf_only": true
+    },
+    "scripts/benchmark_challenge.py": {
+      "ascii": true,
+      "lf_only": true
+    },
+    "scripts/benchmark_reference.py": {
+      "ascii": true,
+      "lf_only": true
+    },
+    "scripts/build_jss_manuscript.py": {
+      "ascii": true,
+      "lf_only": true
+    },
+    "scripts/build_publication.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "scripts/check_distribution.py": {
+      "ascii": true,
+      "lf_only": true
+    },
+    "scripts/check_distribution.sh": {
+      "ascii": true,
+      "lf_only": true
+    },
+    "scripts/diagnose_baseline_portability.py": {
+      "ascii": true,
+      "lf_only": true
+    },
+    "scripts/final_research_audit.py": {
+      "ascii": true,
+      "lf_only": true
+    },
+    "scripts/generate_research_question_summary_figure.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "scripts/profile_baseline.py": {
+      "ascii": false,
+      "lf_only": true,
+      "non_ascii_token_kinds": [
+        "STRING"
+      ]
+    },
+    "scripts/replay_research.py": {
+      "ascii": true,
+      "lf_only": true
+    },
+    "scripts/reproduce_final_research.sh": {
+      "ascii": true,
+      "lf_only": true
+    },
+    "scripts/reproduce_jss_manuscript.sh": {
+      "ascii": true,
+      "lf_only": true
+    },
+    "scripts/reproduce_publication.sh": {
+      "ascii": true,
+      "lf_only": true
+    },
+    "scripts/reproduce_reference.sh": {
+      "ascii": true,
+      "lf_only": true
+    },
+    "scripts/verify_allocation_challenge.py": {
+      "ascii": true,
+      "lf_only": true
+    },
+    "scripts/verify_publication_candidate.sh": {
+      "ascii": true,
+      "lf_only": true
+    }
+  }
+}
