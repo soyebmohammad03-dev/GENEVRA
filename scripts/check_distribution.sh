@@ -30,13 +30,30 @@ cd "$output/outside checkout"
 # An unrelated repository must never become the source of wheel provenance.
 git init -q
 git -c user.name=Test -c user.email=test@example.invalid commit --allow-empty -qm fixture
-"$p" -I -c 'import importlib.metadata as m; print(m.version("genevra")); assert {d.metadata["Name"].lower() for d in m.distributions()} == {"genevra", "numpy"}'
+"$p" -I - <<'PYCORE'
+import importlib.metadata as metadata
+
+print(metadata.version("genevra"))
+installed = {dist.metadata["Name"].lower() for dist in metadata.distributions()}
+assert installed == {"genevra", "numpy"}, installed
+PYCORE
 "$cli" run --seed 0 --output 'wheel result.json'
 "$cli" inspect 'wheel result.json'
 "$cli" analyze 'wheel result.json'
 "$output/source/bin/genevra" run --seed 0 --output 'sdist result.json'
 cmp 'wheel result.json' 'sdist result.json'
-"$p" -c 'import hashlib; from pathlib import Path; print("Baseline JSON SHA-256", hashlib.sha256(Path("wheel result.json").read_bytes()).hexdigest())'
+"$p" -I - <<'PYRESULT'
+import hashlib
+import json
+from pathlib import Path
+
+raw = Path("wheel result.json").read_bytes()
+print("Baseline JSON SHA-256", hashlib.sha256(raw).hexdigest())
+data = json.loads(raw)
+del data["software"]["python_version"], data["software"]["numpy_version"]
+normalized = json.dumps(data, sort_keys=True).encode()
+print("Baseline normalized SHA-256", hashlib.sha256(normalized).hexdigest())
+PYRESULT
 if "$cli" run --seed invalid > invalid.log 2>&1; then
     echo "accepted an invalid seed" >&2
     exit 1

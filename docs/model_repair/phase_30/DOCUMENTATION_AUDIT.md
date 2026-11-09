@@ -1,0 +1,7 @@
+# Documentation audit
+
+The [installation and quick start guide](INSTALLATION_VALIDATION.md) is the distribution entry point. It describes the core-only install, the visualization extra, writable output paths, uninstall, CLI configuration, checkout-only research workflows, evidence interpretation and citation. The existing [architecture](../../architecture.md), [experiment definitions](../../experiments.md), [evidence guide](../../research_evidence.md) and [publication supplement](../../research/phase_29/SUPPLEMENT.md) remain the scientific and implementation context.
+
+The distribution check invokes the main help and all 35 subcommand help entries from the installed wheel and stores them as text. The check also verifies file destinations of relative Markdown links in the Phase 30 directory. The package audit rejects files outside the expected Python and distribution metadata layout. Tests exercise invalid numeric arguments and a missing visualization dependency. The guide separates archive acquisition from wheel installation.
+
+The tested help scope is the command line and the documented configuration entry points. This is not an exhaustive reference for every internal Python symbol. Some historical module docstrings and earlier installation instructions describe their original source-checkout context. They remain in place as research records. Full JSS-formatted reference coverage for the intended submission scope remains subject to author and editorial review.

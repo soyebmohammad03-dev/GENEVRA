@@ -39,6 +39,7 @@ jobs:
           sh scripts/check_distribution.sh "${{ matrix.python }}" "$RUNNER_TEMP/distribution"
           git diff --exit-code e3b2edc1a7eb429be28af3969ad2c92264c0bd93 -- configs docs/research experiments research_evidence results
           sha256sum -c docs/research/phase_29/FROZEN_SHA256SUMS
+          (cd docs/model_repair/phase_30 && sha256sum -c SHA256SUMS)
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -46,3 +47,4 @@ jobs:
           path: |
             ${{ runner.temp }}/distribution/distribution.json
             ${{ runner.temp }}/distribution/help/
+            ${{ runner.temp }}/distribution/outside checkout/wheel result.json

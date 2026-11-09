@@ -1,0 +1,5 @@
+# Source encoding audit
+
+The candidate wheel contains 159 Python source files, including the three byte-identical scripts. All decode as UTF-8 and use LF. The [wheel inventory](distribution-macos-py312.json) names the 147 files containing non-ASCII characters. A separate read of the tracked Python, shell, TOML and YAML files at the engineering revision examined 271 files, of which 174 contain non-ASCII characters. All decode as UTF-8 and none contain CR. The two tracked JSS LaTeX and BibTeX files are ASCII and LF.
+
+This is an audit of the distributable code and the tracked replication-source candidates. It leaves the historical inputs and source snapshots intact. Existing mathematical notation, docstrings, diagnostic text and Unicode output strings need different treatment. A global text replacement could change outputs or strip information from documentation. The software ASCII requirement remains open for the JSS upload. Prepare and test an explicitly scoped source submission before declaring that requirement satisfied. [Official JSS author guidance](https://www.jstatsoft.org/authors)

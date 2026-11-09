@@ -4,6 +4,7 @@ import argparse
 import hashlib
 import importlib.metadata
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -44,6 +45,13 @@ def audit(wheel: Path, root: Path, output: Path) -> None:
         cr = sorted(name for name, data in sources.items() if b"\r" in data)
         if cr:
             raise ValueError(f"unexpected CR line endings: {cr}")
+    guides = root / "docs/model_repair/phase_30"
+    for guide in sorted(guides.glob("*.md")):
+        for target in re.findall(r"\]\(([^)]+)\)", guide.read_text(encoding="utf-8")):
+            if target.startswith(("https://", "http://", "#")):
+                continue
+            if not (guide.parent / target.split("#", 1)[0]).exists():
+                raise ValueError(f"broken local link in {guide.name}: {target}")
     if source_commit() is not None:
         raise ValueError("wheel incorrectly attributed itself to a Git checkout")
     parser = build_parser()
