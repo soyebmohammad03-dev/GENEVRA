@@ -1,12 +1,79 @@
 # GENEVRA
 
-GENEVRA is a research laboratory for studying **open-ended evolution,
-evolvability, and adaptive intelligence** in small, neural-network-based
-digital organisms — designed to run on a laptop, not a GPU cluster.
+## Research in brief
 
-It is not a chatbot, not a RAG app, not an agent framework, and not another
-"watch shapes evolve" artificial-life toy. It is a system for running
-controlled evolutionary experiments and measuring what happens.
+Can a calibration system issue reliable certificates when its sampling and audit
+frames omit the same target units? GENEVRA provides a frozen synthetic benchmark
+for that question, with matched acquisition costs and a separate reference
+implementation. The broader repository also contains a laptop-scale
+digital-evolution simulator. Biological validity remains unestablished.
+
+- **Shared blindness.** None of 512 intervals covered the target. All 180 issued certificates were false, even though no threshold labels were wrong.
+- **Allocation failure.** At equal charged cost, GENEVRA's width proxy gave 1/256 covered-and-precise intervals, versus 104/256 for paid-pilot cost-adjusted Neyman and 229/256 for equal spend.
+- **What additional information buys.** A valid omission cap restored coverage in a separate case. Its remaining identification width prevented useful precision.
+
+The architecture separates the simulator, frozen experiment and archive runners,
+raw-count reference checks, and research reports. Start with the [Phase 27 reproduction
+challenge](docs/research/phase_27/README.md), [mathematical design](docs/research/phase_27/DESIGN_AND_COMPARATORS.md),
+[allocation figure](docs/research/phase_25/allocation.svg) and [identification floor](docs/research/identification_floor.png).
+Cite the exact commit and frozen protocol using [CITATION.cff](CITATION.cff).
+Verification is internal. External reproduction, empirical validation, and
+journal submission remain outstanding.
+
+| Start here | Contents |
+|---|---|
+| [Research guide](docs/research/README.md) | Clean replay command, archive and review instructions |
+| [Capability inventory](docs/research/INVENTORY.md) | Simulator, evidence, experiment and notebook responsibilities |
+| [Frozen experiment index](docs/research/EXPERIMENT_INDEX.md) | Phase 11–19 questions, controls, and outcomes |
+| [Methodology and contributions](docs/research/METHODOLOGY.md) | Established methods, project evidence, and claim limits |
+| [Analysis notebook](notebooks/certification_evidence.ipynb) | Precision, matched access, failure modes, and sensitivity |
+| [Publication foundation](docs/research/MANUSCRIPT_FOUNDATION.md) | Negative findings and remaining independent evidence |
+| [Phase 21 external feasibility](docs/research/phase_21/PHASE_21_COMPLETION_REPORT.md) | Census diagnostic, eligible data requirements and prospective validation design |
+| [Phase 22 prospective validation](docs/research/phase_22/PHASE_22_COMPLETION_REPORT.md) | Independent frame, feasibility gates, sample-size checks and registration draft |
+| [Phase 23 external review package](docs/research/phase_23/README.md) | Claim audit, internally simulated reviews, partner qualification and submission gates |
+| [Phase 24 reproduction challenge](docs/research/phase_24/README.md) | Frozen benchmark, raw-data verification and competing-implementation scorer |
+| [Phase 25 comparative allocation](docs/research/phase_25/README.md) | Paid-pilot variance comparator, matched budgets and exploratory challenge |
+| [Phase 26 adversarial audit](docs/research/phase_26/README.md) | Allocation failure attribution, sensitivity and revised benchmark contribution |
+| [Phase 27 separate reference and review](docs/research/phase_27/README.md) | Clean reproduction, closest-work audit, manuscript and external evaluation |
+| [Phase 28 journal manuscript and package](docs/research/phase_28/README.md) | Rendered PDF, evidence-linked figures and tables, venue assessment and review audit |
+| [Phase 29 final research release](docs/research/phase_29/README.md) | Final manuscript, scientific audit, and voluntary reproduction challenge |
+| [Citation](CITATION.cff) and [license](LICENSE) | Cite a versioned commit and frozen protocol |
+
+## Publication status
+
+The [final manuscript](docs/research/phase_29/rendered/GENEVRA-manuscript.pdf),
+[claim-to-evidence matrix](docs/research/phase_29/CLAIM_TO_EVIDENCE.md) and
+[reproduction release](docs/research/phase_29/README.md) are ready for independent
+technical assessment. The [public challenge](docs/research/phase_29/CHALLENGE.md)
+includes the command, expected outputs and discrepancy reporting. External
+reproduction and empirical validation remain outstanding. Journal submission
+is on hold.
+
+[Benchmark architecture](docs/research/phase_28/rendered/figures/design.png) ·
+[Shared-blindness figure](docs/research/phase_28/rendered/figures/shared.png) ·
+[Matched allocation figure](docs/research/phase_28/rendered/figures/allocation.png)
+
+
+## Coverage and certification research
+
+The [Phase 19 coverage-envelope extension](docs/model_repair/phase_19/extension/PHASE_19_COMPLETION_REPORT.md)
+tests how bounded information about a jointly unreachable population affects
+statistical certification. A valid external bound recovered synthetic mean
+coverage in the planted large-omission case. A worst-case allocation proxy
+reduced useful precision at the same charged budget. Incorrect external bounds
+still caused failures. These are synthetic calibration results. Biological
+measurement validity and field transport remain open.
+
+- [Frozen experiment and cost model](docs/model_repair/phase_19/extension/EXPERIMENT_PROTOCOL.md)
+- [Analysis architecture and scope](docs/model_repair/phase_19/extension/METHOD_DESIGN.md)
+- [Results and baselines](docs/model_repair/phase_19/extension/BASELINE_COMPARISON.md)
+- [Installation and reproduction](docs/model_repair/phase_19/extension/REPRODUCIBILITY.md)
+- [Reviewer and contribution guide](docs/model_repair/phase_19/extension/EXTERNAL_REVIEW_GUIDE.md)
+- [Literature and limitations](docs/model_repair/phase_19/extension/LITERATURE_AND_NOVELTY_AUDIT.md)
+
+The package uses Python and NumPy. The existing [MIT license](LICENSE) applies
+to the code. Review the protocol version and cite the commit when reporting a
+reproduction. Keep credentials and private observations out of artifacts.
 
 ## Research motivation
 
@@ -55,7 +122,7 @@ against those ideas empirically, on small, cheap, reproducible runs.
 ## Development status
 
 **Experimental research platform — core simulation/evolution engine
-complete; research evidence package built and independently audited
+complete; research evidence package built and internally audited
 (see "Research evidence package" below).** GENEVRA runs config-driven,
 reproducible evolutionary experiments end to end — isolated or
 ecologically shared, static or temporally dynamic — and can aggregate,
@@ -324,7 +391,7 @@ Full rationale for this split is in [`docs/architecture.md`](docs/architecture.m
 
 ## Install and run
 
-Requires Python >= 3.11.
+Requires Python >= 3.11. For a wheel-only installation, a worked example, and the boundary between installed commands and frozen research workflows, see the [distribution guide](docs/model_repair/phase_30/INSTALLATION_VALIDATION.md). The [final publication gate](docs/model_repair/phase_31/PHASE_31_COMPLETION_REPORT.md) records the portability findings, readiness decision, and external reproduction challenge.
 
 ```bash
 # using uv (recommended)

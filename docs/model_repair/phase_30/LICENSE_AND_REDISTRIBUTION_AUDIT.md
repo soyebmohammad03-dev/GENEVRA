@@ -1,0 +1,12 @@
+# Licensing and redistribution
+
+| Scope | Findings and distribution decision |
+|---|---|
+| GENEVRA source | MIT under the [project license](../../../LICENSE). Both distributions include the project notice. The wheel contains Python modules and wheel metadata only. |
+| Runtime | NumPy is resolved separately. Its license documentation and wheel notices cover the main BSD license and bundled components. The exact installed metadata can be regenerated with the distribution gate. [NumPy license](https://numpy.org/doc/stable/license.html) |
+| Optional visualization | Matplotlib and transitive wheels are resolved separately. Matplotlib includes its own license terms and notices for third-party fonts and other assets. Pillow and compiled dependencies likewise carry their own notices. Keep the notices with the dependency distributions. [Matplotlib licenses](https://matplotlib.org/stable/project/license.html) · [Pillow project information](https://pillow.readthedocs.io/en/stable/about.html) |
+| Build and test tooling | Hatchling builds the source. uv, pytest, mypy and Ruff are separate tooling. No build or test dependency is declared as a mandatory runtime requirement. |
+| Fonts, plots, figures and LaTeX | No font, graphic, PDF or class file is bundled in the software distributions. The official JSS template is obtained separately under its upstream terms. The frozen review PDF, figures and supplementary plots retain their existing provenance. Confirm final-upload rights and applicable font notices before separately redistributing those materials. |
+| Frozen research data and archives | No datasets, recorded results or research archives are bundled. The registered replay uses the public release URL and SHA-256 in the [archive record](../../research/archive.json). Availability and checksum validation establish the identity of the artifact. Redistribution rights for the full historical supplement still require author review before a new deposit or rebundling. |
+
+The [machine-readable receipt](distribution-macos-py312.json) records resolved names, versions, SPDX expressions when declared, license classifiers and notice paths reported by the installed metadata. Empty fields mean the wheel does not declare that metadata. They carry no inference about permissions. The inventory describes the exact core and visualization install, without vendored dependencies. It does not replace review of license text for a different package set or combined submission.

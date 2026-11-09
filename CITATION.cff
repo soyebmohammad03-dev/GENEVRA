@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "Cite the exact commit and frozen protocol when using this research software."
+title: "GENEVRA"
+type: software
+authors:
+  - given-names: Soyeb
+    family-names: Mohammad
+repository-code: "https://github.com/soyebmohammad03-dev/GENEVRA"
+license: MIT

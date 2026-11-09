@@ -1,0 +1,64 @@
+{
+  "archive_sha256": "bf0f1e979c92cf2228ed52b58021c4ffcc1be48dd9cf49e83a57d214a56afd91",
+  "python": "3.12.15 (main, Oct  3 2026, 00:54:33) [Clang 22.1.3 ]",
+  "elapsed_s": {
+    "11": 16.722,
+    "12": 7.482,
+    "13": 14.017,
+    "14": 14.558,
+    "15": 29.909,
+    "16": 6.476,
+    "17": 0.177,
+    "18": 30.04,
+    "19": 5.174,
+    "19-extension": 0.69
+  },
+  "source_commit": "30df2cd9337b888d85f51d7150c2a4f59a6b618d",
+  "platform": {
+    "architecture": "arm64",
+    "macos": "27.0.1",
+    "build": "26A434",
+    "uv": "0.12.23"
+  },
+  "replay_wall_seconds": 127.55,
+  "replay_max_rss_bytes": 405897216,
+  "byte_identical_outputs": {
+    "identification_floor.png": "815debbbcafc6dfeeaabc29c33b8ca3433b7d7cb0ac6e4eb4e3af4e5a2f46b71",
+    "coverage_envelope.svg": "806ea6f24aa8f5a23fa53014a65b15f7f25250484a8c38d1eacfbfb0d6d8487a",
+    "census_diagnostic.json": "1867d96ac27d42776614bac7f05e7f6e6be3a6b6ba4ae222bf13a2602895f193",
+    "census_diagnostic.png": "79526793f2269597dd75a88fb48bcda64e7c13401dd49cd6fec3779d9ace2cdf",
+    "design_receipt.json": "71ca5653bd6195d8b3a6b1954348cc3946412fd79a3bac0c89ae7fbadba39960"
+  },
+  "publisher_inputs": {
+    "Table-3_PES-sex.xlsx": "0e543b235e1604dbeb1072491a227a1f300d05fc06167a96efbc7d1ed9c00e6e",
+    "2024-release.html": "5a5a4a5f4c6612b944fa946c75a9f57d7b9c4726b07b63f674db18e53f74f619"
+  },
+  "historical_integrity": {
+    "files_sha256_checked": 18143,
+    "mismatches": 0,
+    "zip_crc_checks_passed": 29
+  },
+  "verification_scope": "internal computational reproduction",
+  "quality": {
+    "working_tree": {
+      "passed": 1013,
+      "failed": 0,
+      "skipped": 0,
+      "coverage_percent_reported": 94,
+      "test_wall_seconds": 246.4,
+      "test_max_rss_bytes": 271826944,
+      "ruff_formatted_files": 501,
+      "mypy_files": 174
+    },
+    "clean_public_tree": {
+      "passed": 748,
+      "failed": 0,
+      "skipped": 0,
+      "coverage_percent_reported": 94,
+      "test_wall_seconds": 216.35,
+      "test_max_rss_bytes": 154451968,
+      "ruff_formatted_files": 346,
+      "mypy_files": 154
+    }
+  }
+}

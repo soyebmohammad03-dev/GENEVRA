@@ -1,0 +1,8 @@
+{
+  "title": "When sampling frames share a blind spot: a reproducible benchmark for population-mean certification",
+  "author": [{"given": "Soyeb", "family": "Mohammad"}],
+  "status": "manuscript draft for independent review",
+  "project": "GENEVRA",
+  "repository": "https://github.com/soyebmohammad03-dev/GENEVRA",
+  "citation_note": "Cite the exact repository commit and frozen experiment protocol. Software citation and license are recorded in the repository root."
+}

@@ -1,0 +1,10 @@
+{
+  "version": "phase25-v1",
+  "phase19_config_sha256": "e41d0c223d8e6cd4b5d109e488270b18a61e71640d32da8e6fd41c6d1c40fb3a",
+  "seed": 251902,
+  "replicates": 256,
+  "pilot_per_stratum": 128,
+  "minimum_per_stratum": 1,
+  "comparative_alpha": 0.05,
+  "practical_margin": 0.05
+}

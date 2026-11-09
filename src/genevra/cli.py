@@ -789,18 +789,9 @@ def _cmd_verify_evidence(args: argparse.Namespace) -> int:
 
 
 def _build_baseline_experiment_config(seed: int) -> Any:
-    # Imported lazily: experiments/baseline.py lives outside the package
-    # and is only needed for the `run` subcommand.
-    import importlib.util
-    from pathlib import Path
+    from genevra.experiments._resources import load_experiment_script
 
-    baseline_path = Path(__file__).resolve().parents[2] / "experiments" / "baseline.py"
-    spec = importlib.util.spec_from_file_location("genevra_baseline", baseline_path)
-    if spec is None or spec.loader is None:
-        raise RuntimeError(f"could not load {baseline_path}")
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    return module.build_config(seed)
+    return load_experiment_script("baseline.py").build_config(seed)
 
 
 def _mechanisms_setup(seed: int, max_steps: int = 60) -> Any:
@@ -997,7 +988,7 @@ def _cmd_inspect(args: argparse.Namespace) -> int:
 
 def _cmd_compare(args: argparse.Namespace) -> int:
     print(
-        "genevra compare currently points to the named controlled experiment scripts:\n"
+        "From a GENEVRA source checkout, run the controlled experiment scripts:\n"
         "  python experiments/exp1_isolated_vs_shared.py\n"
         "  python experiments/exp2_static_vs_changing.py\n"
         "  python experiments/exp3_fixed_vs_heritable_mutation.py\n"

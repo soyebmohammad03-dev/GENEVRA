@@ -1,0 +1,16 @@
+{
+  "population": "U.S. ages 0–4, both sexes",
+  "march_2022_net_error_percent": {
+    "Low": -5.3,
+    "Middle": -5.4,
+    "High": -5.5
+  },
+  "march_2022_series_span_percentage_points": 0.2,
+  "april_2024": {
+    "census_count": 18400235,
+    "da_estimate": 19462879,
+    "count_minus_estimate": -1062644,
+    "net_error_percent": -5.45985000471924,
+    "published_percent": -5.46
+  }
+}

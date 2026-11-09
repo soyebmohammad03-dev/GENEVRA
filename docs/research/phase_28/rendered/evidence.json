@@ -1,0 +1,599 @@
+{
+  "source_sha256": {
+    "docs/research/phase_27/reference-verification.json": "59267706155a805bc7795d7171488e86aa04bb0f453d9a1afe3354388826ffd9",
+    "docs/research/phase_25/results.json": "2da8824f782e314d9c24557a2935fd377489f9805a2fc29ed50c61c78aef7d9a",
+    "docs/research/phase_26/reconstruction.json": "fd1493a3dc1810a7459f4c5a04d28ffdc07038f1d50d9d4d2932dc1da4060369",
+    "docs/research/phase_26/sensitivity.json": "df41cdee228de74f4885b4b39d3d6305e9359c30c9282fa5590b892a05626b3b",
+    "docs/model_repair/phase_19/extension/results.json": "c4e1b65f4ca6add897a98387e23e97afc5ba50b7f5268bb03f260d01490170b5",
+    "docs/model_repair/phase_19/extension/config.json": "e41d0c223d8e6cd4b5d109e488270b18a61e71640d32da8e6fd41c6d1c40fb3a"
+  },
+  "tokens": {
+    "shared_n": 512,
+    "shared_cover": 0,
+    "shared_issued": 180,
+    "shared_false": 180,
+    "shared_wrong_label": 0,
+    "shared_upper": "40.73",
+    "n": 256,
+    "budget": "32,768",
+    "proxy": 1,
+    "neyman": 104,
+    "equal": 229,
+    "difference": "-40.23",
+    "low": "-57.21",
+    "high": "-23.26",
+    "discordant": 103,
+    "secondary": 17,
+    "large_n": 512,
+    "large_cover": 512,
+    "large_useful": 0,
+    "large_floor": "1.171",
+    "cells": 144,
+    "records": "36,864",
+    "proxy_n1": "3652.0000",
+    "proxy_low_stratum_width": "0.1165",
+    "proxy_high_stratum_width": "0.4393",
+    "proxy_envelope_increment": "0.1168",
+    "proxy_width": "0.6726",
+    "neyman_n1": "5248.0898",
+    "neyman_low_stratum_width": "0.1243",
+    "neyman_high_stratum_width": "0.3702",
+    "neyman_envelope_increment": "0.1169",
+    "neyman_width": "0.6113",
+    "equal_n1": "8096.0000",
+    "equal_low_stratum_width": "0.1454",
+    "equal_high_stratum_width": "0.2953",
+    "equal_envelope_increment": "0.1169",
+    "equal_width": "0.5576"
+  },
+  "allocation": {
+    "width_proxy": {
+      "case": "small_omission",
+      "budget": 32768,
+      "method": "width_proxy",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 25080.0,
+      "mean_n1": 3652.0,
+      "median_width": 0.6723950054216269,
+      "p90_width": 0.7095061132434217,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 1,
+        "rate": 0.00390625,
+        "wilson": [
+          0.0006898821669617927,
+          0.021790975380582514
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    "variance": {
+      "case": "small_omission",
+      "budget": 32768,
+      "method": "variance",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 21887.8203125,
+      "mean_n1": 5248.08984375,
+      "median_width": 0.6101948188238618,
+      "p90_width": 0.6535984751788191,
+      "utility": 0.05859375,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 104,
+        "rate": 0.40625,
+        "wilson": [
+          0.34790367679855766,
+          0.4673682962812932
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 15,
+        "rate": 0.05859375,
+        "wilson": [
+          0.03582660763317509,
+          0.09441226561778955
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    "equal_spend": {
+      "case": "small_omission",
+      "budget": 32768,
+      "method": "equal_spend",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 16192.0,
+      "mean_n1": 8096.0,
+      "median_width": 0.5590324256655594,
+      "p90_width": 0.6022586033479009,
+      "utility": 0.109375,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 229,
+        "rate": 0.89453125,
+        "wilson": [
+          0.850899024665532,
+          0.9264980886234288
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 28,
+        "rate": 0.109375,
+        "wilson": [
+          0.07676405306596229,
+          0.15353583476674978
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    }
+  },
+  "diagnostics": {
+    "width_proxy": {
+      "mean_n0": 25080,
+      "mean_n1": 3652,
+      "mean_useful": 0.00390625,
+      "mean_width": 0.6726319536448335,
+      "mean_low_stratum_width": 0.1164620758838649,
+      "mean_high_stratum_width": 0.43934778269025565,
+      "mean_envelope_increment": 0.11682209507071295,
+      "mean_true_variance": 1.0706252896754483e-07
+    },
+    "variance": {
+      "mean_n0": 21887.8203125,
+      "mean_n1": 5248.08984375,
+      "mean_useful": 0.40625,
+      "mean_width": 0.6113434166080864,
+      "mean_low_stratum_width": 0.12432922977133153,
+      "mean_high_stratum_width": 0.37016143216772446,
+      "mean_envelope_increment": 0.11685275466903051,
+      "mean_true_variance": 7.980789238782476e-08
+    },
+    "equal_spend": {
+      "mean_n0": 16192,
+      "mean_n1": 8096,
+      "mean_useful": 0.89453125,
+      "mean_width": 0.5576074146527183,
+      "mean_low_stratum_width": 0.145418891186129,
+      "mean_high_stratum_width": 0.2953088873558603,
+      "mean_envelope_increment": 0.11687963611072907,
+      "mean_true_variance": 5.538431324110672e-08
+    }
+  },
+  "sensitivity_exploratory": {
+    "reference": {
+      "width_proxy": {
+        "n": 96,
+        "cost": 32768,
+        "mean_n1": 3652,
+        "median_width": 0.6704462458093414,
+        "coverage": 96,
+        "useful": 3,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 1,
+        "false_certificate": 0,
+        "utility": 1
+      },
+      "variance": {
+        "n": 96,
+        "cost": 32768,
+        "mean_n1": 5374.291666666667,
+        "median_width": 0.6013922325762401,
+        "coverage": 96,
+        "useful": 45,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 8,
+        "false_certificate": 0,
+        "utility": 8
+      },
+      "equal_spend": {
+        "n": 96,
+        "cost": 32768,
+        "mean_n1": 8096,
+        "median_width": 0.5589238707114015,
+        "coverage": 96,
+        "useful": 84,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 12,
+        "false_certificate": 0,
+        "utility": 12
+      }
+    },
+    "pilot_32": {
+      "width_proxy": {
+        "n": 96,
+        "cost": 32768,
+        "mean_n1": 3684,
+        "median_width": 0.6657010100691255,
+        "coverage": 96,
+        "useful": 3,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 1,
+        "false_certificate": 0,
+        "utility": 1
+      },
+      "variance": {
+        "n": 96,
+        "cost": 32768,
+        "mean_n1": 3474.8125,
+        "median_width": 0.6725572334628602,
+        "coverage": 96,
+        "useful": 3,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 1,
+        "false_certificate": 0,
+        "utility": 1
+      },
+      "equal_spend": {
+        "n": 96,
+        "cost": 32768,
+        "mean_n1": 8168,
+        "median_width": 0.5558648237990415,
+        "coverage": 96,
+        "useful": 85,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 12,
+        "false_certificate": 0,
+        "utility": 12
+      }
+    },
+    "pilot_512": {
+      "width_proxy": {
+        "n": 96,
+        "cost": 32768,
+        "mean_n1": 3522,
+        "median_width": 0.6801364760351014,
+        "coverage": 96,
+        "useful": 2,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0,
+        "utility": 0
+      },
+      "variance": {
+        "n": 96,
+        "cost": 32768,
+        "mean_n1": 7449.09375,
+        "median_width": 0.5713676535478597,
+        "coverage": 96,
+        "useful": 74,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 8,
+        "false_certificate": 0,
+        "utility": 8
+      },
+      "equal_spend": {
+        "n": 96,
+        "cost": 32768,
+        "mean_n1": 7808,
+        "median_width": 0.5685723792867167,
+        "coverage": 96,
+        "useful": 81,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 9,
+        "false_certificate": 0,
+        "utility": 9
+      }
+    },
+    "equal_tariffs": {
+      "width_proxy": {
+        "n": 96,
+        "cost": 32768,
+        "mean_n1": 6104,
+        "median_width": 0.5699580317384508,
+        "coverage": 96,
+        "useful": 84,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 15,
+        "false_certificate": 0,
+        "utility": 15
+      },
+      "variance": {
+        "n": 96,
+        "cost": 32768,
+        "mean_n1": 8468.6875,
+        "median_width": 0.525338946019657,
+        "coverage": 96,
+        "useful": 95,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 21,
+        "false_certificate": 0,
+        "utility": 21
+      },
+      "equal_spend": {
+        "n": 96,
+        "cost": 32768,
+        "mean_n1": 16256,
+        "median_width": 0.46998188746022207,
+        "coverage": 96,
+        "useful": 96,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 28,
+        "false_certificate": 0,
+        "utility": 28
+      }
+    },
+    "large_omission": {
+      "width_proxy": {
+        "n": 96,
+        "cost": 32768,
+        "mean_n1": 3652,
+        "median_width": 1.72185494205132,
+        "coverage": 96,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0,
+        "utility": 0
+      },
+      "variance": {
+        "n": 96,
+        "cost": 32768,
+        "mean_n1": 5374.291666666667,
+        "median_width": 1.6531118273270218,
+        "coverage": 96,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0,
+        "utility": 0
+      },
+      "equal_spend": {
+        "n": 96,
+        "cost": 32768,
+        "mean_n1": 8096,
+        "median_width": 1.6108346686921902,
+        "coverage": 96,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 0,
+        "false_certificate": 0,
+        "utility": 0
+      }
+    },
+    "strict_width": {
+      "width_proxy": {
+        "n": 96,
+        "cost": 32768,
+        "mean_n1": 3652,
+        "median_width": 0.6704462458093414,
+        "coverage": 96,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 1,
+        "false_certificate": 0,
+        "utility": 1
+      },
+      "variance": {
+        "n": 96,
+        "cost": 32768,
+        "mean_n1": 5374.291666666667,
+        "median_width": 0.6013922325762401,
+        "coverage": 96,
+        "useful": 0,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 8,
+        "false_certificate": 0,
+        "utility": 8
+      },
+      "equal_spend": {
+        "n": 96,
+        "cost": 32768,
+        "mean_n1": 8096,
+        "median_width": 0.5589238707114015,
+        "coverage": 96,
+        "useful": 3,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 12,
+        "false_certificate": 0,
+        "utility": 12
+      }
+    },
+    "loose_width": {
+      "width_proxy": {
+        "n": 96,
+        "cost": 32768,
+        "mean_n1": 3652,
+        "median_width": 0.6704462458093414,
+        "coverage": 96,
+        "useful": 96,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 1,
+        "false_certificate": 0,
+        "utility": 1
+      },
+      "variance": {
+        "n": 96,
+        "cost": 32768,
+        "mean_n1": 5374.291666666667,
+        "median_width": 0.6013922325762401,
+        "coverage": 96,
+        "useful": 96,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 8,
+        "false_certificate": 0,
+        "utility": 8
+      },
+      "equal_spend": {
+        "n": 96,
+        "cost": 32768,
+        "mean_n1": 8096,
+        "median_width": 0.5589238707114015,
+        "coverage": 96,
+        "useful": 96,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 12,
+        "false_certificate": 0,
+        "utility": 12
+      }
+    },
+    "budget_65536": {
+      "width_proxy": {
+        "n": 96,
+        "cost": 65536,
+        "mean_n1": 7347,
+        "median_width": 0.5051484809671368,
+        "coverage": 96,
+        "useful": 96,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 28,
+        "false_certificate": 0,
+        "utility": 28
+      },
+      "variance": {
+        "n": 96,
+        "cost": 65536,
+        "mean_n1": 10812.708333333334,
+        "median_width": 0.4592058148805872,
+        "coverage": 96,
+        "useful": 96,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 41,
+        "false_certificate": 0,
+        "utility": 41
+      },
+      "equal_spend": {
+        "n": 96,
+        "cost": 65536,
+        "mean_n1": 16288,
+        "median_width": 0.42898777485718587,
+        "coverage": 96,
+        "useful": 96,
+        "abstention": 0,
+        "wrong_call": 0,
+        "certificate": 59,
+        "false_certificate": 0,
+        "utility": 59
+      }
+    }
+  }
+}

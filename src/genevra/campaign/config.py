@@ -15,11 +15,12 @@ from __future__ import annotations
 import dataclasses
 import hashlib
 import json
-import subprocess
 from dataclasses import dataclass
 from enum import StrEnum
 from pathlib import Path
 from typing import Any
+
+from genevra.utils.provenance import source_commit
 
 
 class CampaignMode(StrEnum):
@@ -33,16 +34,6 @@ _MODE_DEFAULT_SEEDS: dict[CampaignMode, int] = {
     CampaignMode.STANDARD: 12,
     CampaignMode.RESEARCH: 24,
 }
-
-
-def _git_commit() -> str | None:
-    try:
-        result = subprocess.run(
-            ["git", "rev-parse", "HEAD"], capture_output=True, text=True, timeout=5, check=False
-        )
-    except (OSError, subprocess.SubprocessError):  # pragma: no cover - environment-dependent
-        return None
-    return result.stdout.strip() if result.returncode == 0 else None
 
 
 def _config_hash(payload: dict[str, Any]) -> str:
@@ -132,7 +123,7 @@ class CampaignConfig:
         return {
             **self.to_dict(),
             "config_hash": self.config_hash(),
-            "git_commit": _git_commit(),
+            "git_commit": source_commit(),
         }
 
     def budget_summary(self) -> dict[str, Any]:

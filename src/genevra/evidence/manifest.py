@@ -8,21 +8,12 @@ from __future__ import annotations
 
 import dataclasses
 import json
-import subprocess
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
-
-def _git_commit() -> str | None:
-    try:
-        result = subprocess.run(
-            ["git", "rev-parse", "HEAD"], capture_output=True, text=True, timeout=5, check=False
-        )
-    except (OSError, subprocess.SubprocessError):  # pragma: no cover - environment-dependent
-        return None
-    return result.stdout.strip() if result.returncode == 0 else None
+from genevra.utils.provenance import source_commit
 
 
 @dataclass(frozen=True)
@@ -40,7 +31,7 @@ class EvidenceArtifact:
     config_hash: str
     relative_path: str
     limitations: tuple[str, ...] = ()
-    git_commit: str | None = field(default_factory=_git_commit)
+    git_commit: str | None = field(default_factory=source_commit)
     creation_timestamp: str = field(default_factory=lambda: datetime.now(UTC).isoformat())
 
     def to_dict(self) -> dict[str, Any]:

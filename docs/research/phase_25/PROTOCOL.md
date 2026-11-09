@@ -1,0 +1,17 @@
+# Phase 25 protocol v1
+
+Freeze this design and [configuration](design.json) before opening outcomes. Reuse all nine Phase 19 extension laws, two budgets, target estimand, support, score cutoffs and tariffs. This is a new allocation experiment using public synthetic scenarios. Its results are exploratory even though the analysis is prespecified. No old observations are replaced. Execute exactly 256 paired replicates per case and budget. Stop on invalid provenance, sampling or cost. No outcome-dependent exclusions, tuning or stopping.
+
+## Intervention
+
+Each matched arm is charged 128 independent pilot draws per stratum and receives their counts. Reserve the remaining budget for independent inference draws. Discard pilot outcomes from all inference intervals, including those of fixed policies, to isolate allocation at identical pilot cost. Draw pairing uses common prefixes within replicate and stratum and independent pilot and inference streams. Duplicate blocks charge each physical row but yield one independent observation. The allocator sees only remaining budget, tariffs, weights, minima and pilot counts. It receives no scenario name, true rate, omitted mass, hidden rate or evaluation outcomes. Supplied external caps are shared at inference.
+
+Compare GENEVRA's fixed width proxy, cost-adjusted plug-in Neyman, minimax variance over Bernoulli rates, equal spend and proportional independent units, each with the identical envelope. Direct uses equal-spend reachable intervals without any omission expansion as a misspecification control. An oracle uses true rates for a separate diagnostic and is excluded from the paired primary comparisons. Always abstain is a zero-acquisition refusal control and is outside equal-cost inference. Every matched arm buys exactly the charged budget. Frame, anchors, caps and support are exogenous shared inputs whose real construction costs are unknown. No claims about field cost are permitted.
+
+## Analysis
+
+Estimate target mean coverage, coverage with width ≤ .60, median and 90th-percentile width, threshold abstention and wrong calls, certificate and false certificate, and utility (+1 correct certificate, −1 false certificate, zero otherwise). Show raw counts, rates and pointwise Wilson intervals. A certificate tolerates .30 anchor error. Display inference allocations, pilot cost and total charge. Report all cells. Primary estimand is paired GENEVRA minus operational variance-aware covered-and-precise probability in small omission at 32,768. Hypothesis of practical improvement requires lower interval endpoint above +.05. Use two-sided 95% bounded-difference Hoeffding intervals, with n=256 and differences in [−1,1]. Secondary GENEVRA versus variance-aware covered-and-precise contrasts across the other 17 cells receive a separate Bonferroni family adjustment. Other outcomes, policies and comparisons are descriptive. A failure to clear the margin is inconclusive about superiority and equivalence.
+
+## Confirmatory track
+
+No confirmatory run is authorized by this protocol. An independent custodian would lock a withheld scenario set, tariff and auxiliary-information rules before registering a separate primary target population, sample size, margins and multiplicity, then obtain policy code digests before exposing observations. Use distinct generation and evaluation seeds, disclose all public-scenario development, and release every locked result. Changing seeds alone on the public laws cannot remove scenario leakage. A synthetic holdout would still provide no empirical validation.

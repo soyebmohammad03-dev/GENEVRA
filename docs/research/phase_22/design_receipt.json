@@ -1,0 +1,182 @@
+{
+  "kind": "analytic planning and deterministic synthetic fixtures; no field observations",
+  "safety_alpha": 0.02,
+  "adverse_risk_cap": 0.05,
+  "power": [
+    {
+      "episodes": 12,
+      "passing_count": -1,
+      "zero_event_upper": 0.278196196,
+      "paired_radius": 0.807467544,
+      "power_by_assumed_adverse_risk": {
+        "0.005": 0,
+        "0.01": 0,
+        "0.025": 0,
+        "0.04": 0,
+        "0.05": 0
+      }
+    },
+    {
+      "episodes": 77,
+      "passing_count": 0,
+      "zero_event_upper": 0.049536476,
+      "paired_radius": 0.318764783,
+      "power_by_assumed_adverse_risk": {
+        "0.005": 0.679793828,
+        "0.01": 0.461221967,
+        "0.025": 0.142349324,
+        "0.04": 0.043140477,
+        "0.05": 0.01926272
+      }
+    },
+    {
+      "episodes": 173,
+      "passing_count": 2,
+      "zero_event_upper": 0.022359096,
+      "paired_radius": 0.212663348,
+      "power_by_assumed_adverse_risk": {
+        "0.005": 0.943230613,
+        "0.01": 0.749647147,
+        "0.025": 0.190609811,
+        "0.04": 0.02916687,
+        "0.05": 0.00718552
+      }
+    },
+    {
+      "episodes": 209,
+      "passing_count": 4,
+      "zero_event_upper": 0.018543723,
+      "paired_radius": 0.193482885,
+      "power_by_assumed_adverse_risk": {
+        "0.005": 0.995731177,
+        "0.01": 0.939806028,
+        "0.025": 0.399343943,
+        "0.04": 0.076620855,
+        "0.05": 0.019519352
+      }
+    },
+    {
+      "episodes": 500,
+      "passing_count": 15,
+      "zero_event_upper": 0.007793518,
+      "paired_radius": 0.125092334,
+      "power_by_assumed_adverse_risk": {
+        "0.005": 0.999999991,
+        "0.01": 0.999938541,
+        "0.025": 0.808606668,
+        "0.04": 0.151266083,
+        "0.05": 0.019858377
+      }
+    },
+    {
+      "episodes": 783,
+      "passing_count": 26,
+      "zero_event_upper": 0.004983738,
+      "paired_radius": 0.099961972,
+      "power_by_assumed_adverse_risk": {
+        "0.005": 1.0,
+        "0.01": 0.999999946,
+        "0.025": 0.938200272,
+        "0.04": 0.191269603,
+        "0.05": 0.014952054
+      }
+    },
+    {
+      "episodes": 2444,
+      "passing_count": 100,
+      "zero_event_upper": 0.001599384,
+      "paired_radius": 0.056580281,
+      "power_by_assumed_adverse_risk": {
+        "0.005": 1.0,
+        "0.01": 1.0,
+        "0.025": 0.999998677,
+        "0.04": 0.616900991,
+        "0.05": 0.01966329
+      }
+    }
+  ],
+  "planning_inflation_for_209": [
+    {
+      "cluster_size": 1,
+      "icc": 0,
+      "loss": 0,
+      "nominal_units": 209
+    },
+    {
+      "cluster_size": 3,
+      "icc": 0.05,
+      "loss": 0.1,
+      "nominal_units": 256
+    },
+    {
+      "cluster_size": 4,
+      "icc": 0.2,
+      "loss": 0.2,
+      "nominal_units": 418
+    },
+    {
+      "cluster_size": 6,
+      "icc": 0.3,
+      "loss": 0.2,
+      "nominal_units": 654
+    }
+  ],
+  "reference_fixtures": [
+    {
+      "case": "covered_channels",
+      "reference": [
+        0.1,
+        0.1
+      ],
+      "fixture_truth_in_band": true,
+      "verdict_for_issued_certificate": "adjudicated_correct"
+    },
+    {
+      "case": "shared_blindness",
+      "reference": [
+        0.19,
+        0.19
+      ],
+      "fixture_truth_in_band": true,
+      "verdict_for_issued_certificate": "adjudicated_false"
+    },
+    {
+      "case": "unsampled_off_channel_stratum",
+      "reference": [
+        0.09,
+        0.19
+      ],
+      "fixture_truth_in_band": true,
+      "verdict_for_issued_certificate": "unresolved"
+    },
+    {
+      "case": "off_frame_valid_cap",
+      "reference": [
+        0.09,
+        0.19
+      ],
+      "fixture_truth_in_band": true,
+      "verdict_for_issued_certificate": "unresolved"
+    },
+    {
+      "case": "off_frame_invalid_cap",
+      "reference": [
+        0.099,
+        0.109
+      ],
+      "fixture_truth_in_band": false,
+      "verdict_for_issued_certificate": "adjudicated_correct"
+    },
+    {
+      "case": "unresolved_nonresponse",
+      "reference": [
+        0.1,
+        0.2
+      ],
+      "fixture_truth_in_band": true,
+      "verdict_for_issued_certificate": "unresolved"
+    }
+  ],
+  "unequal_cost_comparison_admitted": false,
+  "unequal_access_comparison_admitted": false
+}

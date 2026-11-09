@@ -11,11 +11,12 @@ nothing here is a second source of truth for simulation data.
 from __future__ import annotations
 
 import json
-import subprocess
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
+
+from genevra.utils.provenance import source_commit
 
 _SUBDIRS = (
     "raw_data",
@@ -30,16 +31,6 @@ _SUBDIRS = (
     "logs",
     "supplementary",
 )
-
-
-def _git_commit() -> str | None:
-    try:
-        result = subprocess.run(
-            ["git", "rev-parse", "HEAD"], capture_output=True, text=True, timeout=5, check=False
-        )
-    except (OSError, subprocess.SubprocessError):  # pragma: no cover - environment-dependent
-        return None
-    return result.stdout.strip() if result.returncode == 0 else None
 
 
 @dataclass(frozen=True)
@@ -124,7 +115,7 @@ class ArtifactDirectory:
             experiment_id=self.experiment_id,
             seeds=seeds,
             configuration=configuration,
-            git_commit=_git_commit(),
+            git_commit=source_commit(),
             metric_version=metric_version,
             analysis_version=analysis_version,
         )

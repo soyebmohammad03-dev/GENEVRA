@@ -1,0 +1,9114 @@
+{
+  "summary": [
+    {
+      "case": "complete",
+      "budget": 8192,
+      "method": "width_proxy",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 6048.0,
+      "mean_n1": 880.0,
+      "median_width": 1.1613001721405423,
+      "p90_width": 1.3042026248124312,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 6,
+        "rate": 0.0234375,
+        "wilson": [
+          0.010784867555857603,
+          0.0501809956000511
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "complete",
+      "budget": 8192,
+      "method": "variance",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 5265.6953125,
+      "mean_n1": 1271.15234375,
+      "median_width": 1.0420169143622724,
+      "p90_width": 1.2050178859356777,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "complete",
+      "budget": 8192,
+      "method": "minimax",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 6748.0,
+      "mean_n1": 530.0,
+      "median_width": 1.4124479742200569,
+      "p90_width": 1.589031668947268,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 31,
+        "rate": 0.12109375,
+        "wilson": [
+          0.08663517067416432,
+          0.1667557205235664
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "complete",
+      "budget": 8192,
+      "method": "equal_spend",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 3904.0,
+      "mean_n1": 1952.0,
+      "median_width": 0.9623056351203758,
+      "p90_width": 1.1196249614070122,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "complete",
+      "budget": 8192,
+      "method": "proportional",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 6388.0,
+      "mean_n1": 710.0,
+      "median_width": 1.2608011389431424,
+      "p90_width": 1.4095299010627975,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 14,
+        "rate": 0.0546875,
+        "wilson": [
+          0.03285229140400938,
+          0.08968958072528235
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "complete",
+      "budget": 8192,
+      "method": "direct",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 3904.0,
+      "mean_n1": 1952.0,
+      "median_width": 0.9623056351203758,
+      "p90_width": 1.1196249614070122,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "complete",
+      "budget": 8192,
+      "method": "oracle",
+      "n": 256,
+      "information": "oracle",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 2494.0,
+      "mean_n1": 2657.0,
+      "median_width": 0.9100007291600258,
+      "p90_width": 1.1648884428113297,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "complete",
+      "budget": 8192,
+      "method": "abstain",
+      "n": 256,
+      "information": "no_acquisition",
+      "cost": 0,
+      "pilot_cost": 0,
+      "mean_n0": 0.0,
+      "mean_n1": 0.0,
+      "median_width": 480.0,
+      "p90_width": 480.0,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "complete",
+      "budget": 32768,
+      "method": "width_proxy",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 25080.0,
+      "mean_n1": 3652.0,
+      "median_width": 0.5558925754116606,
+      "p90_width": 0.5897920414044522,
+      "utility": 0.28125,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 241,
+        "rate": 0.94140625,
+        "wilson": [
+          0.9055877343822104,
+          0.9641733923668249
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 72,
+        "rate": 0.28125,
+        "wilson": [
+          0.2297209150846507,
+          0.33924702210166807
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "complete",
+      "budget": 32768,
+      "method": "variance",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 21831.953125,
+      "mean_n1": 5276.0234375,
+      "median_width": 0.49039462731979355,
+      "p90_width": 0.5508212963902241,
+      "utility": 0.5,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 251,
+        "rate": 0.98046875,
+        "wilson": [
+          0.9551018677503436,
+          0.9916292702154206
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 128,
+        "rate": 0.5,
+        "wilson": [
+          0.43920555858906296,
+          0.560794441410937
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "complete",
+      "budget": 32768,
+      "method": "minimax",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 27986.0,
+      "mean_n1": 2199.0,
+      "median_width": 0.6749868666412755,
+      "p90_width": 0.7182123401334122,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 1,
+        "rate": 0.00390625,
+        "wilson": [
+          0.0006898821669617927,
+          0.021790975380582514
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "complete",
+      "budget": 32768,
+      "method": "equal_spend",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 16192.0,
+      "mean_n1": 8096.0,
+      "median_width": 0.4389542246207423,
+      "p90_width": 0.48562228580730826,
+      "utility": 0.6875,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 176,
+        "rate": 0.6875,
+        "wilson": [
+          0.62830194262617,
+          0.7411541112141282
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "complete",
+      "budget": 32768,
+      "method": "proportional",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 26496.0,
+      "mean_n1": 2944.0,
+      "median_width": 0.6020489492143111,
+      "p90_width": 0.6429666218249913,
+      "utility": 0.0703125,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 122,
+        "rate": 0.4765625,
+        "wilson": [
+          0.41618039421813385,
+          0.5376375990518288
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 18,
+        "rate": 0.0703125,
+        "wilson": [
+          0.04493554746197091,
+          0.10839432915401236
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "complete",
+      "budget": 32768,
+      "method": "direct",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 16192.0,
+      "mean_n1": 8096.0,
+      "median_width": 0.4389542246207423,
+      "p90_width": 0.48562228580730826,
+      "utility": 0.6875,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 176,
+        "rate": 0.6875,
+        "wilson": [
+          0.62830194262617,
+          0.7411541112141282
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "complete",
+      "budget": 32768,
+      "method": "oracle",
+      "n": 256,
+      "information": "oracle",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 10346.0,
+      "mean_n1": 11019.0,
+      "median_width": 0.44281219626745016,
+      "p90_width": 0.5110469737641407,
+      "utility": 0.58203125,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 149,
+        "rate": 0.58203125,
+        "wilson": [
+          0.5208355774699231,
+          0.6408014460852074
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "complete",
+      "budget": 32768,
+      "method": "abstain",
+      "n": 256,
+      "information": "no_acquisition",
+      "cost": 0,
+      "pilot_cost": 0,
+      "mean_n0": 0.0,
+      "mean_n1": 0.0,
+      "median_width": 480.0,
+      "p90_width": 480.0,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "small_omission",
+      "budget": 8192,
+      "method": "width_proxy",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 6048.0,
+      "mean_n1": 880.0,
+      "median_width": 1.2682082560914514,
+      "p90_width": 1.4381551838266646,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 4,
+        "rate": 0.015625,
+        "wilson": [
+          0.006092598203366294,
+          0.039479262709196654
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "small_omission",
+      "budget": 8192,
+      "method": "variance",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 5291.953125,
+      "mean_n1": 1258.0234375,
+      "median_width": 1.1622718887971604,
+      "p90_width": 1.3518003637038043,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "small_omission",
+      "budget": 8192,
+      "method": "minimax",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 6748.0,
+      "mean_n1": 530.0,
+      "median_width": 1.5288417502329468,
+      "p90_width": 1.718963453228912,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 36,
+        "rate": 0.140625,
+        "wilson": [
+          0.10333688392273097,
+          0.18853901288336414
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "small_omission",
+      "budget": 8192,
+      "method": "equal_spend",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 3904.0,
+      "mean_n1": 1952.0,
+      "median_width": 1.0871697035524606,
+      "p90_width": 1.2323535901962313,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "small_omission",
+      "budget": 8192,
+      "method": "proportional",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 6388.0,
+      "mean_n1": 710.0,
+      "median_width": 1.3730232688370572,
+      "p90_width": 1.5335893737364732,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 16,
+        "rate": 0.0625,
+        "wilson": [
+          0.03883364112851165,
+          0.09910223324412587
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "small_omission",
+      "budget": 8192,
+      "method": "direct",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 3904.0,
+      "mean_n1": 1952.0,
+      "median_width": 0.9705549810429821,
+      "p90_width": 1.1158114959442034,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "small_omission",
+      "budget": 8192,
+      "method": "oracle",
+      "n": 256,
+      "information": "oracle",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 2494.0,
+      "mean_n1": 2657.0,
+      "median_width": 1.0196812001712483,
+      "p90_width": 1.3048571987226207,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "small_omission",
+      "budget": 8192,
+      "method": "abstain",
+      "n": 256,
+      "information": "no_acquisition",
+      "cost": 0,
+      "pilot_cost": 0,
+      "mean_n0": 0.0,
+      "mean_n1": 0.0,
+      "median_width": 480.0,
+      "p90_width": 480.0,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "small_omission",
+      "budget": 32768,
+      "method": "width_proxy",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 25080.0,
+      "mean_n1": 3652.0,
+      "median_width": 0.6723950054216269,
+      "p90_width": 0.7095061132434217,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 1,
+        "rate": 0.00390625,
+        "wilson": [
+          0.0006898821669617927,
+          0.021790975380582514
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "small_omission",
+      "budget": 32768,
+      "method": "variance",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 21887.8203125,
+      "mean_n1": 5248.08984375,
+      "median_width": 0.6101948188238618,
+      "p90_width": 0.6535984751788191,
+      "utility": 0.05859375,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 104,
+        "rate": 0.40625,
+        "wilson": [
+          0.34790367679855766,
+          0.4673682962812932
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 15,
+        "rate": 0.05859375,
+        "wilson": [
+          0.03582660763317509,
+          0.09441226561778955
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "small_omission",
+      "budget": 32768,
+      "method": "minimax",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 27986.0,
+      "mean_n1": 2199.0,
+      "median_width": 0.7885769110506414,
+      "p90_width": 0.8345327845234964,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "small_omission",
+      "budget": 32768,
+      "method": "equal_spend",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 16192.0,
+      "mean_n1": 8096.0,
+      "median_width": 0.5590324256655594,
+      "p90_width": 0.6022586033479009,
+      "utility": 0.109375,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 229,
+        "rate": 0.89453125,
+        "wilson": [
+          0.850899024665532,
+          0.9264980886234288
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 28,
+        "rate": 0.109375,
+        "wilson": [
+          0.07676405306596229,
+          0.15353583476674978
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "small_omission",
+      "budget": 32768,
+      "method": "proportional",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 26496.0,
+      "mean_n1": 2944.0,
+      "median_width": 0.7174312053520885,
+      "p90_width": 0.7597451385140788,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "small_omission",
+      "budget": 32768,
+      "method": "direct",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 16192.0,
+      "mean_n1": 8096.0,
+      "median_width": 0.442153502416768,
+      "p90_width": 0.4854013039999011,
+      "utility": 0.703125,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 180,
+        "rate": 0.703125,
+        "wilson": [
+          0.6444892736219288,
+          0.755754784705061
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "small_omission",
+      "budget": 32768,
+      "method": "oracle",
+      "n": 256,
+      "information": "oracle",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 10346.0,
+      "mean_n1": 11019.0,
+      "median_width": 0.5608529340622825,
+      "p90_width": 0.6234103635033329,
+      "utility": 0.08203125,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 209,
+        "rate": 0.81640625,
+        "wilson": [
+          0.7644232596319748,
+          0.8590338312235285
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 21,
+        "rate": 0.08203125,
+        "wilson": [
+          0.05427759190690546,
+          0.12214328807409647
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "small_omission",
+      "budget": 32768,
+      "method": "abstain",
+      "n": 256,
+      "information": "no_acquisition",
+      "cost": 0,
+      "pilot_cost": 0,
+      "mean_n0": 0.0,
+      "mean_n1": 0.0,
+      "median_width": 480.0,
+      "p90_width": 480.0,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "large_omission",
+      "budget": 8192,
+      "method": "width_proxy",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 6048.0,
+      "mean_n1": 880.0,
+      "median_width": 2.3181621946814746,
+      "p90_width": 2.445511780937453,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 2,
+        "rate": 0.0078125,
+        "wilson": [
+          0.002145090367681419,
+          0.028032768301535768
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "large_omission",
+      "budget": 8192,
+      "method": "variance",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 5272.3984375,
+      "mean_n1": 1267.80078125,
+      "median_width": 2.20294077015894,
+      "p90_width": 2.345791446857123,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "large_omission",
+      "budget": 8192,
+      "method": "minimax",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 6748.0,
+      "mean_n1": 530.0,
+      "median_width": 2.557651728548328,
+      "p90_width": 2.7174010058865603,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 34,
+        "rate": 0.1328125,
+        "wilson": [
+          0.09662155083903351,
+          0.17986034372371584
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "large_omission",
+      "budget": 8192,
+      "method": "equal_spend",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 3904.0,
+      "mean_n1": 1952.0,
+      "median_width": 2.132615297963678,
+      "p90_width": 2.273586547465343,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "large_omission",
+      "budget": 8192,
+      "method": "proportional",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 6388.0,
+      "mean_n1": 710.0,
+      "median_width": 2.408301228041654,
+      "p90_width": 2.5425558751671673,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 13,
+        "rate": 0.05078125,
+        "wilson": [
+          0.029913811386553534,
+          0.08493105962106533
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "large_omission",
+      "budget": 8192,
+      "method": "direct",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 3904.0,
+      "mean_n1": 1952.0,
+      "median_width": 0.9664475356418882,
+      "p90_width": 1.1081271833822548,
+      "utility": 0.0,
+      "coverage": {
+        "count": 8,
+        "rate": 0.03125,
+        "wilson": [
+          0.015918258891511296,
+          0.06044160650774316
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "large_omission",
+      "budget": 8192,
+      "method": "oracle",
+      "n": 256,
+      "information": "oracle",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 2494.0,
+      "mean_n1": 2657.0,
+      "median_width": 2.0671824306812203,
+      "p90_width": 2.3266298387401116,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "large_omission",
+      "budget": 8192,
+      "method": "abstain",
+      "n": 256,
+      "information": "no_acquisition",
+      "cost": 0,
+      "pilot_cost": 0,
+      "mean_n0": 0.0,
+      "mean_n1": 0.0,
+      "median_width": 480.0,
+      "p90_width": 480.0,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "large_omission",
+      "budget": 32768,
+      "method": "width_proxy",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 25080.0,
+      "mean_n1": 3652.0,
+      "median_width": 1.725242926308585,
+      "p90_width": 1.7562176816877875,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "large_omission",
+      "budget": 32768,
+      "method": "variance",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 21678.859375,
+      "mean_n1": 5352.5703125,
+      "median_width": 1.6533886924911168,
+      "p90_width": 1.703594309554999,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "large_omission",
+      "budget": 32768,
+      "method": "minimax",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 27986.0,
+      "mean_n1": 2199.0,
+      "median_width": 1.8404606630741238,
+      "p90_width": 1.891949995195377,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "large_omission",
+      "budget": 32768,
+      "method": "equal_spend",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 16192.0,
+      "mean_n1": 8096.0,
+      "median_width": 1.6091282497984356,
+      "p90_width": 1.652872635914285,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "large_omission",
+      "budget": 32768,
+      "method": "proportional",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 26496.0,
+      "mean_n1": 2944.0,
+      "median_width": 1.768057920314924,
+      "p90_width": 1.8067707730475764,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "large_omission",
+      "budget": 32768,
+      "method": "direct",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 16192.0,
+      "mean_n1": 8096.0,
+      "median_width": 0.4403298992949104,
+      "p90_width": 0.4842941064465178,
+      "utility": -0.73828125,
+      "coverage": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 189,
+        "rate": 0.73828125,
+        "wilson": [
+          0.6811957065092896,
+          0.7883213619127559
+        ]
+      },
+      "false_certificate": {
+        "count": 189,
+        "rate": 0.73828125,
+        "wilson": [
+          0.6811957065092896,
+          0.7883213619127559
+        ]
+      }
+    },
+    {
+      "case": "large_omission",
+      "budget": 32768,
+      "method": "oracle",
+      "n": 256,
+      "information": "oracle",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 10346.0,
+      "mean_n1": 11019.0,
+      "median_width": 1.6124664045053998,
+      "p90_width": 1.6747378380059155,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "large_omission",
+      "budget": 32768,
+      "method": "abstain",
+      "n": 256,
+      "information": "no_acquisition",
+      "cost": 0,
+      "pilot_cost": 0,
+      "mean_n0": 0.0,
+      "mean_n1": 0.0,
+      "median_width": 480.0,
+      "p90_width": 480.0,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "shifted_reachable",
+      "budget": 8192,
+      "method": "width_proxy",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 6048.0,
+      "mean_n1": 880.0,
+      "median_width": 1.6124875702048378,
+      "p90_width": 1.7647548965761803,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "shifted_reachable",
+      "budget": 8192,
+      "method": "variance",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 4667.671875,
+      "mean_n1": 1570.1640625,
+      "median_width": 1.3636582509697333,
+      "p90_width": 1.500903796556902,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "shifted_reachable",
+      "budget": 8192,
+      "method": "minimax",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 6748.0,
+      "mean_n1": 530.0,
+      "median_width": 1.9648237797512977,
+      "p90_width": 2.147620899419249,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "shifted_reachable",
+      "budget": 8192,
+      "method": "equal_spend",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 3904.0,
+      "mean_n1": 1952.0,
+      "median_width": 1.3055436661030044,
+      "p90_width": 1.4652138211555885,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "shifted_reachable",
+      "budget": 8192,
+      "method": "proportional",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 6388.0,
+      "mean_n1": 710.0,
+      "median_width": 1.7555703343993936,
+      "p90_width": 1.9030904636256893,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "shifted_reachable",
+      "budget": 8192,
+      "method": "direct",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 3904.0,
+      "mean_n1": 1952.0,
+      "median_width": 1.189038185195602,
+      "p90_width": 1.34878821526322,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "shifted_reachable",
+      "budget": 8192,
+      "method": "oracle",
+      "n": 256,
+      "information": "oracle",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 1960.0,
+      "mean_n1": 2924.0,
+      "median_width": 1.2837517304929391,
+      "p90_width": 1.6128788057741117,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "shifted_reachable",
+      "budget": 8192,
+      "method": "abstain",
+      "n": 256,
+      "information": "no_acquisition",
+      "cost": 0,
+      "pilot_cost": 0,
+      "mean_n0": 0.0,
+      "mean_n1": 0.0,
+      "median_width": 480.0,
+      "p90_width": 480.0,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "shifted_reachable",
+      "budget": 32768,
+      "method": "width_proxy",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 25080.0,
+      "mean_n1": 3652.0,
+      "median_width": 0.8512212863270806,
+      "p90_width": 0.8835639137444731,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "shifted_reachable",
+      "budget": 32768,
+      "method": "variance",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 19482.9765625,
+      "mean_n1": 6450.51171875,
+      "median_width": 0.7184757535898488,
+      "p90_width": 0.76233131289293,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 1,
+        "rate": 0.00390625,
+        "wilson": [
+          0.0006898821669617927,
+          0.021790975380582514
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "shifted_reachable",
+      "budget": 32768,
+      "method": "minimax",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 27986.0,
+      "mean_n1": 2199.0,
+      "median_width": 1.020070723045492,
+      "p90_width": 1.066315486840109,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "shifted_reachable",
+      "budget": 32768,
+      "method": "equal_spend",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 16192.0,
+      "mean_n1": 8096.0,
+      "median_width": 0.6785994013194366,
+      "p90_width": 0.7255039410953545,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 8,
+        "rate": 0.03125,
+        "wilson": [
+          0.015918258891511296,
+          0.06044160650774316
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "shifted_reachable",
+      "budget": 32768,
+      "method": "proportional",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 26496.0,
+      "mean_n1": 2944.0,
+      "median_width": 0.9171810071036742,
+      "p90_width": 0.9569446174574538,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "shifted_reachable",
+      "budget": 32768,
+      "method": "direct",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 16192.0,
+      "mean_n1": 8096.0,
+      "median_width": 0.5617802914651691,
+      "p90_width": 0.6087082952429761,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 216,
+        "rate": 0.84375,
+        "wilson": [
+          0.7942285422215228,
+          0.8831075564856906
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "shifted_reachable",
+      "budget": 32768,
+      "method": "oracle",
+      "n": 256,
+      "information": "oracle",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 8130.0,
+      "mean_n1": 12127.0,
+      "median_width": 0.6934672810702254,
+      "p90_width": 0.7526042011155591,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 55,
+        "rate": 0.21484375,
+        "wilson": [
+          0.16894358808976334,
+          0.26917533002811644
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "shifted_reachable",
+      "budget": 32768,
+      "method": "abstain",
+      "n": 256,
+      "information": "no_acquisition",
+      "cost": 0,
+      "pilot_cost": 0,
+      "mean_n0": 0.0,
+      "mean_n1": 0.0,
+      "median_width": 480.0,
+      "p90_width": 480.0,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "near_threshold",
+      "budget": 8192,
+      "method": "width_proxy",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 6048.0,
+      "mean_n1": 880.0,
+      "median_width": 0.8729451410335705,
+      "p90_width": 1.0136785990560817,
+      "utility": 0.0,
+      "coverage": {
+        "count": 255,
+        "rate": 0.99609375,
+        "wilson": [
+          0.9782090246194175,
+          0.9993101178330381
+        ]
+      },
+      "useful": {
+        "count": 1,
+        "rate": 0.00390625,
+        "wilson": [
+          0.0006898821669617927,
+          0.021790975380582514
+        ]
+      },
+      "abstention": {
+        "count": 255,
+        "rate": 0.99609375,
+        "wilson": [
+          0.9782090246194175,
+          0.9993101178330381
+        ]
+      },
+      "wrong_call": {
+        "count": 1,
+        "rate": 0.00390625,
+        "wilson": [
+          0.0006898821669617927,
+          0.021790975380582514
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "near_threshold",
+      "budget": 8192,
+      "method": "variance",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 6151.359375,
+      "mean_n1": 828.3203125,
+      "median_width": 0.8974921861579646,
+      "p90_width": 1.1183337962550581,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 1,
+        "rate": 0.00390625,
+        "wilson": [
+          0.0006898821669617927,
+          0.021790975380582514
+        ]
+      },
+      "abstention": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "near_threshold",
+      "budget": 8192,
+      "method": "minimax",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 6748.0,
+      "mean_n1": 530.0,
+      "median_width": 1.0067181219736228,
+      "p90_width": 1.1698879934438131,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 2,
+        "rate": 0.0078125,
+        "wilson": [
+          0.002145090367681419,
+          0.028032768301535768
+        ]
+      },
+      "abstention": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "near_threshold",
+      "budget": 8192,
+      "method": "equal_spend",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 3904.0,
+      "mean_n1": 1952.0,
+      "median_width": 0.8058091612561904,
+      "p90_width": 0.9588402350386442,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "near_threshold",
+      "budget": 8192,
+      "method": "proportional",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 6388.0,
+      "mean_n1": 710.0,
+      "median_width": 0.9209671343605605,
+      "p90_width": 1.078287218819173,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 1,
+        "rate": 0.00390625,
+        "wilson": [
+          0.0006898821669617927,
+          0.021790975380582514
+        ]
+      },
+      "abstention": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "near_threshold",
+      "budget": 8192,
+      "method": "direct",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 3904.0,
+      "mean_n1": 1952.0,
+      "median_width": 0.6890536881002407,
+      "p90_width": 0.8421613156964922,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 99,
+        "rate": 0.38671875,
+        "wilson": [
+          0.3291562242738866,
+          0.4476307431975999
+        ]
+      },
+      "abstention": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "near_threshold",
+      "budget": 8192,
+      "method": "oracle",
+      "n": 256,
+      "information": "oracle",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 3616.0,
+      "mean_n1": 2096.0,
+      "median_width": 0.7926584689364583,
+      "p90_width": 0.9694670490395969,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "near_threshold",
+      "budget": 8192,
+      "method": "abstain",
+      "n": 256,
+      "information": "no_acquisition",
+      "cost": 0,
+      "pilot_cost": 0,
+      "mean_n0": 0.0,
+      "mean_n1": 0.0,
+      "median_width": 480.0,
+      "p90_width": 480.0,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "near_threshold",
+      "budget": 32768,
+      "method": "width_proxy",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 25080.0,
+      "mean_n1": 3652.0,
+      "median_width": 0.47172484907866313,
+      "p90_width": 0.513328790935518,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "abstention": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "near_threshold",
+      "budget": 32768,
+      "method": "variance",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 25311.0546875,
+      "mean_n1": 3536.47265625,
+      "median_width": 0.47746987699214466,
+      "p90_width": 0.5460514570042152,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 251,
+        "rate": 0.98046875,
+        "wilson": [
+          0.9551018677503436,
+          0.9916292702154206
+        ]
+      },
+      "abstention": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "near_threshold",
+      "budget": 32768,
+      "method": "minimax",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 27986.0,
+      "mean_n1": 2199.0,
+      "median_width": 0.5378438291431815,
+      "p90_width": 0.5867204223804907,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 247,
+        "rate": 0.96484375,
+        "wilson": [
+          0.9345472295717082,
+          0.9813959039073644
+        ]
+      },
+      "abstention": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "near_threshold",
+      "budget": 32768,
+      "method": "equal_spend",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 16192.0,
+      "mean_n1": 8096.0,
+      "median_width": 0.4246981637593071,
+      "p90_width": 0.47208314688247777,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "abstention": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "near_threshold",
+      "budget": 32768,
+      "method": "proportional",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 26496.0,
+      "mean_n1": 2944.0,
+      "median_width": 0.49548483052648506,
+      "p90_width": 0.5432195586623617,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "abstention": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "near_threshold",
+      "budget": 32768,
+      "method": "direct",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 16192.0,
+      "mean_n1": 8096.0,
+      "median_width": 0.3077520397791967,
+      "p90_width": 0.35516072724610087,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "abstention": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "near_threshold",
+      "budget": 32768,
+      "method": "oracle",
+      "n": 256,
+      "information": "oracle",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 15000.0,
+      "mean_n1": 8692.0,
+      "median_width": 0.42707332035824697,
+      "p90_width": 0.473712469018012,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "abstention": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "near_threshold",
+      "budget": 32768,
+      "method": "abstain",
+      "n": 256,
+      "information": "no_acquisition",
+      "cost": 0,
+      "pilot_cost": 0,
+      "mean_n0": 0.0,
+      "mean_n1": 0.0,
+      "median_width": 480.0,
+      "p90_width": 480.0,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "verified_hidden_support",
+      "budget": 8192,
+      "method": "width_proxy",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 6048.0,
+      "mean_n1": 880.0,
+      "median_width": 1.1789136712798396,
+      "p90_width": 1.3211016116883687,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 7,
+        "rate": 0.02734375,
+        "wilson": [
+          0.013307156355121155,
+          0.05535570792246043
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "verified_hidden_support",
+      "budget": 8192,
+      "method": "variance",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 5260.59375,
+      "mean_n1": 1273.703125,
+      "median_width": 1.0590332815518906,
+      "p90_width": 1.2118037281352614,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 2,
+        "rate": 0.0078125,
+        "wilson": [
+          0.002145090367681419,
+          0.028032768301535768
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "verified_hidden_support",
+      "budget": 8192,
+      "method": "minimax",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 6748.0,
+      "mean_n1": 530.0,
+      "median_width": 1.4236294036090673,
+      "p90_width": 1.5703239373106734,
+      "utility": 0.0,
+      "coverage": {
+        "count": 255,
+        "rate": 0.99609375,
+        "wilson": [
+          0.9782090246194175,
+          0.9993101178330381
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 38,
+        "rate": 0.1484375,
+        "wilson": [
+          0.1100947469586396,
+          0.19717515209080125
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "verified_hidden_support",
+      "budget": 8192,
+      "method": "equal_spend",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 3904.0,
+      "mean_n1": 1952.0,
+      "median_width": 1.0011844264977787,
+      "p90_width": 1.1374330921057403,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "verified_hidden_support",
+      "budget": 8192,
+      "method": "proportional",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 6388.0,
+      "mean_n1": 710.0,
+      "median_width": 1.2607212280416538,
+      "p90_width": 1.4169377587249314,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 15,
+        "rate": 0.05859375,
+        "wilson": [
+          0.03582660763317509,
+          0.09441226561778955
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "verified_hidden_support",
+      "budget": 8192,
+      "method": "direct",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 3904.0,
+      "mean_n1": 1952.0,
+      "median_width": 0.9826778155756568,
+      "p90_width": 1.119611147844965,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "verified_hidden_support",
+      "budget": 8192,
+      "method": "oracle",
+      "n": 256,
+      "information": "oracle",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 2494.0,
+      "mean_n1": 2657.0,
+      "median_width": 0.9368282915434623,
+      "p90_width": 1.2025696499602807,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "verified_hidden_support",
+      "budget": 8192,
+      "method": "abstain",
+      "n": 256,
+      "information": "no_acquisition",
+      "cost": 0,
+      "pilot_cost": 0,
+      "mean_n0": 0.0,
+      "mean_n1": 0.0,
+      "median_width": 480.0,
+      "p90_width": 480.0,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "verified_hidden_support",
+      "budget": 32768,
+      "method": "width_proxy",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 25080.0,
+      "mean_n1": 3652.0,
+      "median_width": 0.575329698066056,
+      "p90_width": 0.6121240244440713,
+      "utility": 0.15625,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 211,
+        "rate": 0.82421875,
+        "wilson": [
+          0.7728971415203973,
+          0.8659539515784516
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 40,
+        "rate": 0.15625,
+        "wilson": [
+          0.11689244351430939,
+          0.20577145777847722
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "verified_hidden_support",
+      "budget": 32768,
+      "method": "variance",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 22069.546875,
+      "mean_n1": 5157.2265625,
+      "median_width": 0.5110895163273119,
+      "p90_width": 0.5713591620328076,
+      "utility": 0.4375,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 247,
+        "rate": 0.96484375,
+        "wilson": [
+          0.9345472295717082,
+          0.9813959039073644
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 112,
+        "rate": 0.4375,
+        "wilson": [
+          0.37809929934301556,
+          0.4987486827102183
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "verified_hidden_support",
+      "budget": 32768,
+      "method": "minimax",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 27986.0,
+      "mean_n1": 2199.0,
+      "median_width": 0.6953455427793791,
+      "p90_width": 0.7354024910122628,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 2,
+        "rate": 0.0078125,
+        "wilson": [
+          0.002145090367681419,
+          0.028032768301535768
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "verified_hidden_support",
+      "budget": 32768,
+      "method": "equal_spend",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 16192.0,
+      "mean_n1": 8096.0,
+      "median_width": 0.4644898298731094,
+      "p90_width": 0.5092365957895829,
+      "utility": 0.65625,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 168,
+        "rate": 0.65625,
+        "wilson": [
+          0.596144121990143,
+          0.7117359228767722
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "verified_hidden_support",
+      "budget": 32768,
+      "method": "proportional",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 26496.0,
+      "mean_n1": 2944.0,
+      "median_width": 0.6217898216968234,
+      "p90_width": 0.6568500112795415,
+      "utility": 0.00390625,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 60,
+        "rate": 0.234375,
+        "wilson": [
+          0.1866465082202543,
+          0.2899574155059899
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 1,
+        "rate": 0.00390625,
+        "wilson": [
+          0.0006898821669617927,
+          0.021790975380582514
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "verified_hidden_support",
+      "budget": 32768,
+      "method": "direct",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 16192.0,
+      "mean_n1": 8096.0,
+      "median_width": 0.4432862611790045,
+      "p90_width": 0.48825788521566127,
+      "utility": 0.73046875,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 187,
+        "rate": 0.73046875,
+        "wilson": [
+          0.6730030812879184,
+          0.7811199848907815
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "verified_hidden_support",
+      "budget": 32768,
+      "method": "oracle",
+      "n": 256,
+      "information": "oracle",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 10346.0,
+      "mean_n1": 11019.0,
+      "median_width": 0.46358272434501235,
+      "p90_width": 0.5309126974033741,
+      "utility": 0.53515625,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 254,
+        "rate": 0.9921875,
+        "wilson": [
+          0.9719672316984642,
+          0.9978549096323186
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 137,
+        "rate": 0.53515625,
+        "wilson": [
+          0.4739903018869167,
+          0.5952827082081391
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "verified_hidden_support",
+      "budget": 32768,
+      "method": "abstain",
+      "n": 256,
+      "information": "no_acquisition",
+      "cost": 0,
+      "pilot_cost": 0,
+      "mean_n0": 0.0,
+      "mean_n1": 0.0,
+      "median_width": 480.0,
+      "p90_width": 480.0,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "bad_mass_cap",
+      "budget": 8192,
+      "method": "width_proxy",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 6048.0,
+      "mean_n1": 880.0,
+      "median_width": 1.269198734066713,
+      "p90_width": 1.409097924614996,
+      "utility": 0.0,
+      "coverage": {
+        "count": 81,
+        "rate": 0.31640625,
+        "wilson": [
+          0.26250760743602425,
+          0.37573333984535046
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 3,
+        "rate": 0.01171875,
+        "wilson": [
+          0.003993287123007758,
+          0.033881572667882304
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "bad_mass_cap",
+      "budget": 8192,
+      "method": "variance",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 5253.8671875,
+      "mean_n1": 1277.06640625,
+      "median_width": 1.1566086600515915,
+      "p90_width": 1.303493677551459,
+      "utility": 0.0,
+      "coverage": {
+        "count": 52,
+        "rate": 0.203125,
+        "wilson": [
+          0.15839924133131683,
+          0.25662867342154433
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 1,
+        "rate": 0.00390625,
+        "wilson": [
+          0.0006898821669617927,
+          0.021790975380582514
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "bad_mass_cap",
+      "budget": 8192,
+      "method": "minimax",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 6748.0,
+      "mean_n1": 530.0,
+      "median_width": 1.5288417502329468,
+      "p90_width": 1.6973225282466007,
+      "utility": 0.0,
+      "coverage": {
+        "count": 156,
+        "rate": 0.609375,
+        "wilson": [
+          0.5484139251193965,
+          0.6671021062874443
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 32,
+        "rate": 0.125,
+        "wilson": [
+          0.08995183318684266,
+          0.17113605913256094
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "bad_mass_cap",
+      "budget": 8192,
+      "method": "equal_spend",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 3904.0,
+      "mean_n1": 1952.0,
+      "median_width": 1.0789244823028157,
+      "p90_width": 1.2361651489263086,
+      "utility": 0.0,
+      "coverage": {
+        "count": 43,
+        "rate": 0.16796875,
+        "wilson": [
+          0.12715856241588983,
+          0.2185963422419154
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "bad_mass_cap",
+      "budget": 8192,
+      "method": "proportional",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 6388.0,
+      "mean_n1": 710.0,
+      "median_width": 1.3730232688370572,
+      "p90_width": 1.5225459421205114,
+      "utility": 0.0,
+      "coverage": {
+        "count": 128,
+        "rate": 0.5,
+        "wilson": [
+          0.43920555858906296,
+          0.560794441410937
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 11,
+        "rate": 0.04296875,
+        "wilson": [
+          0.024159813300607562,
+          0.07529105546366555
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "bad_mass_cap",
+      "budget": 8192,
+      "method": "direct",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 3904.0,
+      "mean_n1": 1952.0,
+      "median_width": 0.9623056351203758,
+      "p90_width": 1.1196249614070122,
+      "utility": 0.0,
+      "coverage": {
+        "count": 14,
+        "rate": 0.0546875,
+        "wilson": [
+          0.03285229140400938,
+          0.08968958072528235
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "bad_mass_cap",
+      "budget": 8192,
+      "method": "oracle",
+      "n": 256,
+      "information": "oracle",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 2494.0,
+      "mean_n1": 2657.0,
+      "median_width": 1.024336148998267,
+      "p90_width": 1.2993838539118503,
+      "utility": 0.0,
+      "coverage": {
+        "count": 81,
+        "rate": 0.31640625,
+        "wilson": [
+          0.26250760743602425,
+          0.37573333984535046
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "bad_mass_cap",
+      "budget": 8192,
+      "method": "abstain",
+      "n": 256,
+      "information": "no_acquisition",
+      "cost": 0,
+      "pilot_cost": 0,
+      "mean_n0": 0.0,
+      "mean_n1": 0.0,
+      "median_width": 480.0,
+      "p90_width": 480.0,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "bad_mass_cap",
+      "budget": 32768,
+      "method": "width_proxy",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 25080.0,
+      "mean_n1": 3652.0,
+      "median_width": 0.6708783720492476,
+      "p90_width": 0.7105537883692721,
+      "utility": 0.0,
+      "coverage": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "bad_mass_cap",
+      "budget": 32768,
+      "method": "variance",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 21872.328125,
+      "mean_n1": 5255.8359375,
+      "median_width": 0.6082829834142351,
+      "p90_width": 0.6648999034498285,
+      "utility": -0.046875,
+      "coverage": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 12,
+        "rate": 0.046875,
+        "wilson": [
+          0.027014851001628076,
+          0.0801330188843179
+        ]
+      },
+      "false_certificate": {
+        "count": 12,
+        "rate": 0.046875,
+        "wilson": [
+          0.027014851001628076,
+          0.0801330188843179
+        ]
+      }
+    },
+    {
+      "case": "bad_mass_cap",
+      "budget": 32768,
+      "method": "minimax",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 27986.0,
+      "mean_n1": 2199.0,
+      "median_width": 0.7948976268347618,
+      "p90_width": 0.841639055509978,
+      "utility": 0.0,
+      "coverage": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "bad_mass_cap",
+      "budget": 32768,
+      "method": "equal_spend",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 16192.0,
+      "mean_n1": 8096.0,
+      "median_width": 0.5633658031507764,
+      "p90_width": 0.6090954769864176,
+      "utility": -0.09765625,
+      "coverage": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 25,
+        "rate": 0.09765625,
+        "wilson": [
+          0.06702402222215342,
+          0.14018486224554
+        ]
+      },
+      "false_certificate": {
+        "count": 25,
+        "rate": 0.09765625,
+        "wilson": [
+          0.06702402222215342,
+          0.14018486224554
+        ]
+      }
+    },
+    {
+      "case": "bad_mass_cap",
+      "budget": 32768,
+      "method": "proportional",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 26496.0,
+      "mean_n1": 2944.0,
+      "median_width": 0.7167649028030005,
+      "p90_width": 0.7619502696716965,
+      "utility": 0.0,
+      "coverage": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "bad_mass_cap",
+      "budget": 32768,
+      "method": "direct",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 16192.0,
+      "mean_n1": 8096.0,
+      "median_width": 0.44648904767461395,
+      "p90_width": 0.4922415977853104,
+      "utility": -0.6953125,
+      "coverage": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 178,
+        "rate": 0.6953125,
+        "wilson": [
+          0.6363862715072103,
+          0.7484637845764336
+        ]
+      },
+      "false_certificate": {
+        "count": 178,
+        "rate": 0.6953125,
+        "wilson": [
+          0.6363862715072103,
+          0.7484637845764336
+        ]
+      }
+    },
+    {
+      "case": "bad_mass_cap",
+      "budget": 32768,
+      "method": "oracle",
+      "n": 256,
+      "information": "oracle",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 10346.0,
+      "mean_n1": 11019.0,
+      "median_width": 0.561287173745701,
+      "p90_width": 0.6264561598674998,
+      "utility": -0.078125,
+      "coverage": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 20,
+        "rate": 0.078125,
+        "wilson": [
+          0.05114064056843023,
+          0.11758323829089878
+        ]
+      },
+      "false_certificate": {
+        "count": 20,
+        "rate": 0.078125,
+        "wilson": [
+          0.05114064056843023,
+          0.11758323829089878
+        ]
+      }
+    },
+    {
+      "case": "bad_mass_cap",
+      "budget": 32768,
+      "method": "abstain",
+      "n": 256,
+      "information": "no_acquisition",
+      "cost": 0,
+      "pilot_cost": 0,
+      "mean_n0": 0.0,
+      "mean_n1": 0.0,
+      "median_width": 480.0,
+      "p90_width": 480.0,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "bad_hidden_support",
+      "budget": 8192,
+      "method": "width_proxy",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 6048.0,
+      "mean_n1": 880.0,
+      "median_width": 1.166297585466384,
+      "p90_width": 1.308348242762611,
+      "utility": 0.0,
+      "coverage": {
+        "count": 43,
+        "rate": 0.16796875,
+        "wilson": [
+          0.12715856241588983,
+          0.2185963422419154
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 3,
+        "rate": 0.01171875,
+        "wilson": [
+          0.003993287123007758,
+          0.033881572667882304
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "bad_hidden_support",
+      "budget": 8192,
+      "method": "variance",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 5296.96875,
+      "mean_n1": 1255.515625,
+      "median_width": 1.0477365372173268,
+      "p90_width": 1.2017336783313857,
+      "utility": 0.0,
+      "coverage": {
+        "count": 18,
+        "rate": 0.0703125,
+        "wilson": [
+          0.04493554746197091,
+          0.10839432915401236
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 1,
+        "rate": 0.00390625,
+        "wilson": [
+          0.0006898821669617927,
+          0.021790975380582514
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "bad_hidden_support",
+      "budget": 8192,
+      "method": "minimax",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 6748.0,
+      "mean_n1": 530.0,
+      "median_width": 1.4022485493302348,
+      "p90_width": 1.590937353101631,
+      "utility": 0.0,
+      "coverage": {
+        "count": 110,
+        "rate": 0.4296875,
+        "wilson": [
+          0.37052769163836163,
+          0.4909262881715265
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 27,
+        "rate": 0.10546875,
+        "wilson": [
+          0.07350191137657121,
+          0.14910097533446798
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "bad_hidden_support",
+      "budget": 8192,
+      "method": "equal_spend",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 3904.0,
+      "mean_n1": 1952.0,
+      "median_width": 0.9531077802393872,
+      "p90_width": 1.1393232893270753,
+      "utility": 0.0,
+      "coverage": {
+        "count": 11,
+        "rate": 0.04296875,
+        "wilson": [
+          0.024159813300607562,
+          0.07529105546366555
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "bad_hidden_support",
+      "budget": 8192,
+      "method": "proportional",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 6388.0,
+      "mean_n1": 710.0,
+      "median_width": 1.2549433682906244,
+      "p90_width": 1.4045293974387485,
+      "utility": 0.0,
+      "coverage": {
+        "count": 71,
+        "rate": 0.27734375,
+        "wilson": [
+          0.22610219451112512,
+          0.3351687415535207
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 9,
+        "rate": 0.03515625,
+        "wilson": [
+          0.018604096092635542,
+          0.0654527704282918
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "bad_hidden_support",
+      "budget": 8192,
+      "method": "direct",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 3904.0,
+      "mean_n1": 1952.0,
+      "median_width": 0.9343595781300376,
+      "p90_width": 1.121510843544799,
+      "utility": 0.0,
+      "coverage": {
+        "count": 8,
+        "rate": 0.03125,
+        "wilson": [
+          0.015918258891511296,
+          0.06044160650774316
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "bad_hidden_support",
+      "budget": 8192,
+      "method": "oracle",
+      "n": 256,
+      "information": "oracle",
+      "cost": 8192,
+      "pilot_cost": 384,
+      "mean_n0": 2494.0,
+      "mean_n1": 2657.0,
+      "median_width": 0.9265715440252886,
+      "p90_width": 1.2238802178369614,
+      "utility": 0.0,
+      "coverage": {
+        "count": 40,
+        "rate": 0.15625,
+        "wilson": [
+          0.11689244351430939,
+          0.20577145777847722
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "bad_hidden_support",
+      "budget": 8192,
+      "method": "abstain",
+      "n": 256,
+      "information": "no_acquisition",
+      "cost": 0,
+      "pilot_cost": 0,
+      "mean_n0": 0.0,
+      "mean_n1": 0.0,
+      "median_width": 480.0,
+      "p90_width": 480.0,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "bad_hidden_support",
+      "budget": 32768,
+      "method": "width_proxy",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 25080.0,
+      "mean_n1": 3652.0,
+      "median_width": 0.5750321363986101,
+      "p90_width": 0.6134905243622178,
+      "utility": -0.1640625,
+      "coverage": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 42,
+        "rate": 0.1640625,
+        "wilson": [
+          0.12372760124959209,
+          0.21433030228654026
+        ]
+      },
+      "false_certificate": {
+        "count": 42,
+        "rate": 0.1640625,
+        "wilson": [
+          0.12372760124959209,
+          0.21433030228654026
+        ]
+      }
+    },
+    {
+      "case": "bad_hidden_support",
+      "budget": 32768,
+      "method": "variance",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 21936.921875,
+      "mean_n1": 5223.5390625,
+      "median_width": 0.5147154479267206,
+      "p90_width": 0.5632393550408837,
+      "utility": -0.44140625,
+      "coverage": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 113,
+        "rate": 0.44140625,
+        "wilson": [
+          0.38189072167350635,
+          0.5026542615014005
+        ]
+      },
+      "false_certificate": {
+        "count": 113,
+        "rate": 0.44140625,
+        "wilson": [
+          0.38189072167350635,
+          0.5026542615014005
+        ]
+      }
+    },
+    {
+      "case": "bad_hidden_support",
+      "budget": 32768,
+      "method": "minimax",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 27986.0,
+      "mean_n1": 2199.0,
+      "median_width": 0.6951395966647447,
+      "p90_width": 0.7339386839612448,
+      "utility": 0.0,
+      "coverage": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "bad_hidden_support",
+      "budget": 32768,
+      "method": "equal_spend",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 16192.0,
+      "mean_n1": 8096.0,
+      "median_width": 0.46208886300096697,
+      "p90_width": 0.5048850635934566,
+      "utility": -0.625,
+      "coverage": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 160,
+        "rate": 0.625,
+        "wilson": [
+          0.5642590524289499,
+          0.6820449834645823
+        ]
+      },
+      "false_certificate": {
+        "count": 160,
+        "rate": 0.625,
+        "wilson": [
+          0.5642590524289499,
+          0.6820449834645823
+        ]
+      }
+    },
+    {
+      "case": "bad_hidden_support",
+      "budget": 32768,
+      "method": "proportional",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 26496.0,
+      "mean_n1": 2944.0,
+      "median_width": 0.62201342625089,
+      "p90_width": 0.6573036568925152,
+      "utility": -0.01171875,
+      "coverage": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 3,
+        "rate": 0.01171875,
+        "wilson": [
+          0.003993287123007758,
+          0.033881572667882304
+        ]
+      },
+      "false_certificate": {
+        "count": 3,
+        "rate": 0.01171875,
+        "wilson": [
+          0.003993287123007758,
+          0.033881572667882304
+        ]
+      }
+    },
+    {
+      "case": "bad_hidden_support",
+      "budget": 32768,
+      "method": "direct",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 16192.0,
+      "mean_n1": 8096.0,
+      "median_width": 0.44087322914670046,
+      "p90_width": 0.48388448602357437,
+      "utility": -0.72265625,
+      "coverage": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 185,
+        "rate": 0.72265625,
+        "wilson": [
+          0.6648312584464792,
+          0.7738978054888749
+        ]
+      },
+      "false_certificate": {
+        "count": 185,
+        "rate": 0.72265625,
+        "wilson": [
+          0.6648312584464792,
+          0.7738978054888749
+        ]
+      }
+    },
+    {
+      "case": "bad_hidden_support",
+      "budget": 32768,
+      "method": "oracle",
+      "n": 256,
+      "information": "oracle",
+      "cost": 32768,
+      "pilot_cost": 384,
+      "mean_n0": 10346.0,
+      "mean_n1": 11019.0,
+      "median_width": 0.465175046915429,
+      "p90_width": 0.5278868320849864,
+      "utility": -0.51171875,
+      "coverage": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 131,
+        "rate": 0.51171875,
+        "wilson": [
+          0.45076751333371007,
+          0.5723234900313086
+        ]
+      },
+      "false_certificate": {
+        "count": 131,
+        "rate": 0.51171875,
+        "wilson": [
+          0.45076751333371007,
+          0.5723234900313086
+        ]
+      }
+    },
+    {
+      "case": "bad_hidden_support",
+      "budget": 32768,
+      "method": "abstain",
+      "n": 256,
+      "information": "no_acquisition",
+      "cost": 0,
+      "pilot_cost": 0,
+      "mean_n0": 0.0,
+      "mean_n1": 0.0,
+      "median_width": 480.0,
+      "p90_width": 480.0,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "duplicates",
+      "budget": 8192,
+      "method": "width_proxy",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 3072,
+      "mean_n0": 496.0,
+      "mean_n1": 72.0,
+      "median_width": 5.368104447236564,
+      "p90_width": 6.158608607466306,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 216,
+        "rate": 0.84375,
+        "wilson": [
+          0.7942285422215228,
+          0.8831075564856906
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "duplicates",
+      "budget": 8192,
+      "method": "variance",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 3072,
+      "mean_n0": 433.1015625,
+      "mean_n1": 103.44921875,
+      "median_width": 5.066336073747731,
+      "p90_width": 5.968680430282973,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 207,
+        "rate": 0.80859375,
+        "wilson": [
+          0.7559804291899548,
+          0.8520826594222026
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "duplicates",
+      "budget": 8192,
+      "method": "minimax",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 3072,
+      "mean_n0": 554.0,
+      "mean_n1": 43.0,
+      "median_width": 6.469081995793559,
+      "p90_width": 7.598205580763815,
+      "utility": 0.0,
+      "coverage": {
+        "count": 255,
+        "rate": 0.99609375,
+        "wilson": [
+          0.9782090246194175,
+          0.9993101178330381
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 238,
+        "rate": 0.9296875,
+        "wilson": [
+          0.8916056708459876,
+          0.9550644525380292
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "duplicates",
+      "budget": 8192,
+      "method": "equal_spend",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 3072,
+      "mean_n0": 320.0,
+      "mean_n1": 160.0,
+      "median_width": 5.185970891181039,
+      "p90_width": 5.76611843540438,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 178,
+        "rate": 0.6953125,
+        "wilson": [
+          0.6363862715072103,
+          0.7484637845764336
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "duplicates",
+      "budget": 8192,
+      "method": "proportional",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 3072,
+      "mean_n0": 524.0,
+      "mean_n1": 58.0,
+      "median_width": 5.430144485333496,
+      "p90_width": 6.975900928118671,
+      "utility": 0.0,
+      "coverage": {
+        "count": 255,
+        "rate": 0.99609375,
+        "wilson": [
+          0.9782090246194175,
+          0.9993101178330381
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 235,
+        "rate": 0.91796875,
+        "wilson": [
+          0.8778567119259035,
+          0.9457224080930946
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "duplicates",
+      "budget": 8192,
+      "method": "direct",
+      "n": 256,
+      "information": "matched",
+      "cost": 8192,
+      "pilot_cost": 3072,
+      "mean_n0": 320.0,
+      "mean_n1": 160.0,
+      "median_width": 5.071406594478279,
+      "p90_width": 5.651844357583171,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 178,
+        "rate": 0.6953125,
+        "wilson": [
+          0.6363862715072103,
+          0.7484637845764336
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "duplicates",
+      "budget": 8192,
+      "method": "oracle",
+      "n": 256,
+      "information": "oracle",
+      "cost": 8192,
+      "pilot_cost": 3072,
+      "mean_n0": 204.0,
+      "mean_n1": 218.0,
+      "median_width": 6.487487763882539,
+      "p90_width": 6.904875762740189,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 128,
+        "rate": 0.5,
+        "wilson": [
+          0.43920555858906296,
+          0.560794441410937
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "duplicates",
+      "budget": 8192,
+      "method": "abstain",
+      "n": 256,
+      "information": "no_acquisition",
+      "cost": 0,
+      "pilot_cost": 0,
+      "mean_n0": 0.0,
+      "mean_n1": 0.0,
+      "median_width": 480.0,
+      "p90_width": 480.0,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "duplicates",
+      "budget": 32768,
+      "method": "width_proxy",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 3072,
+      "mean_n0": 2874.0,
+      "mean_n1": 419.0,
+      "median_width": 1.8200413751775182,
+      "p90_width": 2.075802734672151,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 85,
+        "rate": 0.33203125,
+        "wilson": [
+          0.2771993280647148,
+          0.3918296237033514
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "duplicates",
+      "budget": 32768,
+      "method": "variance",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 3072,
+      "mean_n0": 2523.0234375,
+      "mean_n1": 594.48828125,
+      "median_width": 1.6593853618005718,
+      "p90_width": 1.9655867553187907,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 32,
+        "rate": 0.125,
+        "wilson": [
+          0.08995183318684266,
+          0.17113605913256094
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "duplicates",
+      "budget": 32768,
+      "method": "minimax",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 3072,
+      "mean_n0": 3208.0,
+      "mean_n1": 252.0,
+      "median_width": 2.2075061187675438,
+      "p90_width": 2.485400832751696,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 138,
+        "rate": 0.5390625,
+        "wilson": [
+          0.47787362687823687,
+          0.599096384338492
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "duplicates",
+      "budget": 32768,
+      "method": "equal_spend",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 3072,
+      "mean_n0": 1856.0,
+      "mean_n1": 928.0,
+      "median_width": 1.5296368571832804,
+      "p90_width": 1.857505521572974,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 4,
+        "rate": 0.015625,
+        "wilson": [
+          0.006092598203366294,
+          0.039479262709196654
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "duplicates",
+      "budget": 32768,
+      "method": "proportional",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 3072,
+      "mean_n0": 3038.0,
+      "mean_n1": 337.0,
+      "median_width": 1.9878305467249,
+      "p90_width": 2.2376630401352533,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 105,
+        "rate": 0.41015625,
+        "wilson": [
+          0.3516648037328092,
+          0.47130417046871464
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "duplicates",
+      "budget": 32768,
+      "method": "direct",
+      "n": 256,
+      "information": "matched",
+      "cost": 32768,
+      "pilot_cost": 3072,
+      "mean_n0": 1856.0,
+      "mean_n1": 928.0,
+      "median_width": 1.4132434789227415,
+      "p90_width": 1.7412761596528004,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 4,
+        "rate": 0.015625,
+        "wilson": [
+          0.006092598203366294,
+          0.039479262709196654
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "duplicates",
+      "budget": 32768,
+      "method": "oracle",
+      "n": 256,
+      "information": "oracle",
+      "cost": 32768,
+      "pilot_cost": 3072,
+      "mean_n0": 1186.0,
+      "mean_n1": 1263.0,
+      "median_width": 1.6636466981448366,
+      "p90_width": 2.164170749465688,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    },
+    {
+      "case": "duplicates",
+      "budget": 32768,
+      "method": "abstain",
+      "n": 256,
+      "information": "no_acquisition",
+      "cost": 0,
+      "pilot_cost": 0,
+      "mean_n0": 0.0,
+      "mean_n1": 0.0,
+      "median_width": 480.0,
+      "p90_width": 480.0,
+      "utility": 0.0,
+      "coverage": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "useful": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "abstention": {
+        "count": 256,
+        "rate": 1.0,
+        "wilson": [
+          0.9852161435741286,
+          0.9999999999999999
+        ]
+      },
+      "wrong_call": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      },
+      "false_certificate": {
+        "count": 0,
+        "rate": 0.0,
+        "wilson": [
+          0.0,
+          0.01478385642587143
+        ]
+      }
+    }
+  ],
+  "contrasts": [
+    {
+      "case": "complete",
+      "budget": 8192,
+      "primary": false,
+      "n": 256,
+      "difference": 0.0,
+      "low": -0.22572959483794833,
+      "high": 0.22572959483794833,
+      "clears_margin": false
+    },
+    {
+      "case": "complete",
+      "budget": 32768,
+      "primary": false,
+      "n": 256,
+      "difference": -0.0390625,
+      "low": -0.2647920948379483,
+      "high": 0.18666709483794833,
+      "clears_margin": false
+    },
+    {
+      "case": "small_omission",
+      "budget": 8192,
+      "primary": false,
+      "n": 256,
+      "difference": 0.0,
+      "low": -0.22572959483794833,
+      "high": 0.22572959483794833,
+      "clears_margin": false
+    },
+    {
+      "case": "small_omission",
+      "budget": 32768,
+      "primary": true,
+      "n": 256,
+      "difference": -0.40234375,
+      "low": -0.5721064394675774,
+      "high": -0.23258106053242256,
+      "clears_margin": false
+    },
+    {
+      "case": "large_omission",
+      "budget": 8192,
+      "primary": false,
+      "n": 256,
+      "difference": 0.0,
+      "low": -0.22572959483794833,
+      "high": 0.22572959483794833,
+      "clears_margin": false
+    },
+    {
+      "case": "large_omission",
+      "budget": 32768,
+      "primary": false,
+      "n": 256,
+      "difference": 0.0,
+      "low": -0.22572959483794833,
+      "high": 0.22572959483794833,
+      "clears_margin": false
+    },
+    {
+      "case": "shifted_reachable",
+      "budget": 8192,
+      "primary": false,
+      "n": 256,
+      "difference": 0.0,
+      "low": -0.22572959483794833,
+      "high": 0.22572959483794833,
+      "clears_margin": false
+    },
+    {
+      "case": "shifted_reachable",
+      "budget": 32768,
+      "primary": false,
+      "n": 256,
+      "difference": -0.00390625,
+      "low": -0.22963584483794833,
+      "high": 0.22182334483794833,
+      "clears_margin": false
+    },
+    {
+      "case": "near_threshold",
+      "budget": 8192,
+      "primary": false,
+      "n": 256,
+      "difference": 0.0,
+      "low": -0.22572959483794833,
+      "high": 0.22572959483794833,
+      "clears_margin": false
+    },
+    {
+      "case": "near_threshold",
+      "budget": 32768,
+      "primary": false,
+      "n": 256,
+      "difference": 0.01953125,
+      "low": -0.20619834483794833,
+      "high": 0.24526084483794833,
+      "clears_margin": false
+    },
+    {
+      "case": "verified_hidden_support",
+      "budget": 8192,
+      "primary": false,
+      "n": 256,
+      "difference": 0.0,
+      "low": -0.22572959483794833,
+      "high": 0.22572959483794833,
+      "clears_margin": false
+    },
+    {
+      "case": "verified_hidden_support",
+      "budget": 32768,
+      "primary": false,
+      "n": 256,
+      "difference": -0.140625,
+      "low": -0.3663545948379483,
+      "high": 0.08510459483794833,
+      "clears_margin": false
+    },
+    {
+      "case": "bad_mass_cap",
+      "budget": 8192,
+      "primary": false,
+      "n": 256,
+      "difference": 0.0,
+      "low": -0.22572959483794833,
+      "high": 0.22572959483794833,
+      "clears_margin": false
+    },
+    {
+      "case": "bad_mass_cap",
+      "budget": 32768,
+      "primary": false,
+      "n": 256,
+      "difference": 0.0,
+      "low": -0.22572959483794833,
+      "high": 0.22572959483794833,
+      "clears_margin": false
+    },
+    {
+      "case": "bad_hidden_support",
+      "budget": 8192,
+      "primary": false,
+      "n": 256,
+      "difference": 0.0,
+      "low": -0.22572959483794833,
+      "high": 0.22572959483794833,
+      "clears_margin": false
+    },
+    {
+      "case": "bad_hidden_support",
+      "budget": 32768,
+      "primary": false,
+      "n": 256,
+      "difference": 0.0,
+      "low": -0.22572959483794833,
+      "high": 0.22572959483794833,
+      "clears_margin": false
+    },
+    {
+      "case": "duplicates",
+      "budget": 8192,
+      "primary": false,
+      "n": 256,
+      "difference": 0.0,
+      "low": -0.22572959483794833,
+      "high": 0.22572959483794833,
+      "clears_margin": false
+    },
+    {
+      "case": "duplicates",
+      "budget": 32768,
+      "primary": false,
+      "n": 256,
+      "difference": 0.0,
+      "low": -0.22572959483794833,
+      "high": 0.22572959483794833,
+      "clears_margin": false
+    }
+  ]
+}

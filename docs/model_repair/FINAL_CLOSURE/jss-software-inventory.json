@@ -1,0 +1,980 @@
+[
+  {
+    "path": "CITATION.cff",
+    "original_sha256": "a5e50c13fd43b1f18fc973d9945d66a2b255bc83e2eb5d493b3b97d7e5acc79c",
+    "candidate_sha256": "a5e50c13fd43b1f18fc973d9945d66a2b255bc83e2eb5d493b3b97d7e5acc79c",
+    "disposition": "verbatim"
+  },
+  {
+    "path": "LICENSE",
+    "original_sha256": "a0a23da72797e101176cd1026887164ad9abaa4729f6af210396b3ca17b347e2",
+    "candidate_sha256": "a0a23da72797e101176cd1026887164ad9abaa4729f6af210396b3ca17b347e2",
+    "disposition": "verbatim"
+  },
+  {
+    "path": "README.md",
+    "original_sha256": "05420efe6335afebd429fb0e3ca2badb84b935e0afd7290967bb2fdc0810498d",
+    "candidate_sha256": "198e18b9c4480e7882adaabf29e9e2248748e8dc66196140ec01282b0a2ac7c7",
+    "disposition": "submission readme"
+  },
+  {
+    "path": "experiments/baseline.py",
+    "original_sha256": "16bfc4753ea7073f513eec064dd9ce2ef8c1f1bc738b15ccf651b9a1189ae5b0",
+    "candidate_sha256": "6db42fa6e92d7680ae669a2838d2fca20ef0faf4598e07a3cb001dcb80e02197",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "experiments/exp1_isolated_vs_shared.py",
+    "original_sha256": "6de006d705c9887dba47a4ab3c68fb4faf2debf2605cdd197c34b883449e27ca",
+    "candidate_sha256": "a8297b9ec3d8a9bae3ec6fd273dd0ba21899201f392ad5838050e3a011b84c2c",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "experiments/exp_ecology_corrected.py",
+    "original_sha256": "43015cd009ea037fb1762f77a9923f52792b944ac374e632432a556373bd090c",
+    "candidate_sha256": "ead5dc171105bb649829f0ef00c664efd516e8c283fb5615d54c935119a6400a",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "pyproject.toml",
+    "original_sha256": "94bef48abe38c3767f55eeb717685bf354386f627d1854ecf71ed82995b092ef",
+    "candidate_sha256": "94bef48abe38c3767f55eeb717685bf354386f627d1854ecf71ed82995b092ef",
+    "disposition": "verbatim"
+  },
+  {
+    "path": "src/genevra/__init__.py",
+    "original_sha256": "391f9cd0d63bc4022c54f37cad6c5a304ceaaf1b6e3d69caceca30d47928534b",
+    "candidate_sha256": "391f9cd0d63bc4022c54f37cad6c5a304ceaaf1b6e3d69caceca30d47928534b",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/analysis/__init__.py",
+    "original_sha256": "35c63658a7d03ac0bc8e7032b261f38f3e5bc8bfc0a6604df119e7b6adb5e39f",
+    "candidate_sha256": "5e71788cecb246e5e30bdb11abc268c6886408a6df273d56bee43f650b6adc1e",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/analysis/aggregation.py",
+    "original_sha256": "6156b42ead13a6c2ae5b9bd3c35c67a2b429ace5e963779243823bc88ca9f866",
+    "candidate_sha256": "95df7be5c8c498bef867c5f269bf6e313afcaf4ac66bb81ebe708380643b4fbb",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/analysis/comparison.py",
+    "original_sha256": "3a63ff230e7dbb93a1210ab71c92b7e61fcb80ba53ef017de252131e863f5144",
+    "candidate_sha256": "50736d14fe322bd06cf44a564da3524e29bce94d92168f4ea84b3dc0bf3828f3",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/analysis/counterfactual.py",
+    "original_sha256": "dfc558e9b64544198371e3cca0097fd407d9091a34623c9775a51ec2804a3ee3",
+    "candidate_sha256": "d02531a207e54cf84afed29fe7b9d7669028ca51c446da166e2a93456408ddec",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/analysis/coverage_envelope.py",
+    "original_sha256": "d55819811f2509c2c7e6def8263ed56107183864a1861d59f5c6580f18fb547a",
+    "candidate_sha256": "d55819811f2509c2c7e6def8263ed56107183864a1861d59f5c6580f18fb547a",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/analysis/evolvability_over_time.py",
+    "original_sha256": "a3e7b39f3962514d4429ab70900b67d180e33cd0e9e275c026a37e13486b8500",
+    "candidate_sha256": "4d7c6b61df7d93bfd7dcc2f1f3f4c1e8d7bbd992cc49939f5411c9bb7f46d3e5",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/analysis/learning_strategy.py",
+    "original_sha256": "66bb9ff60c6f10510b0e8975ebf1a2788a2720e655ec7016ad8a7bd7770e226c",
+    "candidate_sha256": "68854ff39721f1bdfe36b811119d257845f545a63b2ab2cc014c80c2a7c4c7cb",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/analysis/lineage_analysis.py",
+    "original_sha256": "9c92008da89f356b7b0fe72f2b4869709d621073b9bd4b0286d3f0bb9821b025",
+    "candidate_sha256": "55460afbdfb5e4eb7bba7bf0dac01b64234e1b4e0b1861fb531ce2241369e6ec",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/analysis/open_endedness.py",
+    "original_sha256": "9d46da115576aa313ed6b003145d128872a3b0d04d822d47b4f8179b110ceeb0",
+    "candidate_sha256": "49c053c2bb52568049a2baae12f58b4f00576cde69634c687ac46828b7cd5825",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/analysis/regime_detection.py",
+    "original_sha256": "cffe9abf97c7d36e056624973b319b432e043ca39cd068cf78a4a7cd0cc3147d",
+    "candidate_sha256": "371b84dcc7de410b4dac130a3bc63971a9e7ad8be2069f360bf69ddf52dfa19a",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/analysis/report.py",
+    "original_sha256": "c5c8120483f6abe92a382a1d401be4b0425253b1ff960b4831abfa0d629f3992",
+    "candidate_sha256": "e666062bdaf6b555f499eb6c7588bf46d49639564c11056b699c845a74fb152e",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/analysis/stagnation.py",
+    "original_sha256": "c948d84b9f49455f15765175aac911f1f696931179a8ce7557255a0cae9bd694",
+    "candidate_sha256": "36cf52f8b6a495014fa7b38d9ec7156f10bb7aad729dac718cd78eb36d4b3226",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/analysis/strategy_clustering.py",
+    "original_sha256": "d4b4aa85b9110c87f363e922bc4602c99570e92cd029440b7a80b01acb542908",
+    "candidate_sha256": "74c3e5e197d36847d71b37c9efa843e1ad1da95b9cd0ed171c1d6610700f4342",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/analysis/tradeoff.py",
+    "original_sha256": "81ff62e621f42028c2e0fe2c213035d85fc926be3273aecd332422f963d4c255",
+    "candidate_sha256": "e0008cebb7b02f4187c71d139ea8bd9dbecd253e2c7c0d1b677434d9898665c0",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/analysis/validation_design.py",
+    "original_sha256": "696ec92dc92579e844c52290c117327704c98176f369028c28a65cbe7f99704e",
+    "candidate_sha256": "0e7ff85550d7c92bda269f239ebe483cdd8597059859f66afb1e4059288c5f64",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/arrays.py",
+    "original_sha256": "0f4e2bd324ffa6914d96fdee3f416b6d033c90d57677351839aaa07ce0576306",
+    "candidate_sha256": "0f4e2bd324ffa6914d96fdee3f416b6d033c90d57677351839aaa07ce0576306",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/artifacts/__init__.py",
+    "original_sha256": "691d76c271250d68fe7d8d825b4e156c4c9322f45f2024fa83567ab1c0fbb629",
+    "candidate_sha256": "3685965c6ecea25bd17b27d1a0952f0f7b7bfbe8cb6e66e018322b01cf2e7735",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/artifacts/bundle.py",
+    "original_sha256": "80879b7afb14cafc42591d882a950b6dc71a4bfa9a155d2feeeb920dc52c84ed",
+    "candidate_sha256": "fad512f2404a605664665a2807934ee3bec3a3326dbd09ab336ea3feb0dce141",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/artifacts/captions.py",
+    "original_sha256": "19ed236e781a41546f60124a377c4373c5cd1b029cf859d6e4c1609b4735da94",
+    "candidate_sha256": "83d3c82497af136e983e7c77366a960009073c85f350e0c5e0c4d58daff9c398",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/artifacts/directory.py",
+    "original_sha256": "1f8bcbed1951200a92888c2d7aaeda17871f78910bc4cb19b98ab829cb9697de",
+    "candidate_sha256": "f58f5708e237b1be160bff90a3d1c5da316fe542aa651cca708b359d682c8bb7",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/artifacts/figures.py",
+    "original_sha256": "2f26a69830055bb1198eff1868e27253b1d95844382b0ca47d092e74500a4502",
+    "candidate_sha256": "e0546ed64adbfceb4864c0ff272e9e104187732c908ebfa0b22eea55873b8da3",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/artifacts/index.py",
+    "original_sha256": "e1ed29826fd9423c5b77fcc78e231a70e82f9358be5a9c3961817a05e4892296",
+    "candidate_sha256": "e73fc9539bd3a1a4607af68950144bff19dd1f1eaa3894b8addddbf141b90775",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/artifacts/report.py",
+    "original_sha256": "968d7be9aae96b109bdb5aa07e0f154828bd8c2905bb710913ae66643f9c84a6",
+    "candidate_sha256": "f9145de4eafd5ceab9cec8e873a1de7141fd264b97b888e444b46820ae59bad7",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/artifacts/style.py",
+    "original_sha256": "ccbac955a1a8a244afccb12de08bea3214728317725ac218d0492b174ca5009b",
+    "candidate_sha256": "8fa80764679264db23c4e0762ee9378ce724ef309a6901a2a0924c272b5b09b3",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/artifacts/tables.py",
+    "original_sha256": "99faae7e29ea93b672cad468edee92befe617b1989c2f699da72fa879ac12104",
+    "candidate_sha256": "ce46014692cea214c3ae08be5564b337b18e72b42fd21ff8edb30e00e5a68f7d",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/campaign/__init__.py",
+    "original_sha256": "9ce8e0afbf0ceea7372427e2840103377c22e185ae7742693e2824bb42798b6b",
+    "candidate_sha256": "daf9b2f36822c790ca064bc3951fe6c7c754ca514843dce475a00b18e033fa34",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/campaign/bundle.py",
+    "original_sha256": "92c4fa52a9748df8205fd72984ce11256a401a6665eca5ffd5af11d4df96fdee",
+    "candidate_sha256": "2d55fa6243bfbc014f1efb0913cd511f98b885e12102398d46d380c17a1da2c6",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/campaign/checkpoint.py",
+    "original_sha256": "711164787535d3dbcce316ee8d92fe039e112199b5ede7fd733f03ce2a992770",
+    "candidate_sha256": "37c11edc14346eabc959e0035922cc6622f0d90457f55503e8bec544229a7110",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/campaign/config.py",
+    "original_sha256": "de10b1da676bfc9358cc17ffae77d9c893fb3bd60e1b0850d7c5ac706156005d",
+    "candidate_sha256": "a282cece379554bdf70fbab362d64699b1622f65da8939ce81095ba309b017bc",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/campaign/multiple_comparison.py",
+    "original_sha256": "55f70f0f81b38d988bb379a96bb7dc1982a19864b6ded121cbfe384891d8e8dc",
+    "candidate_sha256": "0199428098116c284c1644e7279c334400e896061375b5a787eacec6fa08a3ab",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/campaign/report.py",
+    "original_sha256": "473c2ee33d8585d6dd58266931b700fd148424c1be26cdfc2c1adb97937c5ce9",
+    "candidate_sha256": "ef41fd771929693c3b9d66efebfc2a576691db7d24d47e9927023ee0fec8c2f4",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/campaign/runner.py",
+    "original_sha256": "4bed23bba62fa5fcedca57de2af318b115451a5c9625f72f11a07219f8ca3810",
+    "candidate_sha256": "8707abd19e5f0563b8fdee2b217a54b1e7982d1e73e36f02d22b3e88ef3ae571",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/campaign/seeding.py",
+    "original_sha256": "730360e5a29f9aa2d27304a0ec3fb10bee5520a0aa51fe032d1c52159c3f73f6",
+    "candidate_sha256": "0d8683433c3fc0986d314a4f1d3dde7d983f5e9c9738d2101e9574cf12d4bb04",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/cli.py",
+    "original_sha256": "c03af6feccbb47aca77b53e225a5c19f3d38643af7fb5303214d7c18aa43c9b1",
+    "candidate_sha256": "29c85a86b98a5f669a3264f7139c420d7a93b7d0493a229f7bcab2b6cf505659",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/discovery/__init__.py",
+    "original_sha256": "029ac60b2dc7f3e6d2b3717deb512420478b9be9e35ab91125b7611d46ba6544",
+    "candidate_sha256": "1e43b82cc7cd89b3a25bd72057b31bed36acae144d9acb353aac088b99c0434f",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/discovery/anomaly.py",
+    "original_sha256": "2f724c5abe77d4a4a17188aa4d50a5773309ab8355d2b0c71a8bf63177edfd2e",
+    "candidate_sha256": "010b2bb6603368cad813f3cdb5f45e92a2dcf5939c0126a09c49ac02ab4c9467",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/discovery/contradiction.py",
+    "original_sha256": "f05723fe3bb2ea2261f84b1da9ee872def0d821889ef044e9fed6516d181e586",
+    "candidate_sha256": "bc3c3d5a273d7c0906fb873dd4b5aebe69b076fce386cf3f01654ea5cb64bb3d",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/discovery/correlation.py",
+    "original_sha256": "a2282d7ae311ef6a914a38ce931afdf57aeace443724c9ab545ef9cbefc7ce22",
+    "candidate_sha256": "e9173dcbcc1ecd4cb8012900f04bf9b35abaa1be8c4c457524ca700122b45975",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/discovery/followup.py",
+    "original_sha256": "712d63b37e784619971f5ab189a2fafac1aa4956eccb18bbb2566289991f0830",
+    "candidate_sha256": "660fec97b95a7ce2a256bb277981e8e506227d50f2305e601f17120792aa0e50",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/discovery/hypothesis.py",
+    "original_sha256": "b950332d586ecf67ff29e965ace5b5a736b5aeaa660d4af54ef05363596cecec",
+    "candidate_sha256": "0011a006062e826d89acee5c7f76e48be5461f9d903a7e5dccf5165e26711f48",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/discovery/loop.py",
+    "original_sha256": "a4a9d937bf8fbdcea67e041d7644cee6b26477be395e66ccaf2a783055ca6b39",
+    "candidate_sha256": "8ce027ceecb9c06e2cf2c329d8951fc8612c8ba9b011fc845091519f55ca65cc",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/discovery/memory.py",
+    "original_sha256": "a2add13a89a2e87a325ed205a608c2c2bb40adf1c5ebe86c468fc5463a16a0fc",
+    "candidate_sha256": "352159ee0fac9a926b5fc0b8cdbd0b96f90c164a6198fb0e8f296f2ff9273701",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/discovery/multiple_testing.py",
+    "original_sha256": "1c4c71461c50b2611295683b724c359144e00a45c556acb346b5b1bc7bb40050",
+    "candidate_sha256": "e8fd2375df4a151ee46f469f90f4fef86927e2b80936d6381bdf29f6796c10a5",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/discovery/phenomena.py",
+    "original_sha256": "d0605346f5dbb8e6dbd348c889848e1b5cc1bc2752a4e2390dede5c84cf57454",
+    "candidate_sha256": "b1654ecfb44ee0c98efd212db5143b95b84e54c4d39c2091ed26ead1a7cd2ccc",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/discovery/replication.py",
+    "original_sha256": "412a48f4bb26455c58730f3503a238cb01064662ad7d29a40f4c4d27f9ceb543",
+    "candidate_sha256": "5dd223133b447b78e1e7b0c3c10b090a0a6651f6aa1263ddee969a930767daf8",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/discovery/report.py",
+    "original_sha256": "cc6beadced5b6a9550c1200c4c544738bbde69127a2c819a6473277a93a4c6a5",
+    "candidate_sha256": "3c5f9df67df254855e17217285b654e911744cdfe27cf3ee2b7f54197e2374ea",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/ecology/__init__.py",
+    "original_sha256": "af23c31cfcc6bbb2bfb9efd2477c6af39a2105cf01667f091cdebb0a0962aca2",
+    "candidate_sha256": "9287747f34c79a1e20772741d5baff62902fb8447d1c3ea36d8b155e838efdc3",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/ecology/coevolution.py",
+    "original_sha256": "2dc5e6c5a34d9387e8567e7d0a8e9a7edaedda6a3c4a26a446d79672d2c988f2",
+    "candidate_sha256": "2bc6983e6ddc58ba4b431317b2065a4ad79e4c3df66874a1ed772550894ad3db",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/ecology/competition.py",
+    "original_sha256": "06acf4d3faed39acfccfb431c2b6327bc7cfb5784d3ba3f8378382cfe4e3356b",
+    "candidate_sha256": "37a773fc4b1b1385c2e39b37cee0357c2d1f61c6c1bd29e477c991bdb1fe68d4",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/ecology/hypotheses.py",
+    "original_sha256": "6c517cbf3d5bc51616b7cecc5f25d9531638e2ee2664f5550ffe4017181f708d",
+    "candidate_sha256": "8938dbd682cb81a73fb5f4952503b9d7e6f78563646116a39ce50f3f57e0e187",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/ecology/interactions.py",
+    "original_sha256": "84e707370faace79398d0bdda9531288d42c6835af32ebf126513eaffce849d5",
+    "candidate_sha256": "9eb661461df0aacb6f47e4cc68df3d3e35e900287703a150e53db3fb6a421ecd",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/ecology/network.py",
+    "original_sha256": "4eda7affaf5ece724b13644eb5952fb2a42c1324cc5e05ccdf9a0d6fb9900833",
+    "candidate_sha256": "88d8882d41c9813cddac0d04445d4112cb3d402de1986a036fbecf7c00df61dd",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/ecology/niches.py",
+    "original_sha256": "c9a7a49d87751e2bf48d146e14ef1816cda0c6b56963713d3571924732db02ff",
+    "candidate_sha256": "428a3bff0117149c4a277b7df75d154bda204b1f54b13d7ba4080915e1d283cf",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/ecology/regime_transitions.py",
+    "original_sha256": "eec79ca1bab4c286d416053554a80a4857bb583b33fdcd868f92595b05c46259",
+    "candidate_sha256": "825583bd7f3859f8db85e12d7d904eae62d36ac5d4be55b5cce07932cd88c9a8",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/ecology/roles.py",
+    "original_sha256": "becc0422b15ee9f0158716fb9bfcdd3e2b418b58389e5c2f05ad444a413ed738",
+    "candidate_sha256": "1da19508eb518610797e80e3cce9565093ce1469ed004a4fa759e8f4380b495b",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/ecology/spatial.py",
+    "original_sha256": "98038f3f993b86c8de80ab8a071aefbf2e34232ab7b0a15ae67cee61409865b0",
+    "candidate_sha256": "8c7c5f0168b49a8aab7e0700799ad885aa3976ada2f3e79a482267d1cf003dba",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/evidence/__init__.py",
+    "original_sha256": "8c95094040273e7c2e904bebd1b14a28d7e112204bfde2edd00726d8faf4fb97",
+    "candidate_sha256": "46b162005058a68c47a5e5e36bf73f527c33fc81773031f98f5aa97c253b63e9",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/evidence/build.py",
+    "original_sha256": "a48ba3627c14215caf2bfc4770247f40d103fe4cf9ee6fe6dfa2aba58eb57394",
+    "candidate_sha256": "5f9c1eb973b73e7061a0dfeaba15750216bebc5ac3fdaceb83b074ad2ba86248",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/evidence/checksums.py",
+    "original_sha256": "c225856540bd4f72b4825c73f25b0bcfedbe5b2534c5081789dbf3c8a4308d84",
+    "candidate_sha256": "880bbeb15f7c2c2f7f7931aeb32631c10be2ef372ed08177637fdaebad78e89c",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/evidence/manifest.py",
+    "original_sha256": "27da99e94f2aeda41dadcd8fd182cf5a28fbe32f1e92aedc1bf31be4f6c18cfd",
+    "candidate_sha256": "d559dee62bc56ea18c45672f6e2c1369ca9a412e41bc6f26970d9a5c750802e2",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/evidence/metric_registry.py",
+    "original_sha256": "41887825209dcff3a337a9c0e4879736cd14c57a32c4a3b29ef8aa8822fb77f6",
+    "candidate_sha256": "80f81c0749fbbec973b2f7b24385513566dcc8d80e35ff13da7559ce0165d766",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/evidence/research_question.py",
+    "original_sha256": "ead96b1980fec1aa0b0ba1711b75c04e734cb8b87d73c95ea6a3b75ffc9b9314",
+    "candidate_sha256": "8567dae1dd1332a02fa6544f179b983deda52f8c3e0e0875ab4c70086d158f6d",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/evidence/robustness_classifier.py",
+    "original_sha256": "511f9e7b16c8e30cb972482a0ac781fa1b287e76b18a06b52f1e92e762f9e0a2",
+    "candidate_sha256": "8f95dbddd11d8cf499592766e964222c2572bd46e47add6891bb517cf64bc1c4",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/evidence/validation_split.py",
+    "original_sha256": "ead5164a952034ac630fe4b65aaaeeaf739bd1dc42a9ad6833f24ec264b309cf",
+    "candidate_sha256": "ec7137b97b4fa3c6db0acf6b33af9c877e0a8d35377a55a852c029daf67cf244",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/evidence/verify.py",
+    "original_sha256": "517b0bdd5e97c2c84511745790a6df509d8cb8c89d1cf8db511302b9aba51e94",
+    "candidate_sha256": "517b0bdd5e97c2c84511745790a6df509d8cb8c89d1cf8db511302b9aba51e94",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/evolution/__init__.py",
+    "original_sha256": "b2f5cfc2cecb184c2f611dcf990f9458b6a0c8dad1f175e4956a844fc3727aa4",
+    "candidate_sha256": "cb2bf2c635dd65beed94ec2f58a491b5e1f8d4141136b8b292ebd8df5422d0a7",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/evolution/continuous.py",
+    "original_sha256": "a741803cf3d01545c9128faec36bdde074430da8a0886678edb682485bbf1441",
+    "candidate_sha256": "dfdf10f7114ba14144389729f7a174328975385ccf56e502f17a5ddcd7c9484c",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/evolution/engine.py",
+    "original_sha256": "ced609d7c081dd845bc884a3151aa0be341cc1a3294cea352c327f7b73deca8b",
+    "candidate_sha256": "daa57708ee7ee191758387b4900e872a7b867090424c5e4bb1a8de7e6b3d8086",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/evolution/fitness.py",
+    "original_sha256": "8f82d1ef2953774c7095c1b2c450bc7b5c82f639b66a20e52af0d9afec78daea",
+    "candidate_sha256": "b0104cace8bdd5aa90c5628c782991e3a8bb92422846dd533daf4f46a65b038a",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/evolution/lifetime.py",
+    "original_sha256": "037aa2fed9f2239dccc5afb1c674fe23780ef575750aad2fa70673c78fb6bde1",
+    "candidate_sha256": "6d0e0cf4402c4a0dbfb3b9144f619f78fb56f190b8edd7d5119c6dec3515ee3b",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/evolution/lineage.py",
+    "original_sha256": "2ac71a4134bd1650c4995ca27bdee75418ef82b0746b59f7fbeeb5bb39ab9ff3",
+    "candidate_sha256": "1b585e3a8ae1d0067c9c295f43fa5e05b63228e791d3ccc3610a5adca0737d15",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/evolution/population.py",
+    "original_sha256": "6c077877b1ab30c6d2a0c3a9ec362ab2ddc9955dc1158a25abebd014403ccdd9",
+    "candidate_sha256": "6aba35fc5546f80b5f52f9cfa779fa147688540605188b92757fb50f5c34eeba",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/evolution/reproduction.py",
+    "original_sha256": "4803b49d28839563f6cc2a41d02700d4cddf0cfec8faea26b98bc4b3758944bb",
+    "candidate_sha256": "db6952b842cb5578a35373ba4356c3175b1446107ccee3f99f02a308e51e1fc0",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/evolution/selection.py",
+    "original_sha256": "dc781dab656a52e7dbe7568181b1ed6c74a8eda3f41f34e2ea2421b6332c8c16",
+    "candidate_sha256": "aa57e9ef48ce893ef3769abf4cd6e29bcce64add86dc6f0874edc944e5a1b0f8",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/experiments/__init__.py",
+    "original_sha256": "8792e24bf7bb374d83f4d2e285f1591ffe67c32097087377298d0c7575a8fec6",
+    "candidate_sha256": "704fee4590c11506276feb99910fbfd6d90c325272c8e73b09f525cb3e20140b",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/experiments/_resources.py",
+    "original_sha256": "5e287057afca87bb3902601a87b9f89a162be105179aea43f50ea7e13668f6de",
+    "candidate_sha256": "5e287057afca87bb3902601a87b9f89a162be105179aea43f50ea7e13668f6de",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/experiments/conditions.py",
+    "original_sha256": "1dda8b0877af1c7ce65be025ef6c985457520547f0680cf8497333144e82570b",
+    "candidate_sha256": "25d9d61986e0cac8d704e6503d20d08405d8d02c0d0eeeeb8670b3efe98bfb84",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/experiments/config.py",
+    "original_sha256": "0cb15079541c4475edb7bda4d0010b39177b67b968704bf8974b9e21dd7a4067",
+    "candidate_sha256": "0cb15079541c4475edb7bda4d0010b39177b67b968704bf8974b9e21dd7a4067",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/experiments/matrix.py",
+    "original_sha256": "73fde2f97ee24ee9339381311f78b967b640cbaf035dfcbf8089f907dbb4540c",
+    "candidate_sha256": "34750ae9102a3a359e1e1931537d0a5210ecdb6ff8c60e1c68439e1cc9e7d4d2",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/experiments/result.py",
+    "original_sha256": "ae09a65a360d9edfa127c42df5d8b7bc26d1c2d42e96871eeda30f1d070380bb",
+    "candidate_sha256": "4ef80e9448f87e2e16911668f46ed199c75cb015b723a4b0095440edf4d928ae",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/experiments/runner.py",
+    "original_sha256": "4249a560eca7965c17360c189e37d118aa99036e9863fe4e02be81f1f7fbe708",
+    "candidate_sha256": "d7d4af42270642fc4260e129f116479aa7108d444edd85f2abd4bd8adbf820ff",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/innovation/__init__.py",
+    "original_sha256": "4a9de7da925aa3fe1805d271a4a51d28ff59386838f1956bd253a87c0edda996",
+    "candidate_sha256": "4a9de7da925aa3fe1805d271a4a51d28ff59386838f1956bd253a87c0edda996",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/innovation/activity.py",
+    "original_sha256": "b1353333a1d7fb6dc0b6c680ec80401f7c1c201155bd7b9f0663f16067e46ca5",
+    "candidate_sha256": "ce6b09220fa4c49812e8c369cc7251424044d6f98d0ac3afb526de824ab5de83",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/innovation/analyzer.py",
+    "original_sha256": "094b520ec9d205a53ce4b29f3f7ec2cf3bf577dfe2d4c6eda493b6f3e6c26d37",
+    "candidate_sha256": "65d4f0f8c3e71f11ff5964c66881e19c5c48dc5b64a84260158a7d8d6cbcb60f",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/innovation/dependency_graph.py",
+    "original_sha256": "e88313899f2b618a2cc52b85c8e13ce5868ffd2d0d6fc2f076d665148df642d1",
+    "candidate_sha256": "4f693776a038c5a135892221b3349c0bbf7ef765d166abd66ba4e4b5a0f6ee7d",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/innovation/events.py",
+    "original_sha256": "f72aea0c0ef62c67d33569fe2104e3beaa9710f8c1d28516a96c6e94131008ab",
+    "candidate_sha256": "841cd370f2025d366bb17eca6a760251bf93e1f762ed172af7b2dca0983aef7b",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/innovation/phase_space.py",
+    "original_sha256": "5e0c71fc4bf2c6f2808f48c1c42dda5e779afecaa7959d6f4da0168fb6ebae50",
+    "candidate_sha256": "839d44b0d66c94b37fd507b1ea5b77a8fd7f51ad15bac4d0587c7d46f5a67c85",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/innovation/potential_vs_realized.py",
+    "original_sha256": "cda01f3e8d372b1c90f0b2c3da19e057167469f7b7ba5176e6cfcf3c1e12374d",
+    "candidate_sha256": "26f4caec90464571b680ef72acd1dc801a583c00bc0db401fc95c38251718951",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/innovation/quality_gates.py",
+    "original_sha256": "4f7f5a737af2723583b7ebbdca2b44a47e35a0ec45fcfbb88c45017ec7e1e003",
+    "candidate_sha256": "8b18e5460eb393c5c7fca6ecd7ef86e105ca125a7fa5bb61c34fdfb14d54e8ec",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/innovation/report.py",
+    "original_sha256": "2e6443e751e01b904de73c86d6e557490614a50ae6fdfead3c052decf95ca7b1",
+    "candidate_sha256": "72b6ac01846e01ac74009f582df38648a0fe771d1c265abc004cdc2d97625a2a",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/innovation/trajectory.py",
+    "original_sha256": "dae4143c1883fd4669e801b9b09a4344500ebe587e38b7b8d0984471261b5946",
+    "candidate_sha256": "b9f58353db6456f184d16909db8887b37d24ed052324a4d56e67a4c42ec52cd2",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/literature/__init__.py",
+    "original_sha256": "cdfbede8035e0dd1f399d0c2e26c4e483d66d01a217df7e47922728219a78869",
+    "candidate_sha256": "023dbce6ab32e779d59f996085f9107d544117b0f65c7fbddfe56dc31dd41b02",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/literature/alternative_explanations.py",
+    "original_sha256": "b02e0c42359b1fefab93deb84c93e84fc8d798d5e189667bcabcdc1c3197bfd6",
+    "candidate_sha256": "cdcfa4c4c76bbc408b50db6204af47611b9cd01327b722c6027a52983849cde4",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/literature/boundary_search.py",
+    "original_sha256": "be529bd663f1cf7aaeed0287f4d5523b8d663351e06dceb29227ec03aee103b2",
+    "candidate_sha256": "dfbd12f92cadafee6536e9a48e578b573abbc3719b3a1c64df7ce6ccd5b7bba1",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/literature/cases.py",
+    "original_sha256": "3f8676c54e973838a38347e4f05b74a7d657a8508eb3cd6720ccdff46f6f1687",
+    "candidate_sha256": "a1ba131e26cfd309e7f5c942f40f3e47c2ed0a9a65ad0106286e154f9f78e558",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/literature/claims.py",
+    "original_sha256": "e31cc8b9814677aa0395bf6734deca6210ef942e95950e6722f370fd28f26a00",
+    "candidate_sha256": "2b0a032dd8f6448e9c114d7d3375e30a2cbdd3a647b28abd88576539439e867a",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/literature/comparison_matrix.py",
+    "original_sha256": "64e9e1bc7f296809cc5da5e740686e13bdbf6bae07b7fc60643140a866d9d09c",
+    "candidate_sha256": "440f453f921bde327e1e72190e7cc44511342896d381120028f945a07b2b106a",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/literature/falsification.py",
+    "original_sha256": "bb33d0ffae0b0c6e606fd3263e9f06dacd728edfd977ace41bcbe05eda867f4e",
+    "candidate_sha256": "d2d03d5c430c920f81ff2c48eaa865cb159655228b21c4177eb9f2975e8ddcaa",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/literature/quality_levels.py",
+    "original_sha256": "d3e4f7a7d828935fac260e69440c60673f7b7a79f2af66217b66badd08900fe2",
+    "candidate_sha256": "05159c54405acaf33656769c37281964559b00aa907a3b90172891d3d683111b",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/literature/registry.py",
+    "original_sha256": "08a6fd38851a4186f769b676466be8e97fb6fe24c50e8992ddd3a24cce0e38e4",
+    "candidate_sha256": "ab1d2413a31eaa8dcc2424780f68a16ac2e4024c2919f3ada7713c4211669956",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/literature/report.py",
+    "original_sha256": "e7bca1d3ec52ca1ab146ea8d89192bb3f5a46a9913c60c8693fd5c1a7719c4e0",
+    "candidate_sha256": "ddf028a7cbde2758221d61c0e40c637d8a9ad5d5af56c81cffb690fc043cef04",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/literature/runner.py",
+    "original_sha256": "08147e424a2e4c2d6d80c2578330c7b2e231a4cd53bb428bcfa76f9091598d84",
+    "candidate_sha256": "b7b9171793e118badd2d026977eef5d0280a83cd2676e4f1cf6cd574819dfdc3",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/literature/spec.py",
+    "original_sha256": "6e8ba0045512e279d50fa6bd9c66ac8b5008209f5d3c62618e6e131d119571c4",
+    "candidate_sha256": "ca5b5686018c2a21ad49292410e1e030345cea8528f7245b5a941f0a413b1849",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/mechanisms/__init__.py",
+    "original_sha256": "2eeeffa221788c611bf37f741221fc5139b9fe41a66984a0697fcff9977997cb",
+    "candidate_sha256": "a74ca69e6b038f032a00d5615e85cf7addd49928ed196ed54148ca1f2c50dc20",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/mechanisms/causal_chain.py",
+    "original_sha256": "e30752f09176e78fac779d78a690b61e53740e9063c41a9a5ebf97fdae0d876a",
+    "candidate_sha256": "fe39025e9cad2c52c76f7da266cb0b8832523a8dddf0e64ae05e9ee0f14db20e",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/mechanisms/definitions.py",
+    "original_sha256": "da911c9f21adf1abdad5fdb0dd0333381dba410848ba2f9fd8fd9e1cdf157f54",
+    "candidate_sha256": "60f0f0ca03314bb961d546bb364e50489c6cb1f089e3283f8f81801a065abcef",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/mechanisms/generalization.py",
+    "original_sha256": "e53c4132ac2905fdedfff9eabd5a57d97523921e948253f742b544b4e11d40ea",
+    "candidate_sha256": "6a84f12abc875c69feaf97df49daf74d4e28963994ad9885a1a11a69ec9ad62a",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/mechanisms/learning_strategy_evolution.py",
+    "original_sha256": "e4c24239e5802f51b74689a9569a1d57f3cbb0948262481fc4af7dd69287a06b",
+    "candidate_sha256": "85e70caa1ec946b30341b9eed5ee859863aaa1a10851c99add350f263204dc03",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/mechanisms/mutational_landscape.py",
+    "original_sha256": "4571bea805a268184ec62872f8e6aa4f2d4030dc0ac80d2648d0642f1c81eed9",
+    "candidate_sha256": "471a7dcc061cafe944eec2ce10b414f78a4a4b99add67d5fba190d793bc8690c",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/mechanisms/plasticity_cost.py",
+    "original_sha256": "ea7348aad842280699c069beb82114949b9ed67b71c20f5ca08123dc922e7d79",
+    "candidate_sha256": "35150f34a8348b119956b715c2bceaa2777b2c89eeb99b5004f258b6b5501534",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/mechanisms/regime.py",
+    "original_sha256": "b54dc68cc75a011d6547878bd89d5ee1e8a4523d24740c40b833147a20809610",
+    "candidate_sha256": "8e8801e9d86bdc23de145a95f4023484791e2d1ce04c356034110c5a2feae577",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/mechanisms/report.py",
+    "original_sha256": "7c607e652fdaffbb609cc6de8cb03c4ec892235349b5790045673367b4392e99",
+    "candidate_sha256": "7c607e652fdaffbb609cc6de8cb03c4ec892235349b5790045673367b4392e99",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/mechanisms/robustness.py",
+    "original_sha256": "8ff4ad3e35a65b20e68eb2a61421a09084597bb924cba61ac690c64529344995",
+    "candidate_sha256": "401ae7a654aabd817f9f38fac9fded6bf07cbdfff43b33d5f5249a8442e63973",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/metrics/__init__.py",
+    "original_sha256": "ae6229d8d178e6c3e9540df63363a376aef11bda66482d581e96c7caae092d76",
+    "candidate_sha256": "69852fe66f83eee4ff041382749291e8433683b50a2e4a25ecf2ec1154687eb7",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/metrics/adaptation.py",
+    "original_sha256": "32e72eb21105b6169aa6b5639452f993fdba6f6702d59b5ed24f7228193f57df",
+    "candidate_sha256": "fe1d1c42978b03b2d09ff4ef35d2abe995d7bb0ab57faf8f7316a18832bd5b50",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/metrics/behavior.py",
+    "original_sha256": "b8dee65158e86a7cdef415f9aa5702e4990f8ba4cf64b8490b3bb07ed161abf5",
+    "candidate_sha256": "0fe6657406a7e8f45234941bec053fb1752afaed4ee701d64c418fc56a0874b5",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/metrics/distribution.py",
+    "original_sha256": "3612a0b68767c3010ddd40789dcbb0ce8c0fb391ba6104321ec125257c7b637a",
+    "candidate_sha256": "24aee168da0efd25d85f45aba9566a63cedc9e467ecb3f0eba183a867e427593",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/metrics/diversity.py",
+    "original_sha256": "c65372ea30c802da7cd13e9f3c86e55dc18b6818e2bc5fdf057baf9aa3c8226f",
+    "candidate_sha256": "7afb7eb554087d14fa0290facfc0d44e3c8851460e03c12ce60083e91a7dbd33",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/metrics/evolvability.py",
+    "original_sha256": "a7ae85af124dfa4114f0b93382882ea70a6741b623f13dd1cff21e96fc5e0bed",
+    "candidate_sha256": "ecf9bd74e1f7441b8861cc94d54cf1aa441d09eb8c192fdf1c193fceabb9baa9",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/metrics/fitness_metrics.py",
+    "original_sha256": "f4cb6ea7988dce73e00383cd775dc66eaa8df39f7d3d2b9e9bb817fe3b26da67",
+    "candidate_sha256": "9ec154bdb6864f59aea60a11ec838e03cb3a606135994fbf16b07cfc8a397687",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/metrics/novelty.py",
+    "original_sha256": "2c0c9e2bae842c6b5595e44e2dfad56041ae96bf913203fcdb0dede8737ca6c7",
+    "candidate_sha256": "7a92069099269a65d7eb17d65320dd296654a31d1a13b360f572742f42a90c3e",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/metrics/trajectory.py",
+    "original_sha256": "81e75ba2d0c5ab0c059e5cb20c98f2e21d21fec222da6be59fac9650ab4f13ee",
+    "candidate_sha256": "21e10840305b5970f595d74668b3e4973038e6db15e229cd19309e061a5f88a7",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/organism/__init__.py",
+    "original_sha256": "33806ec1bb5b388edea2d136ddd4f1d97e386caf52506d311983d93328604477",
+    "candidate_sha256": "0bdca267f3b22c15e62a2cf5a028d21bbece488e8bc8fde6afc9022e8db1a603",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/organism/controller.py",
+    "original_sha256": "5b96df755e0bcdb7ee4cd197559e4c6560c322598e186de51206a078b8b6cbfc",
+    "candidate_sha256": "0ae67596f8d703f3c48ae6a46fd26984b79e8845f9d349bad08340d1a47b7726",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/organism/genome.py",
+    "original_sha256": "78d664294b9d9c526228a2f49c80232fb99d78772bdb81a270b77f9bee46add0",
+    "candidate_sha256": "4fb9f0d64753936bf59da26aa6b8a38b754d2f32a006f5f67c56d6a71ddf2904",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/organism/learning.py",
+    "original_sha256": "5f72ab9f126a59e1838596eea8726bad15c1a07bdb9875da749ddfb8a5cb7275",
+    "candidate_sha256": "33364d677295b2f7d17a9b42b12ae3cbe4c8e48e3b782b95422143577471e62d",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/organism/memory.py",
+    "original_sha256": "be2aaa71bebabe57f9e2c8363f5155a3f889245dca26bb87ae0b84f17b911e9a",
+    "candidate_sha256": "ddfa1f83a2df756c7dc1bb4755de9d0b3f30df0e9e190c1a6ca75b7376a46f25",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/organism/metabolism.py",
+    "original_sha256": "f9405a48293287b37955aae02f00e126d5714310e86f2084fcce208912e34674",
+    "candidate_sha256": "5a124c0db2622bf07c5e8cc7e56c55b56f1064590d79ec3f8150b6d5cd9aae7c",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/organism/mutation.py",
+    "original_sha256": "962653194ea47233fa56778d7e4bbfa509eda26c2bb5a68f36f936fcf0247261",
+    "candidate_sha256": "4c06a08cc46b0deacb22b34273fa1f08eaab95d5fe8a1fcdc5dc9bf84f51233d",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/organism/organism.py",
+    "original_sha256": "f5fb2cb743d87cad12b96ab61ce710cf7cb4598b4dd171509457441a3b390f5d",
+    "candidate_sha256": "2790c578c95b7177608c4f45286176ad068f842dfa8ac4f355de8c863de55633",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/organism/phenotype.py",
+    "original_sha256": "b9d0449c028ec519a088b98bb81fe3b1cc414b1afe28c71c8776b51ab1cc996d",
+    "candidate_sha256": "a27749771bcf33910fd98ad4d493945a1329c2b9a0557999dec23c9adb24df60",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/organism/reproduction.py",
+    "original_sha256": "6c584c5dde59d53dc3785c15b6600f94a44eb26a28feabfbb7a410a95afc743b",
+    "candidate_sha256": "f97712658468b0f36c83836afd58fa3791e01793834e4c6b094f03f64aa5ccf7",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/organism/sensors.py",
+    "original_sha256": "26fc4cf7b2b4c6eabb755c29806f4e555f767301612ab50e40899baeef8e35ad",
+    "candidate_sha256": "c5a39669e7a0641f4357a7e986535ad9c5d45fcc755895ecb89b572e947bd7c4",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/population_analysis/__init__.py",
+    "original_sha256": "efb7b1647b6a1124e0039bc858557dbca992eb2d2802a1a40ccdb9d20e9d6534",
+    "candidate_sha256": "da561b7537a0ac4a83bf1da86a18329d99cec4361bd2767e4400fc10491524ed",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/population_analysis/aggregation.py",
+    "original_sha256": "3fb59bfa60635552a29054061684e77ae2217341285a88ef76a307377e5667aa",
+    "candidate_sha256": "414692eabdaf34f8b3a2d46270eb82cbd6197351008da797735b0454a3c814bf",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/population_analysis/evolvability_population.py",
+    "original_sha256": "6a831567ec528e65c8220edff926cdd637413f7c6a8869d0c895726bd6ce76d7",
+    "candidate_sha256": "b89248aad97bd07ce1f3ae0aba033ec0177317795259c2a11e28358e926a7a8e",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/population_analysis/lineage_ecology.py",
+    "original_sha256": "4af09ce86b6d452950cdec8d3c45ce7fbdb9f745efd1de07b3cb89efb9790386",
+    "candidate_sha256": "5f17355b1e0c09112a7850ddc1687a2e193d9338f8f6945be0759b735ebf61c3",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/population_analysis/matrix.py",
+    "original_sha256": "68484bff0cc782eaa5802cf1b6f7b560ba4f3abb23467c10da0aacf071364267",
+    "candidate_sha256": "b8de8f47b715079f86fb8491c5ef0a202d0caf1303f626446b99a51f5188a97d",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/population_analysis/perturbation.py",
+    "original_sha256": "a449b45f15dda7cd1fb2f2c3955fc04442831fb5ad357535e9b4397ec3c8422f",
+    "candidate_sha256": "2f78c6241d3ea7eba91a473602b2111ad83e710709f29daea1cc288bce2eb7be",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/population_analysis/prediction.py",
+    "original_sha256": "36514fc7090bdb546eea036462f0b0f3f0ada33a03c44d4dd0d1e15ddd22e44b",
+    "candidate_sha256": "5aaf9d193882ad871ec5e82f9804439f659ad4bacbbb2f204d437ef2ca848f3a",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/population_analysis/replication_consistency.py",
+    "original_sha256": "07fb9268519198c0bd2a11a67cd82112fc53255679b38527b847e669be0174c7",
+    "candidate_sha256": "43e5f2b6684bc9a8be2b4ee00d6b357d6bfffda08518ba4b78c5838b1fa6ffcd",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/population_analysis/robustness_population.py",
+    "original_sha256": "9040fdefe8ef9496cbfc6bc988491401aab1c1e8de6502e4eece3ce1189956a4",
+    "candidate_sha256": "582e2a80c832c7fecc4d108bf1af4b6a80dcad37f39f8158adc6924c66a324bf",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/population_analysis/temporal_validation.py",
+    "original_sha256": "966a1e230be41a3c59eb60735c3d08456fbb82f687d5a5a115e6c82c9a226015",
+    "candidate_sha256": "61e0dad4c21ad3d96fa601dfc615a17f4767b580aa608ab88002478229f27190",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/simulation/__init__.py",
+    "original_sha256": "fa1a4a7cfd71995f5fdbf3f94384553e9a25ee5fe1010592cd8af8893e3417be",
+    "candidate_sha256": "ae35c4d83c602812f2658fb204fce5d0667434bf1a7aab871385b73e6c733742",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/simulation/dynamics.py",
+    "original_sha256": "eb8ddd95f2325675aa06231459268d62e86b4b5241a8ff55c9fe48e3b74fe2ec",
+    "candidate_sha256": "308907b848109e11ab37630126193d761c6953b910e132814ed25edd9e80249e",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/simulation/environment.py",
+    "original_sha256": "2d6017e9441f8492b161126e3fefa9d406e7a9ec3d018946533554d0e7f58c29",
+    "candidate_sha256": "e05c8e335d10db85e820a1578dd4bbc6fc8509090a5863efb01ca5538ffb1e09",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/simulation/grid_world.py",
+    "original_sha256": "d48847d21bea85256be163b0abf889a0fd4270d270e0e22652bf3b00bc7402e3",
+    "candidate_sha256": "8d12ee06bb916f6eb751e5659efae7bec8fa2c3257e3510c892a65d946e19a71",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/simulation/interaction.py",
+    "original_sha256": "4d56527436f9d8b70a08a71950fdee747d36f2b6a98d435636ff9c6e5da8969e",
+    "candidate_sha256": "90c4c59c5ce5c5b89f6614a8a3b9f77ca5a274dff9d129fb886e1a7c78e5d8d8",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/simulation/shared_grid_world.py",
+    "original_sha256": "3d603d3857acfa8c1bff3956ae742e04545881c6bbe7abf9c75756292a95ee5a",
+    "candidate_sha256": "b9d17c0613350be64a1fe1dfa55eaf83fe601dbb071492019a579d69f285e826",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/simulation/types.py",
+    "original_sha256": "f682f55abb0a204afa232d4911c52c71341a5f78509121610ba4f3b16fe4692a",
+    "candidate_sha256": "7e36065648e8eb530a1d29e94c1ad4f12e16b21997a7c300afaba80ac9978bf4",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/utils/__init__.py",
+    "original_sha256": "d3341f8ff427db797ea4352cb32ef296e969fe1343f54f10280860cd877fa8ba",
+    "candidate_sha256": "d3341f8ff427db797ea4352cb32ef296e969fe1343f54f10280860cd877fa8ba",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/utils/logging.py",
+    "original_sha256": "310553db7a7baab144f78938ea1bdc75dbe4768578085127da753014e3c8ab61",
+    "candidate_sha256": "310553db7a7baab144f78938ea1bdc75dbe4768578085127da753014e3c8ab61",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/utils/provenance.py",
+    "original_sha256": "b192498dab9f8621cc928aba5927db8bedbf9bec35c1561db00dddf2d83b300f",
+    "candidate_sha256": "b192498dab9f8621cc928aba5927db8bedbf9bec35c1561db00dddf2d83b300f",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/utils/seeding.py",
+    "original_sha256": "21c762dc679af6389e0818c7acb55bf26bd713282f9bc5ac1590f4036fee941b",
+    "candidate_sha256": "21c762dc679af6389e0818c7acb55bf26bd713282f9bc5ac1590f4036fee941b",
+    "disposition": "AST verified"
+  },
+  {
+    "path": "src/genevra/visualization.py",
+    "original_sha256": "fa478b9d9b92f7b2c9d9a7c66237b4ae1ce955c7a02be351fe375a0a5ccada88",
+    "candidate_sha256": "ab3ecf66b81c84742906b39bde30e6738daa334fb88b1ce90f3427c0e318c425",
+    "disposition": "AST verified"
+  }
+]

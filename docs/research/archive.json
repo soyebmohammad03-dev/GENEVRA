@@ -1,0 +1,59 @@
+{
+  "asset": "GENEVRA_PHASE20_REPLAY.zip",
+  "phases": {
+    "11": {
+      "copied_files": 208,
+      "original_filename": "GENEVRA_PHASE_11.zip",
+      "original_sha256": "daf8febd2b4617b12936909b47e3c29b90afb103be25e0c7e9bb3ee6ad869366"
+    },
+    "12": {
+      "copied_files": 213,
+      "original_filename": "GENEVRA_PHASE_12.zip",
+      "original_sha256": "298920f1662273b748ac55a0cded006dfb7011cdceedda676bb13c9ce8df2d57"
+    },
+    "13": {
+      "copied_files": 203,
+      "original_filename": "GENEVRA_PHASE_13.zip",
+      "original_sha256": "581f2043d276eb3629580add1b81924b2e2588d204f36c1dcd57fb87698550b6"
+    },
+    "14": {
+      "copied_files": 206,
+      "original_filename": "GENEVRA_PHASE_14.zip",
+      "original_sha256": "f4067bd74eb400b2a8fe290fcb39d4a19b15d959301c429e658c07ca4a6a535a"
+    },
+    "15": {
+      "copied_files": 209,
+      "original_filename": "GENEVRA_PHASE_15.zip",
+      "original_sha256": "2436dcf6e32f63123be51adba9698aa734546035eb0f0c296ad0138e2dd7bac3"
+    },
+    "16": {
+      "copied_files": 212,
+      "original_filename": "GENEVRA_PHASE_16.zip",
+      "original_sha256": "5fa34516e54bf950df1f49db2bb5623ddebca01ce9a8cce253a7d569fd62cd0f"
+    },
+    "17": {
+      "copied_files": 11,
+      "original_filename": "GENEVRA_PHASE_17.zip",
+      "original_sha256": "c53b45c18599de12ed8f9ce8e7068bc6a9a942cdb65cfa5f33f03bca2250d12e"
+    },
+    "18": {
+      "copied_files": 208,
+      "original_filename": "GENEVRA_PHASE_18.zip",
+      "original_sha256": "ccc1aea9771789fe3c1821458912d12a95297ea5e6eb5c478a29cc374ec76c3d"
+    },
+    "19": {
+      "copied_files": 15,
+      "original_filename": "GENEVRA_PHASE_19.zip",
+      "original_sha256": "27ab6a81484d17e7500d200f600ee6c92c429eb2eddaf706042dfed4d9a0edfc"
+    },
+    "19-extension": {
+      "copied_files": 27,
+      "original_filename": "GENEVRA_PHASE_19_EXTENSION.zip",
+      "original_sha256": "69a6fc3642f7a6344ae49faadfc911e20ea70a4088db3d28eb0e94cc0bd9b2ca"
+    }
+  },
+  "schema": 1,
+  "sha256": "bf0f1e979c92cf2228ed52b58021c4ffcc1be48dd9cf49e83a57d214a56afd91",
+  "size": 22959478,
+  "url": "https://github.com/soyebmohammad03-dev/GENEVRA/releases/download/phase-20-reproducibility/GENEVRA_PHASE20_REPLAY.zip"
+}
