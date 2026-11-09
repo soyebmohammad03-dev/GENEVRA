@@ -391,7 +391,7 @@ Full rationale for this split is in [`docs/architecture.md`](docs/architecture.m
 
 ## Install and run
 
-Requires Python >= 3.11.
+Requires Python >= 3.11. For a wheel-only installation, a worked example, and the boundary between installed commands and frozen research workflows, see the [distribution guide](docs/model_repair/phase_30/INSTALLATION_VALIDATION.md).
 
 ```bash
 # using uv (recommended)

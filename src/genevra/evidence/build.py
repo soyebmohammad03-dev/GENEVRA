@@ -54,6 +54,7 @@ from genevra.evidence.research_question import EvidenceStatus, ResearchQuestion
 from genevra.evidence.robustness_classifier import classify_robustness
 from genevra.evidence.validation_split import split_seeds
 from genevra.evolution.lifetime import run_single_lifetime
+from genevra.experiments._resources import load_experiment_script
 from genevra.literature.boundary_search import run_boundary_sweep
 from genevra.literature.cases import case_a_plasticity_evolvability_tradeoff
 from genevra.literature.comparison_matrix import (
@@ -81,6 +82,7 @@ from genevra.population_analysis.robustness_population import robustness_metric_
 from genevra.population_analysis.temporal_validation import leave_one_seed_out
 from genevra.simulation.grid_world import GridWorldConfig
 from genevra.simulation.types import Action
+from genevra.utils.provenance import source_commit
 
 _GIT_COMMIT_UNAVAILABLE = "unavailable"
 
@@ -153,33 +155,6 @@ def _with_research_metrics(factory: Any) -> Any:
     return wrapped
 
 
-def _load_experiment_module(filename: str) -> Any:
-    """`experiments/` has no `__init__.py` (it is a script directory, not
-    a package), so its modules are loaded by file path rather than
-    `import experiments.<name>` — the same technique every
-    `experiments/exp*.py` script itself is run with."""
-    import importlib.util
-
-    path = Path(__file__).resolve().parents[3] / "experiments" / filename
-    spec_mod = importlib.util.spec_from_file_location(path.stem, path)
-    assert spec_mod is not None and spec_mod.loader is not None
-    module = importlib.util.module_from_spec(spec_mod)
-    spec_mod.loader.exec_module(module)
-    return module
-
-
-def _git_commit() -> str:
-    import subprocess
-
-    try:
-        result = subprocess.run(
-            ["git", "rev-parse", "HEAD"], capture_output=True, text=True, timeout=5, check=False
-        )
-    except (OSError, subprocess.SubprocessError):  # pragma: no cover
-        return _GIT_COMMIT_UNAVAILABLE
-    return result.stdout.strip() if result.returncode == 0 else _GIT_COMMIT_UNAVAILABLE
-
-
 def _config_hash(payload: dict[str, Any]) -> str:
     import hashlib
 
@@ -214,7 +189,7 @@ def build_evidence_package(output_root: Path, scale: ScaleConfig = QUICK) -> Evi
 
     manifest = EvidenceManifest()
     research_questions: list[ResearchQuestion] = []
-    git_commit = _git_commit()
+    git_commit = source_commit() or _GIT_COMMIT_UNAVAILABLE
 
     # ---- RQ1 / RQ3 / RQ5 / RQ6 / RQ8: run CASE A once, reuse its raw
     # trajectories for four research questions rather than re-simulating. ----
@@ -949,7 +924,7 @@ def build_evidence_package(output_root: Path, scale: ScaleConfig = QUICK) -> Evi
     )
 
     # ---- RQ4: ecology (isolated vs. shared), reusing experiments/exp1. ----
-    exp1 = _load_experiment_module("exp1_isolated_vs_shared.py")
+    exp1 = load_experiment_script("exp1_isolated_vs_shared.py")
 
     isolated_values = [exp1.isolated_final_diversity(s) for s in scale.ecology_seeds]
     shared_values = [exp1.shared_final_diversity(s) for s in scale.ecology_seeds]
@@ -1269,7 +1244,7 @@ def _build_rq4b(
     both `reproduce-evidence` and the committed `research_evidence/`
     package — this function is the only place this comparison's
     statistics are computed."""
-    exp = _load_experiment_module("exp_ecology_corrected.py")
+    exp = load_experiment_script("exp_ecology_corrected.py")
     seeds = list(scale.ecology_corrected_seeds)
 
     # The analysis plan is frozen to disk BEFORE the experiment runs

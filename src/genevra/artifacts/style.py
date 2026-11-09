@@ -10,18 +10,17 @@ from __future__ import annotations
 
 import dataclasses
 import json
-import subprocess
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import TYPE_CHECKING, Any
 
+from genevra.utils.provenance import source_commit
+
 if TYPE_CHECKING:
     from matplotlib.figure import Figure
 
-_MISSING_MATPLOTLIB = (
-    'matplotlib is required for genevra.artifacts. Install it with: pip install -e ".[viz]"'
-)
+_MISSING_MATPLOTLIB = "matplotlib is required for genevra.artifacts. Run pip install matplotlib."
 
 
 def require_matplotlib() -> Any:
@@ -52,18 +51,6 @@ def apply_style() -> None:
             "axes.spines.right": False,
         }
     )
-
-
-def _git_commit() -> str | None:
-    try:
-        result = subprocess.run(
-            ["git", "rev-parse", "HEAD"], capture_output=True, text=True, timeout=5, check=False
-        )
-    except (OSError, subprocess.SubprocessError):  # pragma: no cover - environment-dependent
-        return None
-    if result.returncode != 0:
-        return None
-    return result.stdout.strip()
 
 
 @dataclass(frozen=True)
@@ -123,7 +110,7 @@ def save_figure(
         analysis_version=analysis_version,
         seed_policy=seed_policy,
         creation_timestamp=datetime.now(UTC).isoformat(),
-        git_commit=_git_commit(),
+        git_commit=source_commit(),
         parameters=parameters or {},
         caption=caption,
         limitations=limitations,

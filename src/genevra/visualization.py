@@ -20,9 +20,7 @@ from typing import TYPE_CHECKING, Any, cast
 if TYPE_CHECKING:
     from matplotlib.figure import Figure
 
-_MISSING_MATPLOTLIB = (
-    'matplotlib is required for genevra.visualization. Install it with: pip install -e ".[viz]"'
-)
+_MISSING_MATPLOTLIB = "Plotting requires matplotlib. Run pip install matplotlib."
 
 
 def _require_matplotlib() -> Any:

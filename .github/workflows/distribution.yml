@@ -1,0 +1,48 @@
+name: Distribution
+
+on:
+  push:
+    branches: [research/publication-development]
+  pull_request:
+    branches: [research/publication-development]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ubuntu:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install tools and run source quality gates
+        run: |
+          python --version
+          cat /etc/os-release
+          uname -m
+          python -m pip install uv ruff mypy numpy matplotlib
+          uv --version
+          ruff check .
+          ruff format --check .
+          mypy
+      - name: Verify distribution and frozen evidence
+        run: |
+          sh scripts/check_distribution.sh "${{ matrix.python }}" "$RUNNER_TEMP/distribution"
+          git diff --exit-code e3b2edc1a7eb429be28af3969ad2c92264c0bd93 -- configs docs/research experiments research_evidence results
+          sha256sum -c docs/research/phase_29/FROZEN_SHA256SUMS
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: distribution-python-${{ matrix.python }}
+          path: |
+            ${{ runner.temp }}/distribution/distribution.json
+            ${{ runner.temp }}/distribution/help/

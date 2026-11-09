@@ -28,6 +28,17 @@ build-backend = "hatchling.build"
 [tool.hatch.build.targets.wheel]
 packages = ["src/genevra"]
 
+[tool.hatch.build.targets.wheel.force-include]
+"experiments/baseline.py" = "genevra/experiments/_scripts/baseline.py"
+"experiments/exp1_isolated_vs_shared.py" = "genevra/experiments/_scripts/exp1_isolated_vs_shared.py"
+"experiments/exp_ecology_corrected.py" = "genevra/experiments/_scripts/exp_ecology_corrected.py"
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "/src", "/experiments/baseline.py", "/experiments/exp1_isolated_vs_shared.py",
+  "/experiments/exp_ecology_corrected.py", "/README.md", "/LICENSE", "/CITATION.cff",
+]
+
 [tool.ruff]
 line-length = 100
 target-version = "py311"
