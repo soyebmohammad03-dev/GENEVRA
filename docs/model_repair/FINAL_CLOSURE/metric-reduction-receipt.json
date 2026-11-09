@@ -1,0 +1,24 @@
+{
+  "norm_calls_per_run": 66124,
+  "operand_lengths": {
+    "10": 61970,
+    "254": 4154
+  },
+  "identical_operand_bytes_by_sha256": 66124,
+  "native_norms_different": 12009,
+  "max_absolute_native_norm_difference": 7.62939453125e-06,
+  "first_difference": {
+    "index_zero_based": 0,
+    "operand_sha256": "f1807bef1901fa0b91bd03899ac1837a048c963f2295c440c7b8f7cb4553e4d8",
+    "mac": 38.06574249267578,
+    "ubuntu": 38.065738677978516,
+    "diagnostic_reference": 38.065738677978516
+  },
+  "reference_trajectories_exactly_equal": true,
+  "selection_rows_exactly_equal": 15,
+  "lineage_rows_exactly_equal": 384,
+  "trace_sha256": [
+    "0a6e854bdba5b10cfb1e6ffed3bcb0125b478647c3d3f2d00f6e80cedd987412",
+    "3daf34a445dc09064e1bb270e82f63ce67a8300c49068a96f85db93e38573a6a"
+  ]
+}
