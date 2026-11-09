@@ -1,0 +1,31 @@
+name: Baseline portability diagnostic
+
+on:
+  push:
+    branches: [research/publication-development]
+    paths:
+      - scripts/diagnose_baseline_portability.py
+      - .github/workflows/portability-diagnostic.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  trace:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.16"
+      - run: python -m pip install . numpy==2.5.4
+      - run: python scripts/diagnose_baseline_portability.py "$RUNNER_TEMP/ubuntu.json"
+        env:
+          OPENBLAS_NUM_THREADS: "1"
+          OMP_NUM_THREADS: "1"
+          PYTHONHASHSEED: "0"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ubuntu-portability-trace
+          path: ${{ runner.temp }}/ubuntu.json
