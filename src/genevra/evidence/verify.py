@@ -17,7 +17,11 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-from genevra.evidence.checksums import ChecksumMismatch, verify_checksum_manifest
+from genevra.evidence.checksums import (
+    ChecksumMismatch,
+    resolve_evidence_path,
+    verify_checksum_manifest,
+)
 from genevra.evidence.manifest import EvidenceManifest
 
 _MANIFEST_TRACKED_DIRS = ("figures", "tables", "reports")
@@ -49,43 +53,51 @@ class EvidenceVerificationReport:
 
 
 def verify_evidence_package(root: Path) -> EvidenceVerificationReport:
-    manifest_path = root / "manifest.json"
     checksum_path = root / "checksums" / "manifest.sha256"
 
-    checksum_mismatches = tuple(verify_checksum_manifest(root, checksum_path))
+    checksum_mismatches = verify_checksum_manifest(root, checksum_path)
+
+    def checked_path(name: str) -> Path | None:
+        try:
+            return resolve_evidence_path(root, name)
+        except ValueError:
+            checksum_mismatches.append(ChecksumMismatch(name, "unsafe evidence path"))
+            return None
 
     missing: list[str] = []
     referenced: set[str] = set()
-    if manifest_path.exists():
+    manifest_path = checked_path("manifest.json")
+    if manifest_path is not None and manifest_path.is_file():
         manifest = EvidenceManifest.load(manifest_path)
         for artifact in manifest.artifacts:
             referenced.add(artifact.relative_path)
-            if not (root / artifact.relative_path).exists():
+            target = checked_path(artifact.relative_path)
+            if target is not None and not target.is_file():
                 missing.append(artifact.relative_path)
-    else:
-        missing.append(str(manifest_path.relative_to(root)))
+    elif manifest_path is not None:
+        missing.append("manifest.json")
 
     orphaned: list[str] = []
     for tracked in _MANIFEST_TRACKED_DIRS:
-        tracked_dir = root / tracked
-        if not tracked_dir.exists():
+        tracked_dir = checked_path(tracked)
+        if tracked_dir is None or not tracked_dir.is_dir():
             continue
         for path in tracked_dir.rglob("*"):
-            if path.is_file():
-                rel = path.relative_to(root).as_posix()
-                if rel not in referenced:
-                    orphaned.append(rel)
+            rel = (Path(tracked) / path.relative_to(tracked_dir)).as_posix()
+            target = checked_path(rel)
+            if target is not None and target.is_file() and rel not in referenced:
+                orphaned.append(rel)
 
     seed_overlap: tuple[int, ...] = ()
-    seeds_path = root / "seeds" / "development_validation_split.json"
-    if seeds_path.exists():
+    seeds_path = checked_path("seeds/development_validation_split.json")
+    if seeds_path is not None and seeds_path.is_file():
         split = json.loads(seeds_path.read_text())
         dev = set(split.get("development_seeds", []))
         val = set(split.get("validation_seeds", []))
         seed_overlap = tuple(sorted(dev & val))
 
     return EvidenceVerificationReport(
-        checksum_mismatches=checksum_mismatches,
+        checksum_mismatches=tuple(checksum_mismatches),
         missing_referenced_files=tuple(missing),
         orphaned_files=tuple(orphaned),
         seed_split_overlap=seed_overlap,

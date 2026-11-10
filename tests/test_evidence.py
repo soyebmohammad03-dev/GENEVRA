@@ -123,6 +123,49 @@ class TestVerifyEvidencePackage:
         assert not report.ok()
         assert report.seed_split_overlap == (2,)
 
+    @pytest.mark.parametrize("path_kind", ["traversal", "absolute", "symlink"])
+    def test_rejects_paths_outside_package(self, tmp_path: Path, path_kind: str) -> None:
+        root = tmp_path / "evidence"
+        self._minimal_package(root)
+        other = tmp_path / "other.txt"
+        other.write_text("outside the package")
+        if path_kind == "symlink":
+            (root / "link.txt").symlink_to(other)
+        name = {
+            "traversal": "../other.txt",
+            "absolute": str(other),
+            "symlink": "link.txt",
+        }[path_kind]
+        manifest_path = root / "checksums" / "manifest.sha256"
+        manifest_path.write_text(f"{sha256_file(other)}  {name}\n")
+        manifest = EvidenceManifest([_artifact(name)])
+        manifest.save(root / "manifest.json")
+
+        report = verify_evidence_package(root)
+        assert not report.ok()
+        assert [(x.path, x.reason) for x in report.checksum_mismatches] == [
+            (name, "unsafe evidence path"),
+            (name, "unsafe evidence path"),
+        ]
+
+    @pytest.mark.parametrize(
+        "name",
+        ["manifest.json", "checksums/manifest.sha256", "seeds/development_validation_split.json"],
+    )
+    def test_rejects_external_control_file(self, tmp_path: Path, name: str) -> None:
+        root = tmp_path / "evidence"
+        self._minimal_package(root)
+        original = root / name
+        other = tmp_path / "outside"
+        original.rename(other)
+        original.symlink_to(other)
+
+        report = verify_evidence_package(root)
+        assert not report.ok()
+        assert any(
+            mismatch.reason == "unsafe evidence path" for mismatch in report.checksum_mismatches
+        )
+
     def test_missing_manifest_reported(self, tmp_path: Path) -> None:
         report = verify_evidence_package(tmp_path)
         assert not report.ok()

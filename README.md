@@ -41,13 +41,12 @@ journal submission remain outstanding.
 
 ## Publication status
 
-The [final manuscript](docs/research/phase_29/rendered/GENEVRA-manuscript.pdf),
-[claim-to-evidence matrix](docs/research/phase_29/CLAIM_TO_EVIDENCE.md) and
-[reproduction release](docs/research/phase_29/README.md) are ready for independent
-technical assessment. The [public challenge](docs/research/phase_29/CHALLENGE.md)
-includes the command, expected outputs and discrepancy reporting. External
-reproduction and empirical validation remain outstanding. Journal submission
-is on hold.
+Start with the [publication and reviewer index](docs/publication/README.md)
+to identify the current editorial manuscript, historical PDFs, exact builds,
+and author actions. The [current distribution guide](docs/model_repair/phase_30/INSTALLATION_VALIDATION.md)
+supersedes the wheel limitation recorded in the frozen Phase 29 guide.
+External reproduction and empirical validation remain outstanding.
+Submission depends on author confirmation and venue requirements.
 
 [Benchmark architecture](docs/research/phase_28/rendered/figures/design.png) ·
 [Shared-blindness figure](docs/research/phase_28/rendered/figures/shared.png) ·
